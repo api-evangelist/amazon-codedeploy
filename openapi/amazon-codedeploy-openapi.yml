@@ -1,0 +1,529 @@
+openapi: 3.1.0
+info:
+  title: Amazon CodeDeploy API
+  description: >-
+    AWS CodeDeploy is a fully managed deployment service that automates software
+    deployments to a variety of compute services such as Amazon EC2, AWS Fargate,
+    AWS Lambda, and your on-premises servers. CodeDeploy makes it easier to rapidly
+    release new features, helps you avoid downtime during deployment, and handles
+    the complexity of updating your applications.
+  version: '2014-10-06'
+  contact:
+    name: Amazon Web Services
+    url: https://aws.amazon.com/contact-us/
+  termsOfService: https://aws.amazon.com/service-terms/
+externalDocs:
+  description: Amazon CodeDeploy API Reference
+  url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/
+servers:
+  - url: https://codedeploy.{region}.amazonaws.com
+    description: Amazon CodeDeploy Regional Endpoint
+    variables:
+      region:
+        default: us-east-1
+        description: AWS Region
+tags:
+  - name: Applications
+    description: Operations for creating and managing CodeDeploy applications
+  - name: Deployment Groups
+    description: Operations for creating and managing deployment groups
+  - name: Deployments
+    description: Operations for creating and monitoring deployments
+  - name: Deployment Configs
+    description: Operations for managing deployment configurations
+paths:
+  /applications:
+    post:
+      operationId: CreateApplication
+      summary: Create an application
+      description: >-
+        Creates an application. An application is a name that represents the
+        compute platform on which you deploy (EC2/On-premises, Lambda, or ECS).
+      tags:
+        - Applications
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateApplicationRequest'
+      responses:
+        '200':
+          description: Application created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateApplicationResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidApplicationNameException'
+        '409':
+          description: Application already exists
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApplicationAlreadyExistsException'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+    get:
+      operationId: ListApplications
+      summary: List applications
+      description: >-
+        Lists the applications registered with the user or AWS account.
+      tags:
+        - Applications
+      parameters:
+        - name: nextToken
+          in: query
+          description: Token for pagination.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListApplicationsResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidNextTokenException'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+
+  /applications/{applicationName}:
+    get:
+      operationId: GetApplication
+      summary: Get application details
+      description: >-
+        Gets information about an application.
+      tags:
+        - Applications
+      parameters:
+        - name: applicationName
+          in: path
+          required: true
+          description: The name of the application.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetApplicationResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidApplicationNameException'
+        '404':
+          description: Application not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApplicationDoesNotExistException'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+    delete:
+      operationId: DeleteApplication
+      summary: Delete an application
+      description: >-
+        Deletes an application along with all associated deployment groups
+        and revisions.
+      tags:
+        - Applications
+      parameters:
+        - name: applicationName
+          in: path
+          required: true
+          description: The name of the application to delete.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Application deleted
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidApplicationNameException'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+
+  /deployments:
+    post:
+      operationId: CreateDeployment
+      summary: Create a deployment
+      description: >-
+        Deploys an application revision through the specified deployment group.
+      tags:
+        - Deployments
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateDeploymentRequest'
+      responses:
+        '200':
+          description: Deployment created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateDeploymentResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidDeploymentGroupNameException'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+    get:
+      operationId: ListDeployments
+      summary: List deployments
+      description: >-
+        Lists the deployments in a deployment group for an application registered
+        with the user or AWS account.
+      tags:
+        - Deployments
+      parameters:
+        - name: applicationName
+          in: query
+          description: The name of the application.
+          schema:
+            type: string
+        - name: deploymentGroupName
+          in: query
+          description: The name of the deployment group.
+          schema:
+            type: string
+        - name: nextToken
+          in: query
+          description: Token for pagination.
+          schema:
+            type: string
+        - name: includeOnlyStatuses
+          in: query
+          description: Filter by deployment status.
+          schema:
+            type: array
+            items:
+              type: string
+              enum:
+                - Created
+                - Queued
+                - InProgress
+                - Baking
+                - Succeeded
+                - Failed
+                - Stopped
+                - Ready
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListDeploymentsResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidApplicationNameException'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+
+  /deployments/{deploymentId}:
+    get:
+      operationId: GetDeployment
+      summary: Get deployment details
+      description: >-
+        Gets information about a deployment, including details about the
+        deployment status.
+      tags:
+        - Deployments
+      parameters:
+        - name: deploymentId
+          in: path
+          required: true
+          description: The unique ID of a deployment.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetDeploymentResponse'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidDeploymentIdException'
+        '404':
+          description: Deployment not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeploymentDoesNotExistException'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+
+components:
+  schemas:
+    CreateApplicationRequest:
+      type: object
+      required:
+        - applicationName
+      properties:
+        applicationName:
+          type: string
+          description: The name of the application.
+        computePlatform:
+          type: string
+          description: The destination platform type for the deployment.
+          enum:
+            - Server
+            - Lambda
+            - ECS
+
+    CreateApplicationResponse:
+      type: object
+      properties:
+        applicationId:
+          type: string
+          description: A unique application ID.
+
+    ListApplicationsResponse:
+      type: object
+      properties:
+        applications:
+          type: array
+          items:
+            type: string
+        nextToken:
+          type: string
+
+    GetApplicationResponse:
+      type: object
+      properties:
+        application:
+          type: object
+          properties:
+            applicationId:
+              type: string
+            applicationName:
+              type: string
+            computePlatform:
+              type: string
+            createTime:
+              type: string
+              format: date-time
+            linkedToGitHub:
+              type: boolean
+
+    CreateDeploymentRequest:
+      type: object
+      required:
+        - applicationName
+        - deploymentGroupName
+      properties:
+        applicationName:
+          type: string
+          description: The name of the application.
+        deploymentGroupName:
+          type: string
+          description: The name of the deployment group.
+        revision:
+          type: object
+          properties:
+            revisionType:
+              type: string
+              enum:
+                - S3
+                - GitHub
+                - String
+                - AppSpecContent
+            s3Location:
+              type: object
+              properties:
+                bucket:
+                  type: string
+                key:
+                  type: string
+                bundleType:
+                  type: string
+                  enum:
+                    - tar
+                    - tgz
+                    - zip
+                    - YAML
+                    - JSON
+            gitHubLocation:
+              type: object
+              properties:
+                repository:
+                  type: string
+                commitId:
+                  type: string
+        description:
+          type: string
+          description: A comment about the deployment.
+        autoRollbackConfiguration:
+          type: object
+          properties:
+            enabled:
+              type: boolean
+            events:
+              type: array
+              items:
+                type: string
+                enum:
+                  - DEPLOYMENT_FAILURE
+                  - DEPLOYMENT_STOP_ON_ALARM
+                  - DEPLOYMENT_STOP_ON_REQUEST
+
+    CreateDeploymentResponse:
+      type: object
+      properties:
+        deploymentId:
+          type: string
+
+    ListDeploymentsResponse:
+      type: object
+      properties:
+        deployments:
+          type: array
+          items:
+            type: string
+        nextToken:
+          type: string
+
+    GetDeploymentResponse:
+      type: object
+      properties:
+        deploymentInfo:
+          type: object
+          properties:
+            deploymentId:
+              type: string
+            applicationName:
+              type: string
+            deploymentGroupName:
+              type: string
+            status:
+              type: string
+              enum:
+                - Created
+                - Queued
+                - InProgress
+                - Baking
+                - Succeeded
+                - Failed
+                - Stopped
+                - Ready
+            createTime:
+              type: string
+              format: date-time
+            startTime:
+              type: string
+              format: date-time
+            completeTime:
+              type: string
+              format: date-time
+            description:
+              type: string
+            creator:
+              type: string
+            computePlatform:
+              type: string
+
+    InvalidApplicationNameException:
+      type: object
+      properties:
+        message:
+          type: string
+
+    ApplicationAlreadyExistsException:
+      type: object
+      properties:
+        message:
+          type: string
+
+    ApplicationDoesNotExistException:
+      type: object
+      properties:
+        message:
+          type: string
+
+    InvalidDeploymentGroupNameException:
+      type: object
+      properties:
+        message:
+          type: string
+
+    InvalidDeploymentIdException:
+      type: object
+      properties:
+        message:
+          type: string
+
+    DeploymentDoesNotExistException:
+      type: object
+      properties:
+        message:
+          type: string
+
+    InvalidNextTokenException:
+      type: object
+      properties:
+        message:
+          type: string
+
+    InternalServerException:
+      type: object
+      properties:
+        message:
+          type: string

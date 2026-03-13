@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.com/schemas/amazon/codedeploy/deployment.json",
+  "title": "Amazon CodeDeploy Deployment",
+  "description": "Represents an AWS CodeDeploy deployment with its configuration, status, and rollback settings.",
+  "type": "object",
+  "required": ["deploymentId"],
+  "properties": {
+    "deploymentId": {
+      "type": "string",
+      "description": "The unique ID of the deployment."
+    },
+    "applicationName": {
+      "type": "string",
+      "description": "The application name."
+    },
+    "deploymentGroupName": {
+      "type": "string",
+      "description": "The deployment group name."
+    },
+    "status": {
+      "type": "string",
+      "description": "The current state of the deployment.",
+      "enum": [
+        "Created",
+        "Queued",
+        "InProgress",
+        "Baking",
+        "Succeeded",
+        "Failed",
+        "Stopped",
+        "Ready"
+      ]
+    },
+    "computePlatform": {
+      "type": "string",
+      "description": "The destination platform type for the deployment.",
+      "enum": ["Server", "Lambda", "ECS"]
+    },
+    "revision": {
+      "type": "object",
+      "description": "Information about the location of stored application artifacts.",
+      "properties": {
+        "revisionType": {
+          "type": "string",
+          "enum": ["S3", "GitHub", "String", "AppSpecContent"]
+        },
+        "s3Location": {
+          "type": "object",
+          "properties": {
+            "bucket": {
+              "type": "string"
+            },
+            "key": {
+              "type": "string"
+            },
+            "bundleType": {
+              "type": "string",
+              "enum": ["tar", "tgz", "zip", "YAML", "JSON"]
+            },
+            "version": {
+              "type": "string"
+            },
+            "eTag": {
+              "type": "string"
+            }
+          }
+        },
+        "gitHubLocation": {
+          "type": "object",
+          "properties": {
+            "repository": {
+              "type": "string"
+            },
+            "commitId": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "description": {
+      "type": "string",
+      "description": "A comment about the deployment.",
+      "maxLength": 256
+    },
+    "creator": {
+      "type": "string",
+      "description": "The means by which the deployment was created.",
+      "enum": ["user", "autoscaling", "codeDeployRollback", "CodeDeploy", "CodeDeployAutoUpdate"]
+    },
+    "createTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "A timestamp that indicates when the deployment was created."
+    },
+    "startTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "A timestamp that indicates when the deployment was deployed to the deployment group."
+    },
+    "completeTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "A timestamp that indicates when the deployment was complete."
+    },
+    "autoRollbackConfiguration": {
+      "type": "object",
+      "description": "Information about the automatic rollback configuration.",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "events": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "DEPLOYMENT_FAILURE",
+              "DEPLOYMENT_STOP_ON_ALARM",
+              "DEPLOYMENT_STOP_ON_REQUEST"
+            ]
+          }
+        }
+      }
+    },
+    "rollbackInfo": {
+      "type": "object",
+      "description": "Information about a deployment rollback.",
+      "properties": {
+        "rollbackDeploymentId": {
+          "type": "string"
+        },
+        "rollbackTriggeringDeploymentId": {
+          "type": "string"
+        },
+        "rollbackMessage": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

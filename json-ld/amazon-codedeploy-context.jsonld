@@ -1,0 +1,62 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "codedeploy": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+
+    "Application": {
+      "@id": "codedeploy:Application",
+      "@context": {
+        "applicationId": "codedeploy:applicationId",
+        "applicationName": "schema:name",
+        "computePlatform": "codedeploy:computePlatform",
+        "createTime": {
+          "@id": "dcterms:created",
+          "@type": "xsd:dateTime"
+        },
+        "linkedToGitHub": {
+          "@id": "codedeploy:linkedToGitHub",
+          "@type": "xsd:boolean"
+        }
+      }
+    },
+
+    "DeploymentGroup": {
+      "@id": "codedeploy:DeploymentGroup",
+      "@context": {
+        "deploymentGroupId": "codedeploy:deploymentGroupId",
+        "deploymentGroupName": "schema:name",
+        "applicationName": "codedeploy:applicationName",
+        "computePlatform": "codedeploy:computePlatform",
+        "deploymentConfigName": "codedeploy:deploymentConfigName",
+        "serviceRoleArn": "codedeploy:serviceRoleArn"
+      }
+    },
+
+    "Deployment": {
+      "@id": "codedeploy:Deployment",
+      "@context": {
+        "deploymentId": "codedeploy:deploymentId",
+        "applicationName": "codedeploy:applicationName",
+        "deploymentGroupName": "codedeploy:deploymentGroupName",
+        "status": "codedeploy:status",
+        "description": "schema:description",
+        "creator": "codedeploy:creator",
+        "createTime": {
+          "@id": "dcterms:created",
+          "@type": "xsd:dateTime"
+        },
+        "startTime": {
+          "@id": "codedeploy:startTime",
+          "@type": "xsd:dateTime"
+        },
+        "completeTime": {
+          "@id": "codedeploy:completeTime",
+          "@type": "xsd:dateTime"
+        }
+      }
+    }
+  }
+}
