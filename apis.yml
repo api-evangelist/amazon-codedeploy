@@ -1,9 +1,16 @@
+aid: amazon-codedeploy
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/apis.yml
 name: Amazon CodeDeploy API
-description: AWS CodeDeploy is a fully managed deployment service that automates software deployments to a variety of compute services such as Amazon EC2, AWS Fargate, AWS Lambda, and on-premises servers, making it easier to rapidly release new features and avoid downtime during deployment.
-image: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
-url: https://aws.amazon.com/codedeploy/
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+specificationVersion: '0.19'
+description: >-
+  AWS CodeDeploy is a fully managed deployment service that automates software
+  deployments to a variety of compute services such as Amazon EC2, AWS
+  Fargate, AWS Lambda, and on-premises servers.
 created: '2024-01-15'
-modified: '2026-03-13'
+modified: '2026-03-16'
 apis:
 - name: Amazon CodeDeploy API
   description: >-
