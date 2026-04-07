@@ -25,12 +25,8 @@ servers:
 tags:
   - name: Applications
     description: Operations for creating and managing CodeDeploy applications
-  - name: Deployment Groups
-    description: Operations for creating and managing deployment groups
   - name: Deployments
     description: Operations for creating and monitoring deployments
-  - name: Deployment Configs
-    description: Operations for managing deployment configurations
 paths:
   /applications:
     post:
