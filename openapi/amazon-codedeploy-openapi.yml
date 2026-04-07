@@ -35,7 +35,7 @@ paths:
   /applications:
     post:
       operationId: CreateApplication
-      summary: Create an application
+      summary: Amazon CodeDeploy Create an application
       description: >-
         Creates an application. An application is a name that represents the
         compute platform on which you deploy (EC2/On-premises, Lambda, or ECS).
@@ -74,7 +74,7 @@ paths:
                 $ref: '#/components/schemas/InternalServerException'
     get:
       operationId: ListApplications
-      summary: List applications
+      summary: Amazon CodeDeploy List applications
       description: >-
         Lists the applications registered with the user or AWS account.
       tags:
@@ -108,7 +108,7 @@ paths:
   /applications/{applicationName}:
     get:
       operationId: GetApplication
-      summary: Get application details
+      summary: Amazon CodeDeploy Get application details
       description: >-
         Gets information about an application.
       tags:
@@ -147,7 +147,7 @@ paths:
                 $ref: '#/components/schemas/InternalServerException'
     delete:
       operationId: DeleteApplication
-      summary: Delete an application
+      summary: Amazon CodeDeploy Delete an application
       description: >-
         Deletes an application along with all associated deployment groups
         and revisions.
@@ -179,7 +179,7 @@ paths:
   /deployments:
     post:
       operationId: CreateDeployment
-      summary: Create a deployment
+      summary: Amazon CodeDeploy Create a deployment
       description: >-
         Deploys an application revision through the specified deployment group.
       tags:
@@ -211,7 +211,7 @@ paths:
                 $ref: '#/components/schemas/InternalServerException'
     get:
       operationId: ListDeployments
-      summary: List deployments
+      summary: Amazon CodeDeploy List deployments
       description: >-
         Lists the deployments in a deployment group for an application registered
         with the user or AWS account.
@@ -272,7 +272,7 @@ paths:
   /deployments/{deploymentId}:
     get:
       operationId: GetDeployment
-      summary: Get deployment details
+      summary: Amazon CodeDeploy Get deployment details
       description: >-
         Gets information about a deployment, including details about the
         deployment status.
