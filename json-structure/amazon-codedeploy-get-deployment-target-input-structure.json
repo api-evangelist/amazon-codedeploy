@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-get-deployment-target-input-structure.json",
+  "name": "GetDeploymentTargetInput",
+  "description": "GetDeploymentTargetInput schema from Amazon CodeDeploy",
+  "type": "object",
+  "properties": {
+    "deploymentId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeploymentId"
+        },
+        {
+          "description": " The unique ID of a deployment. "
+        }
+      ]
+    },
+    "targetId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TargetId"
+        },
+        {
+          "description": " The unique ID of a deployment target. "
+        }
+      ]
+    }
+  }
+}

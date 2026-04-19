@@ -1,0 +1,10 @@
+{
+  "identifer": "500123",
+  "desiredCount": "example-value",
+  "pendingCount": "example-value",
+  "runningCount": "example-value",
+  "status": "ACTIVE",
+  "trafficWeight": "example-value",
+  "targetGroup": "example-value",
+  "taskSetLabel": "example-value"
+}

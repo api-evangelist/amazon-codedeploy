@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-create-application-request-structure.json",
+  "name": "CreateApplicationRequest",
+  "description": "CreateApplicationRequest schema from Amazon CodeDeploy",
+  "type": "object",
+  "properties": {
+    "applicationName": {
+      "type": "string",
+      "description": "The name of the application."
+    },
+    "computePlatform": {
+      "type": "string",
+      "description": "The destination platform type for the deployment.",
+      "enum": [
+        "Server",
+        "Lambda",
+        "ECS"
+      ]
+    }
+  },
+  "required": [
+    "applicationName"
+  ]
+}

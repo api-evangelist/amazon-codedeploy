@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-get-application-response-structure.json",
+  "name": "GetApplicationResponse",
+  "description": "GetApplicationResponse schema from Amazon CodeDeploy",
+  "type": "object",
+  "properties": {
+    "application": {
+      "type": "object",
+      "properties": {
+        "applicationId": {
+          "type": "string"
+        },
+        "applicationName": {
+          "type": "string"
+        },
+        "computePlatform": {
+          "type": "string"
+        },
+        "createTime": {
+          "type": "datetime"
+        },
+        "linkedToGitHub": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

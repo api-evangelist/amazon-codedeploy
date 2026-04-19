@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-create-deployment-output-schema.json",
+  "title": "CreateDeploymentOutput",
+  "description": " Represents the output of a <code>CreateDeployment</code> operation. ",
+  "type": "object",
+  "properties": {
+    "deploymentId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeploymentId"
+        },
+        {
+          "description": " The unique ID of a deployment. "
+        }
+      ]
+    }
+  }
+}

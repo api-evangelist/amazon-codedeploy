@@ -1,0 +1,8 @@
+{
+  "deploymentId": "500123",
+  "instanceId": "500123",
+  "status": "ACTIVE",
+  "lastUpdatedAt": "example-value",
+  "lifecycleEvents": "example-value",
+  "instanceType": "STANDARD"
+}

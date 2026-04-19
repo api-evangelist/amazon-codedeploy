@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-create-application-response-structure.json",
+  "name": "CreateApplicationResponse",
+  "description": "CreateApplicationResponse schema from Amazon CodeDeploy",
+  "type": "object",
+  "properties": {
+    "applicationId": {
+      "type": "string",
+      "description": "A unique application ID."
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-revision-does-not-exist-exception-structure.json",
+  "name": "RevisionDoesNotExistException",
+  "description": "RevisionDoesNotExistException schema from Amazon CodeDeploy"
+}

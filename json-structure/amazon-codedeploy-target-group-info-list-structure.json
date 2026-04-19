@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-target-group-info-list-structure.json",
+  "name": "TargetGroupInfoList",
+  "description": "TargetGroupInfoList schema from Amazon CodeDeploy",
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/TargetGroupInfo"
+  }
+}

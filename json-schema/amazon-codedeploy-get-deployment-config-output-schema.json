@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-get-deployment-config-output-schema.json",
+  "title": "GetDeploymentConfigOutput",
+  "description": "Represents the output of a <code>GetDeploymentConfig</code> operation.",
+  "type": "object",
+  "properties": {
+    "deploymentConfigInfo": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeploymentConfigInfo"
+        },
+        {
+          "description": "Information about the deployment configuration."
+        }
+      ]
+    }
+  }
+}

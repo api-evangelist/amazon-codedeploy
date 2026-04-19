@@ -1,0 +1,5 @@
+{
+  "rollbackDeploymentId": "500123",
+  "rollbackTriggeringDeploymentId": "500123",
+  "rollbackMessage": "example-value"
+}

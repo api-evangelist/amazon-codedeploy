@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-application-revision-sort-by-structure.json",
+  "name": "ApplicationRevisionSortBy",
+  "description": "ApplicationRevisionSortBy schema from Amazon CodeDeploy",
+  "type": "string",
+  "enum": [
+    "registerTime",
+    "firstUsedTime",
+    "lastUsedTime"
+  ]
+}

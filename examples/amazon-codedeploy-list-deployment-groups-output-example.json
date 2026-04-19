@@ -1,0 +1,5 @@
+{
+  "applicationName": "example-resource",
+  "deploymentGroups": "example-value",
+  "nextToken": "example-value"
+}

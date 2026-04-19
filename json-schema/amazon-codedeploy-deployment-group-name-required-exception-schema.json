@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-deployment-group-name-required-exception-schema.json",
+  "title": "DeploymentGroupNameRequiredException",
+  "description": "DeploymentGroupNameRequiredException schema from Amazon CodeDeploy"
+}

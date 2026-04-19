@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-rollback-info-schema.json",
+  "title": "RollbackInfo",
+  "description": "Information about a deployment rollback.",
+  "type": "object",
+  "properties": {
+    "rollbackDeploymentId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeploymentId"
+        },
+        {
+          "description": "The ID of the deployment rollback."
+        }
+      ]
+    },
+    "rollbackTriggeringDeploymentId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeploymentId"
+        },
+        {
+          "description": "The deployment ID of the deployment that was underway and triggered a rollback deployment because it failed or was stopped."
+        }
+      ]
+    },
+    "rollbackMessage": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Description"
+        },
+        {
+          "description": "Information that describes the status of a deployment rollback (for example, whether the deployment can't be rolled back, is in progress, failed, or succeeded). "
+        }
+      ]
+    }
+  }
+}

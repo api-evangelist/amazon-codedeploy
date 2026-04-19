@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-git-hub-account-token-does-not-exist-exception-structure.json",
+  "name": "GitHubAccountTokenDoesNotExistException",
+  "description": "GitHubAccountTokenDoesNotExistException schema from Amazon CodeDeploy"
+}

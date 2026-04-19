@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-invalid-traffic-routing-configuration-exception-schema.json",
+  "title": "InvalidTrafficRoutingConfigurationException",
+  "description": "InvalidTrafficRoutingConfigurationException schema from Amazon CodeDeploy"
+}

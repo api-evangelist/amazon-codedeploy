@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-deployment-option-structure.json",
+  "name": "DeploymentOption",
+  "description": "DeploymentOption schema from Amazon CodeDeploy",
+  "type": "string",
+  "enum": [
+    "WITH_TRAFFIC_CONTROL",
+    "WITHOUT_TRAFFIC_CONTROL"
+  ]
+}

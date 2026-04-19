@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-ecs-target-schema.json",
+  "title": "ECSTarget",
+  "description": " Information about the target of an Amazon ECS deployment. ",
+  "type": "object",
+  "properties": {
+    "deploymentId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeploymentId"
+        },
+        {
+          "description": " The unique ID of a deployment. "
+        }
+      ]
+    },
+    "targetId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TargetId"
+        },
+        {
+          "description": " The unique ID of a deployment target that has a type of <code>ecsTarget</code>. "
+        }
+      ]
+    },
+    "targetArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TargetArn"
+        },
+        {
+          "description": " The Amazon Resource Name (ARN) of the target. "
+        }
+      ]
+    },
+    "lastUpdatedAt": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Time"
+        },
+        {
+          "description": " The date and time when the target Amazon ECS application was updated by a deployment. "
+        }
+      ]
+    },
+    "lifecycleEvents": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LifecycleEventList"
+        },
+        {
+          "description": " The lifecycle events of the deployment to this target Amazon ECS application. "
+        }
+      ]
+    },
+    "status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TargetStatus"
+        },
+        {
+          "description": " The status an Amazon ECS deployment's target ECS application. "
+        }
+      ]
+    },
+    "taskSetsInfo": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ECSTaskSetList"
+        },
+        {
+          "description": " The <code>ECSTaskSet</code> objects associated with the ECS target. "
+        }
+      ]
+    }
+  }
+}

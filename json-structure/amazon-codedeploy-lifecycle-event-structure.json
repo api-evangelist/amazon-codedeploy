@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-lifecycle-event-structure.json",
+  "name": "LifecycleEvent",
+  "description": "Information about a deployment lifecycle event.",
+  "type": "object",
+  "properties": {
+    "lifecycleEventName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LifecycleEventName"
+        },
+        {
+          "description": "The deployment lifecycle event name, such as <code>ApplicationStop</code>, <code>BeforeInstall</code>, <code>AfterInstall</code>, <code>ApplicationStart</code>, or <code>ValidateService</code>."
+        }
+      ]
+    },
+    "diagnostics": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Diagnostics"
+        },
+        {
+          "description": "Diagnostic information about the deployment lifecycle event."
+        }
+      ]
+    },
+    "startTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "A timestamp that indicates when the deployment lifecycle event started."
+        }
+      ]
+    },
+    "endTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "A timestamp that indicates when the deployment lifecycle event ended."
+        }
+      ]
+    },
+    "status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LifecycleEventStatus"
+        },
+        {
+          "description": "<p>The deployment lifecycle event status:</p> <ul> <li> <p>Pending: The deployment lifecycle event is pending.</p> </li> <li> <p>InProgress: The deployment lifecycle event is in progress.</p> </li> <li> <p>Succeeded: The deployment lifecycle event ran successfully.</p> </li> <li> <p>Failed: The deployment lifecycle event has failed.</p> </li> <li> <p>Skipped: The deployment lifecycle event has been skipped.</p> </li> <li> <p>Unknown: The deployment lifecycle event is unknown.</p> </li> </ul>"
+        }
+      ]
+    }
+  }
+}

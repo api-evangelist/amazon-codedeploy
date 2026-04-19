@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-deployment-target-type-structure.json",
+  "name": "DeploymentTargetType",
+  "description": "DeploymentTargetType schema from Amazon CodeDeploy",
+  "type": "string",
+  "enum": [
+    "InstanceTarget",
+    "LambdaTarget",
+    "ECSTarget",
+    "CloudFormationTarget"
+  ]
+}

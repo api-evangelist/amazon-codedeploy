@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-s3-key-schema.json",
+  "title": "S3Key",
+  "description": "S3Key schema from Amazon CodeDeploy",
+  "type": "string"
+}

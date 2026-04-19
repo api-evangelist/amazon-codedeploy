@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-invalid-auto-rollback-config-exception-schema.json",
+  "title": "InvalidAutoRollbackConfigException",
+  "description": "InvalidAutoRollbackConfigException schema from Amazon CodeDeploy"
+}

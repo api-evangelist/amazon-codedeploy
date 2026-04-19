@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-on-premises-tag-set-structure.json",
+  "name": "OnPremisesTagSet",
+  "description": "Information about groups of on-premises instance tags.",
+  "type": "object",
+  "properties": {
+    "onPremisesTagSetList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OnPremisesTagSetList"
+        },
+        {
+          "description": "A list that contains other lists of on-premises instance tag groups. For an instance to be included in the deployment group, it must be identified by all of the tag groups in the list."
+        }
+      ]
+    }
+  }
+}

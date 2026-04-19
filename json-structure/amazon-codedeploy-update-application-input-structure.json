@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-update-application-input-structure.json",
+  "name": "UpdateApplicationInput",
+  "description": "Represents the input of an <code>UpdateApplication</code> operation.",
+  "type": "object",
+  "properties": {
+    "applicationName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ApplicationName"
+        },
+        {
+          "description": "The current name of the application you want to change."
+        }
+      ]
+    },
+    "newApplicationName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ApplicationName"
+        },
+        {
+          "description": "The new name to give the application."
+        }
+      ]
+    }
+  }
+}

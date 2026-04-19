@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-get-application-input-structure.json",
+  "name": "GetApplicationInput",
+  "description": "Represents the input of a <code>GetApplication</code> operation.",
+  "type": "object",
+  "properties": {
+    "applicationName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ApplicationName"
+        },
+        {
+          "description": "The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account."
+        }
+      ]
+    }
+  },
+  "required": [
+    "applicationName"
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-cloud-formation-target-structure.json",
+  "name": "CloudFormationTarget",
+  "description": " Information about the target to be updated by an CloudFormation blue/green deployment. This target type is used for all deployments initiated by a CloudFormation stack update.",
+  "type": "object",
+  "properties": {
+    "deploymentId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeploymentId"
+        },
+        {
+          "description": "The unique ID of an CloudFormation blue/green deployment."
+        }
+      ]
+    },
+    "targetId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TargetId"
+        },
+        {
+          "description": " The unique ID of a deployment target that has a type of\u00a0<code>CloudFormationTarget</code>. "
+        }
+      ]
+    },
+    "lastUpdatedAt": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Time"
+        },
+        {
+          "description": " The date and time when the target application was updated by an CloudFormation blue/green deployment. "
+        }
+      ]
+    },
+    "lifecycleEvents": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LifecycleEventList"
+        },
+        {
+          "description": " The lifecycle events of the CloudFormation blue/green deployment to this target application. "
+        }
+      ]
+    },
+    "status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TargetStatus"
+        },
+        {
+          "description": " The status of an CloudFormation blue/green deployment's target application. "
+        }
+      ]
+    },
+    "resourceType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CloudFormationResourceType"
+        },
+        {
+          "description": "The resource type for the CloudFormation blue/green deployment."
+        }
+      ]
+    },
+    "targetVersionWeight": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TrafficWeight"
+        },
+        {
+          "description": "The percentage of production traffic that the target version of an CloudFormation blue/green deployment receives."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-list-git-hub-account-token-names-input-structure.json",
+  "name": "ListGitHubAccountTokenNamesInput",
+  "description": "Represents the input of a <code>ListGitHubAccountTokenNames</code> operation.",
+  "type": "object",
+  "properties": {
+    "nextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextToken"
+        },
+        {
+          "description": "An identifier returned from the previous <code>ListGitHubAccountTokenNames</code> call. It can be used to return the next set of names in the list. "
+        }
+      ]
+    }
+  }
+}

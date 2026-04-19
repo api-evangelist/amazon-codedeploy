@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-delete-deployment-group-output-schema.json",
+  "title": "DeleteDeploymentGroupOutput",
+  "description": "Represents the output of a <code>DeleteDeploymentGroup</code> operation.",
+  "type": "object",
+  "properties": {
+    "hooksNotCleanedUp": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AutoScalingGroupList"
+        },
+        {
+          "description": "If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group. If the output contains data, CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon EC2 instances in the Auto Scaling group."
+        }
+      ]
+    }
+  }
+}

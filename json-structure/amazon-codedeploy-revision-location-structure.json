@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-revision-location-structure.json",
+  "name": "RevisionLocation",
+  "description": "Information about the location of an application revision.",
+  "type": "object",
+  "properties": {
+    "revisionType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RevisionLocationType"
+        },
+        {
+          "description": "<p>The type of application revision:</p> <ul> <li> <p>S3: An application revision stored in Amazon S3.</p> </li> <li> <p>GitHub: An application revision stored in GitHub (EC2/On-premises deployments only).</p> </li> <li> <p>String: A YAML-formatted or JSON-formatted string (Lambda deployments only).</p> </li> <li> <p>AppSpecContent: An <code>AppSpecContent</code> object that contains the contents of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML stored as a RawString.</p> </li> </ul>"
+        }
+      ]
+    },
+    "s3Location": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/S3Location"
+        },
+        {
+          "description": "Information about the location of a revision stored in Amazon S3. "
+        }
+      ]
+    },
+    "gitHubLocation": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GitHubLocation"
+        },
+        {
+          "description": "Information about the location of application artifacts stored in GitHub."
+        }
+      ]
+    },
+    "string": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RawString"
+        },
+        {
+          "description": "Information about the location of an Lambda deployment revision stored as a RawString."
+        }
+      ]
+    },
+    "appSpecContent": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AppSpecContent"
+        },
+        {
+          "description": " The content of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML and stored as a RawString. "
+        }
+      ]
+    }
+  }
+}

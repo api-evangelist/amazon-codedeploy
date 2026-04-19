@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-application-limit-exceeded-exception-structure.json",
+  "name": "ApplicationLimitExceededException",
+  "description": "ApplicationLimitExceededException schema from Amazon CodeDeploy"
+}

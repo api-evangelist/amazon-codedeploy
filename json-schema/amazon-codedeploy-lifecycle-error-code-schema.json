@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-lifecycle-error-code-schema.json",
+  "title": "LifecycleErrorCode",
+  "description": "LifecycleErrorCode schema from Amazon CodeDeploy",
+  "type": "string",
+  "enum": [
+    "Success",
+    "ScriptMissing",
+    "ScriptNotExecutable",
+    "ScriptTimedOut",
+    "ScriptFailed",
+    "UnknownError"
+  ]
+}

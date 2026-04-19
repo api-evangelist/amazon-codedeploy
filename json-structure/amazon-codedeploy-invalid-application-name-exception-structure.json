@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-invalid-application-name-exception-structure.json",
+  "name": "InvalidApplicationNameException",
+  "description": "InvalidApplicationNameException schema from Amazon CodeDeploy",
+  "type": "object",
+  "properties": {
+    "message": {
+      "type": "string"
+    }
+  }
+}

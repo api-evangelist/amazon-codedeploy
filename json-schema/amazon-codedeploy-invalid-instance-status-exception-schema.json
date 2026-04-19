@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-invalid-instance-status-exception-schema.json",
+  "title": "InvalidInstanceStatusException",
+  "description": "InvalidInstanceStatusException schema from Amazon CodeDeploy"
+}

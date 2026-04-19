@@ -1,0 +1,8 @@
+{
+  "Pending": "example-value",
+  "InProgress": "example-value",
+  "Succeeded": "example-value",
+  "Failed": "example-value",
+  "Skipped": "example-value",
+  "Ready": "example-value"
+}

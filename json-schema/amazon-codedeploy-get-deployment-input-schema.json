@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-get-deployment-input-schema.json",
+  "title": "GetDeploymentInput",
+  "description": "Represents the input of a <code>GetDeployment</code> operation.",
+  "type": "object",
+  "properties": {
+    "deploymentId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeploymentId"
+        },
+        {
+          "description": " The unique ID of a deployment associated with the IAM user or Amazon Web Services account. "
+        }
+      ]
+    }
+  },
+  "required": [
+    "deploymentId"
+  ]
+}

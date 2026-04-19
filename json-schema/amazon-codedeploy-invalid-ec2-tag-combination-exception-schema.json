@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-invalid-ec2-tag-combination-exception-schema.json",
+  "title": "InvalidEC2TagCombinationException",
+  "description": "InvalidEC2TagCombinationException schema from Amazon CodeDeploy"
+}

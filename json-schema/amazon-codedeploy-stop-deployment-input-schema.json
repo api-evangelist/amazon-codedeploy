@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-stop-deployment-input-schema.json",
+  "title": "StopDeploymentInput",
+  "description": " Represents the input of a <code>StopDeployment</code> operation. ",
+  "type": "object",
+  "properties": {
+    "deploymentId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeploymentId"
+        },
+        {
+          "description": " The unique ID of a deployment. "
+        }
+      ]
+    },
+    "autoRollbackEnabled": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NullableBoolean"
+        },
+        {
+          "description": " Indicates, when a deployment is stopped, whether instances that have been updated should be rolled back to the previous version of the application revision. "
+        }
+      ]
+    }
+  },
+  "required": [
+    "deploymentId"
+  ]
+}

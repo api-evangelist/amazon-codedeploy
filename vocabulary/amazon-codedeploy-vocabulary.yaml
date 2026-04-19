@@ -1,0 +1,166 @@
+vocabulary: 1.0.0
+info:
+  provider: Amazon CodeDeploy
+  description: Taxonomy of Amazon CodeDeploy APIs covering deployment automation and release management.
+  created: '2026-04-19'
+  modified: '2026-04-19'
+operational:
+  apis:
+  - name: Amazon CodeDeploy API
+    namespace: codedeploy
+    version: '2014-10-06'
+    baseUrl: http://codedeploy.us-east-1.amazonaws.com
+    status: active
+  resources:
+  - name: ''
+    apis:
+    - Amazon CodeDeploy API
+    actions: &id001
+    - AddTagsToOnPremisesInstances
+    - BatchGetApplicationRevisions
+    - BatchGetApplications
+    - BatchGetDeploymentGroups
+    - BatchGetDeploymentInstances
+    - BatchGetDeploymentTargets
+    - BatchGetDeployments
+    - BatchGetOnPremisesInstances
+    - ContinueDeployment
+    - CreateApplication
+    - CreateDeployment
+    - CreateDeploymentConfig
+    - CreateDeploymentGroup
+    - DeleteApplication
+    - DeleteDeploymentConfig
+    - DeleteDeploymentGroup
+    - DeleteGitHubAccountToken
+    - DeleteResourcesByExternalId
+    - DeregisterOnPremisesInstance
+    - GetApplication
+    - GetApplicationRevision
+    - GetDeployment
+    - GetDeploymentConfig
+    - GetDeploymentGroup
+    - GetDeploymentInstance
+    - GetDeploymentTarget
+    - GetOnPremisesInstance
+    - ListApplicationRevisions
+    - ListApplications
+    - ListDeploymentConfigs
+    - ListDeploymentGroups
+    - ListDeploymentInstances
+    - ListDeploymentTargets
+    - ListDeployments
+    - ListGitHubAccountTokenNames
+    - ListOnPremisesInstances
+    - ListTagsForResource
+    - PutLifecycleEventHookExecutionStatus
+    - RegisterApplicationRevision
+    - RegisterOnPremisesInstance
+    - RemoveTagsFromOnPremisesInstances
+    - SkipWaitTimeForInstanceTermination
+    - StopDeployment
+    - TagResource
+    - UntagResource
+    - UpdateApplication
+    - UpdateDeploymentGroup
+  actions:
+  - name: list
+    httpMethods:
+    - GET
+    pattern: read
+  - name: create
+    httpMethods:
+    - POST
+    pattern: write
+  - name: delete
+    httpMethods:
+    - DELETE
+    pattern: destructive
+  - name: get
+    httpMethods:
+    - GET
+    pattern: read
+  - name: update
+    httpMethods:
+    - PUT
+    pattern: write
+  - name: stop
+    httpMethods:
+    - POST
+    pattern: write
+  schemas:
+    core: []
+  parameters:
+    identifiers:
+    - applicationName
+    - deploymentGroupName
+    - deploymentId
+    pagination:
+    - nextToken
+  enums:
+    deploymentStatus:
+    - Created
+    - Queued
+    - InProgress
+    - Baking
+    - Succeeded
+    - Failed
+    - Stopped
+    - Ready
+    computePlatform:
+    - Server
+    - Lambda
+    - ECS
+  authentication:
+    schemes:
+    - AWS Signature Version 4
+    iamIntegration: true
+capability:
+  workflows:
+  - name: Deployment Automation
+    file: capabilities/amazon-codedeploy-deployment-automation.yaml
+    description: Application deployment to EC2, Lambda, ECS, and on-premises servers.
+    toolCount: 10
+    personas:
+    - DevOps Engineer
+    - Release Manager
+    domains:
+    - Deployment
+    - Release Management
+  personas:
+  - id: devops-engineer
+    name: DevOps Engineer
+    description: Manages deployment infrastructure.
+    workflows:
+    - Deployment Automation
+  - id: release-manager
+    name: Release Manager
+    description: Coordinates application releases.
+    workflows:
+    - Deployment Automation
+  domains:
+  - name: Deployment
+    description: Automated application deployment to compute targets.
+  - name: Release Management
+    description: Managing software release processes and rollbacks.
+  namespaces:
+  - type: consumed
+    name: codedeploy
+    port:
+  - type: rest
+    name: codedeploy-deployment-api
+    port: 8080
+  - type: mcp
+    name: codedeploy-deployment-mcp
+    port: 9090
+  binds:
+  - AWS_ACCESS_KEY_ID
+  - AWS_SECRET_ACCESS_KEY
+  - AWS_REGION
+crossReference:
+- resource: ''
+  operations: *id001
+  workflows:
+  - Deployment Automation
+  personas:
+  - DevOps Engineer

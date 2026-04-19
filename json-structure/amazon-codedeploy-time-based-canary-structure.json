@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-time-based-canary-structure.json",
+  "name": "TimeBasedCanary",
+  "description": "A configuration that shifts traffic from one version of a Lambda function or Amazon ECS task set to another in two increments. The original and target Lambda function versions or ECS task sets are specified in the deployment's AppSpec file.",
+  "type": "object",
+  "properties": {
+    "canaryPercentage": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Percentage"
+        },
+        {
+          "description": "The percentage of traffic to shift in the first increment of a <code>TimeBasedCanary</code> deployment."
+        }
+      ]
+    },
+    "canaryInterval": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WaitTimeInMins"
+        },
+        {
+          "description": "The number of minutes between the first and second traffic shifts of a <code>TimeBasedCanary</code> deployment."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "deploymentConfigName": "example-resource",
+  "minimumHealthyHosts": "example-value",
+  "trafficRoutingConfig": "example-value",
+  "computePlatform": "example-value"
+}

@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-batch-limit-exceeded-exception-structure.json",
+  "name": "BatchLimitExceededException",
+  "description": "BatchLimitExceededException schema from Amazon CodeDeploy"
+}

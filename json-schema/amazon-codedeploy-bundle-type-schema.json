@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-bundle-type-schema.json",
+  "title": "BundleType",
+  "description": "BundleType schema from Amazon CodeDeploy",
+  "type": "string",
+  "enum": [
+    "tar",
+    "tgz",
+    "zip",
+    "YAML",
+    "JSON"
+  ]
+}

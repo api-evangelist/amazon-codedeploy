@@ -1,0 +1,7 @@
+{
+  "lifecycleEventName": "example-resource",
+  "diagnostics": "example-value",
+  "startTime": "example-value",
+  "endTime": "example-value",
+  "status": "ACTIVE"
+}

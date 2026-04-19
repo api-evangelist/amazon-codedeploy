@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-external-id-structure.json",
+  "name": "ExternalId",
+  "description": "ExternalId schema from Amazon CodeDeploy",
+  "type": "string"
+}

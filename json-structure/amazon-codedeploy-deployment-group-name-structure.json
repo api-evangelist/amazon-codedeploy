@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-deployment-group-name-structure.json",
+  "name": "DeploymentGroupName",
+  "description": "DeploymentGroupName schema from Amazon CodeDeploy",
+  "type": "string",
+  "minLength": 1,
+  "maxLength": 100
+}

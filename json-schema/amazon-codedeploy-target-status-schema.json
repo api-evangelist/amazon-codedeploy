@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-target-status-schema.json",
+  "title": "TargetStatus",
+  "description": "TargetStatus schema from Amazon CodeDeploy",
+  "type": "string",
+  "enum": [
+    "Pending",
+    "InProgress",
+    "Succeeded",
+    "Failed",
+    "Skipped",
+    "Unknown",
+    "Ready"
+  ]
+}

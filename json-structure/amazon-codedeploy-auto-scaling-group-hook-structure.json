@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-auto-scaling-group-hook-structure.json",
+  "name": "AutoScalingGroupHook",
+  "description": "AutoScalingGroupHook schema from Amazon CodeDeploy",
+  "type": "string"
+}

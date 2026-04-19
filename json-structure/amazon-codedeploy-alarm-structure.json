@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-alarm-structure.json",
+  "name": "Alarm",
+  "description": "Information about an alarm.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AlarmName"
+        },
+        {
+          "description": "The name of the alarm. Maximum length is 255 characters. Each alarm name can be used only once in a list of alarms."
+        }
+      ]
+    }
+  }
+}

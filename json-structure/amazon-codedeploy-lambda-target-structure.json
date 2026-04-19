@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-lambda-target-structure.json",
+  "name": "LambdaTarget",
+  "description": " Information about the target Lambda function during an Lambda deployment. ",
+  "type": "object",
+  "properties": {
+    "deploymentId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeploymentId"
+        },
+        {
+          "description": " The unique ID of a deployment. "
+        }
+      ]
+    },
+    "targetId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TargetId"
+        },
+        {
+          "description": " The unique ID of a deployment target that has a type of <code>lambdaTarget</code>. "
+        }
+      ]
+    },
+    "targetArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TargetArn"
+        },
+        {
+          "description": " The Amazon Resource Name (ARN) of the target. "
+        }
+      ]
+    },
+    "status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TargetStatus"
+        },
+        {
+          "description": " The status an Lambda deployment's target Lambda function. "
+        }
+      ]
+    },
+    "lastUpdatedAt": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Time"
+        },
+        {
+          "description": " The date and time when the target Lambda function was updated by a deployment. "
+        }
+      ]
+    },
+    "lifecycleEvents": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LifecycleEventList"
+        },
+        {
+          "description": " The lifecycle events of the deployment to this target Lambda function. "
+        }
+      ]
+    },
+    "lambdaFunctionInfo": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LambdaFunctionInfo"
+        },
+        {
+          "description": " A <code>LambdaFunctionInfo</code> object that describes a target Lambda function. "
+        }
+      ]
+    }
+  }
+}

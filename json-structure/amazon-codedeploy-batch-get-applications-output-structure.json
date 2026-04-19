@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-batch-get-applications-output-structure.json",
+  "name": "BatchGetApplicationsOutput",
+  "description": "Represents the output of a <code>BatchGetApplications</code> operation.",
+  "type": "object",
+  "properties": {
+    "applicationsInfo": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ApplicationsInfoList"
+        },
+        {
+          "description": "Information about the applications."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-instance-status-list-structure.json",
+  "name": "InstanceStatusList",
+  "description": "InstanceStatusList schema from Amazon CodeDeploy",
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/InstanceStatus"
+  }
+}

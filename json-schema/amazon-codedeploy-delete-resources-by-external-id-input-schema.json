@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-delete-resources-by-external-id-input-schema.json",
+  "title": "DeleteResourcesByExternalIdInput",
+  "description": "DeleteResourcesByExternalIdInput schema from Amazon CodeDeploy",
+  "type": "object",
+  "properties": {
+    "externalId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ExternalId"
+        },
+        {
+          "description": "The unique ID of an external resource (for example, a CloudFormation stack ID) that is linked to one or more CodeDeploy resources."
+        }
+      ]
+    }
+  }
+}

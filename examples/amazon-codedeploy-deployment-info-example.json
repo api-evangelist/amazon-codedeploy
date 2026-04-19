@@ -1,0 +1,10 @@
+{
+  "applicationName": "example-resource",
+  "deploymentGroupName": "example-resource",
+  "deploymentConfigName": "example-resource",
+  "deploymentId": "500123",
+  "previousRevision": "example-value",
+  "revision": "example-value",
+  "status": "ACTIVE",
+  "errorInformation": "example-value"
+}

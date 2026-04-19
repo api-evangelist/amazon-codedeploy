@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-ec2-tag-set-list-structure.json",
+  "name": "EC2TagSetList",
+  "description": "EC2TagSetList schema from Amazon CodeDeploy",
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/EC2TagFilterList"
+  }
+}

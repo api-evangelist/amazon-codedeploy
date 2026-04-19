@@ -1,0 +1,5 @@
+{
+  "type": "STANDARD",
+  "timeBasedCanary": "example-value",
+  "timeBasedLinear": "example-value"
+}

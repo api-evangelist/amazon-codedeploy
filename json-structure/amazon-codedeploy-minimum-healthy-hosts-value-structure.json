@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-minimum-healthy-hosts-value-structure.json",
+  "name": "MinimumHealthyHostsValue",
+  "description": "MinimumHealthyHostsValue schema from Amazon CodeDeploy",
+  "type": "int32"
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-additional-deployment-status-info-schema.json",
+  "title": "AdditionalDeploymentStatusInfo",
+  "description": "AdditionalDeploymentStatusInfo is deprecated, use DeploymentStatusMessageList instead.",
+  "type": "string",
+  "deprecated": true
+}

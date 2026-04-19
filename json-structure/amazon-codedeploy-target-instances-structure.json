@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-target-instances-structure.json",
+  "name": "TargetInstances",
+  "description": "Information about the instances to be used in the replacement environment in a blue/green deployment.",
+  "type": "object",
+  "properties": {
+    "tagFilters": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EC2TagFilterList"
+        },
+        {
+          "description": "The tag filter key, type, and value used to identify Amazon EC2 instances in a replacement environment for a blue/green deployment. Cannot be used in the same call as <code>ec2TagSet</code>."
+        }
+      ]
+    },
+    "autoScalingGroups": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AutoScalingGroupNameList"
+        },
+        {
+          "description": "The names of one or more Auto Scaling groups to identify a replacement environment for a blue/green deployment."
+        }
+      ]
+    },
+    "ec2TagSet": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EC2TagSet"
+        },
+        {
+          "description": "Information about the groups of Amazon EC2 instance tags that an instance must be identified by in order for it to be included in the replacement environment for a blue/green deployment. Cannot be used in the same call as <code>tagFilters</code>."
+        }
+      ]
+    }
+  }
+}

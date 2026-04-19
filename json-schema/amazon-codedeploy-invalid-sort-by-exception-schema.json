@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-invalid-sort-by-exception-schema.json",
+  "title": "InvalidSortByException",
+  "description": "InvalidSortByException schema from Amazon CodeDeploy"
+}

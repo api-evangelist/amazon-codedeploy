@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-get-deployment-response-schema.json",
+  "title": "GetDeploymentResponse",
+  "description": "GetDeploymentResponse schema from Amazon CodeDeploy",
+  "type": "object",
+  "properties": {
+    "deploymentInfo": {
+      "type": "object",
+      "properties": {
+        "deploymentId": {
+          "type": "string"
+        },
+        "applicationName": {
+          "type": "string"
+        },
+        "deploymentGroupName": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "Created",
+            "Queued",
+            "InProgress",
+            "Baking",
+            "Succeeded",
+            "Failed",
+            "Stopped",
+            "Ready"
+          ]
+        },
+        "createTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "startTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "completeTime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "description": {
+          "type": "string"
+        },
+        "creator": {
+          "type": "string"
+        },
+        "computePlatform": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

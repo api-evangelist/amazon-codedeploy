@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-time-range-structure.json",
+  "name": "TimeRange",
+  "description": "Information about a time range.",
+  "type": "object",
+  "properties": {
+    "start": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "<p>The start time of the time range.</p> <note> <p>Specify null to leave the start time open-ended.</p> </note>"
+        }
+      ]
+    },
+    "end": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "<p>The end time of the time range.</p> <note> <p>Specify null to leave the end time open-ended.</p> </note>"
+        }
+      ]
+    }
+  }
+}

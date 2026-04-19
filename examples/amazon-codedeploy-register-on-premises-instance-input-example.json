@@ -1,0 +1,5 @@
+{
+  "instanceName": "example-resource",
+  "iamSessionArn": "arn:aws:service:us-east-1:123456789012:resource/example",
+  "iamUserArn": "arn:aws:service:us-east-1:123456789012:resource/example"
+}

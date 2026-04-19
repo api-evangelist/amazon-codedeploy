@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-related-deployments-structure.json",
+  "name": "RelatedDeployments",
+  "description": "Information about deployments related to the specified deployment.",
+  "type": "object",
+  "properties": {
+    "autoUpdateOutdatedInstancesRootDeploymentId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeploymentId"
+        },
+        {
+          "description": "The deployment ID of the root deployment that triggered this deployment."
+        }
+      ]
+    },
+    "autoUpdateOutdatedInstancesDeploymentIds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeploymentsList"
+        },
+        {
+          "description": "The deployment IDs of 'auto-update outdated instances' deployments triggered by this deployment."
+        }
+      ]
+    }
+  }
+}

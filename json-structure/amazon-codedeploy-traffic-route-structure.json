@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-traffic-route-structure.json",
+  "name": "TrafficRoute",
+  "description": " Information about a listener. The listener contains the path used to route traffic that is received from the load balancer to a target group. ",
+  "type": "object",
+  "properties": {
+    "listenerArns": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ListenerArnList"
+        },
+        {
+          "description": " The Amazon Resource Name (ARN) of one listener. The listener identifies the route between a target group and a load balancer. This is an array of strings with a maximum size of one. "
+        }
+      ]
+    }
+  }
+}

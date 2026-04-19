@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-minimum-healthy-hosts-type-schema.json",
+  "title": "MinimumHealthyHostsType",
+  "description": "MinimumHealthyHostsType schema from Amazon CodeDeploy",
+  "type": "string",
+  "enum": [
+    "HOST_COUNT",
+    "FLEET_PERCENT"
+  ]
+}

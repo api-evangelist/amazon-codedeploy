@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-target-label-structure.json",
+  "name": "TargetLabel",
+  "description": "TargetLabel schema from Amazon CodeDeploy",
+  "type": "string",
+  "enum": [
+    "Blue",
+    "Green"
+  ]
+}

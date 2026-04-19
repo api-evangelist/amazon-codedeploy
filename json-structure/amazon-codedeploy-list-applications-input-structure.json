@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-list-applications-input-structure.json",
+  "name": "ListApplicationsInput",
+  "description": "Represents the input of a <code>ListApplications</code> operation.",
+  "type": "object",
+  "properties": {
+    "nextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextToken"
+        },
+        {
+          "description": "An identifier returned from the previous list applications call. It can be used to return the next set of applications in the list."
+        }
+      ]
+    }
+  }
+}

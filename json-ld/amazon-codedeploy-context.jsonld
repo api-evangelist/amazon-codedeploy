@@ -1,62 +1,144 @@
 {
   "@context": {
     "@version": 1.1,
-    "codedeploy": "https://docs.aws.amazon.com/codedeploy/latest/APIReference/",
+    "amazon-code-deploy": "https://amazon-code-deploy.amazonaws.com/schema/",
     "schema": "https://schema.org/",
-    "xsd": "http://www.w3.org/2001/XMLSchema#",
     "dcterms": "http://purl.org/dc/terms/",
-
-    "Application": {
-      "@id": "codedeploy:Application",
-      "@context": {
-        "applicationId": "codedeploy:applicationId",
-        "applicationName": "schema:name",
-        "computePlatform": "codedeploy:computePlatform",
-        "createTime": {
-          "@id": "dcterms:created",
-          "@type": "xsd:dateTime"
-        },
-        "linkedToGitHub": {
-          "@id": "codedeploy:linkedToGitHub",
-          "@type": "xsd:boolean"
-        }
-      }
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "CreateApplicationRequest": "amazon-code-deploy:CreateApplicationRequest",
+    "CreateApplicationResponse": "amazon-code-deploy:CreateApplicationResponse",
+    "ListApplicationsResponse": "amazon-code-deploy:ListApplicationsResponse",
+    "GetApplicationResponse": "amazon-code-deploy:GetApplicationResponse",
+    "CreateDeploymentRequest": "amazon-code-deploy:CreateDeploymentRequest",
+    "CreateDeploymentResponse": "amazon-code-deploy:CreateDeploymentResponse",
+    "ListDeploymentsResponse": "amazon-code-deploy:ListDeploymentsResponse",
+    "GetDeploymentResponse": "amazon-code-deploy:GetDeploymentResponse",
+    "InvalidApplicationNameException": "amazon-code-deploy:InvalidApplicationNameException",
+    "ApplicationAlreadyExistsException": "amazon-code-deploy:ApplicationAlreadyExistsException",
+    "ApplicationDoesNotExistException": "amazon-code-deploy:ApplicationDoesNotExistException",
+    "InvalidDeploymentGroupNameException": "amazon-code-deploy:InvalidDeploymentGroupNameException",
+    "InvalidDeploymentIdException": "amazon-code-deploy:InvalidDeploymentIdException",
+    "DeploymentDoesNotExistException": "amazon-code-deploy:DeploymentDoesNotExistException",
+    "InvalidNextTokenException": "amazon-code-deploy:InvalidNextTokenException",
+    "applicationName": {
+      "@id": "amazon-code-deploy:applicationName",
+      "@type": "xsd:string"
     },
-
-    "DeploymentGroup": {
-      "@id": "codedeploy:DeploymentGroup",
-      "@context": {
-        "deploymentGroupId": "codedeploy:deploymentGroupId",
-        "deploymentGroupName": "schema:name",
-        "applicationName": "codedeploy:applicationName",
-        "computePlatform": "codedeploy:computePlatform",
-        "deploymentConfigName": "codedeploy:deploymentConfigName",
-        "serviceRoleArn": "codedeploy:serviceRoleArn"
-      }
+    "computePlatform": {
+      "@id": "amazon-code-deploy:computePlatform",
+      "@type": "xsd:string"
     },
-
-    "Deployment": {
-      "@id": "codedeploy:Deployment",
-      "@context": {
-        "deploymentId": "codedeploy:deploymentId",
-        "applicationName": "codedeploy:applicationName",
-        "deploymentGroupName": "codedeploy:deploymentGroupName",
-        "status": "codedeploy:status",
-        "description": "schema:description",
-        "creator": "codedeploy:creator",
-        "createTime": {
-          "@id": "dcterms:created",
-          "@type": "xsd:dateTime"
-        },
-        "startTime": {
-          "@id": "codedeploy:startTime",
-          "@type": "xsd:dateTime"
-        },
-        "completeTime": {
-          "@id": "codedeploy:completeTime",
-          "@type": "xsd:dateTime"
-        }
-      }
+    "applicationId": {
+      "@id": "amazon-code-deploy:applicationId",
+      "@type": "xsd:string"
+    },
+    "applications": {
+      "@id": "amazon-code-deploy:applications",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "nextToken": {
+      "@id": "amazon-code-deploy:nextToken",
+      "@type": "xsd:string"
+    },
+    "application": {
+      "@id": "amazon-code-deploy:application",
+      "@type": "xsd:string"
+    },
+    "createTime": {
+      "@id": "amazon-code-deploy:createTime",
+      "@type": "xsd:dateTime"
+    },
+    "linkedToGitHub": {
+      "@id": "amazon-code-deploy:linkedToGitHub",
+      "@type": "xsd:boolean"
+    },
+    "deploymentGroupName": {
+      "@id": "amazon-code-deploy:deploymentGroupName",
+      "@type": "xsd:string"
+    },
+    "revision": {
+      "@id": "amazon-code-deploy:revision",
+      "@type": "xsd:string"
+    },
+    "revisionType": {
+      "@id": "amazon-code-deploy:revisionType",
+      "@type": "xsd:string"
+    },
+    "s3Location": {
+      "@id": "amazon-code-deploy:s3Location",
+      "@type": "xsd:string"
+    },
+    "bucket": {
+      "@id": "amazon-code-deploy:bucket",
+      "@type": "xsd:string"
+    },
+    "key": {
+      "@id": "amazon-code-deploy:key",
+      "@type": "xsd:string"
+    },
+    "bundleType": {
+      "@id": "amazon-code-deploy:bundleType",
+      "@type": "xsd:string"
+    },
+    "gitHubLocation": {
+      "@id": "amazon-code-deploy:gitHubLocation",
+      "@type": "xsd:string"
+    },
+    "repository": {
+      "@id": "amazon-code-deploy:repository",
+      "@type": "xsd:string"
+    },
+    "commitId": {
+      "@id": "amazon-code-deploy:commitId",
+      "@type": "xsd:string"
+    },
+    "description": "schema:description",
+    "autoRollbackConfiguration": {
+      "@id": "amazon-code-deploy:autoRollbackConfiguration",
+      "@type": "xsd:string"
+    },
+    "enabled": {
+      "@id": "amazon-code-deploy:enabled",
+      "@type": "xsd:boolean"
+    },
+    "events": {
+      "@id": "amazon-code-deploy:events",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "deploymentId": {
+      "@id": "amazon-code-deploy:deploymentId",
+      "@type": "xsd:string"
+    },
+    "deployments": {
+      "@id": "amazon-code-deploy:deployments",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "deploymentInfo": {
+      "@id": "amazon-code-deploy:deploymentInfo",
+      "@type": "xsd:string"
+    },
+    "status": {
+      "@id": "amazon-code-deploy:status",
+      "@type": "xsd:string"
+    },
+    "startTime": {
+      "@id": "amazon-code-deploy:startTime",
+      "@type": "xsd:dateTime"
+    },
+    "completeTime": {
+      "@id": "amazon-code-deploy:completeTime",
+      "@type": "xsd:dateTime"
+    },
+    "creator": {
+      "@id": "amazon-code-deploy:creator",
+      "@type": "xsd:string"
+    },
+    "message": {
+      "@id": "amazon-code-deploy:message",
+      "@type": "xsd:string"
     }
   }
 }

@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-deployment-status-message-list-structure.json",
+  "name": "DeploymentStatusMessageList",
+  "description": "DeploymentStatusMessageList schema from Amazon CodeDeploy",
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/ErrorMessage"
+  }
+}

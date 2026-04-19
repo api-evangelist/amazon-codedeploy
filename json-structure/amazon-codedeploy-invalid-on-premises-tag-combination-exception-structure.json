@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-invalid-on-premises-tag-combination-exception-structure.json",
+  "name": "InvalidOnPremisesTagCombinationException",
+  "description": "InvalidOnPremisesTagCombinationException schema from Amazon CodeDeploy"
+}

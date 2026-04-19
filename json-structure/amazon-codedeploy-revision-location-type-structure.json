@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-revision-location-type-structure.json",
+  "name": "RevisionLocationType",
+  "description": "RevisionLocationType schema from Amazon CodeDeploy",
+  "type": "string",
+  "enum": [
+    "S3",
+    "GitHub",
+    "String",
+    "AppSpecContent"
+  ]
+}

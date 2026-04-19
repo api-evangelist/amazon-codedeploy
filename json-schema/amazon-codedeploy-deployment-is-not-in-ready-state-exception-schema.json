@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-deployment-is-not-in-ready-state-exception-schema.json",
+  "title": "DeploymentIsNotInReadyStateException",
+  "description": "DeploymentIsNotInReadyStateException schema from Amazon CodeDeploy"
+}

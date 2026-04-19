@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-deployment-config-info-schema.json",
+  "title": "DeploymentConfigInfo",
+  "description": "Information about a deployment configuration.",
+  "type": "object",
+  "properties": {
+    "deploymentConfigId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeploymentConfigId"
+        },
+        {
+          "description": "The deployment configuration ID."
+        }
+      ]
+    },
+    "deploymentConfigName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeploymentConfigName"
+        },
+        {
+          "description": "The deployment configuration name."
+        }
+      ]
+    },
+    "minimumHealthyHosts": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MinimumHealthyHosts"
+        },
+        {
+          "description": "Information about the number or percentage of minimum healthy instance."
+        }
+      ]
+    },
+    "createTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The time at which the deployment configuration was created."
+        }
+      ]
+    },
+    "computePlatform": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ComputePlatform"
+        },
+        {
+          "description": "The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>)."
+        }
+      ]
+    },
+    "trafficRoutingConfig": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TrafficRoutingConfig"
+        },
+        {
+          "description": "The configuration that specifies how the deployment traffic is routed. Used for deployments with a Lambda or Amazon ECS compute platform only."
+        }
+      ]
+    }
+  }
+}

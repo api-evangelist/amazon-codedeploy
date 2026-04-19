@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-s3-bucket-structure.json",
+  "name": "S3Bucket",
+  "description": "S3Bucket schema from Amazon CodeDeploy",
+  "type": "string"
+}

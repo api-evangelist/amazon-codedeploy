@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-tag-filter-type-schema.json",
+  "title": "TagFilterType",
+  "description": "TagFilterType schema from Amazon CodeDeploy",
+  "type": "string",
+  "enum": [
+    "KEY_ONLY",
+    "VALUE_ONLY",
+    "KEY_AND_VALUE"
+  ]
+}

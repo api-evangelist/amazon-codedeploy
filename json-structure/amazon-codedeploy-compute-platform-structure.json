@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-compute-platform-structure.json",
+  "name": "ComputePlatform",
+  "description": "ComputePlatform schema from Amazon CodeDeploy",
+  "type": "string",
+  "enum": [
+    "Server",
+    "Lambda",
+    "ECS"
+  ]
+}

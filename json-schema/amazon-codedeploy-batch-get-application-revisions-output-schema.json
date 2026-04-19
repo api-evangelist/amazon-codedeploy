@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-batch-get-application-revisions-output-schema.json",
+  "title": "BatchGetApplicationRevisionsOutput",
+  "description": "Represents the output of a <code>BatchGetApplicationRevisions</code> operation.",
+  "type": "object",
+  "properties": {
+    "applicationName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ApplicationName"
+        },
+        {
+          "description": "The name of the application that corresponds to the revisions."
+        }
+      ]
+    },
+    "errorMessage": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ErrorMessage"
+        },
+        {
+          "description": "Information about errors that might have occurred during the API call."
+        }
+      ]
+    },
+    "revisions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RevisionInfoList"
+        },
+        {
+          "description": "Additional information about the revisions, including the type and location."
+        }
+      ]
+    }
+  }
+}

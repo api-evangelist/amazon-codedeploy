@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-create-application-output-schema.json",
+  "title": "CreateApplicationOutput",
+  "description": "Represents the output of a <code>CreateApplication</code> operation.",
+  "type": "object",
+  "properties": {
+    "applicationId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ApplicationId"
+        },
+        {
+          "description": "A unique application ID."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-target-filters-structure.json",
+  "name": "TargetFilters",
+  "description": "TargetFilters schema from Amazon CodeDeploy",
+  "type": "object",
+  "additionalProperties": {
+    "$ref": "#/components/schemas/FilterValueList"
+  }
+}

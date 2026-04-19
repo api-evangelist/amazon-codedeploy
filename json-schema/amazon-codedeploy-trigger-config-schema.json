@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-trigger-config-schema.json",
+  "title": "TriggerConfig",
+  "description": "Information about notification triggers for the deployment group.",
+  "type": "object",
+  "properties": {
+    "triggerName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TriggerName"
+        },
+        {
+          "description": "The name of the notification trigger."
+        }
+      ]
+    },
+    "triggerTargetArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TriggerTargetArn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the Amazon Simple Notification Service topic through which notifications about deployment or instance events are sent."
+        }
+      ]
+    },
+    "triggerEvents": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TriggerEventTypeList"
+        },
+        {
+          "description": "The event type or types for which notifications are triggered."
+        }
+      ]
+    }
+  }
+}

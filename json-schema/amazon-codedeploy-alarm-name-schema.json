@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-alarm-name-schema.json",
+  "title": "AlarmName",
+  "description": "AlarmName schema from Amazon CodeDeploy",
+  "type": "string"
+}

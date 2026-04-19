@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-ecs-service-schema.json",
+  "title": "ECSService",
+  "description": " Contains the service and cluster names used to identify an Amazon ECS deployment's target. ",
+  "type": "object",
+  "properties": {
+    "serviceName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ECSServiceName"
+        },
+        {
+          "description": " The name of the target Amazon ECS service. "
+        }
+      ]
+    },
+    "clusterName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ECSClusterName"
+        },
+        {
+          "description": " The name of the cluster that the Amazon ECS service is associated with. "
+        }
+      ]
+    }
+  }
+}

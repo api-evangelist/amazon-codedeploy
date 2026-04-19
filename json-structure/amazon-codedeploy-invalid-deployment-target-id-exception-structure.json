@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-invalid-deployment-target-id-exception-structure.json",
+  "name": "InvalidDeploymentTargetIdException",
+  "description": "InvalidDeploymentTargetIdException schema from Amazon CodeDeploy"
+}

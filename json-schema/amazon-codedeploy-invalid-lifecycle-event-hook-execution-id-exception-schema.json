@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-invalid-lifecycle-event-hook-execution-id-exception-schema.json",
+  "title": "InvalidLifecycleEventHookExecutionIdException",
+  "description": "InvalidLifecycleEventHookExecutionIdException schema from Amazon CodeDeploy"
+}

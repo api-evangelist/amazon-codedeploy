@@ -1,0 +1,1364 @@
+naftiko: 1.0.0-alpha1
+info:
+  label: Amazon CodeDeploy
+  description: Automated application deployment service for EC2, Lambda, ECS, and on-premises servers.
+  tags:
+  - Amazon
+  - AWS
+  - Deployment
+  - DevOps
+  - CI/CD
+  created: '2026-04-19'
+  modified: '2026-04-19'
+binds:
+- namespace: env
+  keys:
+    AWS_ACCESS_KEY_ID: AWS_ACCESS_KEY_ID
+    AWS_SECRET_ACCESS_KEY: AWS_SECRET_ACCESS_KEY
+    AWS_REGION: AWS_REGION
+capability:
+  consumes:
+  - type: http
+    namespace: codedeploy
+    baseUri: http://codedeploy.us-east-1.amazonaws.com
+    description: Amazon CodeDeploy REST API.
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{AWS_AUTH_TOKEN}}'
+      placement: header
+    resources:
+    - name: ''
+      path: /
+      description: 'Operations for '
+      operations:
+      - name: addTagsToOnPremisesInstances
+        method: POST
+        description: Amazon CodeDeploy Add Tags to on Premises Instances
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: batchGetApplicationRevisions
+        method: POST
+        description: Amazon CodeDeploy Batch Get Application Revisions
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: batchGetApplications
+        method: POST
+        description: Amazon CodeDeploy Batch Get Applications
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: batchGetDeploymentGroups
+        method: POST
+        description: Amazon CodeDeploy Batch Get Deployment Groups
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: batchGetDeploymentInstances
+        method: POST
+        description: Amazon CodeDeploy Batch Get Deployment Instances
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: batchGetDeploymentTargets
+        method: POST
+        description: Amazon CodeDeploy Batch Get Deployment Targets
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: batchGetDeployments
+        method: POST
+        description: Amazon CodeDeploy Batch Get Deployments
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: batchGetOnPremisesInstances
+        method: POST
+        description: Amazon CodeDeploy Batch Get on Premises Instances
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: continueDeployment
+        method: POST
+        description: Amazon CodeDeploy Continue Deployment
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: createApplication
+        method: POST
+        description: Amazon CodeDeploy Create Application
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: createDeployment
+        method: POST
+        description: Amazon CodeDeploy Create Deployment
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: createDeploymentConfig
+        method: POST
+        description: Amazon CodeDeploy Create Deployment Config
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: createDeploymentGroup
+        method: POST
+        description: Amazon CodeDeploy Create Deployment Group
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: deleteApplication
+        method: POST
+        description: Amazon CodeDeploy Delete Application
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: deleteDeploymentConfig
+        method: POST
+        description: Amazon CodeDeploy Delete Deployment Config
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: deleteDeploymentGroup
+        method: POST
+        description: Amazon CodeDeploy Delete Deployment Group
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: deleteGitHubAccountToken
+        method: POST
+        description: Amazon CodeDeploy Delete Git Hub Account Token
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: deleteResourcesByExternalId
+        method: POST
+        description: Amazon CodeDeploy Delete Resources by External Id
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: deregisterOnPremisesInstance
+        method: POST
+        description: Amazon CodeDeploy Deregister on Premises Instance
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: getApplication
+        method: POST
+        description: Amazon CodeDeploy Get Application
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: getApplicationRevision
+        method: POST
+        description: Amazon CodeDeploy Get Application Revision
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: getDeployment
+        method: POST
+        description: Amazon CodeDeploy Get Deployment
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: getDeploymentConfig
+        method: POST
+        description: Amazon CodeDeploy Get Deployment Config
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: getDeploymentGroup
+        method: POST
+        description: Amazon CodeDeploy Get Deployment Group
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: getDeploymentInstance
+        method: POST
+        description: Amazon CodeDeploy Get Deployment Instance
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: getDeploymentTarget
+        method: POST
+        description: Amazon CodeDeploy Get Deployment Target
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: getOnPremisesInstance
+        method: POST
+        description: Amazon CodeDeploy Get on Premises Instance
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: listApplicationRevisions
+        method: POST
+        description: Amazon CodeDeploy List Application Revisions
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: listApplications
+        method: POST
+        description: Amazon CodeDeploy List Applications
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: listDeploymentConfigs
+        method: POST
+        description: Amazon CodeDeploy List Deployment Configs
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: listDeploymentGroups
+        method: POST
+        description: Amazon CodeDeploy List Deployment Groups
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: listDeploymentInstances
+        method: POST
+        description: Amazon CodeDeploy List Deployment Instances
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: listDeploymentTargets
+        method: POST
+        description: Amazon CodeDeploy List Deployment Targets
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: listDeployments
+        method: POST
+        description: Amazon CodeDeploy List Deployments
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: listGitHubAccountTokenNames
+        method: POST
+        description: Amazon CodeDeploy List Git Hub Account Token Names
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: listOnPremisesInstances
+        method: POST
+        description: Amazon CodeDeploy List on Premises Instances
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: listTagsForResource
+        method: POST
+        description: Amazon CodeDeploy List Tags for Resource
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: putLifecycleEventHookExecutionStatus
+        method: POST
+        description: Amazon CodeDeploy Put Lifecycle Event Hook Execution Status
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: registerApplicationRevision
+        method: POST
+        description: Amazon CodeDeploy Register Application Revision
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: registerOnPremisesInstance
+        method: POST
+        description: Amazon CodeDeploy Register on Premises Instance
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: removeTagsFromOnPremisesInstances
+        method: POST
+        description: Amazon CodeDeploy Remove Tags from on Premises Instances
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: skipWaitTimeForInstanceTermination
+        method: POST
+        description: Amazon CodeDeploy Skip Wait Time for Instance Termination
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: stopDeployment
+        method: POST
+        description: Amazon CodeDeploy Stop Deployment
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: tagResource
+        method: POST
+        description: Amazon CodeDeploy Tag Resource
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: untagResource
+        method: POST
+        description: Amazon CodeDeploy Untag Resource
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: updateApplication
+        method: POST
+        description: Amazon CodeDeploy Update Application
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: updateDeploymentGroup
+        method: POST
+        description: Amazon CodeDeploy Update Deployment Group
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+  exposes:
+  - type: rest
+    port: 8100
+    namespace: codedeploy-rest
+    resources:
+    - path: /v1/
+      name: ''
+      description: 'REST for '
+      operations:
+      - method: POST
+        name: addTagsToOnPremisesInstances
+        description: Amazon CodeDeploy Add Tags to on Premises Instances
+        call: codedeploy.addTagsToOnPremisesInstances
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: batchGetApplicationRevisions
+        description: Amazon CodeDeploy Batch Get Application Revisions
+        call: codedeploy.batchGetApplicationRevisions
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: batchGetApplications
+        description: Amazon CodeDeploy Batch Get Applications
+        call: codedeploy.batchGetApplications
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: batchGetDeploymentGroups
+        description: Amazon CodeDeploy Batch Get Deployment Groups
+        call: codedeploy.batchGetDeploymentGroups
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: batchGetDeploymentInstances
+        description: Amazon CodeDeploy Batch Get Deployment Instances
+        call: codedeploy.batchGetDeploymentInstances
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: batchGetDeploymentTargets
+        description: Amazon CodeDeploy Batch Get Deployment Targets
+        call: codedeploy.batchGetDeploymentTargets
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: batchGetDeployments
+        description: Amazon CodeDeploy Batch Get Deployments
+        call: codedeploy.batchGetDeployments
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: batchGetOnPremisesInstances
+        description: Amazon CodeDeploy Batch Get on Premises Instances
+        call: codedeploy.batchGetOnPremisesInstances
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: continueDeployment
+        description: Amazon CodeDeploy Continue Deployment
+        call: codedeploy.continueDeployment
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createApplication
+        description: Amazon CodeDeploy Create Application
+        call: codedeploy.createApplication
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createDeployment
+        description: Amazon CodeDeploy Create Deployment
+        call: codedeploy.createDeployment
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createDeploymentConfig
+        description: Amazon CodeDeploy Create Deployment Config
+        call: codedeploy.createDeploymentConfig
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createDeploymentGroup
+        description: Amazon CodeDeploy Create Deployment Group
+        call: codedeploy.createDeploymentGroup
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: deleteApplication
+        description: Amazon CodeDeploy Delete Application
+        call: codedeploy.deleteApplication
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: deleteDeploymentConfig
+        description: Amazon CodeDeploy Delete Deployment Config
+        call: codedeploy.deleteDeploymentConfig
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: deleteDeploymentGroup
+        description: Amazon CodeDeploy Delete Deployment Group
+        call: codedeploy.deleteDeploymentGroup
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: deleteGitHubAccountToken
+        description: Amazon CodeDeploy Delete Git Hub Account Token
+        call: codedeploy.deleteGitHubAccountToken
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: deleteResourcesByExternalId
+        description: Amazon CodeDeploy Delete Resources by External Id
+        call: codedeploy.deleteResourcesByExternalId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: deregisterOnPremisesInstance
+        description: Amazon CodeDeploy Deregister on Premises Instance
+        call: codedeploy.deregisterOnPremisesInstance
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: getApplication
+        description: Amazon CodeDeploy Get Application
+        call: codedeploy.getApplication
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: getApplicationRevision
+        description: Amazon CodeDeploy Get Application Revision
+        call: codedeploy.getApplicationRevision
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: getDeployment
+        description: Amazon CodeDeploy Get Deployment
+        call: codedeploy.getDeployment
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: getDeploymentConfig
+        description: Amazon CodeDeploy Get Deployment Config
+        call: codedeploy.getDeploymentConfig
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: getDeploymentGroup
+        description: Amazon CodeDeploy Get Deployment Group
+        call: codedeploy.getDeploymentGroup
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: getDeploymentInstance
+        description: Amazon CodeDeploy Get Deployment Instance
+        call: codedeploy.getDeploymentInstance
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: getDeploymentTarget
+        description: Amazon CodeDeploy Get Deployment Target
+        call: codedeploy.getDeploymentTarget
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: getOnPremisesInstance
+        description: Amazon CodeDeploy Get on Premises Instance
+        call: codedeploy.getOnPremisesInstance
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: listApplicationRevisions
+        description: Amazon CodeDeploy List Application Revisions
+        call: codedeploy.listApplicationRevisions
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: listApplications
+        description: Amazon CodeDeploy List Applications
+        call: codedeploy.listApplications
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: listDeploymentConfigs
+        description: Amazon CodeDeploy List Deployment Configs
+        call: codedeploy.listDeploymentConfigs
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: listDeploymentGroups
+        description: Amazon CodeDeploy List Deployment Groups
+        call: codedeploy.listDeploymentGroups
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: listDeploymentInstances
+        description: Amazon CodeDeploy List Deployment Instances
+        call: codedeploy.listDeploymentInstances
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: listDeploymentTargets
+        description: Amazon CodeDeploy List Deployment Targets
+        call: codedeploy.listDeploymentTargets
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: listDeployments
+        description: Amazon CodeDeploy List Deployments
+        call: codedeploy.listDeployments
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: listGitHubAccountTokenNames
+        description: Amazon CodeDeploy List Git Hub Account Token Names
+        call: codedeploy.listGitHubAccountTokenNames
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: listOnPremisesInstances
+        description: Amazon CodeDeploy List on Premises Instances
+        call: codedeploy.listOnPremisesInstances
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: listTagsForResource
+        description: Amazon CodeDeploy List Tags for Resource
+        call: codedeploy.listTagsForResource
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: putLifecycleEventHookExecutionStatus
+        description: Amazon CodeDeploy Put Lifecycle Event Hook Execution Status
+        call: codedeploy.putLifecycleEventHookExecutionStatus
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: registerApplicationRevision
+        description: Amazon CodeDeploy Register Application Revision
+        call: codedeploy.registerApplicationRevision
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: registerOnPremisesInstance
+        description: Amazon CodeDeploy Register on Premises Instance
+        call: codedeploy.registerOnPremisesInstance
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: removeTagsFromOnPremisesInstances
+        description: Amazon CodeDeploy Remove Tags from on Premises Instances
+        call: codedeploy.removeTagsFromOnPremisesInstances
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: skipWaitTimeForInstanceTermination
+        description: Amazon CodeDeploy Skip Wait Time for Instance Termination
+        call: codedeploy.skipWaitTimeForInstanceTermination
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: stopDeployment
+        description: Amazon CodeDeploy Stop Deployment
+        call: codedeploy.stopDeployment
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: tagResource
+        description: Amazon CodeDeploy Tag Resource
+        call: codedeploy.tagResource
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: untagResource
+        description: Amazon CodeDeploy Untag Resource
+        call: codedeploy.untagResource
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: updateApplication
+        description: Amazon CodeDeploy Update Application
+        call: codedeploy.updateApplication
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: updateDeploymentGroup
+        description: Amazon CodeDeploy Update Deployment Group
+        call: codedeploy.updateDeploymentGroup
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9100
+    namespace: codedeploy-mcp
+    transport: http
+    tools:
+    - name: codedeploy-addTagsToOnPremisesInstances
+      description: Amazon CodeDeploy Add Tags to on Premises Instances
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codedeploy.addTagsToOnPremisesInstances
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codedeploy-batchGetApplicationRevisions
+      description: Amazon CodeDeploy Batch Get Application Revisions
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codedeploy.batchGetApplicationRevisions
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codedeploy-batchGetApplications
+      description: Amazon CodeDeploy Batch Get Applications
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codedeploy.batchGetApplications
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codedeploy-batchGetDeploymentGroups
+      description: Amazon CodeDeploy Batch Get Deployment Groups
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codedeploy.batchGetDeploymentGroups
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codedeploy-batchGetDeploymentInstances
+      description: Amazon CodeDeploy Batch Get Deployment Instances
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codedeploy.batchGetDeploymentInstances
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codedeploy-batchGetDeploymentTargets
+      description: Amazon CodeDeploy Batch Get Deployment Targets
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codedeploy.batchGetDeploymentTargets
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codedeploy-batchGetDeployments
+      description: Amazon CodeDeploy Batch Get Deployments
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codedeploy.batchGetDeployments
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codedeploy-batchGetOnPremisesInstances
+      description: Amazon CodeDeploy Batch Get on Premises Instances
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codedeploy.batchGetOnPremisesInstances
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codedeploy-continueDeployment
+      description: Amazon CodeDeploy Continue Deployment
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codedeploy.continueDeployment
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codedeploy-createApplication
+      description: Amazon CodeDeploy Create Application
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codedeploy.createApplication
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codedeploy-createDeployment
+      description: Amazon CodeDeploy Create Deployment
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codedeploy.createDeployment
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codedeploy-createDeploymentConfig
+      description: Amazon CodeDeploy Create Deployment Config
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codedeploy.createDeploymentConfig
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codedeploy-createDeploymentGroup
+      description: Amazon CodeDeploy Create Deployment Group
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codedeploy.createDeploymentGroup
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codedeploy-deleteApplication
+      description: Amazon CodeDeploy Delete Application
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codedeploy.deleteApplication
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codedeploy-deleteDeploymentConfig
+      description: Amazon CodeDeploy Delete Deployment Config
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codedeploy.deleteDeploymentConfig
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codedeploy-deleteDeploymentGroup
+      description: Amazon CodeDeploy Delete Deployment Group
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codedeploy.deleteDeploymentGroup
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codedeploy-deleteGitHubAccountToken
+      description: Amazon CodeDeploy Delete Git Hub Account Token
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codedeploy.deleteGitHubAccountToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codedeploy-deleteResourcesByExternalId
+      description: Amazon CodeDeploy Delete Resources by External Id
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codedeploy.deleteResourcesByExternalId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codedeploy-deregisterOnPremisesInstance
+      description: Amazon CodeDeploy Deregister on Premises Instance
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codedeploy.deregisterOnPremisesInstance
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codedeploy-getApplication
+      description: Amazon CodeDeploy Get Application
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codedeploy.getApplication
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codedeploy-getApplicationRevision
+      description: Amazon CodeDeploy Get Application Revision
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codedeploy.getApplicationRevision
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codedeploy-getDeployment
+      description: Amazon CodeDeploy Get Deployment
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codedeploy.getDeployment
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codedeploy-getDeploymentConfig
+      description: Amazon CodeDeploy Get Deployment Config
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codedeploy.getDeploymentConfig
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codedeploy-getDeploymentGroup
+      description: Amazon CodeDeploy Get Deployment Group
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codedeploy.getDeploymentGroup
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codedeploy-getDeploymentInstance
+      description: Amazon CodeDeploy Get Deployment Instance
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codedeploy.getDeploymentInstance
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codedeploy-getDeploymentTarget
+      description: Amazon CodeDeploy Get Deployment Target
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codedeploy.getDeploymentTarget
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codedeploy-getOnPremisesInstance
+      description: Amazon CodeDeploy Get on Premises Instance
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codedeploy.getOnPremisesInstance
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codedeploy-listApplicationRevisions
+      description: Amazon CodeDeploy List Application Revisions
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codedeploy.listApplicationRevisions
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codedeploy-listApplications
+      description: Amazon CodeDeploy List Applications
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codedeploy.listApplications
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codedeploy-listDeploymentConfigs
+      description: Amazon CodeDeploy List Deployment Configs
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codedeploy.listDeploymentConfigs
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codedeploy-listDeploymentGroups
+      description: Amazon CodeDeploy List Deployment Groups
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codedeploy.listDeploymentGroups
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codedeploy-listDeploymentInstances
+      description: Amazon CodeDeploy List Deployment Instances
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codedeploy.listDeploymentInstances
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codedeploy-listDeploymentTargets
+      description: Amazon CodeDeploy List Deployment Targets
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codedeploy.listDeploymentTargets
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codedeploy-listDeployments
+      description: Amazon CodeDeploy List Deployments
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codedeploy.listDeployments
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codedeploy-listGitHubAccountTokenNames
+      description: Amazon CodeDeploy List Git Hub Account Token Names
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codedeploy.listGitHubAccountTokenNames
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codedeploy-listOnPremisesInstances
+      description: Amazon CodeDeploy List on Premises Instances
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codedeploy.listOnPremisesInstances
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codedeploy-listTagsForResource
+      description: Amazon CodeDeploy List Tags for Resource
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codedeploy.listTagsForResource
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codedeploy-putLifecycleEventHookExecutionStatus
+      description: Amazon CodeDeploy Put Lifecycle Event Hook Execution Status
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codedeploy.putLifecycleEventHookExecutionStatus
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codedeploy-registerApplicationRevision
+      description: Amazon CodeDeploy Register Application Revision
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codedeploy.registerApplicationRevision
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codedeploy-registerOnPremisesInstance
+      description: Amazon CodeDeploy Register on Premises Instance
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codedeploy.registerOnPremisesInstance
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codedeploy-removeTagsFromOnPremisesInstances
+      description: Amazon CodeDeploy Remove Tags from on Premises Instances
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codedeploy.removeTagsFromOnPremisesInstances
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codedeploy-skipWaitTimeForInstanceTermination
+      description: Amazon CodeDeploy Skip Wait Time for Instance Termination
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codedeploy.skipWaitTimeForInstanceTermination
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codedeploy-stopDeployment
+      description: Amazon CodeDeploy Stop Deployment
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codedeploy.stopDeployment
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codedeploy-tagResource
+      description: Amazon CodeDeploy Tag Resource
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codedeploy.tagResource
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codedeploy-untagResource
+      description: Amazon CodeDeploy Untag Resource
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codedeploy.untagResource
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codedeploy-updateApplication
+      description: Amazon CodeDeploy Update Application
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codedeploy.updateApplication
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codedeploy-updateDeploymentGroup
+      description: Amazon CodeDeploy Update Deployment Group
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codedeploy.updateDeploymentGroup
+      outputParameters:
+      - type: object
+        mapping: $.

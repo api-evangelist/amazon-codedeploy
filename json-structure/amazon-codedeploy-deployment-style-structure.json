@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-deployment-style-structure.json",
+  "name": "DeploymentStyle",
+  "description": "Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer.",
+  "type": "object",
+  "properties": {
+    "deploymentType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeploymentType"
+        },
+        {
+          "description": "Indicates whether to run an in-place deployment or a blue/green deployment."
+        }
+      ]
+    },
+    "deploymentOption": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeploymentOption"
+        },
+        {
+          "description": "Indicates whether to route deployment traffic behind a load balancer."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-app-spec-content-schema.json",
+  "title": "AppSpecContent",
+  "description": " A revision for an Lambda or Amazon ECS deployment that is a YAML-formatted or JSON-formatted string. For Lambda and Amazon ECS deployments, the revision is the same as the AppSpec file. This method replaces the deprecated <code>RawString</code> data type. ",
+  "type": "object",
+  "properties": {
+    "content": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RawStringContent"
+        },
+        {
+          "description": "<p> The YAML-formatted or JSON-formatted revision string. </p> <p> For an Lambda deployment, the content includes a Lambda function name, the alias for its original version, and the alias for its replacement version. The deployment shifts traffic from the original version of the Lambda function to the replacement version. </p> <p> For an Amazon ECS deployment, the content includes the task name, information about the load balancer that serves traffic to the container, and more. </p> <p> For both types of deployments, the content can specify Lambda functions that run at specified hooks, such as <code>BeforeInstall</code>, during a deployment. </p>"
+        }
+      ]
+    },
+    "sha256": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RawStringSha256"
+        },
+        {
+          "description": " The SHA256 hash value of the revision content. "
+        }
+      ]
+    }
+  }
+}

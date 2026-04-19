@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-ec2-tag-set-schema.json",
+  "title": "EC2TagSet",
+  "description": "Information about groups of Amazon EC2 instance tags.",
+  "type": "object",
+  "properties": {
+    "ec2TagSetList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EC2TagSetList"
+        },
+        {
+          "description": "A list that contains other lists of Amazon EC2 instance tag groups. For an instance to be included in the deployment group, it must be identified by all of the tag groups in the list."
+        }
+      ]
+    }
+  }
+}

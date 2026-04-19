@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-create-deployment-request-schema.json",
+  "title": "CreateDeploymentRequest",
+  "description": "CreateDeploymentRequest schema from Amazon CodeDeploy",
+  "type": "object",
+  "properties": {
+    "applicationName": {
+      "type": "string",
+      "description": "The name of the application."
+    },
+    "deploymentGroupName": {
+      "type": "string",
+      "description": "The name of the deployment group."
+    },
+    "revision": {
+      "type": "object",
+      "properties": {
+        "revisionType": {
+          "type": "string",
+          "enum": [
+            "S3",
+            "GitHub",
+            "String",
+            "AppSpecContent"
+          ]
+        },
+        "s3Location": {
+          "type": "object",
+          "properties": {
+            "bucket": {
+              "type": "string"
+            },
+            "key": {
+              "type": "string"
+            },
+            "bundleType": {
+              "type": "string",
+              "enum": [
+                "tar",
+                "tgz",
+                "zip",
+                "YAML",
+                "JSON"
+              ]
+            }
+          }
+        },
+        "gitHubLocation": {
+          "type": "object",
+          "properties": {
+            "repository": {
+              "type": "string"
+            },
+            "commitId": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "description": {
+      "type": "string",
+      "description": "A comment about the deployment."
+    },
+    "autoRollbackConfiguration": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "events": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "DEPLOYMENT_FAILURE",
+              "DEPLOYMENT_STOP_ON_ALARM",
+              "DEPLOYMENT_STOP_ON_REQUEST"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "applicationName",
+    "deploymentGroupName"
+  ]
+}

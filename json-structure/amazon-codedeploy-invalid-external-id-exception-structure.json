@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-invalid-external-id-exception-structure.json",
+  "name": "InvalidExternalIdException",
+  "description": "InvalidExternalIdException schema from Amazon CodeDeploy"
+}

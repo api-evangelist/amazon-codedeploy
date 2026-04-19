@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-deployment-overview-schema.json",
+  "title": "DeploymentOverview",
+  "description": "Information about the deployment status of the instances in the deployment.",
+  "type": "object",
+  "properties": {
+    "Pending": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InstanceCount"
+        },
+        {
+          "description": "The number of instances in the deployment in a pending state."
+        }
+      ]
+    },
+    "InProgress": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InstanceCount"
+        },
+        {
+          "description": "The number of instances in which the deployment is in progress."
+        }
+      ]
+    },
+    "Succeeded": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InstanceCount"
+        },
+        {
+          "description": "The number of instances in the deployment to which revisions have been successfully deployed."
+        }
+      ]
+    },
+    "Failed": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InstanceCount"
+        },
+        {
+          "description": "The number of instances in the deployment in a failed state."
+        }
+      ]
+    },
+    "Skipped": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InstanceCount"
+        },
+        {
+          "description": "The number of instances in the deployment in a skipped state."
+        }
+      ]
+    },
+    "Ready": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InstanceCount"
+        },
+        {
+          "description": "The number of instances in a replacement environment ready to receive traffic in a blue/green deployment."
+        }
+      ]
+    }
+  }
+}

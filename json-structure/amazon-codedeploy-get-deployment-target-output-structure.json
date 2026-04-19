@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-get-deployment-target-output-structure.json",
+  "name": "GetDeploymentTargetOutput",
+  "description": "GetDeploymentTargetOutput schema from Amazon CodeDeploy",
+  "type": "object",
+  "properties": {
+    "deploymentTarget": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeploymentTarget"
+        },
+        {
+          "description": " A deployment target that contains information about a deployment such as its status, lifecycle events, and when it was last updated. It also contains metadata about the deployment target. The deployment target metadata depends on the deployment target's type (<code>instanceTarget</code>, <code>lambdaTarget</code>, or <code>ecsTarget</code>). "
+        }
+      ]
+    }
+  }
+}

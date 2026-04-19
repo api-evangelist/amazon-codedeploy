@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-delete-git-hub-account-token-output-schema.json",
+  "title": "DeleteGitHubAccountTokenOutput",
+  "description": "Represents the output of a <code>DeleteGitHubAccountToken</code> operation.",
+  "type": "object",
+  "properties": {
+    "tokenName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GitHubAccountTokenName"
+        },
+        {
+          "description": "The name of the GitHub account connection that was deleted."
+        }
+      ]
+    }
+  }
+}

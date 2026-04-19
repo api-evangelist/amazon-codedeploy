@@ -1,0 +1,12 @@
+{
+  "deploymentInfo": {
+    "deploymentId": "500123",
+    "applicationName": "example-resource",
+    "deploymentGroupName": "example-resource",
+    "status": "Created",
+    "createTime": "example-value",
+    "startTime": "example-value",
+    "completeTime": "example-value",
+    "description": "Example description"
+  }
+}

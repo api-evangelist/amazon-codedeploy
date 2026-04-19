@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-instance-target-schema.json",
+  "title": "InstanceTarget",
+  "description": " A target Amazon EC2 or on-premises instance during a deployment that uses the EC2/On-premises compute platform. ",
+  "type": "object",
+  "properties": {
+    "deploymentId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeploymentId"
+        },
+        {
+          "description": " The unique ID of a deployment. "
+        }
+      ]
+    },
+    "targetId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TargetId"
+        },
+        {
+          "description": " The unique ID of a deployment target that has a type of <code>instanceTarget</code>. "
+        }
+      ]
+    },
+    "targetArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TargetArn"
+        },
+        {
+          "description": " The Amazon Resource Name (ARN) of the target. "
+        }
+      ]
+    },
+    "status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TargetStatus"
+        },
+        {
+          "description": " The status an EC2/On-premises deployment's target instance. "
+        }
+      ]
+    },
+    "lastUpdatedAt": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Time"
+        },
+        {
+          "description": " The date and time when the target instance was updated by a deployment. "
+        }
+      ]
+    },
+    "lifecycleEvents": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LifecycleEventList"
+        },
+        {
+          "description": " The lifecycle events of the deployment to this target instance. "
+        }
+      ]
+    },
+    "instanceLabel": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TargetLabel"
+        },
+        {
+          "description": " A label that identifies whether the instance is an original target (<code>BLUE</code>) or a replacement target (<code>GREEN</code>). "
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-git-hub-account-token-name-list-structure.json",
+  "name": "GitHubAccountTokenNameList",
+  "description": "GitHubAccountTokenNameList schema from Amazon CodeDeploy",
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/GitHubAccountTokenName"
+  }
+}

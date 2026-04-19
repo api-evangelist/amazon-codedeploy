@@ -1,0 +1,6 @@
+{
+  "deploymentId": "500123",
+  "nextToken": "example-value",
+  "instanceStatusFilter": "ACTIVE",
+  "instanceTypeFilter": "STANDARD"
+}

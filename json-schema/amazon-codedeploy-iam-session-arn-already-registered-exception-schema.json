@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-iam-session-arn-already-registered-exception-schema.json",
+  "title": "IamSessionArnAlreadyRegisteredException",
+  "description": "IamSessionArnAlreadyRegisteredException schema from Amazon CodeDeploy"
+}

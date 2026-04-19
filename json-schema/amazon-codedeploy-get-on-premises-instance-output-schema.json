@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-get-on-premises-instance-output-schema.json",
+  "title": "GetOnPremisesInstanceOutput",
+  "description": " Represents the output of a <code>GetOnPremisesInstance</code> operation. ",
+  "type": "object",
+  "properties": {
+    "instanceInfo": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InstanceInfo"
+        },
+        {
+          "description": " Information about the on-premises instance. "
+        }
+      ]
+    }
+  }
+}

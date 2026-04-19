@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-get-deployment-config-input-structure.json",
+  "name": "GetDeploymentConfigInput",
+  "description": "Represents the input of a <code>GetDeploymentConfig</code> operation.",
+  "type": "object",
+  "properties": {
+    "deploymentConfigName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeploymentConfigName"
+        },
+        {
+          "description": "The name of a deployment configuration associated with the IAM user or Amazon Web Services account."
+        }
+      ]
+    }
+  },
+  "required": [
+    "deploymentConfigName"
+  ]
+}

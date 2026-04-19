@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-auto-rollback-configuration-structure.json",
+  "name": "AutoRollbackConfiguration",
+  "description": "Information about a configuration for automatically rolling back to a previous version of an application revision when a deployment is not completed successfully.",
+  "type": "object",
+  "properties": {
+    "enabled": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Boolean"
+        },
+        {
+          "description": "Indicates whether a defined automatic rollback configuration is currently enabled."
+        }
+      ]
+    },
+    "events": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AutoRollbackEventsList"
+        },
+        {
+          "description": "The event type or types that trigger a rollback."
+        }
+      ]
+    }
+  }
+}

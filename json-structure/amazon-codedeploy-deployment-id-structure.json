@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-deployment-id-structure.json",
+  "name": "DeploymentId",
+  "description": "DeploymentId schema from Amazon CodeDeploy",
+  "type": "string"
+}

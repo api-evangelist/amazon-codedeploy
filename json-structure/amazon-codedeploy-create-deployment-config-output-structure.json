@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-create-deployment-config-output-structure.json",
+  "name": "CreateDeploymentConfigOutput",
+  "description": "Represents the output of a <code>CreateDeploymentConfig</code> operation.",
+  "type": "object",
+  "properties": {
+    "deploymentConfigId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeploymentConfigId"
+        },
+        {
+          "description": "A unique deployment configuration ID."
+        }
+      ]
+    }
+  }
+}

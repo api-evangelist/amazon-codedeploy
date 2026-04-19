@@ -1,0 +1,5 @@
+{
+  "targetGroups": "example-value",
+  "prodTrafficRoute": "example-value",
+  "testTrafficRoute": "example-value"
+}

@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-invalid-trigger-config-exception-structure.json",
+  "name": "InvalidTriggerConfigException",
+  "description": "InvalidTriggerConfigException schema from Amazon CodeDeploy"
+}

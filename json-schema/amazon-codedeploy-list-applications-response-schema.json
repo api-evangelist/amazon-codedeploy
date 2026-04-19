@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-list-applications-response-schema.json",
+  "title": "ListApplicationsResponse",
+  "description": "ListApplicationsResponse schema from Amazon CodeDeploy",
+  "type": "object",
+  "properties": {
+    "applications": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "nextToken": {
+      "type": "string"
+    }
+  }
+}

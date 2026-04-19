@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-iam-user-arn-required-exception-schema.json",
+  "title": "IamUserArnRequiredException",
+  "description": "IamUserArnRequiredException schema from Amazon CodeDeploy"
+}

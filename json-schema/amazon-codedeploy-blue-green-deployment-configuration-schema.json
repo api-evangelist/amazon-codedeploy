@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-blue-green-deployment-configuration-schema.json",
+  "title": "BlueGreenDeploymentConfiguration",
+  "description": "Information about blue/green deployment options for a deployment group.",
+  "type": "object",
+  "properties": {
+    "terminateBlueInstancesOnDeploymentSuccess": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BlueInstanceTerminationOption"
+        },
+        {
+          "description": "Information about whether to terminate instances in the original fleet during a blue/green deployment."
+        }
+      ]
+    },
+    "deploymentReadyOption": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeploymentReadyOption"
+        },
+        {
+          "description": "Information about the action to take when newly provisioned instances are ready to receive traffic in a blue/green deployment."
+        }
+      ]
+    },
+    "greenFleetProvisioningOption": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GreenFleetProvisioningOption"
+        },
+        {
+          "description": "Information about how instances are provisioned for a replacement environment in a blue/green deployment."
+        }
+      ]
+    }
+  }
+}

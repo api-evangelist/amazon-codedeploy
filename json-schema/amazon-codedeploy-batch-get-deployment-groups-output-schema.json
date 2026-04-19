@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-batch-get-deployment-groups-output-schema.json",
+  "title": "BatchGetDeploymentGroupsOutput",
+  "description": "Represents the output of a <code>BatchGetDeploymentGroups</code> operation.",
+  "type": "object",
+  "properties": {
+    "deploymentGroupsInfo": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeploymentGroupInfoList"
+        },
+        {
+          "description": "Information about the deployment groups."
+        }
+      ]
+    },
+    "errorMessage": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ErrorMessage"
+        },
+        {
+          "description": "Information about errors that might have occurred during the API call."
+        }
+      ]
+    }
+  }
+}

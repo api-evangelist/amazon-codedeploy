@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-skip-wait-time-for-instance-termination-input-structure.json",
+  "name": "SkipWaitTimeForInstanceTerminationInput",
+  "description": "SkipWaitTimeForInstanceTerminationInput schema from Amazon CodeDeploy",
+  "type": "object",
+  "properties": {
+    "deploymentId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeploymentId"
+        },
+        {
+          "description": " The unique ID of a blue/green deployment for which you want to skip the instance termination wait time. "
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "deploymentTargetType": "STANDARD",
+  "instanceTarget": "example-value",
+  "lambdaTarget": "example-value",
+  "ecsTarget": "example-value",
+  "cloudFormationTarget": "example-value"
+}

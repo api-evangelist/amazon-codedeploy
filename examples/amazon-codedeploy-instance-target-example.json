@@ -1,0 +1,9 @@
+{
+  "deploymentId": "500123",
+  "targetId": "500123",
+  "targetArn": "arn:aws:service:us-east-1:123456789012:resource/example",
+  "status": "ACTIVE",
+  "lastUpdatedAt": "example-value",
+  "lifecycleEvents": "example-value",
+  "instanceLabel": "example-value"
+}

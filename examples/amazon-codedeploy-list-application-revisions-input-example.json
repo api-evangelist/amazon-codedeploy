@@ -1,0 +1,9 @@
+{
+  "applicationName": "example-resource",
+  "sortBy": "example-value",
+  "sortOrder": "example-value",
+  "s3Bucket": "example-value",
+  "s3KeyPrefix": "example-value",
+  "deployed": "example-value",
+  "nextToken": "example-value"
+}

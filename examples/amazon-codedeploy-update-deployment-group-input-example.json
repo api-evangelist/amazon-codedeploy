@@ -1,0 +1,10 @@
+{
+  "applicationName": "example-resource",
+  "currentDeploymentGroupName": "example-resource",
+  "newDeploymentGroupName": "example-resource",
+  "deploymentConfigName": "example-resource",
+  "ec2TagFilters": "example-value",
+  "onPremisesInstanceTagFilters": "example-value",
+  "autoScalingGroups": "example-value",
+  "serviceRoleArn": "arn:aws:service:us-east-1:123456789012:resource/example"
+}

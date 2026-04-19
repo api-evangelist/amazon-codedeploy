@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-git-hub-account-token-name-required-exception-schema.json",
+  "title": "GitHubAccountTokenNameRequiredException",
+  "description": "GitHubAccountTokenNameRequiredException schema from Amazon CodeDeploy"
+}

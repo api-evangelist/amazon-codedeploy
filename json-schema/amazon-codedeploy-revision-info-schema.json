@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-revision-info-schema.json",
+  "title": "RevisionInfo",
+  "description": "Information about an application revision.",
+  "type": "object",
+  "properties": {
+    "revisionLocation": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RevisionLocation"
+        },
+        {
+          "description": "Information about the location and type of an application revision."
+        }
+      ]
+    },
+    "genericRevisionInfo": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GenericRevisionInfo"
+        },
+        {
+          "description": "Information about an application revision, including usage details and associated deployment groups."
+        }
+      ]
+    }
+  }
+}

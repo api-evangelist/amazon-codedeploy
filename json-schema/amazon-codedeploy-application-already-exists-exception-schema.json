@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-application-already-exists-exception-schema.json",
+  "title": "ApplicationAlreadyExistsException",
+  "description": "ApplicationAlreadyExistsException schema from Amazon CodeDeploy",
+  "type": "object",
+  "properties": {
+    "message": {
+      "type": "string"
+    }
+  }
+}

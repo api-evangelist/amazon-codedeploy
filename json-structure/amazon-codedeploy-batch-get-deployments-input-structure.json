@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-batch-get-deployments-input-structure.json",
+  "name": "BatchGetDeploymentsInput",
+  "description": " Represents the input of a <code>BatchGetDeployments</code> operation. ",
+  "type": "object",
+  "properties": {
+    "deploymentIds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeploymentsList"
+        },
+        {
+          "description": " A list of deployment IDs, separated by spaces. The maximum number of deployment IDs you can specify is 25."
+        }
+      ]
+    }
+  },
+  "required": [
+    "deploymentIds"
+  ]
+}

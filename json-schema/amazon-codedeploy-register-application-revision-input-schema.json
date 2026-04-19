@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-register-application-revision-input-schema.json",
+  "title": "RegisterApplicationRevisionInput",
+  "description": "Represents the input of a RegisterApplicationRevision operation.",
+  "type": "object",
+  "properties": {
+    "applicationName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ApplicationName"
+        },
+        {
+          "description": "The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account."
+        }
+      ]
+    },
+    "description": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Description"
+        },
+        {
+          "description": "A comment about the revision."
+        }
+      ]
+    },
+    "revision": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RevisionLocation"
+        },
+        {
+          "description": "Information about the application revision to register, including type and location."
+        }
+      ]
+    }
+  },
+  "required": [
+    "applicationName",
+    "revision"
+  ]
+}

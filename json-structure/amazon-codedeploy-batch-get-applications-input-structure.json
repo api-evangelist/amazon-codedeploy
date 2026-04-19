@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-batch-get-applications-input-structure.json",
+  "name": "BatchGetApplicationsInput",
+  "description": "Represents the input of a <code>BatchGetApplications</code> operation.",
+  "type": "object",
+  "properties": {
+    "applicationNames": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ApplicationsList"
+        },
+        {
+          "description": "A list of application names separated by spaces. The maximum number of application names you can specify is 100."
+        }
+      ]
+    }
+  },
+  "required": [
+    "applicationNames"
+  ]
+}

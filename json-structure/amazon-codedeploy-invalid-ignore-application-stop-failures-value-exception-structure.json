@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-invalid-ignore-application-stop-failures-value-exception-structure.json",
+  "name": "InvalidIgnoreApplicationStopFailuresValueException",
+  "description": "InvalidIgnoreApplicationStopFailuresValueException schema from Amazon CodeDeploy"
+}

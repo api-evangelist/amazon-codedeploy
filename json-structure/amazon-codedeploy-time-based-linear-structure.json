@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-time-based-linear-structure.json",
+  "name": "TimeBasedLinear",
+  "description": "A configuration that shifts traffic from one version of a Lambda function or ECS task set to another in equal increments, with an equal number of minutes between each increment. The original and target Lambda function versions or ECS task sets are specified in the deployment's AppSpec file.",
+  "type": "object",
+  "properties": {
+    "linearPercentage": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Percentage"
+        },
+        {
+          "description": "The percentage of traffic that is shifted at the start of each increment of a <code>TimeBasedLinear</code> deployment."
+        }
+      ]
+    },
+    "linearInterval": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/WaitTimeInMins"
+        },
+        {
+          "description": "The number of minutes between each incremental traffic shift of a <code>TimeBasedLinear</code> deployment."
+        }
+      ]
+    }
+  }
+}

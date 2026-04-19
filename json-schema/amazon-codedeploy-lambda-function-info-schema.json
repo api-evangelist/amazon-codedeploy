@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-lambda-function-info-schema.json",
+  "title": "LambdaFunctionInfo",
+  "description": " Information about a Lambda function specified in a deployment. ",
+  "type": "object",
+  "properties": {
+    "functionName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LambdaFunctionName"
+        },
+        {
+          "description": " The name of a Lambda function. "
+        }
+      ]
+    },
+    "functionAlias": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LambdaFunctionAlias"
+        },
+        {
+          "description": " The alias of a Lambda function. For more information, see <a href=\"https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html\">Lambda Function Aliases</a> in the <i>Lambda Developer Guide</i>."
+        }
+      ]
+    },
+    "currentVersion": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Version"
+        },
+        {
+          "description": " The version of a Lambda function that production traffic points to. "
+        }
+      ]
+    },
+    "targetVersion": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Version"
+        },
+        {
+          "description": " The version of a Lambda function that production traffic points to after the Lambda function is deployed. "
+        }
+      ]
+    },
+    "targetVersionWeight": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TrafficWeight"
+        },
+        {
+          "description": " The percentage of production traffic that the target version of a Lambda function receives. "
+        }
+      ]
+    }
+  }
+}

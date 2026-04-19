@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-application-does-not-exist-exception-structure.json",
+  "name": "ApplicationDoesNotExistException",
+  "description": "ApplicationDoesNotExistException schema from Amazon CodeDeploy",
+  "type": "object",
+  "properties": {
+    "message": {
+      "type": "string"
+    }
+  }
+}

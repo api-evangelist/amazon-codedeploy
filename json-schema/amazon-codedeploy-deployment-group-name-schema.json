@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-deployment-group-name-schema.json",
+  "title": "DeploymentGroupName",
+  "description": "DeploymentGroupName schema from Amazon CodeDeploy",
+  "type": "string",
+  "minLength": 1,
+  "maxLength": 100
+}

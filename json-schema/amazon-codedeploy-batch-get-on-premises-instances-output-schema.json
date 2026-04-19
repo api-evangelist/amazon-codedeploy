@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-batch-get-on-premises-instances-output-schema.json",
+  "title": "BatchGetOnPremisesInstancesOutput",
+  "description": "Represents the output of a <code>BatchGetOnPremisesInstances</code> operation.",
+  "type": "object",
+  "properties": {
+    "instanceInfos": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InstanceInfoList"
+        },
+        {
+          "description": "Information about the on-premises instances."
+        }
+      ]
+    }
+  }
+}

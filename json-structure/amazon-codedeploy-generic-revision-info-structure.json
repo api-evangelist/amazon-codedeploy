@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-generic-revision-info-structure.json",
+  "name": "GenericRevisionInfo",
+  "description": "Information about an application revision.",
+  "type": "object",
+  "properties": {
+    "description": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Description"
+        },
+        {
+          "description": "A comment about the revision."
+        }
+      ]
+    },
+    "deploymentGroups": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeploymentGroupsList"
+        },
+        {
+          "description": "The deployment groups for which this is the current target revision."
+        }
+      ]
+    },
+    "firstUsedTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "When the revision was first used by CodeDeploy."
+        }
+      ]
+    },
+    "lastUsedTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "When the revision was last used by CodeDeploy."
+        }
+      ]
+    },
+    "registerTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "When the revision was registered with CodeDeploy."
+        }
+      ]
+    }
+  }
+}

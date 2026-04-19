@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-batch-get-on-premises-instances-input-schema.json",
+  "title": "BatchGetOnPremisesInstancesInput",
+  "description": "Represents the input of a <code>BatchGetOnPremisesInstances</code> operation.",
+  "type": "object",
+  "properties": {
+    "instanceNames": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InstanceNameList"
+        },
+        {
+          "description": "The names of the on-premises instances about which to get information. The maximum number of instance names you can specify is 25."
+        }
+      ]
+    }
+  },
+  "required": [
+    "instanceNames"
+  ]
+}

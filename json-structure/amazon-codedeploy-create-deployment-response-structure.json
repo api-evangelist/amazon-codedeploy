@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-create-deployment-response-structure.json",
+  "name": "CreateDeploymentResponse",
+  "description": "CreateDeploymentResponse schema from Amazon CodeDeploy",
+  "type": "object",
+  "properties": {
+    "deploymentId": {
+      "type": "string"
+    }
+  }
+}

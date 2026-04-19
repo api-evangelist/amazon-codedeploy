@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-deployment-target-schema.json",
+  "title": "DeploymentTarget",
+  "description": " Information about the deployment target. ",
+  "type": "object",
+  "properties": {
+    "deploymentTargetType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeploymentTargetType"
+        },
+        {
+          "description": "The deployment type that is specific to the deployment's compute platform or deployments initiated by a CloudFormation stack update."
+        }
+      ]
+    },
+    "instanceTarget": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InstanceTarget"
+        },
+        {
+          "description": " Information about the target for a deployment that uses the EC2/On-premises compute platform. "
+        }
+      ]
+    },
+    "lambdaTarget": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LambdaTarget"
+        },
+        {
+          "description": " Information about the target for a deployment that uses the Lambda compute platform. "
+        }
+      ]
+    },
+    "ecsTarget": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ECSTarget"
+        },
+        {
+          "description": " Information about the target for a deployment that uses the Amazon ECS compute platform. "
+        }
+      ]
+    },
+    "cloudFormationTarget": {
+      "$ref": "#/components/schemas/CloudFormationTarget"
+    }
+  }
+}

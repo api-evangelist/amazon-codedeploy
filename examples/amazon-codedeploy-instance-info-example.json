@@ -1,0 +1,9 @@
+{
+  "instanceName": "example-resource",
+  "iamSessionArn": "arn:aws:service:us-east-1:123456789012:resource/example",
+  "iamUserArn": "arn:aws:service:us-east-1:123456789012:resource/example",
+  "instanceArn": "arn:aws:service:us-east-1:123456789012:resource/example",
+  "registerTime": "example-value",
+  "deregisterTime": "example-value",
+  "tags": "example-value"
+}

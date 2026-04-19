@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-batch-get-deployment-instances-output-structure.json",
+  "name": "BatchGetDeploymentInstancesOutput",
+  "description": "Represents the output of a <code>BatchGetDeploymentInstances</code> operation.",
+  "type": "object",
+  "properties": {
+    "instancesSummary": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InstanceSummaryList"
+        },
+        {
+          "description": "Information about the instance."
+        }
+      ]
+    },
+    "errorMessage": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ErrorMessage"
+        },
+        {
+          "description": "Information about errors that might have occurred during the API call."
+        }
+      ]
+    }
+  }
+}

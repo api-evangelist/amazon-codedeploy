@@ -1,0 +1,8 @@
+{
+  "deploymentConfigId": "500123",
+  "deploymentConfigName": "example-resource",
+  "minimumHealthyHosts": "example-value",
+  "createTime": "example-value",
+  "computePlatform": "example-value",
+  "trafficRoutingConfig": "example-value"
+}

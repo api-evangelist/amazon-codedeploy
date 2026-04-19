@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-tag-structure.json",
+  "name": "Tag",
+  "description": "Information about a tag.",
+  "type": "object",
+  "properties": {
+    "Key": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Key"
+        },
+        {
+          "description": "The tag's key."
+        }
+      ]
+    },
+    "Value": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Value"
+        },
+        {
+          "description": "The tag's value."
+        }
+      ]
+    }
+  }
+}

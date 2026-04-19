@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-ec2-tag-filter-type-structure.json",
+  "name": "EC2TagFilterType",
+  "description": "EC2TagFilterType schema from Amazon CodeDeploy",
+  "type": "string",
+  "enum": [
+    "KEY_ONLY",
+    "VALUE_ONLY",
+    "KEY_AND_VALUE"
+  ]
+}

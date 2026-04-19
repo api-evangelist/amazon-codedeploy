@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-delete-resources-by-external-id-input-structure.json",
+  "name": "DeleteResourcesByExternalIdInput",
+  "description": "DeleteResourcesByExternalIdInput schema from Amazon CodeDeploy",
+  "type": "object",
+  "properties": {
+    "externalId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ExternalId"
+        },
+        {
+          "description": "The unique ID of an external resource (for example, a CloudFormation stack ID) that is linked to one or more CodeDeploy resources."
+        }
+      ]
+    }
+  }
+}

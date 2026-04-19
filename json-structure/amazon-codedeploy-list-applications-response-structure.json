@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-list-applications-response-structure.json",
+  "name": "ListApplicationsResponse",
+  "description": "ListApplicationsResponse schema from Amazon CodeDeploy",
+  "type": "object",
+  "properties": {
+    "applications": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "nextToken": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,229 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-deployment-group-info-structure.json",
+  "name": "DeploymentGroupInfo",
+  "description": "Information about a deployment group.",
+  "type": "object",
+  "properties": {
+    "applicationName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ApplicationName"
+        },
+        {
+          "description": "The application name."
+        }
+      ]
+    },
+    "deploymentGroupId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeploymentGroupId"
+        },
+        {
+          "description": "The deployment group ID."
+        }
+      ]
+    },
+    "deploymentGroupName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeploymentGroupName"
+        },
+        {
+          "description": "The deployment group name."
+        }
+      ]
+    },
+    "deploymentConfigName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeploymentConfigName"
+        },
+        {
+          "description": "The deployment configuration name."
+        }
+      ]
+    },
+    "ec2TagFilters": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EC2TagFilterList"
+        },
+        {
+          "description": "The Amazon EC2 tags on which to filter. The deployment group includes EC2 instances with any of the specified tags."
+        }
+      ]
+    },
+    "onPremisesInstanceTagFilters": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagFilterList"
+        },
+        {
+          "description": "The on-premises instance tags on which to filter. The deployment group includes on-premises instances with any of the specified tags."
+        }
+      ]
+    },
+    "autoScalingGroups": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AutoScalingGroupList"
+        },
+        {
+          "description": "A list of associated Auto Scaling groups."
+        }
+      ]
+    },
+    "serviceRoleArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Role"
+        },
+        {
+          "description": "A service role Amazon Resource Name (ARN) that grants CodeDeploy permission to make calls to Amazon Web Services services on your behalf. For more information, see <a href=\"https://docs.aws.amazon.com/codedeploy/latest/userguide/getting-started-create-service-role.html\">Create a Service Role for CodeDeploy</a> in the <i>CodeDeploy User Guide</i>."
+        }
+      ]
+    },
+    "targetRevision": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RevisionLocation"
+        },
+        {
+          "description": "Information about the deployment group's target revision, including type and location."
+        }
+      ]
+    },
+    "triggerConfigurations": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TriggerConfigList"
+        },
+        {
+          "description": "Information about triggers associated with the deployment group."
+        }
+      ]
+    },
+    "alarmConfiguration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AlarmConfiguration"
+        },
+        {
+          "description": "A list of alarms associated with the deployment group."
+        }
+      ]
+    },
+    "autoRollbackConfiguration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AutoRollbackConfiguration"
+        },
+        {
+          "description": "Information about the automatic rollback configuration associated with the deployment group."
+        }
+      ]
+    },
+    "deploymentStyle": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeploymentStyle"
+        },
+        {
+          "description": "Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer."
+        }
+      ]
+    },
+    "outdatedInstancesStrategy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OutdatedInstancesStrategy"
+        },
+        {
+          "description": "<p>Indicates what happens when new Amazon EC2 instances are launched mid-deployment and do not receive the deployed application revision.</p> <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update outdated instances' deployments to apply the deployed application revision to the new Amazon EC2 instances.</p> <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new Amazon EC2 instances. This may result in instances having different revisions.</p>"
+        }
+      ]
+    },
+    "blueGreenDeploymentConfiguration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BlueGreenDeploymentConfiguration"
+        },
+        {
+          "description": "Information about blue/green deployment options for a deployment group."
+        }
+      ]
+    },
+    "loadBalancerInfo": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LoadBalancerInfo"
+        },
+        {
+          "description": "Information about the load balancer to use in a deployment."
+        }
+      ]
+    },
+    "lastSuccessfulDeployment": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LastDeploymentInfo"
+        },
+        {
+          "description": "Information about the most recent successful deployment to the deployment group."
+        }
+      ]
+    },
+    "lastAttemptedDeployment": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LastDeploymentInfo"
+        },
+        {
+          "description": "Information about the most recent attempted deployment to the deployment group."
+        }
+      ]
+    },
+    "ec2TagSet": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EC2TagSet"
+        },
+        {
+          "description": "Information about groups of tags applied to an Amazon EC2 instance. The deployment group includes only Amazon EC2 instances identified by all of the tag groups. Cannot be used in the same call as ec2TagFilters."
+        }
+      ]
+    },
+    "onPremisesTagSet": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/OnPremisesTagSet"
+        },
+        {
+          "description": "Information about groups of tags applied to an on-premises instance. The deployment group includes only on-premises instances identified by all the tag groups. Cannot be used in the same call as onPremisesInstanceTagFilters."
+        }
+      ]
+    },
+    "computePlatform": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ComputePlatform"
+        },
+        {
+          "description": "The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>)."
+        }
+      ]
+    },
+    "ecsServices": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ECSServiceList"
+        },
+        {
+          "description": " The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. "
+        }
+      ]
+    }
+  }
+}

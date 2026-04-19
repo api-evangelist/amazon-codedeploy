@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-get-application-output-structure.json",
+  "name": "GetApplicationOutput",
+  "description": "Represents the output of a <code>GetApplication</code> operation.",
+  "type": "object",
+  "properties": {
+    "application": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ApplicationInfo"
+        },
+        {
+          "description": "Information about the application."
+        }
+      ]
+    }
+  }
+}

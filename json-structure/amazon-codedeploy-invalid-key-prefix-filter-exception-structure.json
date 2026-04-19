@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-invalid-key-prefix-filter-exception-structure.json",
+  "name": "InvalidKeyPrefixFilterException",
+  "description": "InvalidKeyPrefixFilterException schema from Amazon CodeDeploy"
+}

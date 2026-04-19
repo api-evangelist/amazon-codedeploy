@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-batch-get-deployments-output-schema.json",
+  "title": "BatchGetDeploymentsOutput",
+  "description": " Represents the output of a <code>BatchGetDeployments</code> operation. ",
+  "type": "object",
+  "properties": {
+    "deploymentsInfo": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeploymentsInfoList"
+        },
+        {
+          "description": " Information about the deployments. "
+        }
+      ]
+    }
+  }
+}

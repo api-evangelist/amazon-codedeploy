@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-continue-deployment-input-structure.json",
+  "name": "ContinueDeploymentInput",
+  "description": "ContinueDeploymentInput schema from Amazon CodeDeploy",
+  "type": "object",
+  "properties": {
+    "deploymentId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeploymentId"
+        },
+        {
+          "description": " The unique ID of a blue/green deployment for which you want to start rerouting traffic to the replacement environment. "
+        }
+      ]
+    },
+    "deploymentWaitType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeploymentWaitType"
+        },
+        {
+          "description": " The status of the deployment's waiting period. <code>READY_WAIT</code> indicates that the deployment is ready to start shifting traffic. <code>TERMINATION_WAIT</code> indicates that the traffic is shifted, but the original target is not terminated. "
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-instance-status-structure.json",
+  "name": "InstanceStatus",
+  "description": "InstanceStatus is deprecated, use TargetStatus instead.",
+  "type": "string",
+  "enum": [
+    "Pending",
+    "InProgress",
+    "Succeeded",
+    "Failed",
+    "Skipped",
+    "Unknown",
+    "Ready"
+  ],
+  "deprecated": true
+}

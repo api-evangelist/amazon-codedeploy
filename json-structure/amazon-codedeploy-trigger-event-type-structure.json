@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-trigger-event-type-structure.json",
+  "name": "TriggerEventType",
+  "description": "TriggerEventType schema from Amazon CodeDeploy",
+  "type": "string",
+  "enum": [
+    "DeploymentStart",
+    "DeploymentSuccess",
+    "DeploymentFailure",
+    "DeploymentStop",
+    "DeploymentRollback",
+    "DeploymentReady",
+    "InstanceStart",
+    "InstanceSuccess",
+    "InstanceFailure",
+    "InstanceReady"
+  ]
+}

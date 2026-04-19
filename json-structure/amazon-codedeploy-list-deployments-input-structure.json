@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-list-deployments-input-structure.json",
+  "name": "ListDeploymentsInput",
+  "description": "Represents the input of a <code>ListDeployments</code> operation.",
+  "type": "object",
+  "properties": {
+    "applicationName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ApplicationName"
+        },
+        {
+          "description": "<p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p> <note> <p>If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is not specified, then <code>deploymentGroupName</code> must not be specified. </p> </note>"
+        }
+      ]
+    },
+    "deploymentGroupName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeploymentGroupName"
+        },
+        {
+          "description": "<p>The name of a deployment group for the specified application.</p> <note> <p>If <code>deploymentGroupName</code> is specified, then <code>applicationName</code> must be specified. If it is not specified, then <code>applicationName</code> must not be specified. </p> </note>"
+        }
+      ]
+    },
+    "externalId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ExternalId"
+        },
+        {
+          "description": "The unique ID of an external resource for returning deployments linked to the external resource."
+        }
+      ]
+    },
+    "includeOnlyStatuses": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeploymentStatusList"
+        },
+        {
+          "description": "<p>A subset of deployments to list by status:</p> <ul> <li> <p> <code>Created</code>: Include created deployments in the resulting list.</p> </li> <li> <p> <code>Queued</code>: Include queued deployments in the resulting list.</p> </li> <li> <p> <code>In Progress</code>: Include in-progress deployments in the resulting list.</p> </li> <li> <p> <code>Succeeded</code>: Include successful deployments in the resulting list.</p> </li> <li> <p> <code>Failed</code>: Include failed deployments in the resulting list.</p> </li> <li> <p> <code>Stopped</code>: Include stopped deployments in the resulting list.</p> </li> </ul>"
+        }
+      ]
+    },
+    "createTimeRange": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeRange"
+        },
+        {
+          "description": "A time range (start and end) for returning a subset of the list of deployments."
+        }
+      ]
+    },
+    "nextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextToken"
+        },
+        {
+          "description": "An identifier returned from the previous list deployments call. It can be used to return the next set of deployments in the list."
+        }
+      ]
+    }
+  }
+}

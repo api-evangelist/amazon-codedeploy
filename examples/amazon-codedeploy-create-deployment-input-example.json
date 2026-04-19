@@ -1,0 +1,10 @@
+{
+  "applicationName": "example-resource",
+  "deploymentGroupName": "example-resource",
+  "revision": "example-value",
+  "deploymentConfigName": "example-resource",
+  "description": "Example description",
+  "ignoreApplicationStopFailures": "example-value",
+  "targetInstances": "example-value",
+  "autoRollbackConfiguration": "example-value"
+}

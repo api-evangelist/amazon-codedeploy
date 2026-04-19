@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-deployment-status-structure.json",
+  "name": "DeploymentStatus",
+  "description": "DeploymentStatus schema from Amazon CodeDeploy",
+  "type": "string",
+  "enum": [
+    "Created",
+    "Queued",
+    "InProgress",
+    "Baking",
+    "Succeeded",
+    "Failed",
+    "Stopped",
+    "Ready"
+  ]
+}

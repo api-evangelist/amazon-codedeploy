@@ -1,0 +1,9 @@
+{
+  "application": {
+    "applicationId": "500123",
+    "applicationName": "example-resource",
+    "computePlatform": "example-value",
+    "createTime": "example-value",
+    "linkedToGitHub": true
+  }
+}

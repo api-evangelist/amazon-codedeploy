@@ -1,0 +1,5 @@
+{
+  "terminateBlueInstancesOnDeploymentSuccess": "example-value",
+  "deploymentReadyOption": "example-value",
+  "greenFleetProvisioningOption": "example-value"
+}

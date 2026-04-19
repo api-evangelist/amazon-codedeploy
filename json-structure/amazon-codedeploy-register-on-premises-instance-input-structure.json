@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-register-on-premises-instance-input-structure.json",
+  "name": "RegisterOnPremisesInstanceInput",
+  "description": "Represents the input of the register on-premises instance operation.",
+  "type": "object",
+  "properties": {
+    "instanceName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InstanceName"
+        },
+        {
+          "description": "The name of the on-premises instance to register."
+        }
+      ]
+    },
+    "iamSessionArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IamSessionArn"
+        },
+        {
+          "description": "The ARN of the IAM session to associate with the on-premises instance."
+        }
+      ]
+    },
+    "iamUserArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IamUserArn"
+        },
+        {
+          "description": "The ARN of the IAM user to associate with the on-premises instance."
+        }
+      ]
+    }
+  },
+  "required": [
+    "instanceName"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-invalid-file-exists-behavior-exception-structure.json",
+  "name": "InvalidFileExistsBehaviorException",
+  "description": "InvalidFileExistsBehaviorException schema from Amazon CodeDeploy"
+}

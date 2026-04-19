@@ -1,0 +1,5 @@
+{
+  "enabled": "example-value",
+  "ignorePollAlarmFailure": "example-value",
+  "alarms": "example-value"
+}

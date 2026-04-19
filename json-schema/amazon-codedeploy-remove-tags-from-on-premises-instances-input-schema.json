@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-remove-tags-from-on-premises-instances-input-schema.json",
+  "title": "RemoveTagsFromOnPremisesInstancesInput",
+  "description": "Represents the input of a <code>RemoveTagsFromOnPremisesInstances</code> operation.",
+  "type": "object",
+  "properties": {
+    "tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagList"
+        },
+        {
+          "description": "The tag key-value pairs to remove from the on-premises instances."
+        }
+      ]
+    },
+    "instanceNames": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InstanceNameList"
+        },
+        {
+          "description": "The names of the on-premises instances from which to remove tags."
+        }
+      ]
+    }
+  },
+  "required": [
+    "tags",
+    "instanceNames"
+  ]
+}

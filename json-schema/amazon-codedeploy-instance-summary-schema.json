@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-instance-summary-schema.json",
+  "title": "InstanceSummary",
+  "description": "Information about an instance in a deployment.InstanceSummary is deprecated, use DeploymentTarget instead.",
+  "type": "object",
+  "properties": {
+    "deploymentId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeploymentId"
+        },
+        {
+          "description": " The unique ID of a deployment. "
+        }
+      ]
+    },
+    "instanceId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InstanceId"
+        },
+        {
+          "description": "The instance ID."
+        }
+      ]
+    },
+    "status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InstanceStatus"
+        },
+        {
+          "description": "<p>The deployment status for this instance:</p> <ul> <li> <p> <code>Pending</code>: The deployment is pending for this instance.</p> </li> <li> <p> <code>In Progress</code>: The deployment is in progress for this instance.</p> </li> <li> <p> <code>Succeeded</code>: The deployment has succeeded for this instance.</p> </li> <li> <p> <code>Failed</code>: The deployment has failed for this instance.</p> </li> <li> <p> <code>Skipped</code>: The deployment has been skipped for this instance.</p> </li> <li> <p> <code>Unknown</code>: The deployment status is unknown for this instance.</p> </li> </ul>"
+        }
+      ]
+    },
+    "lastUpdatedAt": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "A timestamp that indicates when the instance information was last updated."
+        }
+      ]
+    },
+    "lifecycleEvents": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LifecycleEventList"
+        },
+        {
+          "description": "A list of lifecycle events for this instance."
+        }
+      ]
+    },
+    "instanceType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InstanceType"
+        },
+        {
+          "description": "<p>Information about which environment an instance belongs to in a blue/green deployment.</p> <ul> <li> <p>BLUE: The instance is part of the original environment.</p> </li> <li> <p>GREEN: The instance is part of the replacement environment.</p> </li> </ul>"
+        }
+      ]
+    }
+  },
+  "deprecated": true
+}

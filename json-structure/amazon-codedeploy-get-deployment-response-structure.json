@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-get-deployment-response-structure.json",
+  "name": "GetDeploymentResponse",
+  "description": "GetDeploymentResponse schema from Amazon CodeDeploy",
+  "type": "object",
+  "properties": {
+    "deploymentInfo": {
+      "type": "object",
+      "properties": {
+        "deploymentId": {
+          "type": "string"
+        },
+        "applicationName": {
+          "type": "string"
+        },
+        "deploymentGroupName": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "Created",
+            "Queued",
+            "InProgress",
+            "Baking",
+            "Succeeded",
+            "Failed",
+            "Stopped",
+            "Ready"
+          ]
+        },
+        "createTime": {
+          "type": "datetime"
+        },
+        "startTime": {
+          "type": "datetime"
+        },
+        "completeTime": {
+          "type": "datetime"
+        },
+        "description": {
+          "type": "string"
+        },
+        "creator": {
+          "type": "string"
+        },
+        "computePlatform": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

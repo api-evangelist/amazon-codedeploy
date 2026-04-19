@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-deployment-ready-action-structure.json",
+  "name": "DeploymentReadyAction",
+  "description": "DeploymentReadyAction schema from Amazon CodeDeploy",
+  "type": "string",
+  "enum": [
+    "CONTINUE_DEPLOYMENT",
+    "STOP_DEPLOYMENT"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-get-deployment-group-input-structure.json",
+  "name": "GetDeploymentGroupInput",
+  "description": "Represents the input of a <code>GetDeploymentGroup</code> operation.",
+  "type": "object",
+  "properties": {
+    "applicationName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ApplicationName"
+        },
+        {
+          "description": "The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account."
+        }
+      ]
+    },
+    "deploymentGroupName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeploymentGroupName"
+        },
+        {
+          "description": "The name of a deployment group for the specified application."
+        }
+      ]
+    }
+  },
+  "required": [
+    "applicationName",
+    "deploymentGroupName"
+  ]
+}

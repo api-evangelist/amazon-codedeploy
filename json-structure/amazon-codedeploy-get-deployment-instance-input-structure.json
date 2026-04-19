@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-get-deployment-instance-input-structure.json",
+  "name": "GetDeploymentInstanceInput",
+  "description": " Represents the input of a <code>GetDeploymentInstance</code> operation. ",
+  "type": "object",
+  "properties": {
+    "deploymentId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeploymentId"
+        },
+        {
+          "description": " The unique ID of a deployment. "
+        }
+      ]
+    },
+    "instanceId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InstanceId"
+        },
+        {
+          "description": " The unique ID of an instance in the deployment group. "
+        }
+      ]
+    }
+  },
+  "required": [
+    "deploymentId",
+    "instanceId"
+  ]
+}

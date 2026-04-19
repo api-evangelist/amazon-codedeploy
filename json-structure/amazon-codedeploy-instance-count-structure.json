@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-instance-count-structure.json",
+  "name": "InstanceCount",
+  "description": "InstanceCount schema from Amazon CodeDeploy",
+  "type": "int32"
+}

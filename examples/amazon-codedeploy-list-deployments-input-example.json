@@ -1,0 +1,8 @@
+{
+  "applicationName": "example-resource",
+  "deploymentGroupName": "example-resource",
+  "externalId": "500123",
+  "includeOnlyStatuses": "ACTIVE",
+  "createTimeRange": "example-value",
+  "nextToken": "example-value"
+}

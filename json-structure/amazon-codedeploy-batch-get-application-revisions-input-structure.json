@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-batch-get-application-revisions-input-structure.json",
+  "name": "BatchGetApplicationRevisionsInput",
+  "description": "Represents the input of a <code>BatchGetApplicationRevisions</code> operation.",
+  "type": "object",
+  "properties": {
+    "applicationName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ApplicationName"
+        },
+        {
+          "description": "The name of an CodeDeploy application about which to get revision information."
+        }
+      ]
+    },
+    "revisions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RevisionLocationList"
+        },
+        {
+          "description": "An array of <code>RevisionLocation</code> objects that specify information to get about the application revisions, including type and location. The maximum number of <code>RevisionLocation</code> objects you can specify is 25."
+        }
+      ]
+    }
+  },
+  "required": [
+    "applicationName",
+    "revisions"
+  ]
+}

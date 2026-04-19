@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-invalid-bucket-name-filter-exception-schema.json",
+  "title": "InvalidBucketNameFilterException",
+  "description": "InvalidBucketNameFilterException schema from Amazon CodeDeploy"
+}

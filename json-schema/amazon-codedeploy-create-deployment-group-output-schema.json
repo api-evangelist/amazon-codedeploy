@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-create-deployment-group-output-schema.json",
+  "title": "CreateDeploymentGroupOutput",
+  "description": "Represents the output of a <code>CreateDeploymentGroup</code> operation.",
+  "type": "object",
+  "properties": {
+    "deploymentGroupId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DeploymentGroupId"
+        },
+        {
+          "description": "A unique deployment group ID."
+        }
+      ]
+    }
+  }
+}

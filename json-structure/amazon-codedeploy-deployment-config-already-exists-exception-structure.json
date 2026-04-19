@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-deployment-config-already-exists-exception-structure.json",
+  "name": "DeploymentConfigAlreadyExistsException",
+  "description": "DeploymentConfigAlreadyExistsException schema from Amazon CodeDeploy"
+}

@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-application-info-structure.json",
+  "name": "ApplicationInfo",
+  "description": "Information about an application.",
+  "type": "object",
+  "properties": {
+    "applicationId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ApplicationId"
+        },
+        {
+          "description": "The application ID."
+        }
+      ]
+    },
+    "applicationName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ApplicationName"
+        },
+        {
+          "description": "The application name."
+        }
+      ]
+    },
+    "createTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The time at which the application was created."
+        }
+      ]
+    },
+    "linkedToGitHub": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Boolean"
+        },
+        {
+          "description": "True if the user has authenticated with GitHub for the specified application. Otherwise, false."
+        }
+      ]
+    },
+    "gitHubAccountName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GitHubAccountTokenName"
+        },
+        {
+          "description": "The name for a connection to a GitHub account."
+        }
+      ]
+    },
+    "computePlatform": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ComputePlatform"
+        },
+        {
+          "description": "The destination platform type for deployment of the application (<code>Lambda</code> or <code>Server</code>)."
+        }
+      ]
+    }
+  }
+}

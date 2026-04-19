@@ -1,0 +1,23 @@
+{
+  "applicationName": "example-resource",
+  "deploymentGroupName": "example-resource",
+  "revision": {
+    "revisionType": "S3",
+    "s3Location": {
+      "bucket": "example-value",
+      "key": "example-value",
+      "bundleType": "tar"
+    },
+    "gitHubLocation": {
+      "repository": "example-value",
+      "commitId": "500123"
+    }
+  },
+  "description": "Example description",
+  "autoRollbackConfiguration": {
+    "enabled": true,
+    "events": [
+      "DEPLOYMENT_FAILURE"
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-structure/amazon-codedeploy-auto-scaling-group-name-list-structure.json",
+  "name": "AutoScalingGroupNameList",
+  "description": "AutoScalingGroupNameList schema from Amazon CodeDeploy",
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/AutoScalingGroupName"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/json-schema/amazon-codedeploy-put-lifecycle-event-hook-execution-status-output-schema.json",
+  "title": "PutLifecycleEventHookExecutionStatusOutput",
+  "description": "PutLifecycleEventHookExecutionStatusOutput schema from Amazon CodeDeploy",
+  "type": "object",
+  "properties": {
+    "lifecycleEventHookExecutionId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LifecycleEventHookExecutionId"
+        },
+        {
+          "description": "The execution ID of the lifecycle event hook. A hook is specified in the <code>hooks</code> section of the deployment's AppSpec file."
+        }
+      ]
+    }
+  }
+}
