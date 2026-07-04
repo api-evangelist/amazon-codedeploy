@@ -1,0 +1,25 @@
+generated: '2026-06-20'
+method: searched
+source: probed /.well-known/ discovery surface on the API host and provider host
+hosts:
+  - host: https://codedeploy.us-east-1.amazonaws.com
+    note: >-
+      Regional CodeDeploy API endpoint (AWS Signature V4 / JSON protocol); no
+      /.well-known/ discovery documents are published.
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+  - host: https://aws.amazon.com
+    note: AWS provider/portal host publishes an RFC 9116 security.txt.
+    documents:
+      - path: /.well-known/security.txt
+        status: 200
+        file: amazon-codedeploy-security.txt

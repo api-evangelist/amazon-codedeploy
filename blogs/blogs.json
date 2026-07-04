@@ -1,0 +1,6 @@
+{
+  "repo": "amazon-codedeploy",
+  "feeds": [ { "source": "https://aws.amazon.com/blogs/devops/tag/aws-codedeploy/feed/", "feed_url": "https://aws.amazon.com/blogs/devops/tag/aws-codedeploy/feed/", "title": "AWS CodeDeploy – AWS DevOps & Developer Productivity Blog", "saved": 12 } ],
+  "fetched": "2026-07-04T13:39:37Z",
+  "post_count": 12
+}

@@ -1,0 +1,71 @@
+generated: '2026-06-20'
+method: searched
+source: >-
+  AWS SDK client libraries verified on public package registries; CodeDeploy is
+  covered by the unified AWS SDKs (per-language) and the AWS CLI.
+packages:
+  - language: javascript
+    registry: npm
+    name: "@aws-sdk/client-codedeploy"
+    url: https://www.npmjs.com/package/@aws-sdk/client-codedeploy
+    install: npm install @aws-sdk/client-codedeploy
+    official: true
+    status: 200
+  - language: python
+    registry: pypi
+    name: boto3
+    url: https://pypi.org/project/boto3/
+    install: pip install boto3
+    official: true
+    status: 200
+    note: CodeDeploy client is provided via boto3/botocore ("codedeploy" service).
+  - language: java
+    registry: maven
+    name: software.amazon.awssdk:codedeploy
+    url: https://central.sonatype.com/artifact/software.amazon.awssdk/codedeploy
+    install: >-
+      implementation 'software.amazon.awssdk:codedeploy'
+    official: true
+    status: 200
+  - language: dotnet
+    registry: nuget
+    name: AWSSDK.CodeDeploy
+    url: https://www.nuget.org/packages/AWSSDK.CodeDeploy/
+    install: dotnet add package AWSSDK.CodeDeploy
+    official: true
+    status: 200
+  - language: go
+    registry: pkg.go.dev
+    name: github.com/aws/aws-sdk-go-v2/service/codedeploy
+    url: https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/codedeploy
+    install: go get github.com/aws/aws-sdk-go-v2/service/codedeploy
+    official: true
+    status: 200
+  - language: ruby
+    registry: rubygems
+    name: aws-sdk-codedeploy
+    url: https://rubygems.org/gems/aws-sdk-codedeploy
+    install: gem install aws-sdk-codedeploy
+    official: true
+    status: 200
+  - language: php
+    registry: packagist
+    name: aws/aws-sdk-php
+    url: https://packagist.org/packages/aws/aws-sdk-php
+    install: composer require aws/aws-sdk-php
+    official: true
+    status: 200
+    note: CodeDeploy client is provided via the monolithic aws/aws-sdk-php package.
+  - language: rust
+    registry: crates.io
+    name: aws-sdk-codedeploy
+    url: https://crates.io/crates/aws-sdk-codedeploy
+    install: cargo add aws-sdk-codedeploy
+    official: true
+    status: 200
+  - language: cli
+    registry: other
+    name: aws-cli (codedeploy)
+    url: https://docs.aws.amazon.com/cli/latest/reference/deploy/
+    install: aws deploy help
+    official: true

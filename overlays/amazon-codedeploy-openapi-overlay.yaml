@@ -1,0 +1,39 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Amazon CodeDeploy API
+  version: 1.0.0
+extends: openapi/amazon-codedeploy-openapi.yml
+x-provenance:
+  generated: '2026-06-20'
+  method: generated
+  source: >-
+    Captures API Evangelist enrichment applied on top of the harvested AWS
+    CodeDeploy OpenAPI (openapi/amazon-codedeploy-openapi-original.yaml).
+actions:
+  - target: $.info
+    description: Tag the spec with the API Evangelist quality signal and catalog identity.
+    update:
+      x-apievangelist-rating: 4
+      x-apievangelist-slug: amazon-codedeploy
+      x-api-provider: Amazon Web Services
+  - target: $.externalDocs
+    description: Point external docs at the canonical CodeDeploy API Reference.
+    update:
+      description: Amazon CodeDeploy API Reference
+      url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/
+  - target: $.tags
+    description: Ensure human-friendly resource groupings are present.
+    update:
+      - name: Applications
+        description: Operations for creating and managing CodeDeploy applications
+      - name: Deployments
+        description: Operations for creating and monitoring deployments
+  - target: $.servers
+    description: Express the regional endpoint as a templated server variable.
+    update:
+      - url: https://codedeploy.{region}.amazonaws.com
+        description: Amazon CodeDeploy Regional Endpoint
+        variables:
+          region:
+            default: us-east-1
+            description: AWS Region

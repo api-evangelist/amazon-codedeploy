@@ -1,0 +1,42 @@
+generated: '2026-06-20'
+method: derived
+source: >-
+  Derived from openapi/amazon-codedeploy-openapi.yml and AWS CodeDeploy API
+  Reference (Common Parameters / Common Errors). CodeDeploy is an AWS query/JSON
+  service authenticated with AWS Signature Version 4.
+standards:
+  - id: aws-sigv4
+    conforms: true
+    evidence: >-
+      AWS Signature Version 4 request signing (X-Amz-* / Authorization headers)
+      documented in CommonParameters; requests target codedeploy.{region}.amazonaws.com.
+  - id: oauth2
+    conforms: false
+    evidence: No OAuth2 security scheme; auth is AWS SigV4.
+  - id: oidc
+    conforms: false
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: >-
+      Errors are AWS service exception shapes (JSON body with a "message" field and
+      x-amzn-ErrorType header), not application/problem+json.
+  - id: pagination
+    conforms: true
+    evidence: >-
+      List operations use nextToken / NextToken cursor pagination (see
+      ListApplications, ListDeployments).
+  - id: idempotency
+    conforms: false
+    evidence: No Idempotency-Key header convention documented.
+  - id: fhir-r4
+    conforms: false
+  - id: fapi
+    conforms: false
+  - id: scim
+    conforms: false
+  - id: odata
+    conforms: false
+  - id: psd2
+    conforms: false
+  - id: json-api
+    conforms: false

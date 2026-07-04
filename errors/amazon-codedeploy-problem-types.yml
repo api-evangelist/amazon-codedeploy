@@ -1,0 +1,67 @@
+generated: '2026-06-20'
+method: derived
+format: aws-exception
+source: >-
+  Derived from 4xx/5xx responses in openapi/amazon-codedeploy-openapi.yml. AWS
+  CodeDeploy does not use RFC 9457 problem+json; errors are returned as JSON
+  service-exception shapes with a "message" field and an x-amzn-ErrorType header.
+  Titles/remediation enriched from the CodeDeploy API Reference Common Errors page
+  (https://docs.aws.amazon.com/codedeploy/latest/APIReference/CommonErrors.html).
+problems:
+  - status: 400
+    type: InvalidApplicationNameException
+    title: The application name was specified in an invalid format.
+    remediation: Supply an application name of 1-100 characters using allowed characters.
+    source_operations:
+      - openapi/amazon-codedeploy-openapi.yml#CreateApplication
+      - openapi/amazon-codedeploy-openapi.yml#GetApplication
+      - openapi/amazon-codedeploy-openapi.yml#DeleteApplication
+      - openapi/amazon-codedeploy-openapi.yml#ListDeployments
+  - status: 400
+    type: InvalidNextTokenException
+    title: The next token was specified in an invalid format.
+    remediation: Pass the nextToken value returned by the previous list call unmodified.
+    source_operations:
+      - openapi/amazon-codedeploy-openapi.yml#ListApplications
+  - status: 400
+    type: InvalidDeploymentGroupNameException
+    title: The deployment group name was specified in an invalid format.
+    remediation: Provide a valid deployment group name for the application.
+    source_operations:
+      - openapi/amazon-codedeploy-openapi.yml#CreateDeployment
+  - status: 400
+    type: InvalidDeploymentIdException
+    title: At least one of the deployment IDs was specified in an invalid format.
+    remediation: Provide a valid deployment ID.
+    source_operations:
+      - openapi/amazon-codedeploy-openapi.yml#GetDeployment
+  - status: 404
+    type: ApplicationDoesNotExistException
+    title: The application does not exist with the applicable IAM user or AWS account.
+    remediation: Create the application or verify the name and account/region.
+    source_operations:
+      - openapi/amazon-codedeploy-openapi.yml#GetApplication
+  - status: 404
+    type: DeploymentDoesNotExistException
+    title: The deployment with the IAM user or AWS account does not exist.
+    remediation: Verify the deployment ID exists in the specified account and region.
+    source_operations:
+      - openapi/amazon-codedeploy-openapi.yml#GetDeployment
+  - status: 409
+    type: ApplicationAlreadyExistsException
+    title: An application with the specified name with the IAM user or AWS account already exists.
+    remediation: Choose a unique application name or update the existing application.
+    source_operations:
+      - openapi/amazon-codedeploy-openapi.yml#CreateApplication
+  - status: 500
+    type: InternalServerException
+    title: There was an internal error in AWS CodeDeploy.
+    remediation: Retry the request with exponential backoff; if it persists, contact AWS Support.
+    source_operations:
+      - openapi/amazon-codedeploy-openapi.yml#CreateApplication
+      - openapi/amazon-codedeploy-openapi.yml#ListApplications
+      - openapi/amazon-codedeploy-openapi.yml#GetApplication
+      - openapi/amazon-codedeploy-openapi.yml#DeleteApplication
+      - openapi/amazon-codedeploy-openapi.yml#CreateDeployment
+      - openapi/amazon-codedeploy-openapi.yml#ListDeployments
+      - openapi/amazon-codedeploy-openapi.yml#GetDeployment

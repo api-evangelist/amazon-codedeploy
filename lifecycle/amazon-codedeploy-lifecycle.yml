@@ -1,0 +1,25 @@
+generated: '2026-06-20'
+method: searched
+source: >-
+  AWS CodeDeploy API Reference (API version date), AWS documentation and the AWS
+  Health status page. CodeDeploy uses a date-stamped API version (2014-10-06) and
+  the standard AWS SDK/CLI versioning model rather than URI-path API versions.
+versioning:
+  scheme: date-version
+  current: '2014-10-06'
+  docs: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  note: >-
+    API version is fixed in the service model; consumers pin behavior through the
+    versioned AWS SDKs rather than a versioned URL path.
+deprecation:
+  policy_url: https://docs.aws.amazon.com/codedeploy/latest/userguide/history.html
+  sunset_header: false
+  deprecation_header: false
+  note: >-
+    CodeDeploy communicates changes via the AWS "Document history" page; RFC 8594
+    Sunset/Deprecation response headers are not used.
+sla:
+  url: https://aws.amazon.com/codedeploy/sla/
+  uptime_target: "99.9%"
+status_page: https://health.aws.amazon.com/health/status
+deprecated_operations: []

@@ -1,0 +1,117 @@
+# AWS CodeDeploy API Reference
+
+> AWS CodeDeploy is a deployment service that automates application deployments to Amazon EC2 instances, on-premises instances running in your own facility, serverless AWS Lambda functions, or applications in an Amazon ECS service.
+
+- [Welcome](https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.md)
+- [Common Parameters](https://docs.aws.amazon.com/codedeploy/latest/APIReference/CommonParameters.md)
+- [Common Error Types](https://docs.aws.amazon.com/codedeploy/latest/APIReference/CommonErrors.md)
+
+## [Actions](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_Operations.md)
+
+- [AddTagsToOnPremisesInstances](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_AddTagsToOnPremisesInstances.md): Adds tags to on-premises instances.
+- [BatchGetApplicationRevisions](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_BatchGetApplicationRevisions.md): Gets information about one or more application revisions.
+- [BatchGetApplications](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_BatchGetApplications.md): Gets information about one or more applications.
+- [BatchGetDeploymentGroups](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_BatchGetDeploymentGroups.md): Gets information about one or more deployment groups.
+- [BatchGetDeploymentInstances](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_BatchGetDeploymentInstances.md)
+- [BatchGetDeployments](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_BatchGetDeployments.md): Gets information about one or more deployments.
+- [BatchGetDeploymentTargets](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_BatchGetDeploymentTargets.md): Returns an array of one or more targets associated with a deployment.
+- [BatchGetOnPremisesInstances](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_BatchGetOnPremisesInstances.md): Gets information about one or more on-premises instances.
+- [ContinueDeployment](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ContinueDeployment.md): For a blue/green deployment, starts the process of rerouting traffic from instances in the original environment to instances in the replacement environment without waiting for a specified wait time to elapse. (Traffic rerouting, which is achieved by registering instances in the replacement environment with the load balancer, can start as soon as all instances have a status of Ready.)
+- [CreateApplication](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateApplication.md): Creates an application.
+- [CreateDeployment](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.md): Deploys an application revision through the specified deployment group.
+- [CreateDeploymentConfig](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeploymentConfig.md): Creates a deployment configuration.
+- [CreateDeploymentGroup](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeploymentGroup.md): Creates a deployment group to which application revisions are deployed.
+- [DeleteApplication](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_DeleteApplication.md): Deletes an application.
+- [DeleteDeploymentConfig](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_DeleteDeploymentConfig.md): Deletes a deployment configuration.
+- [DeleteDeploymentGroup](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_DeleteDeploymentGroup.md): Deletes a deployment group.
+- [DeleteGitHubAccountToken](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_DeleteGitHubAccountToken.md): Deletes a GitHub account connection.
+- [DeleteResourcesByExternalId](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_DeleteResourcesByExternalId.md): Deletes resources linked to an external ID.
+- [DeregisterOnPremisesInstance](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_DeregisterOnPremisesInstance.md): Deregisters an on-premises instance.
+- [GetApplication](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_GetApplication.md): Gets information about an application.
+- [GetApplicationRevision](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_GetApplicationRevision.md): Gets information about an application revision.
+- [GetDeployment](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_GetDeployment.md): Gets information about a deployment.
+- [GetDeploymentConfig](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_GetDeploymentConfig.md): Gets information about a deployment configuration.
+- [GetDeploymentGroup](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_GetDeploymentGroup.md): Gets information about a deployment group.
+- [GetDeploymentInstance](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_GetDeploymentInstance.md): Gets information about an instance as part of a deployment.
+- [GetDeploymentTarget](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_GetDeploymentTarget.md): Returns information about a deployment target.
+- [GetOnPremisesInstance](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_GetOnPremisesInstance.md): Gets information about an on-premises instance.
+- [ListApplicationRevisions](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ListApplicationRevisions.md): Lists information about revisions for an application.
+- [ListApplications](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ListApplications.md): Lists the applications registered with the user or AWS account.
+- [ListDeploymentConfigs](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ListDeploymentConfigs.md): Lists the deployment configurations with the user or AWS account.
+- [ListDeploymentGroups](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ListDeploymentGroups.md): Lists the deployment groups for an application registered with the AWS user or AWS account.
+- [ListDeploymentInstances](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ListDeploymentInstances.md)
+- [ListDeployments](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ListDeployments.md): Lists the deployments in a deployment group for an application registered with the user or AWS account.
+- [ListDeploymentTargets](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ListDeploymentTargets.md): Returns an array of target IDs that are associated a deployment.
+- [ListGitHubAccountTokenNames](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ListGitHubAccountTokenNames.md): Lists the names of stored connections to GitHub accounts.
+- [ListOnPremisesInstances](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ListOnPremisesInstances.md): Gets a list of names for one or more on-premises instances.
+- [ListTagsForResource](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ListTagsForResource.md): Returns a list of tags for the resource identified by a specified Amazon Resource Name (ARN).
+- [PutLifecycleEventHookExecutionStatus](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_PutLifecycleEventHookExecutionStatus.md): Sets the result of a Lambda validation function.
+- [RegisterApplicationRevision](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_RegisterApplicationRevision.md): Registers with AWS CodeDeploy a revision for the specified application.
+- [RegisterOnPremisesInstance](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_RegisterOnPremisesInstance.md): Registers an on-premises instance.
+- [RemoveTagsFromOnPremisesInstances](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_RemoveTagsFromOnPremisesInstances.md): Removes one or more tags from one or more on-premises instances.
+- [SkipWaitTimeForInstanceTermination](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_SkipWaitTimeForInstanceTermination.md): In a blue/green deployment, overrides any specified wait time and starts terminating instances immediately after the traffic routing is complete.
+- [StopDeployment](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_StopDeployment.md): Attempts to stop an ongoing deployment.
+- [TagResource](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_TagResource.md): Associates the list of tags in the input Tags parameter with the resource identified by the ResourceArn input parameter.
+- [UntagResource](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_UntagResource.md): Disassociates a resource from a list of tags.
+- [UpdateApplication](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_UpdateApplication.md): Changes the name of an application.
+- [UpdateDeploymentGroup](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_UpdateDeploymentGroup.md): Changes information about a deployment group.
+
+
+## [Data Types](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_Types.md)
+
+- [Alarm](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_Alarm.md): Information about an alarm.
+- [AlarmConfiguration](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_AlarmConfiguration.md): Information about alarms associated with a deployment or deployment group.
+- [ApplicationInfo](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ApplicationInfo.md): Information about an application.
+- [AppSpecContent](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_AppSpecContent.md): A revision for an AWS Lambda or Amazon ECS deployment that is a YAML-formatted or JSON-formatted string.
+- [AutoRollbackConfiguration](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_AutoRollbackConfiguration.md): Information about a configuration for automatically rolling back to a previous version of an application revision when a deployment is not completed successfully.
+- [AutoScalingGroup](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_AutoScalingGroup.md): Information about an Auto Scaling group.
+- [BlueGreenDeploymentConfiguration](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_BlueGreenDeploymentConfiguration.md): Information about blue/green deployment options for a deployment group.
+- [BlueInstanceTerminationOption](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_BlueInstanceTerminationOption.md): Information about whether instances in the original environment are terminated when a blue/green deployment is successful.
+- [CloudFormationTarget](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CloudFormationTarget.md): Information about the target to be updated by an CloudFormation blue/green deployment.
+- [DeploymentConfigInfo](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_DeploymentConfigInfo.md): Information about a deployment configuration.
+- [DeploymentGroupInfo](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_DeploymentGroupInfo.md): Information about a deployment group.
+- [DeploymentInfo](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_DeploymentInfo.md): Information about a deployment.
+- [DeploymentOverview](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_DeploymentOverview.md): Information about the deployment status of the instances in the deployment.
+- [DeploymentReadyOption](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_DeploymentReadyOption.md): Information about how traffic is rerouted to instances in a replacement environment in a blue/green deployment.
+- [DeploymentStyle](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_DeploymentStyle.md): Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer.
+- [DeploymentTarget](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_DeploymentTarget.md): Information about the deployment target.
+- [Diagnostics](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_Diagnostics.md): Diagnostic information about executable scripts that are part of a deployment.
+- [EC2TagFilter](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_EC2TagFilter.md): Information about an EC2 tag filter.
+- [EC2TagSet](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_EC2TagSet.md): Information about groups of Amazon EC2 instance tags.
+- [ECSService](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ECSService.md): Contains the service and cluster names used to identify an Amazon ECS deployment's target.
+- [ECSTarget](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ECSTarget.md): Information about the target of an Amazon ECS deployment.
+- [ECSTaskSet](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ECSTaskSet.md): Information about a set of Amazon ECS tasks in an AWS CodeDeploy deployment.
+- [ELBInfo](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ELBInfo.md): Information about a Classic Load Balancer in Elastic Load Balancing to use in a deployment.
+- [ErrorInformation](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ErrorInformation.md): Information about a deployment error.
+- [GenericRevisionInfo](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_GenericRevisionInfo.md): Information about an application revision.
+- [GitHubLocation](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_GitHubLocation.md): Information about the location of application artifacts stored in GitHub.
+- [GreenFleetProvisioningOption](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_GreenFleetProvisioningOption.md): Information about the instances that belong to the replacement environment in a blue/green deployment.
+- [InstanceInfo](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_InstanceInfo.md): Information about an on-premises instance.
+- [InstanceSummary](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_InstanceSummary.md): This data type has been deprecated.
+- [InstanceTarget](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_InstanceTarget.md): A target Amazon EC2 or on-premises instance during a deployment that uses the EC2/On-premises compute platform.
+- [LambdaFunctionInfo](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_LambdaFunctionInfo.md): Information about a Lambda function specified in a deployment.
+- [LambdaTarget](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_LambdaTarget.md): Information about the target AWS Lambda function during an AWS Lambda deployment.
+- [LastDeploymentInfo](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_LastDeploymentInfo.md): Information about the most recent attempted or successful deployment to a deployment group.
+- [LifecycleEvent](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_LifecycleEvent.md): Information about a deployment lifecycle event.
+- [LoadBalancerInfo](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_LoadBalancerInfo.md): Information about the Elastic Load Balancing load balancer or target group used in a deployment.
+- [MinimumHealthyHosts](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_MinimumHealthyHosts.md): Information about the minimum number of healthy instances.
+- [MinimumHealthyHostsPerZone](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_MinimumHealthyHostsPerZone.md): Information about the minimum number of healthy instances per Availability Zone.
+- [OnPremisesTagSet](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_OnPremisesTagSet.md): Information about groups of on-premises instance tags.
+- [RawString](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_RawString.md): This data type has been deprecated.
+- [RelatedDeployments](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_RelatedDeployments.md): Information about deployments related to the specified deployment.
+- [RevisionInfo](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_RevisionInfo.md): Information about an application revision.
+- [RevisionLocation](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_RevisionLocation.md): Information about the location of an application revision.
+- [RollbackInfo](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_RollbackInfo.md): Information about a deployment rollback.
+- [S3Location](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_S3Location.md): Information about the location of application artifacts stored in Amazon S3.
+- [Tag](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_Tag.md): Information about a tag.
+- [TagFilter](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_TagFilter.md): Information about an on-premises instance tag filter.
+- [TargetGroupInfo](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_TargetGroupInfo.md): Information about a target group in Elastic Load Balancing to use in a deployment.
+- [TargetGroupPairInfo](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_TargetGroupPairInfo.md): Information about two target groups and how traffic is routed during an Amazon ECS deployment.
+- [TargetInstances](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_TargetInstances.md): Information about the instances to be used in the replacement environment in a blue/green deployment.
+- [TimeBasedCanary](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_TimeBasedCanary.md): A configuration that shifts traffic from one version of a Lambda function or Amazon ECS task set to another in two increments.
+- [TimeBasedLinear](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_TimeBasedLinear.md): A configuration that shifts traffic from one version of a Lambda function or ECS task set to another in equal increments, with an equal number of minutes between each increment.
+- [TimeRange](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_TimeRange.md): Information about a time range.
+- [TrafficRoute](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_TrafficRoute.md): Information about a listener.
+- [TrafficRoutingConfig](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_TrafficRoutingConfig.md): The configuration that specifies how traffic is shifted from one version of a Lambda function to another version during an AWS Lambda deployment, or from one Amazon ECS task set to another during an Amazon ECS deployment.
+- [TriggerConfig](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_TriggerConfig.md): Information about notification triggers for the deployment group.
+- [ZonalConfig](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_ZonalConfig.md): Configure the ZonalConfig object if you want AWS CodeDeploy to deploy your application to one Availability Zone at a time, within an AWS Region.
