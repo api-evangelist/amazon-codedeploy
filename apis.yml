@@ -43,6 +43,14 @@ apis:
       - type: OpenAPI
         url: openapi/amazon-codedeploy-openapi-original.yaml
 common:
+  - type: TrustCenter
+    url: security/amazon-codedeploy-trust-center.yml
+  - type: VulnerabilityDisclosure
+    url: security/amazon-codedeploy-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/amazon-codedeploy-domain-security.yml
+  - type: Authentication
+    url: authentication/amazon-codedeploy-authentication.yml
   - type: GettingStarted
     url: https://docs.aws.amazon.com/codedeploy/latest/userguide/getting-started-codedeploy.html
   - type: Authentication
