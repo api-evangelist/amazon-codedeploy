@@ -43,6 +43,8 @@ apis:
       - type: OpenAPI
         url: openapi/amazon-codedeploy-openapi-original.yaml
 common:
+  - type: AgenticAccess
+    url: agentic-access/amazon-codedeploy-agentic-access.yml
   - type: TrustCenter
     url: security/amazon-codedeploy-trust-center.yml
   - type: VulnerabilityDisclosure
