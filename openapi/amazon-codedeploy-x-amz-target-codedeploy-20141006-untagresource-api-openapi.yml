@@ -1,0 +1,347 @@
+openapi: 3.0.0
+info:
+  version: '2014-10-06'
+  x-release: v4
+  title: 'AWS CodeDeploy Applications #X Amz Target=CodeDeploy 20141006.UntagResource API'
+  description: '<p>CodeDeploy is a deployment service that automates application deployments to Amazon EC2 instances, on-premises instances running in your own facility, serverless Lambda functions, or applications in an Amazon ECS service.</p> <p>You can deploy a nearly unlimited variety of application content, such as an updated Lambda function, updated applications in an Amazon ECS service, code, web and configuration files, executables, packages, scripts, multimedia files, and so on. CodeDeploy can deploy application content stored in Amazon S3 buckets, GitHub repositories, or Bitbucket repositories. You do not need to make changes to your existing code before you can use CodeDeploy.</p> <p>CodeDeploy makes it easier for you to rapidly release new features, helps you avoid downtime during application deployment, and handles the complexity of updating your applications, without many of the risks associated with error-prone manual deployments.</p> <p> <b>CodeDeploy Components</b> </p> <p>Use the information in this guide to help you work with the following CodeDeploy components:</p> <ul> <li> <p> <b>Application</b>: A name that uniquely identifies the application you want to deploy. CodeDeploy uses this name, which functions as a container, to ensure the correct combination of revision, deployment configuration, and deployment group are referenced during a deployment.</p> </li> <li> <p> <b>Deployment group</b>: A set of individual instances, CodeDeploy Lambda deployment configuration settings, or an Amazon ECS service and network details. A Lambda deployment group specifies how to route traffic to a new version of a Lambda function. An Amazon ECS deployment group specifies the service created in Amazon ECS to deploy, a load balancer, and a listener to reroute production traffic to an updated containerized application. An Amazon EC2/On-premises deployment group contains individually tagged instances, Amazon EC2 instances in Amazon EC2 Auto Scaling groups, or both. All deployment groups can specify optional trigger, alarm, and rollback settings.</p> </li> <li> <p> <b>Deployment configuration</b>: A set of deployment rules and deployment success and failure conditions used by CodeDeploy during a deployment.</p> </li> <li> <p> <b>Deployment</b>: The process and the components used when updating a Lambda function, a containerized application in an Amazon ECS service, or of installing content on one or more instances. </p> </li> <li> <p> <b>Application revisions</b>: For an Lambda deployment, this is an AppSpec file that specifies the Lambda function to be updated and one or more functions to validate deployment lifecycle events. For an Amazon ECS deployment, this is an AppSpec file that specifies the Amazon ECS task definition, container, and port where production traffic is rerouted. For an EC2/On-premises deployment, this is an archive file that contains source content—source code, webpages, executable files, and deployment scripts—along with an AppSpec file. Revisions are stored in Amazon S3 buckets or GitHub repositories. For Amazon S3, a revision is uniquely identified by its Amazon S3 object key and its ETag, version, or both. For GitHub, a revision is uniquely identified by its commit ID.</p> </li> </ul> <p>This guide also contains information to help you get details about the instances in your deployments, to make on-premises instances available for CodeDeploy deployments, to get details about a Lambda function deployment, and to get details about Amazon ECS service deployments.</p> <p> <b>CodeDeploy Information Resources</b> </p> <ul> <li> <p> <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">CodeDeploy User Guide</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/">CodeDeploy API Reference Guide</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/cli/latest/reference/deploy/index.html">CLI Reference for CodeDeploy</a> </p> </li> <li> <p> <a href="https://forums.aws.amazon.com/forum.jspa?forumID=179">CodeDeploy Developer Forum</a> </p> </li> </ul>'
+  x-logo:
+    url: https://twitter.com/awscloud/profile_image?size=original
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: codedeploy
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/codedeploy-2014-10-06.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://codedeploy.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The CodeDeploy multi-region endpoint
+- url: https://codedeploy.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The CodeDeploy multi-region endpoint
+- url: http://codedeploy.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The CodeDeploy endpoint for China (Beijing) and China (Ningxia)
+- url: https://codedeploy.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The CodeDeploy endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#X Amz Target=CodeDeploy 20141006.UntagResource'
+paths:
+  /#X-Amz-Target=CodeDeploy_20141006.UntagResource:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: UntagResource
+      description: ' Disassociates a resource from a list of tags. The resource is identified by the <code>ResourceArn</code> input parameter. The tags are identified by the list of keys in the <code>TagKeys</code> input parameter. '
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UntagResourceOutput'
+              examples:
+                UntagResource200Example:
+                  summary: Default UntagResource 200 response
+                  x-microcks-default: true
+                  value: {}
+        '480':
+          description: ResourceArnRequiredException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceArnRequiredException'
+              examples:
+                UntagResource480Example:
+                  summary: Default UntagResource 480 response
+                  x-microcks-default: true
+                  value: example-value
+        '481':
+          description: ApplicationDoesNotExistException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApplicationDoesNotExistException'
+              examples:
+                UntagResource481Example:
+                  summary: Default UntagResource 481 response
+                  x-microcks-default: true
+                  value: example-value
+        '482':
+          description: DeploymentGroupDoesNotExistException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeploymentGroupDoesNotExistException'
+              examples:
+                UntagResource482Example:
+                  summary: Default UntagResource 482 response
+                  x-microcks-default: true
+                  value: example-value
+        '483':
+          description: DeploymentConfigDoesNotExistException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeploymentConfigDoesNotExistException'
+              examples:
+                UntagResource483Example:
+                  summary: Default UntagResource 483 response
+                  x-microcks-default: true
+                  value: example-value
+        '484':
+          description: TagRequiredException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TagRequiredException'
+              examples:
+                UntagResource484Example:
+                  summary: Default UntagResource 484 response
+                  x-microcks-default: true
+                  value: example-value
+        '485':
+          description: InvalidTagsToAddException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidTagsToAddException'
+              examples:
+                UntagResource485Example:
+                  summary: Default UntagResource 485 response
+                  x-microcks-default: true
+                  value: example-value
+        '486':
+          description: ArnNotSupportedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ArnNotSupportedException'
+              examples:
+                UntagResource486Example:
+                  summary: Default UntagResource 486 response
+                  x-microcks-default: true
+                  value: example-value
+        '487':
+          description: InvalidArnException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidArnException'
+              examples:
+                UntagResource487Example:
+                  summary: Default UntagResource 487 response
+                  x-microcks-default: true
+                  value: example-value
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UntagResourceInput'
+            examples:
+              UntagResourceRequestExample:
+                summary: Default UntagResource request
+                x-microcks-default: true
+                value:
+                  ResourceArn: arn:aws:service:us-east-1:123456789012:resource/example
+                  TagKeys: example-value
+      parameters:
+      - name: X-Amz-Target
+        in: header
+        required: true
+        schema:
+          type: string
+          enum:
+          - CodeDeploy_20141006.UntagResource
+      summary: Amazon CodeDeploy Untag Resource
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#X Amz Target=CodeDeploy 20141006.UntagResource'
+components:
+  schemas:
+    UntagResourceOutput:
+      type: object
+      properties: {}
+    DeploymentGroupDoesNotExistException: {}
+    InvalidTagsToAddException: {}
+    TagKeyList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Key'
+    UntagResourceInput:
+      type: object
+      required:
+      - ResourceArn
+      - TagKeys
+      title: UntagResourceInput
+      properties:
+        ResourceArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: ' The Amazon Resource Name (ARN) that specifies from which resource to disassociate the tags with the keys in the <code>TagKeys</code> input parameter. '
+        TagKeys:
+          allOf:
+          - $ref: '#/components/schemas/TagKeyList'
+          - description: ' A list of keys of <code>Tag</code> objects. The <code>Tag</code> objects identified by the keys are disassociated from the resource specified by the <code>ResourceArn</code> input parameter. '
+    TagRequiredException: {}
+    Key:
+      type: string
+    ArnNotSupportedException: {}
+    InvalidArnException: {}
+    ResourceArnRequiredException: {}
+    DeploymentConfigDoesNotExistException: {}
+    ApplicationDoesNotExistException: {}
+    Arn:
+      type: string
+      minLength: 1
+      maxLength: 1011
+  parameters:
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/codedeploy/
+x-hasEquivalentPaths: true

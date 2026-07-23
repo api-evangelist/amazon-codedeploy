@@ -1,0 +1,1093 @@
+openapi: 3.0.0
+info:
+  version: '2014-10-06'
+  x-release: v4
+  title: 'AWS CodeDeploy Applications #X Amz Target=CodeDeploy 20141006.UpdateDeploymentGroup API'
+  description: '<p>CodeDeploy is a deployment service that automates application deployments to Amazon EC2 instances, on-premises instances running in your own facility, serverless Lambda functions, or applications in an Amazon ECS service.</p> <p>You can deploy a nearly unlimited variety of application content, such as an updated Lambda function, updated applications in an Amazon ECS service, code, web and configuration files, executables, packages, scripts, multimedia files, and so on. CodeDeploy can deploy application content stored in Amazon S3 buckets, GitHub repositories, or Bitbucket repositories. You do not need to make changes to your existing code before you can use CodeDeploy.</p> <p>CodeDeploy makes it easier for you to rapidly release new features, helps you avoid downtime during application deployment, and handles the complexity of updating your applications, without many of the risks associated with error-prone manual deployments.</p> <p> <b>CodeDeploy Components</b> </p> <p>Use the information in this guide to help you work with the following CodeDeploy components:</p> <ul> <li> <p> <b>Application</b>: A name that uniquely identifies the application you want to deploy. CodeDeploy uses this name, which functions as a container, to ensure the correct combination of revision, deployment configuration, and deployment group are referenced during a deployment.</p> </li> <li> <p> <b>Deployment group</b>: A set of individual instances, CodeDeploy Lambda deployment configuration settings, or an Amazon ECS service and network details. A Lambda deployment group specifies how to route traffic to a new version of a Lambda function. An Amazon ECS deployment group specifies the service created in Amazon ECS to deploy, a load balancer, and a listener to reroute production traffic to an updated containerized application. An Amazon EC2/On-premises deployment group contains individually tagged instances, Amazon EC2 instances in Amazon EC2 Auto Scaling groups, or both. All deployment groups can specify optional trigger, alarm, and rollback settings.</p> </li> <li> <p> <b>Deployment configuration</b>: A set of deployment rules and deployment success and failure conditions used by CodeDeploy during a deployment.</p> </li> <li> <p> <b>Deployment</b>: The process and the components used when updating a Lambda function, a containerized application in an Amazon ECS service, or of installing content on one or more instances. </p> </li> <li> <p> <b>Application revisions</b>: For an Lambda deployment, this is an AppSpec file that specifies the Lambda function to be updated and one or more functions to validate deployment lifecycle events. For an Amazon ECS deployment, this is an AppSpec file that specifies the Amazon ECS task definition, container, and port where production traffic is rerouted. For an EC2/On-premises deployment, this is an archive file that contains source content—source code, webpages, executable files, and deployment scripts—along with an AppSpec file. Revisions are stored in Amazon S3 buckets or GitHub repositories. For Amazon S3, a revision is uniquely identified by its Amazon S3 object key and its ETag, version, or both. For GitHub, a revision is uniquely identified by its commit ID.</p> </li> </ul> <p>This guide also contains information to help you get details about the instances in your deployments, to make on-premises instances available for CodeDeploy deployments, to get details about a Lambda function deployment, and to get details about Amazon ECS service deployments.</p> <p> <b>CodeDeploy Information Resources</b> </p> <ul> <li> <p> <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">CodeDeploy User Guide</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/">CodeDeploy API Reference Guide</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/cli/latest/reference/deploy/index.html">CLI Reference for CodeDeploy</a> </p> </li> <li> <p> <a href="https://forums.aws.amazon.com/forum.jspa?forumID=179">CodeDeploy Developer Forum</a> </p> </li> </ul>'
+  x-logo:
+    url: https://twitter.com/awscloud/profile_image?size=original
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: codedeploy
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/codedeploy-2014-10-06.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://codedeploy.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The CodeDeploy multi-region endpoint
+- url: https://codedeploy.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The CodeDeploy multi-region endpoint
+- url: http://codedeploy.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The CodeDeploy endpoint for China (Beijing) and China (Ningxia)
+- url: https://codedeploy.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The CodeDeploy endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#X Amz Target=CodeDeploy 20141006.UpdateDeploymentGroup'
+paths:
+  /#X-Amz-Target=CodeDeploy_20141006.UpdateDeploymentGroup:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: UpdateDeploymentGroup
+      description: Changes information about a deployment group.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateDeploymentGroupOutput'
+              examples:
+                UpdateDeploymentGroup200Example:
+                  summary: Default UpdateDeploymentGroup 200 response
+                  x-microcks-default: true
+                  value:
+                    hooksNotCleanedUp: example-value
+        '480':
+          description: ApplicationNameRequiredException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApplicationNameRequiredException'
+              examples:
+                UpdateDeploymentGroup480Example:
+                  summary: Default UpdateDeploymentGroup 480 response
+                  x-microcks-default: true
+                  value: example-value
+        '481':
+          description: InvalidApplicationNameException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidApplicationNameException'
+              examples:
+                UpdateDeploymentGroup481Example:
+                  summary: Default UpdateDeploymentGroup 481 response
+                  x-microcks-default: true
+                  value: example-value
+        '482':
+          description: ApplicationDoesNotExistException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApplicationDoesNotExistException'
+              examples:
+                UpdateDeploymentGroup482Example:
+                  summary: Default UpdateDeploymentGroup 482 response
+                  x-microcks-default: true
+                  value: example-value
+        '483':
+          description: InvalidDeploymentGroupNameException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidDeploymentGroupNameException'
+              examples:
+                UpdateDeploymentGroup483Example:
+                  summary: Default UpdateDeploymentGroup 483 response
+                  x-microcks-default: true
+                  value: example-value
+        '484':
+          description: DeploymentGroupAlreadyExistsException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeploymentGroupAlreadyExistsException'
+              examples:
+                UpdateDeploymentGroup484Example:
+                  summary: Default UpdateDeploymentGroup 484 response
+                  x-microcks-default: true
+                  value: example-value
+        '485':
+          description: DeploymentGroupNameRequiredException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeploymentGroupNameRequiredException'
+              examples:
+                UpdateDeploymentGroup485Example:
+                  summary: Default UpdateDeploymentGroup 485 response
+                  x-microcks-default: true
+                  value: example-value
+        '486':
+          description: DeploymentGroupDoesNotExistException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeploymentGroupDoesNotExistException'
+              examples:
+                UpdateDeploymentGroup486Example:
+                  summary: Default UpdateDeploymentGroup 486 response
+                  x-microcks-default: true
+                  value: example-value
+        '487':
+          description: InvalidEC2TagException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidEC2TagException'
+              examples:
+                UpdateDeploymentGroup487Example:
+                  summary: Default UpdateDeploymentGroup 487 response
+                  x-microcks-default: true
+                  value: example-value
+        '488':
+          description: InvalidTagException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidTagException'
+              examples:
+                UpdateDeploymentGroup488Example:
+                  summary: Default UpdateDeploymentGroup 488 response
+                  x-microcks-default: true
+                  value: example-value
+        '489':
+          description: InvalidAutoScalingGroupException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidAutoScalingGroupException'
+              examples:
+                UpdateDeploymentGroup489Example:
+                  summary: Default UpdateDeploymentGroup 489 response
+                  x-microcks-default: true
+                  value: example-value
+        '490':
+          description: InvalidDeploymentConfigNameException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidDeploymentConfigNameException'
+              examples:
+                UpdateDeploymentGroup490Example:
+                  summary: Default UpdateDeploymentGroup 490 response
+                  x-microcks-default: true
+                  value: example-value
+        '491':
+          description: DeploymentConfigDoesNotExistException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeploymentConfigDoesNotExistException'
+              examples:
+                UpdateDeploymentGroup491Example:
+                  summary: Default UpdateDeploymentGroup 491 response
+                  x-microcks-default: true
+                  value: example-value
+        '492':
+          description: InvalidRoleException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidRoleException'
+              examples:
+                UpdateDeploymentGroup492Example:
+                  summary: Default UpdateDeploymentGroup 492 response
+                  x-microcks-default: true
+                  value: example-value
+        '493':
+          description: LifecycleHookLimitExceededException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LifecycleHookLimitExceededException'
+              examples:
+                UpdateDeploymentGroup493Example:
+                  summary: Default UpdateDeploymentGroup 493 response
+                  x-microcks-default: true
+                  value: example-value
+        '494':
+          description: InvalidTriggerConfigException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidTriggerConfigException'
+              examples:
+                UpdateDeploymentGroup494Example:
+                  summary: Default UpdateDeploymentGroup 494 response
+                  x-microcks-default: true
+                  value: example-value
+        '495':
+          description: TriggerTargetsLimitExceededException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TriggerTargetsLimitExceededException'
+              examples:
+                UpdateDeploymentGroup495Example:
+                  summary: Default UpdateDeploymentGroup 495 response
+                  x-microcks-default: true
+                  value: example-value
+        '496':
+          description: InvalidAlarmConfigException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidAlarmConfigException'
+              examples:
+                UpdateDeploymentGroup496Example:
+                  summary: Default UpdateDeploymentGroup 496 response
+                  x-microcks-default: true
+                  value: example-value
+        '497':
+          description: AlarmsLimitExceededException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AlarmsLimitExceededException'
+              examples:
+                UpdateDeploymentGroup497Example:
+                  summary: Default UpdateDeploymentGroup 497 response
+                  x-microcks-default: true
+                  value: example-value
+        '498':
+          description: InvalidAutoRollbackConfigException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidAutoRollbackConfigException'
+              examples:
+                UpdateDeploymentGroup498Example:
+                  summary: Default UpdateDeploymentGroup 498 response
+                  x-microcks-default: true
+                  value: example-value
+        '499':
+          description: InvalidLoadBalancerInfoException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidLoadBalancerInfoException'
+              examples:
+                UpdateDeploymentGroup499Example:
+                  summary: Default UpdateDeploymentGroup 499 response
+                  x-microcks-default: true
+                  value: example-value
+        '500':
+          description: InvalidDeploymentStyleException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidDeploymentStyleException'
+              examples:
+                UpdateDeploymentGroup500Example:
+                  summary: Default UpdateDeploymentGroup 500 response
+                  x-microcks-default: true
+                  value: example-value
+        '501':
+          description: InvalidBlueGreenDeploymentConfigurationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidBlueGreenDeploymentConfigurationException'
+              examples:
+                UpdateDeploymentGroup501Example:
+                  summary: Default UpdateDeploymentGroup 501 response
+                  x-microcks-default: true
+                  value: example-value
+        '502':
+          description: InvalidEC2TagCombinationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidEC2TagCombinationException'
+              examples:
+                UpdateDeploymentGroup502Example:
+                  summary: Default UpdateDeploymentGroup 502 response
+                  x-microcks-default: true
+                  value: example-value
+        '503':
+          description: InvalidOnPremisesTagCombinationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidOnPremisesTagCombinationException'
+              examples:
+                UpdateDeploymentGroup503Example:
+                  summary: Default UpdateDeploymentGroup 503 response
+                  x-microcks-default: true
+                  value: example-value
+        '504':
+          description: TagSetListLimitExceededException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TagSetListLimitExceededException'
+              examples:
+                UpdateDeploymentGroup504Example:
+                  summary: Default UpdateDeploymentGroup 504 response
+                  x-microcks-default: true
+                  value: example-value
+        '505':
+          description: InvalidInputException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidInputException'
+              examples:
+                UpdateDeploymentGroup505Example:
+                  summary: Default UpdateDeploymentGroup 505 response
+                  x-microcks-default: true
+                  value: example-value
+        '506':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+              examples:
+                UpdateDeploymentGroup506Example:
+                  summary: Default UpdateDeploymentGroup 506 response
+                  x-microcks-default: true
+                  value: example-value
+        '507':
+          description: InvalidECSServiceException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidECSServiceException'
+              examples:
+                UpdateDeploymentGroup507Example:
+                  summary: Default UpdateDeploymentGroup 507 response
+                  x-microcks-default: true
+                  value: example-value
+        '508':
+          description: InvalidTargetGroupPairException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidTargetGroupPairException'
+              examples:
+                UpdateDeploymentGroup508Example:
+                  summary: Default UpdateDeploymentGroup 508 response
+                  x-microcks-default: true
+                  value: example-value
+        '509':
+          description: ECSServiceMappingLimitExceededException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ECSServiceMappingLimitExceededException'
+              examples:
+                UpdateDeploymentGroup509Example:
+                  summary: Default UpdateDeploymentGroup 509 response
+                  x-microcks-default: true
+                  value: example-value
+        '510':
+          description: InvalidTrafficRoutingConfigurationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidTrafficRoutingConfigurationException'
+              examples:
+                UpdateDeploymentGroup510Example:
+                  summary: Default UpdateDeploymentGroup 510 response
+                  x-microcks-default: true
+                  value: example-value
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateDeploymentGroupInput'
+            examples:
+              UpdateDeploymentGroupRequestExample:
+                summary: Default UpdateDeploymentGroup request
+                x-microcks-default: true
+                value:
+                  applicationName: example-resource
+                  currentDeploymentGroupName: example-resource
+                  newDeploymentGroupName: example-resource
+                  deploymentConfigName: example-resource
+                  ec2TagFilters: example-value
+                  onPremisesInstanceTagFilters: example-value
+                  autoScalingGroups: example-value
+                  serviceRoleArn: arn:aws:service:us-east-1:123456789012:resource/example
+      parameters:
+      - name: X-Amz-Target
+        in: header
+        required: true
+        schema:
+          type: string
+          enum:
+          - CodeDeploy_20141006.UpdateDeploymentGroup
+      summary: Amazon CodeDeploy Update Deployment Group
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#X Amz Target=CodeDeploy 20141006.UpdateDeploymentGroup'
+components:
+  schemas:
+    OutdatedInstancesStrategy:
+      type: string
+      enum:
+      - UPDATE
+      - IGNORE
+    EC2TagFilter:
+      type: object
+      properties:
+        Key:
+          allOf:
+          - $ref: '#/components/schemas/Key'
+          - description: The tag filter key.
+        Value:
+          allOf:
+          - $ref: '#/components/schemas/Value'
+          - description: The tag filter value.
+        Type:
+          allOf:
+          - $ref: '#/components/schemas/EC2TagFilterType'
+          - description: '<p>The tag filter type:</p> <ul> <li> <p> <code>KEY_ONLY</code>: Key only.</p> </li> <li> <p> <code>VALUE_ONLY</code>: Value only.</p> </li> <li> <p> <code>KEY_AND_VALUE</code>: Key and value.</p> </li> </ul>'
+      description: Information about an EC2 tag filter.
+    Alarm:
+      type: object
+      properties:
+        name:
+          allOf:
+          - $ref: '#/components/schemas/AlarmName'
+          - description: The name of the alarm. Maximum length is 255 characters. Each alarm name can be used only once in a list of alarms.
+      description: Information about an alarm.
+    TargetGroupInfo:
+      type: object
+      properties:
+        name:
+          allOf:
+          - $ref: '#/components/schemas/TargetGroupName'
+          - description: 'For blue/green deployments, the name of the target group that instances in the original environment are deregistered from, and instances in the replacement environment are registered with. For in-place deployments, the name of the target group that instances are deregistered from, so they are not serving traffic during a deployment, and then re-registered with after the deployment is complete. '
+      description: Information about a target group in Elastic Load Balancing to use in a deployment. Instances are registered as targets in a target group, and traffic is routed to the target group.
+    OnPremisesTagSetList:
+      type: array
+      items:
+        $ref: '#/components/schemas/TagFilterList'
+    AutoRollbackEventsList:
+      type: array
+      items:
+        $ref: '#/components/schemas/AutoRollbackEvent'
+    InvalidLoadBalancerInfoException: {}
+    ListenerArnList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ListenerArn'
+    InvalidRoleException: {}
+    AlarmsLimitExceededException: {}
+    AutoRollbackConfiguration:
+      type: object
+      properties:
+        enabled:
+          allOf:
+          - $ref: '#/components/schemas/Boolean'
+          - description: Indicates whether a defined automatic rollback configuration is currently enabled.
+        events:
+          allOf:
+          - $ref: '#/components/schemas/AutoRollbackEventsList'
+          - description: The event type or types that trigger a rollback.
+      description: Information about a configuration for automatically rolling back to a previous version of an application revision when a deployment is not completed successfully.
+    InvalidTriggerConfigException: {}
+    Value:
+      type: string
+    InvalidEC2TagCombinationException: {}
+    LoadBalancerInfo:
+      type: object
+      properties:
+        elbInfoList:
+          allOf:
+          - $ref: '#/components/schemas/ELBInfoList'
+          - description: <p>An array that contains information about the load balancer to use for load balancing in a deployment. In Elastic Load Balancing, load balancers are used with Classic Load Balancers.</p> <note> <p> Adding more than one load balancer to the array is not supported. </p> </note>
+        targetGroupInfoList:
+          allOf:
+          - $ref: '#/components/schemas/TargetGroupInfoList'
+          - description: <p>An array that contains information about the target group to use for load balancing in a deployment. In Elastic Load Balancing, target groups are used with Application Load Balancers.</p> <note> <p> Adding more than one target group to the array is not supported. </p> </note>
+        targetGroupPairInfoList:
+          allOf:
+          - $ref: '#/components/schemas/TargetGroupPairInfoList'
+          - description: ' The target group pair information. This is an array of <code>TargeGroupPairInfo</code> objects with a maximum size of one. '
+      description: Information about the Elastic Load Balancing load balancer or target group used in a deployment.
+    AutoScalingGroupName:
+      type: string
+    AutoRollbackEvent:
+      type: string
+      enum:
+      - DEPLOYMENT_FAILURE
+      - DEPLOYMENT_STOP_ON_ALARM
+      - DEPLOYMENT_STOP_ON_REQUEST
+    EC2TagSetList:
+      type: array
+      items:
+        $ref: '#/components/schemas/EC2TagFilterList'
+    TargetGroupInfoList:
+      type: array
+      items:
+        $ref: '#/components/schemas/TargetGroupInfo'
+    AutoScalingGroupList:
+      type: array
+      items:
+        $ref: '#/components/schemas/AutoScalingGroup'
+    BlueInstanceTerminationOption:
+      type: object
+      properties:
+        action:
+          allOf:
+          - $ref: '#/components/schemas/InstanceAction'
+          - description: '<p>The action to take on instances in the original environment after a successful blue/green deployment.</p> <ul> <li> <p> <code>TERMINATE</code>: Instances are terminated after a specified wait time.</p> </li> <li> <p> <code>KEEP_ALIVE</code>: Instances are left running after they are deregistered from the load balancer and removed from the deployment group.</p> </li> </ul>'
+        terminationWaitTimeInMinutes:
+          allOf:
+          - $ref: '#/components/schemas/Duration'
+          - description: <p>For an Amazon EC2 deployment, the number of minutes to wait after a successful blue/green deployment before terminating instances from the original environment.</p> <p> For an Amazon ECS deployment, the number of minutes before deleting the original (blue) task set. During an Amazon ECS deployment, CodeDeploy shifts traffic from the original (blue) task set to a replacement (green) task set. </p> <p> The maximum setting is 2880 minutes (2 days). </p>
+      description: 'Information about whether instances in the original environment are terminated when a blue/green deployment is successful. <code>BlueInstanceTerminationOption</code> does not apply to Lambda deployments. '
+    EC2TagFilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/EC2TagFilter'
+    InvalidAlarmConfigException: {}
+    EC2TagSet:
+      type: object
+      properties:
+        ec2TagSetList:
+          allOf:
+          - $ref: '#/components/schemas/EC2TagSetList'
+          - description: A list that contains other lists of Amazon EC2 instance tag groups. For an instance to be included in the deployment group, it must be identified by all of the tag groups in the list.
+      description: Information about groups of Amazon EC2 instance tags.
+    ECSClusterName:
+      type: string
+    ELBInfo:
+      type: object
+      properties:
+        name:
+          allOf:
+          - $ref: '#/components/schemas/ELBName'
+          - description: For blue/green deployments, the name of the load balancer that is used to route traffic from original instances to replacement instances in a blue/green deployment. For in-place deployments, the name of the load balancer that instances are deregistered from so they are not serving traffic during a deployment, and then re-registered with after the deployment is complete.
+      description: Information about a load balancer in Elastic Load Balancing to use in a deployment. Instances are registered directly with a load balancer, and traffic is routed to the load balancer.
+    DeploymentReadyAction:
+      type: string
+      enum:
+      - CONTINUE_DEPLOYMENT
+      - STOP_DEPLOYMENT
+    TriggerTargetArn:
+      type: string
+    GreenFleetProvisioningOption:
+      type: object
+      properties:
+        action:
+          allOf:
+          - $ref: '#/components/schemas/GreenFleetProvisioningAction'
+          - description: '<p>The method used to add instances to a replacement environment.</p> <ul> <li> <p> <code>DISCOVER_EXISTING</code>: Use instances that already exist or will be created manually.</p> </li> <li> <p> <code>COPY_AUTO_SCALING_GROUP</code>: Use settings from a specified Auto Scaling group to define and create instances in a new Auto Scaling group.</p> </li> </ul>'
+      description: Information about the instances that belong to the replacement environment in a blue/green deployment.
+    ELBInfoList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ELBInfo'
+    DeploymentGroupNameRequiredException: {}
+    InvalidDeploymentGroupNameException: {}
+    DeploymentGroupName:
+      type: string
+      minLength: 1
+      maxLength: 100
+    InstanceAction:
+      type: string
+      enum:
+      - TERMINATE
+      - KEEP_ALIVE
+    Key:
+      type: string
+    TagFilter:
+      type: object
+      properties:
+        Key:
+          allOf:
+          - $ref: '#/components/schemas/Key'
+          - description: The on-premises instance tag filter key.
+        Value:
+          allOf:
+          - $ref: '#/components/schemas/Value'
+          - description: The on-premises instance tag filter value.
+        Type:
+          allOf:
+          - $ref: '#/components/schemas/TagFilterType'
+          - description: '<p>The on-premises instance tag filter type:</p> <ul> <li> <p>KEY_ONLY: Key only.</p> </li> <li> <p>VALUE_ONLY: Value only.</p> </li> <li> <p>KEY_AND_VALUE: Key and value.</p> </li> </ul>'
+      description: Information about an on-premises instance tag filter.
+    InvalidEC2TagException: {}
+    TriggerTargetsLimitExceededException: {}
+    InvalidTagException: {}
+    Role:
+      type: string
+    GreenFleetProvisioningAction:
+      type: string
+      enum:
+      - DISCOVER_EXISTING
+      - COPY_AUTO_SCALING_GROUP
+    InvalidBlueGreenDeploymentConfigurationException: {}
+    InvalidApplicationNameException: {}
+    TargetGroupPairInfo:
+      type: object
+      properties:
+        targetGroups:
+          allOf:
+          - $ref: '#/components/schemas/TargetGroupInfoList'
+          - description: ' One pair of target groups. One is associated with the original task set. The second is associated with the task set that serves traffic after the deployment is complete. '
+        prodTrafficRoute:
+          allOf:
+          - $ref: '#/components/schemas/TrafficRoute'
+          - description: ' The path used by a load balancer to route production traffic when an Amazon ECS deployment is complete. '
+        testTrafficRoute:
+          allOf:
+          - $ref: '#/components/schemas/TrafficRoute'
+          - description: ' An optional path used by a load balancer to route test traffic after an Amazon ECS deployment. Validation can occur while test traffic is served during a deployment. '
+      description: ' Information about two target groups and how traffic is routed during an Amazon ECS deployment. An optional test traffic route can be specified. '
+    DeploymentStyle:
+      type: object
+      properties:
+        deploymentType:
+          allOf:
+          - $ref: '#/components/schemas/DeploymentType'
+          - description: Indicates whether to run an in-place deployment or a blue/green deployment.
+        deploymentOption:
+          allOf:
+          - $ref: '#/components/schemas/DeploymentOption'
+          - description: Indicates whether to route deployment traffic behind a load balancer.
+      description: Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer.
+    TagSetListLimitExceededException: {}
+    UpdateDeploymentGroupInput:
+      type: object
+      required:
+      - applicationName
+      - currentDeploymentGroupName
+      title: UpdateDeploymentGroupInput
+      properties:
+        applicationName:
+          allOf:
+          - $ref: '#/components/schemas/ApplicationName'
+          - description: The application name that corresponds to the deployment group to update.
+        currentDeploymentGroupName:
+          allOf:
+          - $ref: '#/components/schemas/DeploymentGroupName'
+          - description: The current name of the deployment group.
+        newDeploymentGroupName:
+          allOf:
+          - $ref: '#/components/schemas/DeploymentGroupName'
+          - description: The new name of the deployment group, if you want to change it.
+        deploymentConfigName:
+          allOf:
+          - $ref: '#/components/schemas/DeploymentConfigName'
+          - description: The replacement deployment configuration name to use, if you want to change it.
+        ec2TagFilters:
+          allOf:
+          - $ref: '#/components/schemas/EC2TagFilterList'
+          - description: The replacement set of Amazon EC2 tags on which to filter, if you want to change them. To keep the existing tags, enter their names. To remove tags, do not enter any tag names.
+        onPremisesInstanceTagFilters:
+          allOf:
+          - $ref: '#/components/schemas/TagFilterList'
+          - description: The replacement set of on-premises instance tags on which to filter, if you want to change them. To keep the existing tags, enter their names. To remove tags, do not enter any tag names.
+        autoScalingGroups:
+          allOf:
+          - $ref: '#/components/schemas/AutoScalingGroupNameList'
+          - description: <p>The replacement list of Auto Scaling groups to be included in the deployment group, if you want to change them.</p> <ul> <li> <p>To keep the Auto Scaling groups, enter their names or do not specify this parameter. </p> </li> <li> <p>To remove Auto Scaling groups, specify a non-null empty list of Auto Scaling group names to detach all CodeDeploy-managed Auto Scaling lifecycle hooks. For examples, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/codedeploy/latest/userguide/troubleshooting-auto-scaling.html#troubleshooting-auto-scaling-heartbeat">Amazon EC2 instances in an Amazon EC2 Auto Scaling group fail to launch and receive the error "Heartbeat Timeout"</a> in the <i>CodeDeploy User Guide</i>.</p> </li> </ul>
+        serviceRoleArn:
+          allOf:
+          - $ref: '#/components/schemas/Role'
+          - description: A replacement ARN for the service role, if you want to change it.
+        triggerConfigurations:
+          allOf:
+          - $ref: '#/components/schemas/TriggerConfigList'
+          - description: Information about triggers to change when the deployment group is updated. For examples, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit a Trigger in a CodeDeploy Deployment Group</a> in the <i>CodeDeploy User Guide</i>.
+        alarmConfiguration:
+          allOf:
+          - $ref: '#/components/schemas/AlarmConfiguration'
+          - description: Information to add or change about Amazon CloudWatch alarms when the deployment group is updated.
+        autoRollbackConfiguration:
+          allOf:
+          - $ref: '#/components/schemas/AutoRollbackConfiguration'
+          - description: Information for an automatic rollback configuration that is added or changed when a deployment group is updated.
+        outdatedInstancesStrategy:
+          allOf:
+          - $ref: '#/components/schemas/OutdatedInstancesStrategy'
+          - description: <p>Indicates what happens when new Amazon EC2 instances are launched mid-deployment and do not receive the deployed application revision.</p> <p>If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update outdated instances' deployments to apply the deployed application revision to the new Amazon EC2 instances.</p> <p>If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new Amazon EC2 instances. This may result in instances having different revisions.</p>
+        deploymentStyle:
+          allOf:
+          - $ref: '#/components/schemas/DeploymentStyle'
+          - description: Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer.
+        blueGreenDeploymentConfiguration:
+          allOf:
+          - $ref: '#/components/schemas/BlueGreenDeploymentConfiguration'
+          - description: Information about blue/green deployment options for a deployment group.
+        loadBalancerInfo:
+          allOf:
+          - $ref: '#/components/schemas/LoadBalancerInfo'
+          - description: Information about the load balancer used in a deployment.
+        ec2TagSet:
+          allOf:
+          - $ref: '#/components/schemas/EC2TagSet'
+          - description: Information about groups of tags applied to on-premises instances. The deployment group includes only Amazon EC2 instances identified by all the tag groups.
+        ecsServices:
+          allOf:
+          - $ref: '#/components/schemas/ECSServiceList'
+          - description: ' The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. '
+        onPremisesTagSet:
+          allOf:
+          - $ref: '#/components/schemas/OnPremisesTagSet'
+          - description: Information about an on-premises instance tag set. The deployment group includes only on-premises instances identified by all the tag groups.
+      description: Represents the input of an <code>UpdateDeploymentGroup</code> operation.
+    TargetGroupName:
+      type: string
+    DeploymentGroupDoesNotExistException: {}
+    BlueGreenDeploymentConfiguration:
+      type: object
+      properties:
+        terminateBlueInstancesOnDeploymentSuccess:
+          allOf:
+          - $ref: '#/components/schemas/BlueInstanceTerminationOption'
+          - description: Information about whether to terminate instances in the original fleet during a blue/green deployment.
+        deploymentReadyOption:
+          allOf:
+          - $ref: '#/components/schemas/DeploymentReadyOption'
+          - description: Information about the action to take when newly provisioned instances are ready to receive traffic in a blue/green deployment.
+        greenFleetProvisioningOption:
+          allOf:
+          - $ref: '#/components/schemas/GreenFleetProvisioningOption'
+          - description: Information about how instances are provisioned for a replacement environment in a blue/green deployment.
+      description: Information about blue/green deployment options for a deployment group.
+    TriggerEventType:
+      type: string
+      enum:
+      - DeploymentStart
+      - DeploymentSuccess
+      - DeploymentFailure
+      - DeploymentStop
+      - DeploymentRollback
+      - DeploymentReady
+      - InstanceStart
+      - InstanceSuccess
+      - InstanceFailure
+      - InstanceReady
+    Boolean:
+      type: boolean
+    ECSService:
+      type: object
+      properties:
+        serviceName:
+          allOf:
+          - $ref: '#/components/schemas/ECSServiceName'
+          - description: ' The name of the target Amazon ECS service. '
+        clusterName:
+          allOf:
+          - $ref: '#/components/schemas/ECSClusterName'
+          - description: ' The name of the cluster that the Amazon ECS service is associated with. '
+      description: ' Contains the service and cluster names used to identify an Amazon ECS deployment''s target. '
+    InvalidAutoScalingGroupException: {}
+    InvalidDeploymentConfigNameException: {}
+    AlarmName:
+      type: string
+    AutoScalingGroupNameList:
+      type: array
+      items:
+        $ref: '#/components/schemas/AutoScalingGroupName'
+    UpdateDeploymentGroupOutput:
+      type: object
+      properties:
+        hooksNotCleanedUp:
+          allOf:
+          - $ref: '#/components/schemas/AutoScalingGroupList'
+          - description: If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon Web Services account. If the output contains data, CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon Web Services account.
+      description: Represents the output of an <code>UpdateDeploymentGroup</code> operation.
+    TriggerConfig:
+      type: object
+      properties:
+        triggerName:
+          allOf:
+          - $ref: '#/components/schemas/TriggerName'
+          - description: The name of the notification trigger.
+        triggerTargetArn:
+          allOf:
+          - $ref: '#/components/schemas/TriggerTargetArn'
+          - description: The Amazon Resource Name (ARN) of the Amazon Simple Notification Service topic through which notifications about deployment or instance events are sent.
+        triggerEvents:
+          allOf:
+          - $ref: '#/components/schemas/TriggerEventTypeList'
+          - description: The event type or types for which notifications are triggered.
+      description: Information about notification triggers for the deployment group.
+    DeploymentGroupAlreadyExistsException: {}
+    DeploymentReadyOption:
+      type: object
+      properties:
+        actionOnTimeout:
+          allOf:
+          - $ref: '#/components/schemas/DeploymentReadyAction'
+          - description: '<p>Information about when to reroute traffic from an original environment to a replacement environment in a blue/green deployment.</p> <ul> <li> <p>CONTINUE_DEPLOYMENT: Register new instances with the load balancer immediately after the new application revision is installed on the instances in the replacement environment.</p> </li> <li> <p>STOP_DEPLOYMENT: Do not register new instances with a load balancer unless traffic rerouting is started using <a>ContinueDeployment</a>. If traffic rerouting is not started before the end of the specified wait period, the deployment status is changed to Stopped.</p> </li> </ul>'
+        waitTimeInMinutes:
+          allOf:
+          - $ref: '#/components/schemas/Duration'
+          - description: The number of minutes to wait before the status of a blue/green deployment is changed to Stopped if rerouting is not started manually. Applies only to the <code>STOP_DEPLOYMENT</code> option for <code>actionOnTimeout</code>.
+      description: Information about how traffic is rerouted to instances in a replacement environment in a blue/green deployment.
+    ECSServiceList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ECSService'
+    DeploymentConfigDoesNotExistException: {}
+    ApplicationDoesNotExistException: {}
+    ECSServiceName:
+      type: string
+    DeploymentOption:
+      type: string
+      enum:
+      - WITH_TRAFFIC_CONTROL
+      - WITHOUT_TRAFFIC_CONTROL
+    InvalidOnPremisesTagCombinationException: {}
+    AutoScalingGroupHook:
+      type: string
+    ListenerArn:
+      type: string
+    InvalidTrafficRoutingConfigurationException: {}
+    TagFilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/TagFilter'
+    InvalidAutoRollbackConfigException: {}
+    TriggerName:
+      type: string
+    TriggerConfigList:
+      type: array
+      items:
+        $ref: '#/components/schemas/TriggerConfig'
+    DeploymentType:
+      type: string
+      enum:
+      - IN_PLACE
+      - BLUE_GREEN
+    ApplicationName:
+      type: string
+      minLength: 1
+      maxLength: 100
+    AlarmList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Alarm'
+    ThrottlingException: {}
+    ELBName:
+      type: string
+    OnPremisesTagSet:
+      type: object
+      properties:
+        onPremisesTagSetList:
+          allOf:
+          - $ref: '#/components/schemas/OnPremisesTagSetList'
+          - description: A list that contains other lists of on-premises instance tag groups. For an instance to be included in the deployment group, it must be identified by all of the tag groups in the list.
+      description: Information about groups of on-premises instance tags.
+    DeploymentConfigName:
+      type: string
+      minLength: 1
+      maxLength: 100
+    TagFilterType:
+      type: string
+      enum:
+      - KEY_ONLY
+      - VALUE_ONLY
+      - KEY_AND_VALUE
+    ApplicationNameRequiredException: {}
+    TrafficRoute:
+      type: object
+      properties:
+        listenerArns:
+          allOf:
+          - $ref: '#/components/schemas/ListenerArnList'
+          - description: ' The Amazon Resource Name (ARN) of one listener. The listener identifies the route between a target group and a load balancer. This is an array of strings with a maximum size of one. '
+      description: ' Information about a listener. The listener contains the path used to route traffic that is received from the load balancer to a target group. '
+    InvalidInputException: {}
+    InvalidECSServiceException: {}
+    ECSServiceMappingLimitExceededException: {}
+    TriggerEventTypeList:
+      type: array
+      items:
+        $ref: '#/components/schemas/TriggerEventType'
+    EC2TagFilterType:
+      type: string
+      enum:
+      - KEY_ONLY
+      - VALUE_ONLY
+      - KEY_AND_VALUE
+    Duration:
+      type: integer
+    InvalidTargetGroupPairException: {}
+    AlarmConfiguration:
+      type: object
+      properties:
+        enabled:
+          allOf:
+          - $ref: '#/components/schemas/Boolean'
+          - description: Indicates whether the alarm configuration is enabled.
+        ignorePollAlarmFailure:
+          allOf:
+          - $ref: '#/components/schemas/Boolean'
+          - description: '<p>Indicates whether a deployment should continue if information about the current state of alarms cannot be retrieved from Amazon CloudWatch. The default value is false.</p> <ul> <li> <p> <code>true</code>: The deployment proceeds even if alarm status information can''t be retrieved from Amazon CloudWatch.</p> </li> <li> <p> <code>false</code>: The deployment stops if alarm status information can''t be retrieved from Amazon CloudWatch.</p> </li> </ul>'
+        alarms:
+          allOf:
+          - $ref: '#/components/schemas/AlarmList'
+          - description: A list of alarms configured for the deployment or deployment group. A maximum of 10 alarms can be added.
+      description: Information about alarms associated with a deployment or deployment group.
+    AutoScalingGroup:
+      type: object
+      properties:
+        name:
+          allOf:
+          - $ref: '#/components/schemas/AutoScalingGroupName'
+          - description: The Auto Scaling group name.
+        hook:
+          allOf:
+          - $ref: '#/components/schemas/AutoScalingGroupHook'
+          - description: An Auto Scaling lifecycle event hook name.
+      description: Information about an Auto Scaling group.
+    TargetGroupPairInfoList:
+      type: array
+      items:
+        $ref: '#/components/schemas/TargetGroupPairInfo'
+    InvalidDeploymentStyleException: {}
+    LifecycleHookLimitExceededException: {}
+  parameters:
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/codedeploy/
+x-hasEquivalentPaths: true

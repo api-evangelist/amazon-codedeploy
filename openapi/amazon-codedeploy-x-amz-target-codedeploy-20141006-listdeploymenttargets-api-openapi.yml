@@ -1,0 +1,369 @@
+openapi: 3.0.0
+info:
+  version: '2014-10-06'
+  x-release: v4
+  title: 'AWS CodeDeploy Applications #X Amz Target=CodeDeploy 20141006.ListDeploymentTargets API'
+  description: '<p>CodeDeploy is a deployment service that automates application deployments to Amazon EC2 instances, on-premises instances running in your own facility, serverless Lambda functions, or applications in an Amazon ECS service.</p> <p>You can deploy a nearly unlimited variety of application content, such as an updated Lambda function, updated applications in an Amazon ECS service, code, web and configuration files, executables, packages, scripts, multimedia files, and so on. CodeDeploy can deploy application content stored in Amazon S3 buckets, GitHub repositories, or Bitbucket repositories. You do not need to make changes to your existing code before you can use CodeDeploy.</p> <p>CodeDeploy makes it easier for you to rapidly release new features, helps you avoid downtime during application deployment, and handles the complexity of updating your applications, without many of the risks associated with error-prone manual deployments.</p> <p> <b>CodeDeploy Components</b> </p> <p>Use the information in this guide to help you work with the following CodeDeploy components:</p> <ul> <li> <p> <b>Application</b>: A name that uniquely identifies the application you want to deploy. CodeDeploy uses this name, which functions as a container, to ensure the correct combination of revision, deployment configuration, and deployment group are referenced during a deployment.</p> </li> <li> <p> <b>Deployment group</b>: A set of individual instances, CodeDeploy Lambda deployment configuration settings, or an Amazon ECS service and network details. A Lambda deployment group specifies how to route traffic to a new version of a Lambda function. An Amazon ECS deployment group specifies the service created in Amazon ECS to deploy, a load balancer, and a listener to reroute production traffic to an updated containerized application. An Amazon EC2/On-premises deployment group contains individually tagged instances, Amazon EC2 instances in Amazon EC2 Auto Scaling groups, or both. All deployment groups can specify optional trigger, alarm, and rollback settings.</p> </li> <li> <p> <b>Deployment configuration</b>: A set of deployment rules and deployment success and failure conditions used by CodeDeploy during a deployment.</p> </li> <li> <p> <b>Deployment</b>: The process and the components used when updating a Lambda function, a containerized application in an Amazon ECS service, or of installing content on one or more instances. </p> </li> <li> <p> <b>Application revisions</b>: For an Lambda deployment, this is an AppSpec file that specifies the Lambda function to be updated and one or more functions to validate deployment lifecycle events. For an Amazon ECS deployment, this is an AppSpec file that specifies the Amazon ECS task definition, container, and port where production traffic is rerouted. For an EC2/On-premises deployment, this is an archive file that contains source content—source code, webpages, executable files, and deployment scripts—along with an AppSpec file. Revisions are stored in Amazon S3 buckets or GitHub repositories. For Amazon S3, a revision is uniquely identified by its Amazon S3 object key and its ETag, version, or both. For GitHub, a revision is uniquely identified by its commit ID.</p> </li> </ul> <p>This guide also contains information to help you get details about the instances in your deployments, to make on-premises instances available for CodeDeploy deployments, to get details about a Lambda function deployment, and to get details about Amazon ECS service deployments.</p> <p> <b>CodeDeploy Information Resources</b> </p> <ul> <li> <p> <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">CodeDeploy User Guide</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/">CodeDeploy API Reference Guide</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/cli/latest/reference/deploy/index.html">CLI Reference for CodeDeploy</a> </p> </li> <li> <p> <a href="https://forums.aws.amazon.com/forum.jspa?forumID=179">CodeDeploy Developer Forum</a> </p> </li> </ul>'
+  x-logo:
+    url: https://twitter.com/awscloud/profile_image?size=original
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: codedeploy
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/codedeploy-2014-10-06.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://codedeploy.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The CodeDeploy multi-region endpoint
+- url: https://codedeploy.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The CodeDeploy multi-region endpoint
+- url: http://codedeploy.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The CodeDeploy endpoint for China (Beijing) and China (Ningxia)
+- url: https://codedeploy.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The CodeDeploy endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: '#X Amz Target=CodeDeploy 20141006.ListDeploymentTargets'
+paths:
+  /#X-Amz-Target=CodeDeploy_20141006.ListDeploymentTargets:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: ListDeploymentTargets
+      description: ' Returns an array of target IDs that are associated a deployment. '
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListDeploymentTargetsOutput'
+              examples:
+                ListDeploymentTargets200Example:
+                  summary: Default ListDeploymentTargets 200 response
+                  x-microcks-default: true
+                  value:
+                    targetIds: '500123'
+                    nextToken: example-value
+        '480':
+          description: DeploymentIdRequiredException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeploymentIdRequiredException'
+              examples:
+                ListDeploymentTargets480Example:
+                  summary: Default ListDeploymentTargets 480 response
+                  x-microcks-default: true
+                  value: example-value
+        '481':
+          description: DeploymentDoesNotExistException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeploymentDoesNotExistException'
+              examples:
+                ListDeploymentTargets481Example:
+                  summary: Default ListDeploymentTargets 481 response
+                  x-microcks-default: true
+                  value: example-value
+        '482':
+          description: DeploymentNotStartedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeploymentNotStartedException'
+              examples:
+                ListDeploymentTargets482Example:
+                  summary: Default ListDeploymentTargets 482 response
+                  x-microcks-default: true
+                  value: example-value
+        '483':
+          description: InvalidNextTokenException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidNextTokenException'
+              examples:
+                ListDeploymentTargets483Example:
+                  summary: Default ListDeploymentTargets 483 response
+                  x-microcks-default: true
+                  value: example-value
+        '484':
+          description: InvalidDeploymentIdException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidDeploymentIdException'
+              examples:
+                ListDeploymentTargets484Example:
+                  summary: Default ListDeploymentTargets 484 response
+                  x-microcks-default: true
+                  value: example-value
+        '485':
+          description: InvalidInstanceStatusException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidInstanceStatusException'
+              examples:
+                ListDeploymentTargets485Example:
+                  summary: Default ListDeploymentTargets 485 response
+                  x-microcks-default: true
+                  value: example-value
+        '486':
+          description: InvalidInstanceTypeException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidInstanceTypeException'
+              examples:
+                ListDeploymentTargets486Example:
+                  summary: Default ListDeploymentTargets 486 response
+                  x-microcks-default: true
+                  value: example-value
+        '487':
+          description: InvalidDeploymentInstanceTypeException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidDeploymentInstanceTypeException'
+              examples:
+                ListDeploymentTargets487Example:
+                  summary: Default ListDeploymentTargets 487 response
+                  x-microcks-default: true
+                  value: example-value
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ListDeploymentTargetsInput'
+            examples:
+              ListDeploymentTargetsRequestExample:
+                summary: Default ListDeploymentTargets request
+                x-microcks-default: true
+                value:
+                  deploymentId: '500123'
+                  nextToken: example-value
+                  targetFilters: example-value
+      parameters:
+      - name: X-Amz-Target
+        in: header
+        required: true
+        schema:
+          type: string
+          enum:
+          - CodeDeploy_20141006.ListDeploymentTargets
+      summary: Amazon CodeDeploy List Deployment Targets
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - '#X Amz Target=CodeDeploy 20141006.ListDeploymentTargets'
+components:
+  schemas:
+    FilterValueList:
+      type: array
+      items:
+        $ref: '#/components/schemas/FilterValue'
+    DeploymentId:
+      type: string
+    InvalidNextTokenException: {}
+    DeploymentDoesNotExistException: {}
+    ListDeploymentTargetsOutput:
+      type: object
+      properties:
+        targetIds:
+          allOf:
+          - $ref: '#/components/schemas/TargetIdList'
+          - description: ' The unique IDs of deployment targets. '
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: ' If a large amount of information is returned, a token identifier is also returned. It can be used in a subsequent <code>ListDeploymentTargets</code> call to return the next set of deployment targets in the list. '
+    TargetId:
+      type: string
+    ListDeploymentTargetsInput:
+      type: object
+      title: ListDeploymentTargetsInput
+      properties:
+        deploymentId:
+          allOf:
+          - $ref: '#/components/schemas/DeploymentId'
+          - description: ' The unique ID of a deployment. '
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: ' A token identifier returned from the previous <code>ListDeploymentTargets</code> call. It can be used to return the next set of deployment targets in the list. '
+        targetFilters:
+          allOf:
+          - $ref: '#/components/schemas/TargetFilters'
+          - description: <p> A key used to filter the returned targets. The two valid values are:</p> <ul> <li> <p> <code>TargetStatus</code> - A <code>TargetStatus</code> filter string can be <code>Failed</code>, <code>InProgress</code>, <code>Pending</code>, <code>Ready</code>, <code>Skipped</code>, <code>Succeeded</code>, or <code>Unknown</code>. </p> </li> <li> <p> <code>ServerInstanceLabel</code> - A <code>ServerInstanceLabel</code> filter string can be <code>Blue</code> or <code>Green</code>. </p> </li> </ul>
+    TargetIdList:
+      type: array
+      items:
+        $ref: '#/components/schemas/TargetId'
+    DeploymentNotStartedException: {}
+    InvalidInstanceStatusException: {}
+    DeploymentIdRequiredException: {}
+    TargetFilters:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/FilterValueList'
+    InvalidDeploymentIdException: {}
+    NextToken:
+      type: string
+    InvalidDeploymentInstanceTypeException: {}
+    FilterValue:
+      type: string
+    InvalidInstanceTypeException: {}
+  parameters:
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/codedeploy/
+x-hasEquivalentPaths: true
