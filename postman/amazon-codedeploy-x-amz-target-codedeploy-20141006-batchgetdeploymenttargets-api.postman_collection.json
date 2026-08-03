@@ -1,0 +1,1014 @@
+{
+  "info": {
+    "_postman_id": "5dd2c2b5-d424-48d4-9921-fc482ef7da50",
+    "name": "AWS CodeDeploy Applications #X Amz Target=CodeDeploy 20141006.BatchGetDeploymentTargets API",
+    "description": "<p>CodeDeploy is a deployment service that automates application deployments to Amazon EC2 instances, on-premises instances running in your own facility, serverless Lambda functions, or applications in an Amazon ECS service.</p> <p>You can deploy a nearly unlimited variety of application content, such as an updated Lambda function, updated applications in an Amazon ECS service, code, web and configuration files, executables, packages, scripts, multimedia files, and so on. CodeDeploy can deploy application content stored in Amazon S3 buckets, GitHub repositories, or Bitbucket repositories. You do not need to make changes to your existing code before you can use CodeDeploy.</p> <p>CodeDeploy makes it easier for you to rapidly release new features, helps you avoid downtime during application deployment, and handles the complexity of updating your applications, without many of the risks associated with error-prone manual deployments.</p> <p> <b>CodeDeploy Components</b> </p> <p>Use the information in this guide to help you work with the following CodeDeploy components:</p> <ul> <li> <p> <b>Application</b>: A name that uniquely identifies the application you want to deploy. CodeDeploy uses this name, which functions as a container, to ensure the correct combination of revision, deployment configuration, and deployment group are referenced during a deployment.</p> </li> <li> <p> <b>Deployment group</b>: A set of individual instances, CodeDeploy Lambda deployment configuration settings, or an Amazon ECS service and network details. A Lambda deployment group specifies how to route traffic to a new version of a Lambda function. An Amazon ECS deployment group specifies the service created in Amazon ECS to deploy, a load balancer, and a listener to reroute production traffic to an updated containerized application. An Amazon EC2/On-premises deployment group contains individually tagged instances, Amazon EC2 instances in Amazon EC2 Auto Scaling groups, or both. All deployment groups can specify optional trigger, alarm, and rollback settings.</p> </li> <li> <p> <b>Deployment configuration</b>: A set of deployment rules and deployment success and failure conditions used by CodeDeploy during a deployment.</p> </li> <li> <p> <b>Deployment</b>: The process and the components used when updating a Lambda function, a containerized application in an Amazon ECS service, or of installing content on one or more instances. </p> </li> <li> <p> <b>Application revisions</b>: For an Lambda deployment, this is an AppSpec file that specifies the Lambda function to be updated and one or more functions to validate deployment lifecycle events. For an Amazon ECS deployment, this is an AppSpec file that specifies the Amazon ECS task definition, container, and port where production traffic is rerouted. For an EC2/On-premises deployment, this is an archive file that contains source content\u2014source code, webpages, executable files, and deployment scripts\u2014along with an AppSpec file. Revisions are stored in Amazon S3 buckets or GitHub repositories. For Amazon S3, a revision is uniquely identified by its Amazon S3 object key and its ETag, version, or both. For GitHub, a revision is uniquely identified by its commit ID.</p> </li> </ul> <p>This guide also contains information to help you get details about the instances in your deployments, to make on-premises instances available for CodeDeploy deployments, to get details about a Lambda function deployment, and to get details about Amazon ECS service deployments.</p> <p> <b>CodeDeploy Information Resources</b> </p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/codedeploy/latest/userguide\">CodeDeploy User Guide</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/codedeploy/latest/APIReference/\">CodeDeploy API Reference Guide</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/cli/latest/reference/deploy/index.html\">CLI Reference for CodeDeploy</a> </p> </li> <li> <p> <a href=\"https://forums.aws.amazon.com/forum.jspa?forumID=179\">CodeDeploy Developer Forum</a> </p> </li> </ul>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:11:22.000Z",
+    "updatedAt": "2026-07-28T10:11:22.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-5dd2c2b5-d424-48d4-9921-fc482ef7da50"
+  },
+  "item": [
+    {
+      "name": "#X-Amz-Target=CodeDeploy_20141006.BatchGetDeploymentTargets",
+      "item": [
+        {
+          "name": "Amazon CodeDeploy Batch Get Deployment Targets",
+          "id": "58e5369e-7265-4913-bba6-bfb682f9cb74",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "CodeDeploy_20141006.BatchGetDeploymentTargets"
+              },
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"deploymentId\": \"<string>\",\n  \"targetIds\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.BatchGetDeploymentTargets",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "hash": "X-Amz-Target=CodeDeploy_20141006.BatchGetDeploymentTargets"
+            },
+            "description": "<p> Returns an array of one or more targets associated with a deployment. This method works with all compute types and should be used instead of the deprecated <code>BatchGetDeploymentInstances</code>. The maximum number of targets that can be returned is 25.</p> <p> The type of targets returned depends on the deployment's compute platform or deployment method: </p> <ul> <li> <p> <b>EC2/On-premises</b>: Information about Amazon EC2 instance targets. </p> </li> <li> <p> <b>Lambda</b>: Information about Lambda functions targets. </p> </li> <li> <p> <b>Amazon ECS</b>: Information about Amazon ECS service targets. </p> </li> <li> <p> <b>CloudFormation</b>: Information about targets of blue/green deployments initiated by a CloudFormation stack update.</p> </li> </ul>"
+          },
+          "response": [
+            {
+              "id": "b831ccac-a8bb-4e4f-bae4-f705db79ca07",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "CodeDeploy_20141006.BatchGetDeploymentTargets"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"deploymentId\": \"<string>\",\n  \"targetIds\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.BatchGetDeploymentTargets",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=CodeDeploy_20141006.BatchGetDeploymentTargets"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"deploymentTargets\": [\n    {\n      \"deploymentTargetType\": \"InstanceTarget\",\n      \"instanceTarget\": {\n        \"deploymentId\": \"<string>\",\n        \"targetId\": \"<string>\",\n        \"targetArn\": \"<string>\",\n        \"status\": \"Failed\",\n        \"lastUpdatedAt\": \"<dateTime>\",\n        \"lifecycleEvents\": [\n          {\n            \"lifecycleEventName\": \"<string>\",\n            \"diagnostics\": {\n              \"errorCode\": \"ScriptFailed\",\n              \"scriptName\": \"<string>\",\n              \"message\": \"<string>\",\n              \"logTail\": \"<string>\"\n            },\n            \"startTime\": \"<dateTime>\",\n            \"endTime\": \"<dateTime>\",\n            \"status\": \"Skipped\"\n          },\n          {\n            \"lifecycleEventName\": \"<string>\",\n            \"diagnostics\": {\n              \"errorCode\": \"UnknownError\",\n              \"scriptName\": \"<string>\",\n              \"message\": \"<string>\",\n              \"logTail\": \"<string>\"\n            },\n            \"startTime\": \"<dateTime>\",\n            \"endTime\": \"<dateTime>\",\n            \"status\": \"InProgress\"\n          }\n        ],\n        \"instanceLabel\": \"Blue\"\n      },\n      \"lambdaTarget\": {\n        \"deploymentId\": \"<string>\",\n        \"targetId\": \"<string>\",\n        \"targetArn\": \"<string>\",\n        \"status\": \"Ready\",\n        \"lastUpdatedAt\": \"<dateTime>\",\n        \"lifecycleEvents\": [\n          {\n            \"lifecycleEventName\": \"<string>\",\n            \"diagnostics\": {\n              \"errorCode\": \"ScriptMissing\",\n              \"scriptName\": \"<string>\",\n              \"message\": \"<string>\",\n              \"logTail\": \"<string>\"\n            },\n            \"startTime\": \"<dateTime>\",\n            \"endTime\": \"<dateTime>\",\n            \"status\": \"Unknown\"\n          },\n          {\n            \"lifecycleEventName\": \"<string>\",\n            \"diagnostics\": {\n              \"errorCode\": \"UnknownError\",\n              \"scriptName\": \"<string>\",\n              \"message\": \"<string>\",\n              \"logTail\": \"<string>\"\n            },\n            \"startTime\": \"<dateTime>\",\n            \"endTime\": \"<dateTime>\",\n            \"status\": \"InProgress\"\n          }\n        ],\n        \"lambdaFunctionInfo\": {\n          \"functionName\": \"<string>\",\n          \"functionAlias\": \"<string>\",\n          \"currentVersion\": \"<string>\",\n          \"targetVersion\": \"<string>\",\n          \"targetVersionWeight\": \"<double>\"\n        }\n      },\n      \"ecsTarget\": {\n        \"deploymentId\": \"<string>\",\n        \"targetId\": \"<string>\",\n        \"targetArn\": \"<string>\",\n        \"lastUpdatedAt\": \"<dateTime>\",\n        \"lifecycleEvents\": [\n          {\n            \"lifecycleEventName\": \"<string>\",\n            \"diagnostics\": {\n              \"errorCode\": \"ScriptFailed\",\n              \"scriptName\": \"<string>\",\n              \"message\": \"<string>\",\n              \"logTail\": \"<string>\"\n            },\n            \"startTime\": \"<dateTime>\",\n            \"endTime\": \"<dateTime>\",\n            \"status\": \"InProgress\"\n          },\n          {\n            \"lifecycleEventName\": \"<string>\",\n            \"diagnostics\": {\n              \"errorCode\": \"ScriptMissing\",\n              \"scriptName\": \"<string>\",\n              \"message\": \"<string>\",\n              \"logTail\": \"<string>\"\n            },\n            \"startTime\": \"<dateTime>\",\n            \"endTime\": \"<dateTime>\",\n            \"status\": \"Succeeded\"\n          }\n        ],\n        \"status\": \"Failed\",\n        \"taskSetsInfo\": [\n          {\n            \"identifer\": \"<string>\",\n            \"desiredCount\": \"<integer>\",\n            \"pendingCount\": \"<integer>\",\n            \"runningCount\": \"<integer>\",\n            \"status\": \"<string>\",\n            \"trafficWeight\": \"<double>\",\n            \"targetGroup\": {\n              \"name\": \"<string>\"\n            },\n            \"taskSetLabel\": \"Green\"\n          },\n          {\n            \"identifer\": \"<string>\",\n            \"desiredCount\": \"<integer>\",\n            \"pendingCount\": \"<integer>\",\n            \"runningCount\": \"<integer>\",\n            \"status\": \"<string>\",\n            \"trafficWeight\": \"<double>\",\n            \"targetGroup\": {\n              \"name\": \"<string>\"\n            },\n            \"taskSetLabel\": \"Blue\"\n          }\n        ]\n      },\n      \"cloudFormationTarget\": {\n        \"deploymentId\": \"<string>\",\n        \"targetId\": \"<string>\",\n        \"lastUpdatedAt\": \"<dateTime>\",\n        \"lifecycleEvents\": [\n          {\n            \"lifecycleEventName\": \"<string>\",\n            \"diagnostics\": {\n              \"errorCode\": \"Success\",\n              \"scriptName\": \"<string>\",\n              \"message\": \"<string>\",\n              \"logTail\": \"<string>\"\n            },\n            \"startTime\": \"<dateTime>\",\n            \"endTime\": \"<dateTime>\",\n            \"status\": \"Succeeded\"\n          },\n          {\n            \"lifecycleEventName\": \"<string>\",\n            \"diagnostics\": {\n              \"errorCode\": \"UnknownError\",\n              \"scriptName\": \"<string>\",\n              \"message\": \"<string>\",\n              \"logTail\": \"<string>\"\n            },\n            \"startTime\": \"<dateTime>\",\n            \"endTime\": \"<dateTime>\",\n            \"status\": \"Skipped\"\n          }\n        ],\n        \"status\": \"Unknown\",\n        \"resourceType\": \"<string>\",\n        \"targetVersionWeight\": \"<double>\"\n      }\n    },\n    {\n      \"deploymentTargetType\": \"CloudFormationTarget\",\n      \"instanceTarget\": {\n        \"deploymentId\": \"<string>\",\n        \"targetId\": \"<string>\",\n        \"targetArn\": \"<string>\",\n        \"status\": \"Ready\",\n        \"lastUpdatedAt\": \"<dateTime>\",\n        \"lifecycleEvents\": [\n          {\n            \"lifecycleEventName\": \"<string>\",\n            \"diagnostics\": {\n              \"errorCode\": \"ScriptNotExecutable\",\n              \"scriptName\": \"<string>\",\n              \"message\": \"<string>\",\n              \"logTail\": \"<string>\"\n            },\n            \"startTime\": \"<dateTime>\",\n            \"endTime\": \"<dateTime>\",\n            \"status\": \"Pending\"\n          },\n          {\n            \"lifecycleEventName\": \"<string>\",\n            \"diagnostics\": {\n              \"errorCode\": \"Success\",\n              \"scriptName\": \"<string>\",\n              \"message\": \"<string>\",\n              \"logTail\": \"<string>\"\n            },\n            \"startTime\": \"<dateTime>\",\n            \"endTime\": \"<dateTime>\",\n            \"status\": \"Unknown\"\n          }\n        ],\n        \"instanceLabel\": \"Green\"\n      },\n      \"lambdaTarget\": {\n        \"deploymentId\": \"<string>\",\n        \"targetId\": \"<string>\",\n        \"targetArn\": \"<string>\",\n        \"status\": \"Pending\",\n        \"lastUpdatedAt\": \"<dateTime>\",\n        \"lifecycleEvents\": [\n          {\n            \"lifecycleEventName\": \"<string>\",\n            \"diagnostics\": {\n              \"errorCode\": \"ScriptTimedOut\",\n              \"scriptName\": \"<string>\",\n              \"message\": \"<string>\",\n              \"logTail\": \"<string>\"\n            },\n            \"startTime\": \"<dateTime>\",\n            \"endTime\": \"<dateTime>\",\n            \"status\": \"Pending\"\n          },\n          {\n            \"lifecycleEventName\": \"<string>\",\n            \"diagnostics\": {\n              \"errorCode\": \"ScriptFailed\",\n              \"scriptName\": \"<string>\",\n              \"message\": \"<string>\",\n              \"logTail\": \"<string>\"\n            },\n            \"startTime\": \"<dateTime>\",\n            \"endTime\": \"<dateTime>\",\n            \"status\": \"Pending\"\n          }\n        ],\n        \"lambdaFunctionInfo\": {\n          \"functionName\": \"<string>\",\n          \"functionAlias\": \"<string>\",\n          \"currentVersion\": \"<string>\",\n          \"targetVersion\": \"<string>\",\n          \"targetVersionWeight\": \"<double>\"\n        }\n      },\n      \"ecsTarget\": {\n        \"deploymentId\": \"<string>\",\n        \"targetId\": \"<string>\",\n        \"targetArn\": \"<string>\",\n        \"lastUpdatedAt\": \"<dateTime>\",\n        \"lifecycleEvents\": [\n          {\n            \"lifecycleEventName\": \"<string>\",\n            \"diagnostics\": {\n              \"errorCode\": \"ScriptNotExecutable\",\n              \"scriptName\": \"<string>\",\n              \"message\": \"<string>\",\n              \"logTail\": \"<string>\"\n            },\n            \"startTime\": \"<dateTime>\",\n            \"endTime\": \"<dateTime>\",\n            \"status\": \"Skipped\"\n          },\n          {\n            \"lifecycleEventName\": \"<string>\",\n            \"diagnostics\": {\n              \"errorCode\": \"Success\",\n              \"scriptName\": \"<string>\",\n              \"message\": \"<string>\",\n              \"logTail\": \"<string>\"\n            },\n            \"startTime\": \"<dateTime>\",\n            \"endTime\": \"<dateTime>\",\n            \"status\": \"Succeeded\"\n          }\n        ],\n        \"status\": \"Pending\",\n        \"taskSetsInfo\": [\n          {\n            \"identifer\": \"<string>\",\n            \"desiredCount\": \"<integer>\",\n            \"pendingCount\": \"<integer>\",\n            \"runningCount\": \"<integer>\",\n            \"status\": \"<string>\",\n            \"trafficWeight\": \"<double>\",\n            \"targetGroup\": {\n              \"name\": \"<string>\"\n            },\n            \"taskSetLabel\": \"Green\"\n          },\n          {\n            \"identifer\": \"<string>\",\n            \"desiredCount\": \"<integer>\",\n            \"pendingCount\": \"<integer>\",\n            \"runningCount\": \"<integer>\",\n            \"status\": \"<string>\",\n            \"trafficWeight\": \"<double>\",\n            \"targetGroup\": {\n              \"name\": \"<string>\"\n            },\n            \"taskSetLabel\": \"Blue\"\n          }\n        ]\n      },\n      \"cloudFormationTarget\": {\n        \"deploymentId\": \"<string>\",\n        \"targetId\": \"<string>\",\n        \"lastUpdatedAt\": \"<dateTime>\",\n        \"lifecycleEvents\": [\n          {\n            \"lifecycleEventName\": \"<string>\",\n            \"diagnostics\": {\n              \"errorCode\": \"ScriptTimedOut\",\n              \"scriptName\": \"<string>\",\n              \"message\": \"<string>\",\n              \"logTail\": \"<string>\"\n            },\n            \"startTime\": \"<dateTime>\",\n            \"endTime\": \"<dateTime>\",\n            \"status\": \"Failed\"\n          },\n          {\n            \"lifecycleEventName\": \"<string>\",\n            \"diagnostics\": {\n              \"errorCode\": \"ScriptTimedOut\",\n              \"scriptName\": \"<string>\",\n              \"message\": \"<string>\",\n              \"logTail\": \"<string>\"\n            },\n            \"startTime\": \"<dateTime>\",\n            \"endTime\": \"<dateTime>\",\n            \"status\": \"Succeeded\"\n          }\n        ],\n        \"status\": \"Failed\",\n        \"resourceType\": \"<string>\",\n        \"targetVersionWeight\": \"<double>\"\n      }\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T10:11:22.000Z",
+              "updatedAt": "2026-07-28T10:11:22.000Z",
+              "uid": "35240-b831ccac-a8bb-4e4f-bae4-f705db79ca07"
+            },
+            {
+              "id": "c468da3c-1f50-4b33-816f-ce9f6393f8df",
+              "name": "InvalidDeploymentIdException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "CodeDeploy_20141006.BatchGetDeploymentTargets"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"deploymentId\": \"<string>\",\n  \"targetIds\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.BatchGetDeploymentTargets",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=CodeDeploy_20141006.BatchGetDeploymentTargets"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:11:22.000Z",
+              "updatedAt": "2026-07-28T10:11:22.000Z",
+              "uid": "35240-c468da3c-1f50-4b33-816f-ce9f6393f8df"
+            },
+            {
+              "id": "a2e68c56-88c5-4317-8280-06a642d0e867",
+              "name": "DeploymentIdRequiredException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "CodeDeploy_20141006.BatchGetDeploymentTargets"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"deploymentId\": \"<string>\",\n  \"targetIds\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.BatchGetDeploymentTargets",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=CodeDeploy_20141006.BatchGetDeploymentTargets"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:11:22.000Z",
+              "updatedAt": "2026-07-28T10:11:22.000Z",
+              "uid": "35240-a2e68c56-88c5-4317-8280-06a642d0e867"
+            },
+            {
+              "id": "d1b2593e-0374-4d18-9614-208f6b4b57c1",
+              "name": "DeploymentDoesNotExistException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "CodeDeploy_20141006.BatchGetDeploymentTargets"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"deploymentId\": \"<string>\",\n  \"targetIds\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.BatchGetDeploymentTargets",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=CodeDeploy_20141006.BatchGetDeploymentTargets"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:11:22.000Z",
+              "updatedAt": "2026-07-28T10:11:22.000Z",
+              "uid": "35240-d1b2593e-0374-4d18-9614-208f6b4b57c1"
+            },
+            {
+              "id": "43b6bcdb-d2b0-47a1-b71f-28e5c0a8afe5",
+              "name": "DeploymentNotStartedException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "CodeDeploy_20141006.BatchGetDeploymentTargets"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"deploymentId\": \"<string>\",\n  \"targetIds\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.BatchGetDeploymentTargets",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=CodeDeploy_20141006.BatchGetDeploymentTargets"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:11:22.000Z",
+              "updatedAt": "2026-07-28T10:11:22.000Z",
+              "uid": "35240-43b6bcdb-d2b0-47a1-b71f-28e5c0a8afe5"
+            },
+            {
+              "id": "0fe39928-f5ad-446f-8289-95944b0c62a1",
+              "name": "DeploymentTargetIdRequiredException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "CodeDeploy_20141006.BatchGetDeploymentTargets"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"deploymentId\": \"<string>\",\n  \"targetIds\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.BatchGetDeploymentTargets",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=CodeDeploy_20141006.BatchGetDeploymentTargets"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:11:22.000Z",
+              "updatedAt": "2026-07-28T10:11:22.000Z",
+              "uid": "35240-0fe39928-f5ad-446f-8289-95944b0c62a1"
+            },
+            {
+              "id": "df771795-a413-4c75-9cb2-3c0edc66ad2c",
+              "name": "InvalidDeploymentTargetIdException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "CodeDeploy_20141006.BatchGetDeploymentTargets"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"deploymentId\": \"<string>\",\n  \"targetIds\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.BatchGetDeploymentTargets",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=CodeDeploy_20141006.BatchGetDeploymentTargets"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:11:22.000Z",
+              "updatedAt": "2026-07-28T10:11:22.000Z",
+              "uid": "35240-df771795-a413-4c75-9cb2-3c0edc66ad2c"
+            },
+            {
+              "id": "3e9f9aa9-015c-43c8-a286-a6468d858b4a",
+              "name": "DeploymentTargetDoesNotExistException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "CodeDeploy_20141006.BatchGetDeploymentTargets"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"deploymentId\": \"<string>\",\n  \"targetIds\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.BatchGetDeploymentTargets",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=CodeDeploy_20141006.BatchGetDeploymentTargets"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:11:22.000Z",
+              "updatedAt": "2026-07-28T10:11:22.000Z",
+              "uid": "35240-3e9f9aa9-015c-43c8-a286-a6468d858b4a"
+            },
+            {
+              "id": "ee9a9ded-29f2-4162-9f3d-26e72c1eb914",
+              "name": "DeploymentTargetListSizeExceededException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "CodeDeploy_20141006.BatchGetDeploymentTargets"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"deploymentId\": \"<string>\",\n  \"targetIds\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.BatchGetDeploymentTargets",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=CodeDeploy_20141006.BatchGetDeploymentTargets"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:11:22.000Z",
+              "updatedAt": "2026-07-28T10:11:22.000Z",
+              "uid": "35240-ee9a9ded-29f2-4162-9f3d-26e72c1eb914"
+            },
+            {
+              "id": "e303acca-3230-4a8d-a876-3cfe4c9b14ea",
+              "name": "InstanceDoesNotExistException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "CodeDeploy_20141006.BatchGetDeploymentTargets"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"deploymentId\": \"<string>\",\n  \"targetIds\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.BatchGetDeploymentTargets",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=CodeDeploy_20141006.BatchGetDeploymentTargets"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:11:22.000Z",
+              "updatedAt": "2026-07-28T10:11:22.000Z",
+              "uid": "35240-e303acca-3230-4a8d-a876-3cfe4c9b14ea"
+            }
+          ],
+          "createdAt": "2026-07-28T10:11:22.000Z",
+          "updatedAt": "2026-07-28T10:11:22.000Z",
+          "uid": "35240-58e5369e-7265-4913-bba6-bfb682f9cb74"
+        }
+      ],
+      "id": "0b2a762f-57e2-41f6-af70-3e509fdcd44f",
+      "createdAt": "2026-07-28T10:11:22.000Z",
+      "updatedAt": "2026-07-28T10:11:22.000Z",
+      "uid": "35240-0b2a762f-57e2-41f6-af70-3e509fdcd44f"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://codedeploy.{{region}}.amazonaws.com"
+    }
+  ]
+}

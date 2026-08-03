@@ -1,0 +1,2524 @@
+{
+  "info": {
+    "_postman_id": "fb73c0ff-43b6-4bf4-84ef-3f14a5780be2",
+    "name": "AWS CodeDeploy Applications #X Amz Target=CodeDeploy 20141006.CreateDeployment API",
+    "description": "<p>CodeDeploy is a deployment service that automates application deployments to Amazon EC2 instances, on-premises instances running in your own facility, serverless Lambda functions, or applications in an Amazon ECS service.</p> <p>You can deploy a nearly unlimited variety of application content, such as an updated Lambda function, updated applications in an Amazon ECS service, code, web and configuration files, executables, packages, scripts, multimedia files, and so on. CodeDeploy can deploy application content stored in Amazon S3 buckets, GitHub repositories, or Bitbucket repositories. You do not need to make changes to your existing code before you can use CodeDeploy.</p> <p>CodeDeploy makes it easier for you to rapidly release new features, helps you avoid downtime during application deployment, and handles the complexity of updating your applications, without many of the risks associated with error-prone manual deployments.</p> <p> <b>CodeDeploy Components</b> </p> <p>Use the information in this guide to help you work with the following CodeDeploy components:</p> <ul> <li> <p> <b>Application</b>: A name that uniquely identifies the application you want to deploy. CodeDeploy uses this name, which functions as a container, to ensure the correct combination of revision, deployment configuration, and deployment group are referenced during a deployment.</p> </li> <li> <p> <b>Deployment group</b>: A set of individual instances, CodeDeploy Lambda deployment configuration settings, or an Amazon ECS service and network details. A Lambda deployment group specifies how to route traffic to a new version of a Lambda function. An Amazon ECS deployment group specifies the service created in Amazon ECS to deploy, a load balancer, and a listener to reroute production traffic to an updated containerized application. An Amazon EC2/On-premises deployment group contains individually tagged instances, Amazon EC2 instances in Amazon EC2 Auto Scaling groups, or both. All deployment groups can specify optional trigger, alarm, and rollback settings.</p> </li> <li> <p> <b>Deployment configuration</b>: A set of deployment rules and deployment success and failure conditions used by CodeDeploy during a deployment.</p> </li> <li> <p> <b>Deployment</b>: The process and the components used when updating a Lambda function, a containerized application in an Amazon ECS service, or of installing content on one or more instances. </p> </li> <li> <p> <b>Application revisions</b>: For an Lambda deployment, this is an AppSpec file that specifies the Lambda function to be updated and one or more functions to validate deployment lifecycle events. For an Amazon ECS deployment, this is an AppSpec file that specifies the Amazon ECS task definition, container, and port where production traffic is rerouted. For an EC2/On-premises deployment, this is an archive file that contains source content\u2014source code, webpages, executable files, and deployment scripts\u2014along with an AppSpec file. Revisions are stored in Amazon S3 buckets or GitHub repositories. For Amazon S3, a revision is uniquely identified by its Amazon S3 object key and its ETag, version, or both. For GitHub, a revision is uniquely identified by its commit ID.</p> </li> </ul> <p>This guide also contains information to help you get details about the instances in your deployments, to make on-premises instances available for CodeDeploy deployments, to get details about a Lambda function deployment, and to get details about Amazon ECS service deployments.</p> <p> <b>CodeDeploy Information Resources</b> </p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/codedeploy/latest/userguide\">CodeDeploy User Guide</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/codedeploy/latest/APIReference/\">CodeDeploy API Reference Guide</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/cli/latest/reference/deploy/index.html\">CLI Reference for CodeDeploy</a> </p> </li> <li> <p> <a href=\"https://forums.aws.amazon.com/forum.jspa?forumID=179\">CodeDeploy Developer Forum</a> </p> </li> </ul>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:11:29.000Z",
+    "updatedAt": "2026-07-28T10:11:29.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-fb73c0ff-43b6-4bf4-84ef-3f14a5780be2"
+  },
+  "item": [
+    {
+      "name": "#X-Amz-Target=CodeDeploy_20141006.CreateDeployment",
+      "item": [
+        {
+          "name": "Amazon CodeDeploy Create Deployment",
+          "id": "c70de100-e4eb-4129-84a3-ebda0390502b",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "CodeDeploy_20141006.CreateDeployment"
+              },
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"applicationName\": \"<string>\",\n  \"deploymentGroupName\": \"<string>\",\n  \"revision\": {\n    \"revisionType\": \"AppSpecContent\",\n    \"s3Location\": {\n      \"bucket\": \"<string>\",\n      \"key\": \"<string>\",\n      \"bundleType\": \"zip\",\n      \"version\": \"<string>\",\n      \"eTag\": \"<string>\"\n    },\n    \"gitHubLocation\": {\n      \"repository\": \"<string>\",\n      \"commitId\": \"<string>\"\n    },\n    \"string\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    },\n    \"appSpecContent\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    }\n  },\n  \"deploymentConfigName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"ignoreApplicationStopFailures\": \"<boolean>\",\n  \"targetInstances\": {\n    \"tagFilters\": [\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"VALUE_ONLY\"\n      },\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"KEY_AND_VALUE\"\n      }\n    ],\n    \"autoScalingGroups\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"ec2TagSet\": {\n      \"ec2TagSetList\": [\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          }\n        ],\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          }\n        ]\n      ]\n    }\n  },\n  \"autoRollbackConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"events\": [\n      \"DEPLOYMENT_STOP_ON_REQUEST\",\n      \"DEPLOYMENT_STOP_ON_ALARM\"\n    ]\n  },\n  \"updateOutdatedInstancesOnly\": \"<boolean>\",\n  \"fileExistsBehavior\": \"RETAIN\",\n  \"overrideAlarmConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"ignorePollAlarmFailure\": \"<boolean>\",\n    \"alarms\": [\n      {\n        \"name\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\"\n      }\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.CreateDeployment",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "hash": "X-Amz-Target=CodeDeploy_20141006.CreateDeployment"
+            },
+            "description": "Deploys an application revision through the specified deployment group."
+          },
+          "response": [
+            {
+              "id": "cc9baef1-a4d4-4d2d-b156-6f6f96eafef0",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "CodeDeploy_20141006.CreateDeployment"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationName\": \"<string>\",\n  \"deploymentGroupName\": \"<string>\",\n  \"revision\": {\n    \"revisionType\": \"AppSpecContent\",\n    \"s3Location\": {\n      \"bucket\": \"<string>\",\n      \"key\": \"<string>\",\n      \"bundleType\": \"zip\",\n      \"version\": \"<string>\",\n      \"eTag\": \"<string>\"\n    },\n    \"gitHubLocation\": {\n      \"repository\": \"<string>\",\n      \"commitId\": \"<string>\"\n    },\n    \"string\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    },\n    \"appSpecContent\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    }\n  },\n  \"deploymentConfigName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"ignoreApplicationStopFailures\": \"<boolean>\",\n  \"targetInstances\": {\n    \"tagFilters\": [\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"VALUE_ONLY\"\n      },\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"KEY_AND_VALUE\"\n      }\n    ],\n    \"autoScalingGroups\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"ec2TagSet\": {\n      \"ec2TagSetList\": [\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          }\n        ],\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          }\n        ]\n      ]\n    }\n  },\n  \"autoRollbackConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"events\": [\n      \"DEPLOYMENT_STOP_ON_REQUEST\",\n      \"DEPLOYMENT_STOP_ON_ALARM\"\n    ]\n  },\n  \"updateOutdatedInstancesOnly\": \"<boolean>\",\n  \"fileExistsBehavior\": \"RETAIN\",\n  \"overrideAlarmConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"ignorePollAlarmFailure\": \"<boolean>\",\n    \"alarms\": [\n      {\n        \"name\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\"\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.CreateDeployment",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=CodeDeploy_20141006.CreateDeployment"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"deploymentId\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T10:11:29.000Z",
+              "updatedAt": "2026-07-28T10:11:29.000Z",
+              "uid": "35240-cc9baef1-a4d4-4d2d-b156-6f6f96eafef0"
+            },
+            {
+              "id": "ec8776a6-54af-4f7e-977b-851dbdc69566",
+              "name": "ApplicationNameRequiredException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "CodeDeploy_20141006.CreateDeployment"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationName\": \"<string>\",\n  \"deploymentGroupName\": \"<string>\",\n  \"revision\": {\n    \"revisionType\": \"AppSpecContent\",\n    \"s3Location\": {\n      \"bucket\": \"<string>\",\n      \"key\": \"<string>\",\n      \"bundleType\": \"zip\",\n      \"version\": \"<string>\",\n      \"eTag\": \"<string>\"\n    },\n    \"gitHubLocation\": {\n      \"repository\": \"<string>\",\n      \"commitId\": \"<string>\"\n    },\n    \"string\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    },\n    \"appSpecContent\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    }\n  },\n  \"deploymentConfigName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"ignoreApplicationStopFailures\": \"<boolean>\",\n  \"targetInstances\": {\n    \"tagFilters\": [\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"VALUE_ONLY\"\n      },\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"KEY_AND_VALUE\"\n      }\n    ],\n    \"autoScalingGroups\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"ec2TagSet\": {\n      \"ec2TagSetList\": [\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          }\n        ],\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          }\n        ]\n      ]\n    }\n  },\n  \"autoRollbackConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"events\": [\n      \"DEPLOYMENT_STOP_ON_REQUEST\",\n      \"DEPLOYMENT_STOP_ON_ALARM\"\n    ]\n  },\n  \"updateOutdatedInstancesOnly\": \"<boolean>\",\n  \"fileExistsBehavior\": \"RETAIN\",\n  \"overrideAlarmConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"ignorePollAlarmFailure\": \"<boolean>\",\n    \"alarms\": [\n      {\n        \"name\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\"\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.CreateDeployment",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=CodeDeploy_20141006.CreateDeployment"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:11:29.000Z",
+              "updatedAt": "2026-07-28T10:11:29.000Z",
+              "uid": "35240-ec8776a6-54af-4f7e-977b-851dbdc69566"
+            },
+            {
+              "id": "58392528-e9cd-42a3-8bb1-f9d9c2196082",
+              "name": "InvalidApplicationNameException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "CodeDeploy_20141006.CreateDeployment"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationName\": \"<string>\",\n  \"deploymentGroupName\": \"<string>\",\n  \"revision\": {\n    \"revisionType\": \"AppSpecContent\",\n    \"s3Location\": {\n      \"bucket\": \"<string>\",\n      \"key\": \"<string>\",\n      \"bundleType\": \"zip\",\n      \"version\": \"<string>\",\n      \"eTag\": \"<string>\"\n    },\n    \"gitHubLocation\": {\n      \"repository\": \"<string>\",\n      \"commitId\": \"<string>\"\n    },\n    \"string\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    },\n    \"appSpecContent\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    }\n  },\n  \"deploymentConfigName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"ignoreApplicationStopFailures\": \"<boolean>\",\n  \"targetInstances\": {\n    \"tagFilters\": [\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"VALUE_ONLY\"\n      },\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"KEY_AND_VALUE\"\n      }\n    ],\n    \"autoScalingGroups\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"ec2TagSet\": {\n      \"ec2TagSetList\": [\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          }\n        ],\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          }\n        ]\n      ]\n    }\n  },\n  \"autoRollbackConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"events\": [\n      \"DEPLOYMENT_STOP_ON_REQUEST\",\n      \"DEPLOYMENT_STOP_ON_ALARM\"\n    ]\n  },\n  \"updateOutdatedInstancesOnly\": \"<boolean>\",\n  \"fileExistsBehavior\": \"RETAIN\",\n  \"overrideAlarmConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"ignorePollAlarmFailure\": \"<boolean>\",\n    \"alarms\": [\n      {\n        \"name\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\"\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.CreateDeployment",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=CodeDeploy_20141006.CreateDeployment"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:11:29.000Z",
+              "updatedAt": "2026-07-28T10:11:29.000Z",
+              "uid": "35240-58392528-e9cd-42a3-8bb1-f9d9c2196082"
+            },
+            {
+              "id": "c5e7c262-5a81-46ff-9064-e65c8fc9411d",
+              "name": "ApplicationDoesNotExistException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "CodeDeploy_20141006.CreateDeployment"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationName\": \"<string>\",\n  \"deploymentGroupName\": \"<string>\",\n  \"revision\": {\n    \"revisionType\": \"AppSpecContent\",\n    \"s3Location\": {\n      \"bucket\": \"<string>\",\n      \"key\": \"<string>\",\n      \"bundleType\": \"zip\",\n      \"version\": \"<string>\",\n      \"eTag\": \"<string>\"\n    },\n    \"gitHubLocation\": {\n      \"repository\": \"<string>\",\n      \"commitId\": \"<string>\"\n    },\n    \"string\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    },\n    \"appSpecContent\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    }\n  },\n  \"deploymentConfigName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"ignoreApplicationStopFailures\": \"<boolean>\",\n  \"targetInstances\": {\n    \"tagFilters\": [\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"VALUE_ONLY\"\n      },\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"KEY_AND_VALUE\"\n      }\n    ],\n    \"autoScalingGroups\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"ec2TagSet\": {\n      \"ec2TagSetList\": [\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          }\n        ],\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          }\n        ]\n      ]\n    }\n  },\n  \"autoRollbackConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"events\": [\n      \"DEPLOYMENT_STOP_ON_REQUEST\",\n      \"DEPLOYMENT_STOP_ON_ALARM\"\n    ]\n  },\n  \"updateOutdatedInstancesOnly\": \"<boolean>\",\n  \"fileExistsBehavior\": \"RETAIN\",\n  \"overrideAlarmConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"ignorePollAlarmFailure\": \"<boolean>\",\n    \"alarms\": [\n      {\n        \"name\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\"\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.CreateDeployment",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=CodeDeploy_20141006.CreateDeployment"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:11:29.000Z",
+              "updatedAt": "2026-07-28T10:11:29.000Z",
+              "uid": "35240-c5e7c262-5a81-46ff-9064-e65c8fc9411d"
+            },
+            {
+              "id": "399e294c-0b8c-4cd9-9790-98d76ea52b48",
+              "name": "DeploymentGroupNameRequiredException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "CodeDeploy_20141006.CreateDeployment"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationName\": \"<string>\",\n  \"deploymentGroupName\": \"<string>\",\n  \"revision\": {\n    \"revisionType\": \"AppSpecContent\",\n    \"s3Location\": {\n      \"bucket\": \"<string>\",\n      \"key\": \"<string>\",\n      \"bundleType\": \"zip\",\n      \"version\": \"<string>\",\n      \"eTag\": \"<string>\"\n    },\n    \"gitHubLocation\": {\n      \"repository\": \"<string>\",\n      \"commitId\": \"<string>\"\n    },\n    \"string\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    },\n    \"appSpecContent\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    }\n  },\n  \"deploymentConfigName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"ignoreApplicationStopFailures\": \"<boolean>\",\n  \"targetInstances\": {\n    \"tagFilters\": [\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"VALUE_ONLY\"\n      },\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"KEY_AND_VALUE\"\n      }\n    ],\n    \"autoScalingGroups\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"ec2TagSet\": {\n      \"ec2TagSetList\": [\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          }\n        ],\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          }\n        ]\n      ]\n    }\n  },\n  \"autoRollbackConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"events\": [\n      \"DEPLOYMENT_STOP_ON_REQUEST\",\n      \"DEPLOYMENT_STOP_ON_ALARM\"\n    ]\n  },\n  \"updateOutdatedInstancesOnly\": \"<boolean>\",\n  \"fileExistsBehavior\": \"RETAIN\",\n  \"overrideAlarmConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"ignorePollAlarmFailure\": \"<boolean>\",\n    \"alarms\": [\n      {\n        \"name\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\"\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.CreateDeployment",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=CodeDeploy_20141006.CreateDeployment"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:11:29.000Z",
+              "updatedAt": "2026-07-28T10:11:29.000Z",
+              "uid": "35240-399e294c-0b8c-4cd9-9790-98d76ea52b48"
+            },
+            {
+              "id": "9a0437c9-f547-41d6-97dc-ebf58d2d29bf",
+              "name": "InvalidDeploymentGroupNameException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "CodeDeploy_20141006.CreateDeployment"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationName\": \"<string>\",\n  \"deploymentGroupName\": \"<string>\",\n  \"revision\": {\n    \"revisionType\": \"AppSpecContent\",\n    \"s3Location\": {\n      \"bucket\": \"<string>\",\n      \"key\": \"<string>\",\n      \"bundleType\": \"zip\",\n      \"version\": \"<string>\",\n      \"eTag\": \"<string>\"\n    },\n    \"gitHubLocation\": {\n      \"repository\": \"<string>\",\n      \"commitId\": \"<string>\"\n    },\n    \"string\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    },\n    \"appSpecContent\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    }\n  },\n  \"deploymentConfigName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"ignoreApplicationStopFailures\": \"<boolean>\",\n  \"targetInstances\": {\n    \"tagFilters\": [\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"VALUE_ONLY\"\n      },\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"KEY_AND_VALUE\"\n      }\n    ],\n    \"autoScalingGroups\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"ec2TagSet\": {\n      \"ec2TagSetList\": [\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          }\n        ],\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          }\n        ]\n      ]\n    }\n  },\n  \"autoRollbackConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"events\": [\n      \"DEPLOYMENT_STOP_ON_REQUEST\",\n      \"DEPLOYMENT_STOP_ON_ALARM\"\n    ]\n  },\n  \"updateOutdatedInstancesOnly\": \"<boolean>\",\n  \"fileExistsBehavior\": \"RETAIN\",\n  \"overrideAlarmConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"ignorePollAlarmFailure\": \"<boolean>\",\n    \"alarms\": [\n      {\n        \"name\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\"\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.CreateDeployment",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=CodeDeploy_20141006.CreateDeployment"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:11:29.000Z",
+              "updatedAt": "2026-07-28T10:11:29.000Z",
+              "uid": "35240-9a0437c9-f547-41d6-97dc-ebf58d2d29bf"
+            },
+            {
+              "id": "b36ca78c-400a-4e4a-8734-e6769183b826",
+              "name": "DeploymentGroupDoesNotExistException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "CodeDeploy_20141006.CreateDeployment"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationName\": \"<string>\",\n  \"deploymentGroupName\": \"<string>\",\n  \"revision\": {\n    \"revisionType\": \"AppSpecContent\",\n    \"s3Location\": {\n      \"bucket\": \"<string>\",\n      \"key\": \"<string>\",\n      \"bundleType\": \"zip\",\n      \"version\": \"<string>\",\n      \"eTag\": \"<string>\"\n    },\n    \"gitHubLocation\": {\n      \"repository\": \"<string>\",\n      \"commitId\": \"<string>\"\n    },\n    \"string\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    },\n    \"appSpecContent\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    }\n  },\n  \"deploymentConfigName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"ignoreApplicationStopFailures\": \"<boolean>\",\n  \"targetInstances\": {\n    \"tagFilters\": [\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"VALUE_ONLY\"\n      },\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"KEY_AND_VALUE\"\n      }\n    ],\n    \"autoScalingGroups\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"ec2TagSet\": {\n      \"ec2TagSetList\": [\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          }\n        ],\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          }\n        ]\n      ]\n    }\n  },\n  \"autoRollbackConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"events\": [\n      \"DEPLOYMENT_STOP_ON_REQUEST\",\n      \"DEPLOYMENT_STOP_ON_ALARM\"\n    ]\n  },\n  \"updateOutdatedInstancesOnly\": \"<boolean>\",\n  \"fileExistsBehavior\": \"RETAIN\",\n  \"overrideAlarmConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"ignorePollAlarmFailure\": \"<boolean>\",\n    \"alarms\": [\n      {\n        \"name\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\"\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.CreateDeployment",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=CodeDeploy_20141006.CreateDeployment"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:11:29.000Z",
+              "updatedAt": "2026-07-28T10:11:29.000Z",
+              "uid": "35240-b36ca78c-400a-4e4a-8734-e6769183b826"
+            },
+            {
+              "id": "cb29f133-f9dc-4269-ba62-6b18af213c49",
+              "name": "RevisionRequiredException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "CodeDeploy_20141006.CreateDeployment"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationName\": \"<string>\",\n  \"deploymentGroupName\": \"<string>\",\n  \"revision\": {\n    \"revisionType\": \"AppSpecContent\",\n    \"s3Location\": {\n      \"bucket\": \"<string>\",\n      \"key\": \"<string>\",\n      \"bundleType\": \"zip\",\n      \"version\": \"<string>\",\n      \"eTag\": \"<string>\"\n    },\n    \"gitHubLocation\": {\n      \"repository\": \"<string>\",\n      \"commitId\": \"<string>\"\n    },\n    \"string\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    },\n    \"appSpecContent\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    }\n  },\n  \"deploymentConfigName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"ignoreApplicationStopFailures\": \"<boolean>\",\n  \"targetInstances\": {\n    \"tagFilters\": [\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"VALUE_ONLY\"\n      },\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"KEY_AND_VALUE\"\n      }\n    ],\n    \"autoScalingGroups\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"ec2TagSet\": {\n      \"ec2TagSetList\": [\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          }\n        ],\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          }\n        ]\n      ]\n    }\n  },\n  \"autoRollbackConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"events\": [\n      \"DEPLOYMENT_STOP_ON_REQUEST\",\n      \"DEPLOYMENT_STOP_ON_ALARM\"\n    ]\n  },\n  \"updateOutdatedInstancesOnly\": \"<boolean>\",\n  \"fileExistsBehavior\": \"RETAIN\",\n  \"overrideAlarmConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"ignorePollAlarmFailure\": \"<boolean>\",\n    \"alarms\": [\n      {\n        \"name\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\"\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.CreateDeployment",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=CodeDeploy_20141006.CreateDeployment"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:11:29.000Z",
+              "updatedAt": "2026-07-28T10:11:29.000Z",
+              "uid": "35240-cb29f133-f9dc-4269-ba62-6b18af213c49"
+            },
+            {
+              "id": "8704e7fa-0854-44ba-a188-39540e4e7e68",
+              "name": "RevisionDoesNotExistException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "CodeDeploy_20141006.CreateDeployment"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationName\": \"<string>\",\n  \"deploymentGroupName\": \"<string>\",\n  \"revision\": {\n    \"revisionType\": \"AppSpecContent\",\n    \"s3Location\": {\n      \"bucket\": \"<string>\",\n      \"key\": \"<string>\",\n      \"bundleType\": \"zip\",\n      \"version\": \"<string>\",\n      \"eTag\": \"<string>\"\n    },\n    \"gitHubLocation\": {\n      \"repository\": \"<string>\",\n      \"commitId\": \"<string>\"\n    },\n    \"string\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    },\n    \"appSpecContent\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    }\n  },\n  \"deploymentConfigName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"ignoreApplicationStopFailures\": \"<boolean>\",\n  \"targetInstances\": {\n    \"tagFilters\": [\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"VALUE_ONLY\"\n      },\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"KEY_AND_VALUE\"\n      }\n    ],\n    \"autoScalingGroups\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"ec2TagSet\": {\n      \"ec2TagSetList\": [\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          }\n        ],\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          }\n        ]\n      ]\n    }\n  },\n  \"autoRollbackConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"events\": [\n      \"DEPLOYMENT_STOP_ON_REQUEST\",\n      \"DEPLOYMENT_STOP_ON_ALARM\"\n    ]\n  },\n  \"updateOutdatedInstancesOnly\": \"<boolean>\",\n  \"fileExistsBehavior\": \"RETAIN\",\n  \"overrideAlarmConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"ignorePollAlarmFailure\": \"<boolean>\",\n    \"alarms\": [\n      {\n        \"name\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\"\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.CreateDeployment",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=CodeDeploy_20141006.CreateDeployment"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:11:29.000Z",
+              "updatedAt": "2026-07-28T10:11:29.000Z",
+              "uid": "35240-8704e7fa-0854-44ba-a188-39540e4e7e68"
+            },
+            {
+              "id": "39ce6d3e-49ea-419b-b51b-b8895581cbe6",
+              "name": "InvalidRevisionException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "CodeDeploy_20141006.CreateDeployment"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationName\": \"<string>\",\n  \"deploymentGroupName\": \"<string>\",\n  \"revision\": {\n    \"revisionType\": \"AppSpecContent\",\n    \"s3Location\": {\n      \"bucket\": \"<string>\",\n      \"key\": \"<string>\",\n      \"bundleType\": \"zip\",\n      \"version\": \"<string>\",\n      \"eTag\": \"<string>\"\n    },\n    \"gitHubLocation\": {\n      \"repository\": \"<string>\",\n      \"commitId\": \"<string>\"\n    },\n    \"string\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    },\n    \"appSpecContent\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    }\n  },\n  \"deploymentConfigName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"ignoreApplicationStopFailures\": \"<boolean>\",\n  \"targetInstances\": {\n    \"tagFilters\": [\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"VALUE_ONLY\"\n      },\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"KEY_AND_VALUE\"\n      }\n    ],\n    \"autoScalingGroups\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"ec2TagSet\": {\n      \"ec2TagSetList\": [\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          }\n        ],\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          }\n        ]\n      ]\n    }\n  },\n  \"autoRollbackConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"events\": [\n      \"DEPLOYMENT_STOP_ON_REQUEST\",\n      \"DEPLOYMENT_STOP_ON_ALARM\"\n    ]\n  },\n  \"updateOutdatedInstancesOnly\": \"<boolean>\",\n  \"fileExistsBehavior\": \"RETAIN\",\n  \"overrideAlarmConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"ignorePollAlarmFailure\": \"<boolean>\",\n    \"alarms\": [\n      {\n        \"name\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\"\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.CreateDeployment",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=CodeDeploy_20141006.CreateDeployment"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:11:29.000Z",
+              "updatedAt": "2026-07-28T10:11:29.000Z",
+              "uid": "35240-39ce6d3e-49ea-419b-b51b-b8895581cbe6"
+            },
+            {
+              "id": "baa01a0f-31e2-4cd5-b1e5-1ca9f07170ee",
+              "name": "InvalidDeploymentConfigNameException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "CodeDeploy_20141006.CreateDeployment"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationName\": \"<string>\",\n  \"deploymentGroupName\": \"<string>\",\n  \"revision\": {\n    \"revisionType\": \"AppSpecContent\",\n    \"s3Location\": {\n      \"bucket\": \"<string>\",\n      \"key\": \"<string>\",\n      \"bundleType\": \"zip\",\n      \"version\": \"<string>\",\n      \"eTag\": \"<string>\"\n    },\n    \"gitHubLocation\": {\n      \"repository\": \"<string>\",\n      \"commitId\": \"<string>\"\n    },\n    \"string\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    },\n    \"appSpecContent\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    }\n  },\n  \"deploymentConfigName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"ignoreApplicationStopFailures\": \"<boolean>\",\n  \"targetInstances\": {\n    \"tagFilters\": [\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"VALUE_ONLY\"\n      },\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"KEY_AND_VALUE\"\n      }\n    ],\n    \"autoScalingGroups\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"ec2TagSet\": {\n      \"ec2TagSetList\": [\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          }\n        ],\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          }\n        ]\n      ]\n    }\n  },\n  \"autoRollbackConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"events\": [\n      \"DEPLOYMENT_STOP_ON_REQUEST\",\n      \"DEPLOYMENT_STOP_ON_ALARM\"\n    ]\n  },\n  \"updateOutdatedInstancesOnly\": \"<boolean>\",\n  \"fileExistsBehavior\": \"RETAIN\",\n  \"overrideAlarmConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"ignorePollAlarmFailure\": \"<boolean>\",\n    \"alarms\": [\n      {\n        \"name\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\"\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.CreateDeployment",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=CodeDeploy_20141006.CreateDeployment"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:11:29.000Z",
+              "updatedAt": "2026-07-28T10:11:29.000Z",
+              "uid": "35240-baa01a0f-31e2-4cd5-b1e5-1ca9f07170ee"
+            },
+            {
+              "id": "fa8bec43-58db-4810-bd29-7de62032e91a",
+              "name": "DeploymentConfigDoesNotExistException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "CodeDeploy_20141006.CreateDeployment"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationName\": \"<string>\",\n  \"deploymentGroupName\": \"<string>\",\n  \"revision\": {\n    \"revisionType\": \"AppSpecContent\",\n    \"s3Location\": {\n      \"bucket\": \"<string>\",\n      \"key\": \"<string>\",\n      \"bundleType\": \"zip\",\n      \"version\": \"<string>\",\n      \"eTag\": \"<string>\"\n    },\n    \"gitHubLocation\": {\n      \"repository\": \"<string>\",\n      \"commitId\": \"<string>\"\n    },\n    \"string\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    },\n    \"appSpecContent\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    }\n  },\n  \"deploymentConfigName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"ignoreApplicationStopFailures\": \"<boolean>\",\n  \"targetInstances\": {\n    \"tagFilters\": [\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"VALUE_ONLY\"\n      },\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"KEY_AND_VALUE\"\n      }\n    ],\n    \"autoScalingGroups\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"ec2TagSet\": {\n      \"ec2TagSetList\": [\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          }\n        ],\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          }\n        ]\n      ]\n    }\n  },\n  \"autoRollbackConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"events\": [\n      \"DEPLOYMENT_STOP_ON_REQUEST\",\n      \"DEPLOYMENT_STOP_ON_ALARM\"\n    ]\n  },\n  \"updateOutdatedInstancesOnly\": \"<boolean>\",\n  \"fileExistsBehavior\": \"RETAIN\",\n  \"overrideAlarmConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"ignorePollAlarmFailure\": \"<boolean>\",\n    \"alarms\": [\n      {\n        \"name\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\"\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.CreateDeployment",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=CodeDeploy_20141006.CreateDeployment"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:11:29.000Z",
+              "updatedAt": "2026-07-28T10:11:29.000Z",
+              "uid": "35240-fa8bec43-58db-4810-bd29-7de62032e91a"
+            },
+            {
+              "id": "bd733ca1-cba6-450b-b165-86598b9b94cf",
+              "name": "DescriptionTooLongException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "CodeDeploy_20141006.CreateDeployment"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationName\": \"<string>\",\n  \"deploymentGroupName\": \"<string>\",\n  \"revision\": {\n    \"revisionType\": \"AppSpecContent\",\n    \"s3Location\": {\n      \"bucket\": \"<string>\",\n      \"key\": \"<string>\",\n      \"bundleType\": \"zip\",\n      \"version\": \"<string>\",\n      \"eTag\": \"<string>\"\n    },\n    \"gitHubLocation\": {\n      \"repository\": \"<string>\",\n      \"commitId\": \"<string>\"\n    },\n    \"string\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    },\n    \"appSpecContent\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    }\n  },\n  \"deploymentConfigName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"ignoreApplicationStopFailures\": \"<boolean>\",\n  \"targetInstances\": {\n    \"tagFilters\": [\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"VALUE_ONLY\"\n      },\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"KEY_AND_VALUE\"\n      }\n    ],\n    \"autoScalingGroups\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"ec2TagSet\": {\n      \"ec2TagSetList\": [\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          }\n        ],\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          }\n        ]\n      ]\n    }\n  },\n  \"autoRollbackConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"events\": [\n      \"DEPLOYMENT_STOP_ON_REQUEST\",\n      \"DEPLOYMENT_STOP_ON_ALARM\"\n    ]\n  },\n  \"updateOutdatedInstancesOnly\": \"<boolean>\",\n  \"fileExistsBehavior\": \"RETAIN\",\n  \"overrideAlarmConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"ignorePollAlarmFailure\": \"<boolean>\",\n    \"alarms\": [\n      {\n        \"name\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\"\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.CreateDeployment",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=CodeDeploy_20141006.CreateDeployment"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:11:29.000Z",
+              "updatedAt": "2026-07-28T10:11:29.000Z",
+              "uid": "35240-bd733ca1-cba6-450b-b165-86598b9b94cf"
+            },
+            {
+              "id": "7973b999-69f0-4078-b168-c1a2031d33b7",
+              "name": "DeploymentLimitExceededException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "CodeDeploy_20141006.CreateDeployment"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationName\": \"<string>\",\n  \"deploymentGroupName\": \"<string>\",\n  \"revision\": {\n    \"revisionType\": \"AppSpecContent\",\n    \"s3Location\": {\n      \"bucket\": \"<string>\",\n      \"key\": \"<string>\",\n      \"bundleType\": \"zip\",\n      \"version\": \"<string>\",\n      \"eTag\": \"<string>\"\n    },\n    \"gitHubLocation\": {\n      \"repository\": \"<string>\",\n      \"commitId\": \"<string>\"\n    },\n    \"string\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    },\n    \"appSpecContent\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    }\n  },\n  \"deploymentConfigName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"ignoreApplicationStopFailures\": \"<boolean>\",\n  \"targetInstances\": {\n    \"tagFilters\": [\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"VALUE_ONLY\"\n      },\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"KEY_AND_VALUE\"\n      }\n    ],\n    \"autoScalingGroups\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"ec2TagSet\": {\n      \"ec2TagSetList\": [\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          }\n        ],\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          }\n        ]\n      ]\n    }\n  },\n  \"autoRollbackConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"events\": [\n      \"DEPLOYMENT_STOP_ON_REQUEST\",\n      \"DEPLOYMENT_STOP_ON_ALARM\"\n    ]\n  },\n  \"updateOutdatedInstancesOnly\": \"<boolean>\",\n  \"fileExistsBehavior\": \"RETAIN\",\n  \"overrideAlarmConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"ignorePollAlarmFailure\": \"<boolean>\",\n    \"alarms\": [\n      {\n        \"name\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\"\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.CreateDeployment",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=CodeDeploy_20141006.CreateDeployment"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:11:29.000Z",
+              "updatedAt": "2026-07-28T10:11:29.000Z",
+              "uid": "35240-7973b999-69f0-4078-b168-c1a2031d33b7"
+            },
+            {
+              "id": "f5a9cb08-89d0-4e44-9e51-e38449084e21",
+              "name": "InvalidTargetInstancesException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "CodeDeploy_20141006.CreateDeployment"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationName\": \"<string>\",\n  \"deploymentGroupName\": \"<string>\",\n  \"revision\": {\n    \"revisionType\": \"AppSpecContent\",\n    \"s3Location\": {\n      \"bucket\": \"<string>\",\n      \"key\": \"<string>\",\n      \"bundleType\": \"zip\",\n      \"version\": \"<string>\",\n      \"eTag\": \"<string>\"\n    },\n    \"gitHubLocation\": {\n      \"repository\": \"<string>\",\n      \"commitId\": \"<string>\"\n    },\n    \"string\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    },\n    \"appSpecContent\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    }\n  },\n  \"deploymentConfigName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"ignoreApplicationStopFailures\": \"<boolean>\",\n  \"targetInstances\": {\n    \"tagFilters\": [\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"VALUE_ONLY\"\n      },\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"KEY_AND_VALUE\"\n      }\n    ],\n    \"autoScalingGroups\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"ec2TagSet\": {\n      \"ec2TagSetList\": [\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          }\n        ],\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          }\n        ]\n      ]\n    }\n  },\n  \"autoRollbackConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"events\": [\n      \"DEPLOYMENT_STOP_ON_REQUEST\",\n      \"DEPLOYMENT_STOP_ON_ALARM\"\n    ]\n  },\n  \"updateOutdatedInstancesOnly\": \"<boolean>\",\n  \"fileExistsBehavior\": \"RETAIN\",\n  \"overrideAlarmConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"ignorePollAlarmFailure\": \"<boolean>\",\n    \"alarms\": [\n      {\n        \"name\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\"\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.CreateDeployment",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=CodeDeploy_20141006.CreateDeployment"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:11:29.000Z",
+              "updatedAt": "2026-07-28T10:11:29.000Z",
+              "uid": "35240-f5a9cb08-89d0-4e44-9e51-e38449084e21"
+            },
+            {
+              "id": "fc50f09f-49b0-4649-9b1b-9bee18e09880",
+              "name": "InvalidAlarmConfigException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "CodeDeploy_20141006.CreateDeployment"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationName\": \"<string>\",\n  \"deploymentGroupName\": \"<string>\",\n  \"revision\": {\n    \"revisionType\": \"AppSpecContent\",\n    \"s3Location\": {\n      \"bucket\": \"<string>\",\n      \"key\": \"<string>\",\n      \"bundleType\": \"zip\",\n      \"version\": \"<string>\",\n      \"eTag\": \"<string>\"\n    },\n    \"gitHubLocation\": {\n      \"repository\": \"<string>\",\n      \"commitId\": \"<string>\"\n    },\n    \"string\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    },\n    \"appSpecContent\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    }\n  },\n  \"deploymentConfigName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"ignoreApplicationStopFailures\": \"<boolean>\",\n  \"targetInstances\": {\n    \"tagFilters\": [\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"VALUE_ONLY\"\n      },\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"KEY_AND_VALUE\"\n      }\n    ],\n    \"autoScalingGroups\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"ec2TagSet\": {\n      \"ec2TagSetList\": [\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          }\n        ],\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          }\n        ]\n      ]\n    }\n  },\n  \"autoRollbackConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"events\": [\n      \"DEPLOYMENT_STOP_ON_REQUEST\",\n      \"DEPLOYMENT_STOP_ON_ALARM\"\n    ]\n  },\n  \"updateOutdatedInstancesOnly\": \"<boolean>\",\n  \"fileExistsBehavior\": \"RETAIN\",\n  \"overrideAlarmConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"ignorePollAlarmFailure\": \"<boolean>\",\n    \"alarms\": [\n      {\n        \"name\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\"\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.CreateDeployment",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=CodeDeploy_20141006.CreateDeployment"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:11:29.000Z",
+              "updatedAt": "2026-07-28T10:11:29.000Z",
+              "uid": "35240-fc50f09f-49b0-4649-9b1b-9bee18e09880"
+            },
+            {
+              "id": "daea3efc-1ee8-4ba4-b1f6-7604813adfad",
+              "name": "AlarmsLimitExceededException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "CodeDeploy_20141006.CreateDeployment"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationName\": \"<string>\",\n  \"deploymentGroupName\": \"<string>\",\n  \"revision\": {\n    \"revisionType\": \"AppSpecContent\",\n    \"s3Location\": {\n      \"bucket\": \"<string>\",\n      \"key\": \"<string>\",\n      \"bundleType\": \"zip\",\n      \"version\": \"<string>\",\n      \"eTag\": \"<string>\"\n    },\n    \"gitHubLocation\": {\n      \"repository\": \"<string>\",\n      \"commitId\": \"<string>\"\n    },\n    \"string\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    },\n    \"appSpecContent\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    }\n  },\n  \"deploymentConfigName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"ignoreApplicationStopFailures\": \"<boolean>\",\n  \"targetInstances\": {\n    \"tagFilters\": [\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"VALUE_ONLY\"\n      },\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"KEY_AND_VALUE\"\n      }\n    ],\n    \"autoScalingGroups\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"ec2TagSet\": {\n      \"ec2TagSetList\": [\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          }\n        ],\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          }\n        ]\n      ]\n    }\n  },\n  \"autoRollbackConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"events\": [\n      \"DEPLOYMENT_STOP_ON_REQUEST\",\n      \"DEPLOYMENT_STOP_ON_ALARM\"\n    ]\n  },\n  \"updateOutdatedInstancesOnly\": \"<boolean>\",\n  \"fileExistsBehavior\": \"RETAIN\",\n  \"overrideAlarmConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"ignorePollAlarmFailure\": \"<boolean>\",\n    \"alarms\": [\n      {\n        \"name\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\"\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.CreateDeployment",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=CodeDeploy_20141006.CreateDeployment"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:11:29.000Z",
+              "updatedAt": "2026-07-28T10:11:29.000Z",
+              "uid": "35240-daea3efc-1ee8-4ba4-b1f6-7604813adfad"
+            },
+            {
+              "id": "dc6af5d1-2fa1-4f7d-b136-e5d91d7e4a2f",
+              "name": "InvalidAutoRollbackConfigException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "CodeDeploy_20141006.CreateDeployment"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationName\": \"<string>\",\n  \"deploymentGroupName\": \"<string>\",\n  \"revision\": {\n    \"revisionType\": \"AppSpecContent\",\n    \"s3Location\": {\n      \"bucket\": \"<string>\",\n      \"key\": \"<string>\",\n      \"bundleType\": \"zip\",\n      \"version\": \"<string>\",\n      \"eTag\": \"<string>\"\n    },\n    \"gitHubLocation\": {\n      \"repository\": \"<string>\",\n      \"commitId\": \"<string>\"\n    },\n    \"string\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    },\n    \"appSpecContent\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    }\n  },\n  \"deploymentConfigName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"ignoreApplicationStopFailures\": \"<boolean>\",\n  \"targetInstances\": {\n    \"tagFilters\": [\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"VALUE_ONLY\"\n      },\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"KEY_AND_VALUE\"\n      }\n    ],\n    \"autoScalingGroups\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"ec2TagSet\": {\n      \"ec2TagSetList\": [\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          }\n        ],\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          }\n        ]\n      ]\n    }\n  },\n  \"autoRollbackConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"events\": [\n      \"DEPLOYMENT_STOP_ON_REQUEST\",\n      \"DEPLOYMENT_STOP_ON_ALARM\"\n    ]\n  },\n  \"updateOutdatedInstancesOnly\": \"<boolean>\",\n  \"fileExistsBehavior\": \"RETAIN\",\n  \"overrideAlarmConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"ignorePollAlarmFailure\": \"<boolean>\",\n    \"alarms\": [\n      {\n        \"name\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\"\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.CreateDeployment",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=CodeDeploy_20141006.CreateDeployment"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:11:29.000Z",
+              "updatedAt": "2026-07-28T10:11:29.000Z",
+              "uid": "35240-dc6af5d1-2fa1-4f7d-b136-e5d91d7e4a2f"
+            },
+            {
+              "id": "cc964a8f-c24a-45d4-8a65-5ab8bf18bf50",
+              "name": "InvalidLoadBalancerInfoException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "CodeDeploy_20141006.CreateDeployment"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationName\": \"<string>\",\n  \"deploymentGroupName\": \"<string>\",\n  \"revision\": {\n    \"revisionType\": \"AppSpecContent\",\n    \"s3Location\": {\n      \"bucket\": \"<string>\",\n      \"key\": \"<string>\",\n      \"bundleType\": \"zip\",\n      \"version\": \"<string>\",\n      \"eTag\": \"<string>\"\n    },\n    \"gitHubLocation\": {\n      \"repository\": \"<string>\",\n      \"commitId\": \"<string>\"\n    },\n    \"string\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    },\n    \"appSpecContent\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    }\n  },\n  \"deploymentConfigName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"ignoreApplicationStopFailures\": \"<boolean>\",\n  \"targetInstances\": {\n    \"tagFilters\": [\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"VALUE_ONLY\"\n      },\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"KEY_AND_VALUE\"\n      }\n    ],\n    \"autoScalingGroups\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"ec2TagSet\": {\n      \"ec2TagSetList\": [\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          }\n        ],\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          }\n        ]\n      ]\n    }\n  },\n  \"autoRollbackConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"events\": [\n      \"DEPLOYMENT_STOP_ON_REQUEST\",\n      \"DEPLOYMENT_STOP_ON_ALARM\"\n    ]\n  },\n  \"updateOutdatedInstancesOnly\": \"<boolean>\",\n  \"fileExistsBehavior\": \"RETAIN\",\n  \"overrideAlarmConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"ignorePollAlarmFailure\": \"<boolean>\",\n    \"alarms\": [\n      {\n        \"name\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\"\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.CreateDeployment",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=CodeDeploy_20141006.CreateDeployment"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:11:29.000Z",
+              "updatedAt": "2026-07-28T10:11:29.000Z",
+              "uid": "35240-cc964a8f-c24a-45d4-8a65-5ab8bf18bf50"
+            },
+            {
+              "id": "37a193be-f8b8-4c69-b8a3-83bb29a14d91",
+              "name": "InvalidFileExistsBehaviorException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "CodeDeploy_20141006.CreateDeployment"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationName\": \"<string>\",\n  \"deploymentGroupName\": \"<string>\",\n  \"revision\": {\n    \"revisionType\": \"AppSpecContent\",\n    \"s3Location\": {\n      \"bucket\": \"<string>\",\n      \"key\": \"<string>\",\n      \"bundleType\": \"zip\",\n      \"version\": \"<string>\",\n      \"eTag\": \"<string>\"\n    },\n    \"gitHubLocation\": {\n      \"repository\": \"<string>\",\n      \"commitId\": \"<string>\"\n    },\n    \"string\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    },\n    \"appSpecContent\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    }\n  },\n  \"deploymentConfigName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"ignoreApplicationStopFailures\": \"<boolean>\",\n  \"targetInstances\": {\n    \"tagFilters\": [\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"VALUE_ONLY\"\n      },\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"KEY_AND_VALUE\"\n      }\n    ],\n    \"autoScalingGroups\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"ec2TagSet\": {\n      \"ec2TagSetList\": [\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          }\n        ],\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          }\n        ]\n      ]\n    }\n  },\n  \"autoRollbackConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"events\": [\n      \"DEPLOYMENT_STOP_ON_REQUEST\",\n      \"DEPLOYMENT_STOP_ON_ALARM\"\n    ]\n  },\n  \"updateOutdatedInstancesOnly\": \"<boolean>\",\n  \"fileExistsBehavior\": \"RETAIN\",\n  \"overrideAlarmConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"ignorePollAlarmFailure\": \"<boolean>\",\n    \"alarms\": [\n      {\n        \"name\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\"\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.CreateDeployment",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=CodeDeploy_20141006.CreateDeployment"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:11:29.000Z",
+              "updatedAt": "2026-07-28T10:11:29.000Z",
+              "uid": "35240-37a193be-f8b8-4c69-b8a3-83bb29a14d91"
+            },
+            {
+              "id": "5daf7641-0217-46c7-b1b2-445638e05e82",
+              "name": "InvalidRoleException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "CodeDeploy_20141006.CreateDeployment"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationName\": \"<string>\",\n  \"deploymentGroupName\": \"<string>\",\n  \"revision\": {\n    \"revisionType\": \"AppSpecContent\",\n    \"s3Location\": {\n      \"bucket\": \"<string>\",\n      \"key\": \"<string>\",\n      \"bundleType\": \"zip\",\n      \"version\": \"<string>\",\n      \"eTag\": \"<string>\"\n    },\n    \"gitHubLocation\": {\n      \"repository\": \"<string>\",\n      \"commitId\": \"<string>\"\n    },\n    \"string\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    },\n    \"appSpecContent\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    }\n  },\n  \"deploymentConfigName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"ignoreApplicationStopFailures\": \"<boolean>\",\n  \"targetInstances\": {\n    \"tagFilters\": [\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"VALUE_ONLY\"\n      },\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"KEY_AND_VALUE\"\n      }\n    ],\n    \"autoScalingGroups\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"ec2TagSet\": {\n      \"ec2TagSetList\": [\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          }\n        ],\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          }\n        ]\n      ]\n    }\n  },\n  \"autoRollbackConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"events\": [\n      \"DEPLOYMENT_STOP_ON_REQUEST\",\n      \"DEPLOYMENT_STOP_ON_ALARM\"\n    ]\n  },\n  \"updateOutdatedInstancesOnly\": \"<boolean>\",\n  \"fileExistsBehavior\": \"RETAIN\",\n  \"overrideAlarmConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"ignorePollAlarmFailure\": \"<boolean>\",\n    \"alarms\": [\n      {\n        \"name\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\"\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.CreateDeployment",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=CodeDeploy_20141006.CreateDeployment"
+                }
+              },
+              "status": "Client Closed Request",
+              "code": 499,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:11:29.000Z",
+              "updatedAt": "2026-07-28T10:11:29.000Z",
+              "uid": "35240-5daf7641-0217-46c7-b1b2-445638e05e82"
+            },
+            {
+              "id": "7281423a-380d-474a-ba09-65ceb7236a63",
+              "name": "InvalidAutoScalingGroupException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "CodeDeploy_20141006.CreateDeployment"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationName\": \"<string>\",\n  \"deploymentGroupName\": \"<string>\",\n  \"revision\": {\n    \"revisionType\": \"AppSpecContent\",\n    \"s3Location\": {\n      \"bucket\": \"<string>\",\n      \"key\": \"<string>\",\n      \"bundleType\": \"zip\",\n      \"version\": \"<string>\",\n      \"eTag\": \"<string>\"\n    },\n    \"gitHubLocation\": {\n      \"repository\": \"<string>\",\n      \"commitId\": \"<string>\"\n    },\n    \"string\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    },\n    \"appSpecContent\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    }\n  },\n  \"deploymentConfigName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"ignoreApplicationStopFailures\": \"<boolean>\",\n  \"targetInstances\": {\n    \"tagFilters\": [\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"VALUE_ONLY\"\n      },\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"KEY_AND_VALUE\"\n      }\n    ],\n    \"autoScalingGroups\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"ec2TagSet\": {\n      \"ec2TagSetList\": [\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          }\n        ],\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          }\n        ]\n      ]\n    }\n  },\n  \"autoRollbackConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"events\": [\n      \"DEPLOYMENT_STOP_ON_REQUEST\",\n      \"DEPLOYMENT_STOP_ON_ALARM\"\n    ]\n  },\n  \"updateOutdatedInstancesOnly\": \"<boolean>\",\n  \"fileExistsBehavior\": \"RETAIN\",\n  \"overrideAlarmConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"ignorePollAlarmFailure\": \"<boolean>\",\n    \"alarms\": [\n      {\n        \"name\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\"\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.CreateDeployment",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=CodeDeploy_20141006.CreateDeployment"
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:11:29.000Z",
+              "updatedAt": "2026-07-28T10:11:29.000Z",
+              "uid": "35240-7281423a-380d-474a-ba09-65ceb7236a63"
+            },
+            {
+              "id": "c4c35842-0eba-4cdc-86eb-ebcb74e08538",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "CodeDeploy_20141006.CreateDeployment"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationName\": \"<string>\",\n  \"deploymentGroupName\": \"<string>\",\n  \"revision\": {\n    \"revisionType\": \"AppSpecContent\",\n    \"s3Location\": {\n      \"bucket\": \"<string>\",\n      \"key\": \"<string>\",\n      \"bundleType\": \"zip\",\n      \"version\": \"<string>\",\n      \"eTag\": \"<string>\"\n    },\n    \"gitHubLocation\": {\n      \"repository\": \"<string>\",\n      \"commitId\": \"<string>\"\n    },\n    \"string\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    },\n    \"appSpecContent\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    }\n  },\n  \"deploymentConfigName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"ignoreApplicationStopFailures\": \"<boolean>\",\n  \"targetInstances\": {\n    \"tagFilters\": [\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"VALUE_ONLY\"\n      },\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"KEY_AND_VALUE\"\n      }\n    ],\n    \"autoScalingGroups\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"ec2TagSet\": {\n      \"ec2TagSetList\": [\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          }\n        ],\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          }\n        ]\n      ]\n    }\n  },\n  \"autoRollbackConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"events\": [\n      \"DEPLOYMENT_STOP_ON_REQUEST\",\n      \"DEPLOYMENT_STOP_ON_ALARM\"\n    ]\n  },\n  \"updateOutdatedInstancesOnly\": \"<boolean>\",\n  \"fileExistsBehavior\": \"RETAIN\",\n  \"overrideAlarmConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"ignorePollAlarmFailure\": \"<boolean>\",\n    \"alarms\": [\n      {\n        \"name\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\"\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.CreateDeployment",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=CodeDeploy_20141006.CreateDeployment"
+                }
+              },
+              "status": "Not Implemented",
+              "code": 501,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:11:29.000Z",
+              "updatedAt": "2026-07-28T10:11:29.000Z",
+              "uid": "35240-c4c35842-0eba-4cdc-86eb-ebcb74e08538"
+            },
+            {
+              "id": "9621c19f-11b6-455a-b31f-b3d066e6a891",
+              "name": "InvalidUpdateOutdatedInstancesOnlyValueException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "CodeDeploy_20141006.CreateDeployment"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationName\": \"<string>\",\n  \"deploymentGroupName\": \"<string>\",\n  \"revision\": {\n    \"revisionType\": \"AppSpecContent\",\n    \"s3Location\": {\n      \"bucket\": \"<string>\",\n      \"key\": \"<string>\",\n      \"bundleType\": \"zip\",\n      \"version\": \"<string>\",\n      \"eTag\": \"<string>\"\n    },\n    \"gitHubLocation\": {\n      \"repository\": \"<string>\",\n      \"commitId\": \"<string>\"\n    },\n    \"string\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    },\n    \"appSpecContent\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    }\n  },\n  \"deploymentConfigName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"ignoreApplicationStopFailures\": \"<boolean>\",\n  \"targetInstances\": {\n    \"tagFilters\": [\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"VALUE_ONLY\"\n      },\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"KEY_AND_VALUE\"\n      }\n    ],\n    \"autoScalingGroups\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"ec2TagSet\": {\n      \"ec2TagSetList\": [\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          }\n        ],\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          }\n        ]\n      ]\n    }\n  },\n  \"autoRollbackConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"events\": [\n      \"DEPLOYMENT_STOP_ON_REQUEST\",\n      \"DEPLOYMENT_STOP_ON_ALARM\"\n    ]\n  },\n  \"updateOutdatedInstancesOnly\": \"<boolean>\",\n  \"fileExistsBehavior\": \"RETAIN\",\n  \"overrideAlarmConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"ignorePollAlarmFailure\": \"<boolean>\",\n    \"alarms\": [\n      {\n        \"name\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\"\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.CreateDeployment",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=CodeDeploy_20141006.CreateDeployment"
+                }
+              },
+              "status": "Bad Gateway",
+              "code": 502,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:11:29.000Z",
+              "updatedAt": "2026-07-28T10:11:29.000Z",
+              "uid": "35240-9621c19f-11b6-455a-b31f-b3d066e6a891"
+            },
+            {
+              "id": "a9cdab9a-d1ca-41be-89a8-caee39fc64f8",
+              "name": "InvalidIgnoreApplicationStopFailuresValueException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "CodeDeploy_20141006.CreateDeployment"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationName\": \"<string>\",\n  \"deploymentGroupName\": \"<string>\",\n  \"revision\": {\n    \"revisionType\": \"AppSpecContent\",\n    \"s3Location\": {\n      \"bucket\": \"<string>\",\n      \"key\": \"<string>\",\n      \"bundleType\": \"zip\",\n      \"version\": \"<string>\",\n      \"eTag\": \"<string>\"\n    },\n    \"gitHubLocation\": {\n      \"repository\": \"<string>\",\n      \"commitId\": \"<string>\"\n    },\n    \"string\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    },\n    \"appSpecContent\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    }\n  },\n  \"deploymentConfigName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"ignoreApplicationStopFailures\": \"<boolean>\",\n  \"targetInstances\": {\n    \"tagFilters\": [\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"VALUE_ONLY\"\n      },\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"KEY_AND_VALUE\"\n      }\n    ],\n    \"autoScalingGroups\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"ec2TagSet\": {\n      \"ec2TagSetList\": [\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          }\n        ],\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          }\n        ]\n      ]\n    }\n  },\n  \"autoRollbackConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"events\": [\n      \"DEPLOYMENT_STOP_ON_REQUEST\",\n      \"DEPLOYMENT_STOP_ON_ALARM\"\n    ]\n  },\n  \"updateOutdatedInstancesOnly\": \"<boolean>\",\n  \"fileExistsBehavior\": \"RETAIN\",\n  \"overrideAlarmConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"ignorePollAlarmFailure\": \"<boolean>\",\n    \"alarms\": [\n      {\n        \"name\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\"\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.CreateDeployment",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=CodeDeploy_20141006.CreateDeployment"
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:11:29.000Z",
+              "updatedAt": "2026-07-28T10:11:29.000Z",
+              "uid": "35240-a9cdab9a-d1ca-41be-89a8-caee39fc64f8"
+            },
+            {
+              "id": "ec168f2a-8aac-4ae8-84e4-428519838049",
+              "name": "InvalidGitHubAccountTokenException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "CodeDeploy_20141006.CreateDeployment"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationName\": \"<string>\",\n  \"deploymentGroupName\": \"<string>\",\n  \"revision\": {\n    \"revisionType\": \"AppSpecContent\",\n    \"s3Location\": {\n      \"bucket\": \"<string>\",\n      \"key\": \"<string>\",\n      \"bundleType\": \"zip\",\n      \"version\": \"<string>\",\n      \"eTag\": \"<string>\"\n    },\n    \"gitHubLocation\": {\n      \"repository\": \"<string>\",\n      \"commitId\": \"<string>\"\n    },\n    \"string\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    },\n    \"appSpecContent\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    }\n  },\n  \"deploymentConfigName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"ignoreApplicationStopFailures\": \"<boolean>\",\n  \"targetInstances\": {\n    \"tagFilters\": [\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"VALUE_ONLY\"\n      },\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"KEY_AND_VALUE\"\n      }\n    ],\n    \"autoScalingGroups\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"ec2TagSet\": {\n      \"ec2TagSetList\": [\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          }\n        ],\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          }\n        ]\n      ]\n    }\n  },\n  \"autoRollbackConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"events\": [\n      \"DEPLOYMENT_STOP_ON_REQUEST\",\n      \"DEPLOYMENT_STOP_ON_ALARM\"\n    ]\n  },\n  \"updateOutdatedInstancesOnly\": \"<boolean>\",\n  \"fileExistsBehavior\": \"RETAIN\",\n  \"overrideAlarmConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"ignorePollAlarmFailure\": \"<boolean>\",\n    \"alarms\": [\n      {\n        \"name\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\"\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.CreateDeployment",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=CodeDeploy_20141006.CreateDeployment"
+                }
+              },
+              "status": "Gateway Timeout",
+              "code": 504,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:11:29.000Z",
+              "updatedAt": "2026-07-28T10:11:29.000Z",
+              "uid": "35240-ec168f2a-8aac-4ae8-84e4-428519838049"
+            },
+            {
+              "id": "414e66cc-1c47-4937-af51-4b2c5446d632",
+              "name": "InvalidTrafficRoutingConfigurationException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "CodeDeploy_20141006.CreateDeployment"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationName\": \"<string>\",\n  \"deploymentGroupName\": \"<string>\",\n  \"revision\": {\n    \"revisionType\": \"AppSpecContent\",\n    \"s3Location\": {\n      \"bucket\": \"<string>\",\n      \"key\": \"<string>\",\n      \"bundleType\": \"zip\",\n      \"version\": \"<string>\",\n      \"eTag\": \"<string>\"\n    },\n    \"gitHubLocation\": {\n      \"repository\": \"<string>\",\n      \"commitId\": \"<string>\"\n    },\n    \"string\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    },\n    \"appSpecContent\": {\n      \"content\": \"<string>\",\n      \"sha256\": \"<string>\"\n    }\n  },\n  \"deploymentConfigName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"ignoreApplicationStopFailures\": \"<boolean>\",\n  \"targetInstances\": {\n    \"tagFilters\": [\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"VALUE_ONLY\"\n      },\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"KEY_AND_VALUE\"\n      }\n    ],\n    \"autoScalingGroups\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"ec2TagSet\": {\n      \"ec2TagSetList\": [\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          }\n        ],\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          }\n        ]\n      ]\n    }\n  },\n  \"autoRollbackConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"events\": [\n      \"DEPLOYMENT_STOP_ON_REQUEST\",\n      \"DEPLOYMENT_STOP_ON_ALARM\"\n    ]\n  },\n  \"updateOutdatedInstancesOnly\": \"<boolean>\",\n  \"fileExistsBehavior\": \"RETAIN\",\n  \"overrideAlarmConfiguration\": {\n    \"enabled\": \"<boolean>\",\n    \"ignorePollAlarmFailure\": \"<boolean>\",\n    \"alarms\": [\n      {\n        \"name\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\"\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.CreateDeployment",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=CodeDeploy_20141006.CreateDeployment"
+                }
+              },
+              "status": "HTTP Version Not Supported",
+              "code": 505,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:11:29.000Z",
+              "updatedAt": "2026-07-28T10:11:29.000Z",
+              "uid": "35240-414e66cc-1c47-4937-af51-4b2c5446d632"
+            }
+          ],
+          "createdAt": "2026-07-28T10:11:29.000Z",
+          "updatedAt": "2026-07-28T10:11:29.000Z",
+          "uid": "35240-c70de100-e4eb-4129-84a3-ebda0390502b"
+        }
+      ],
+      "id": "d78733b7-9410-4cd5-abe7-adef4968e57e",
+      "createdAt": "2026-07-28T10:11:29.000Z",
+      "updatedAt": "2026-07-28T10:11:29.000Z",
+      "uid": "35240-d78733b7-9410-4cd5-abe7-adef4968e57e"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://codedeploy.{{region}}.amazonaws.com"
+    }
+  ]
+}

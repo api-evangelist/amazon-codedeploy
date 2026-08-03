@@ -16,6 +16,13 @@
       "method": "none"
     },
     {
+      "source": "https://aws.amazon.com/blogs/devops/feed/",
+      "feed_url": "https://aws.amazon.com/blogs/devops/feed/",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    },
+    {
       "source": "https://aws.amazon.com/blogs/devops/",
       "feed_url": "https://aws.amazon.com/blogs/devops/feed/",
       "title": "",
@@ -23,6 +30,6 @@
       "method": "discovered"
     }
   ],
-  "fetched": "2026-07-11T11:50:51Z",
-  "post_count": 12
+  "fetched": "2026-08-01T15:49:00Z",
+  "post_count": 34
 }

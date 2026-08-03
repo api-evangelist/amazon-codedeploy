@@ -1,0 +1,729 @@
+openapi: 3.1.0
+info:
+  title: Amazon CodeDeploy API
+  description: >-
+    AWS CodeDeploy is a fully managed deployment service that automates software
+    deployments to a variety of compute services such as Amazon EC2, AWS Fargate,
+    AWS Lambda, and your on-premises servers. CodeDeploy makes it easier to rapidly
+    release new features, helps you avoid downtime during deployment, and handles
+    the complexity of updating your applications.
+  version: '2014-10-06'
+  contact:
+    name: Amazon Web Services
+    url: https://aws.amazon.com/contact-us/
+  termsOfService: https://aws.amazon.com/service-terms/
+externalDocs:
+  description: Amazon CodeDeploy API Reference
+  url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/
+servers:
+- url: https://codedeploy.{region}.amazonaws.com
+  description: Amazon CodeDeploy Regional Endpoint
+  variables:
+    region:
+      default: us-east-1
+      description: AWS Region
+tags:
+- name: Applications
+  description: Operations for creating and managing CodeDeploy applications
+- name: Deployments
+  description: Operations for creating and monitoring deployments
+paths:
+  /applications:
+    post:
+      operationId: CreateApplication
+      summary: Amazon CodeDeploy Create an Application
+      description: >-
+        Creates an application. An application is a name that represents the
+        compute platform on which you deploy (EC2/On-premises, Lambda, or ECS).
+      tags:
+      - Applications
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateApplicationRequest'
+            examples:
+              CreateApplicationRequestExample:
+                summary: Default CreateApplication request
+                x-microcks-default: true
+                value:
+                  applicationName: example-resource
+                  computePlatform: Server
+      responses:
+        '200':
+          description: Application created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateApplicationResponse'
+              examples:
+                CreateApplication200Example:
+                  summary: Default CreateApplication 200 response
+                  x-microcks-default: true
+                  value:
+                    applicationId: '500123'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidApplicationNameException'
+              examples:
+                CreateApplication400Example:
+                  summary: Default CreateApplication 400 response
+                  x-microcks-default: true
+                  value:
+                    message: example-value
+        '409':
+          description: Application already exists
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApplicationAlreadyExistsException'
+              examples:
+                CreateApplication409Example:
+                  summary: Default CreateApplication 409 response
+                  x-microcks-default: true
+                  value:
+                    message: example-value
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+              examples:
+                CreateApplication500Example:
+                  summary: Default CreateApplication 500 response
+                  x-microcks-default: true
+                  value:
+                    message: example-value
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    get:
+      operationId: ListApplications
+      summary: Amazon CodeDeploy List Applications
+      description: >-
+        Lists the applications registered with the user or AWS account.
+      tags:
+      - Applications
+      parameters:
+      - name: nextToken
+        in: query
+        description: Token for pagination.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListApplicationsResponse'
+              examples:
+                ListApplications200Example:
+                  summary: Default ListApplications 200 response
+                  x-microcks-default: true
+                  value:
+                    applications:
+                    - example-value
+                    nextToken: example-value
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidNextTokenException'
+              examples:
+                ListApplications400Example:
+                  summary: Default ListApplications 400 response
+                  x-microcks-default: true
+                  value:
+                    message: example-value
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+
+              examples:
+                ListApplications500Example:
+                  summary: Default ListApplications 500 response
+                  x-microcks-default: true
+                  value:
+                    message: example-value
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /applications/{applicationName}:
+    get:
+      operationId: GetApplication
+      summary: Amazon CodeDeploy Get Application Details
+      description: >-
+        Gets information about an application.
+      tags:
+      - Applications
+      parameters:
+      - name: applicationName
+        in: path
+        required: true
+        description: The name of the application.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetApplicationResponse'
+              examples:
+                GetApplication200Example:
+                  summary: Default GetApplication 200 response
+                  x-microcks-default: true
+                  value:
+                    application:
+                      applicationId: '500123'
+                      applicationName: example-resource
+                      computePlatform: example-value
+                      createTime: example-value
+                      linkedToGitHub: true
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidApplicationNameException'
+              examples:
+                GetApplication400Example:
+                  summary: Default GetApplication 400 response
+                  x-microcks-default: true
+                  value:
+                    message: example-value
+        '404':
+          description: Application not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApplicationDoesNotExistException'
+              examples:
+                GetApplication404Example:
+                  summary: Default GetApplication 404 response
+                  x-microcks-default: true
+                  value:
+                    message: example-value
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+              examples:
+                GetApplication500Example:
+                  summary: Default GetApplication 500 response
+                  x-microcks-default: true
+                  value:
+                    message: example-value
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    delete:
+      operationId: DeleteApplication
+      summary: Amazon CodeDeploy Delete an Application
+      description: >-
+        Deletes an application along with all associated deployment groups
+        and revisions.
+      tags:
+      - Applications
+      parameters:
+      - name: applicationName
+        in: path
+        required: true
+        description: The name of the application to delete.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Application deleted
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidApplicationNameException'
+              examples:
+                DeleteApplication400Example:
+                  summary: Default DeleteApplication 400 response
+                  x-microcks-default: true
+                  value:
+                    message: example-value
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+
+              examples:
+                DeleteApplication500Example:
+                  summary: Default DeleteApplication 500 response
+                  x-microcks-default: true
+                  value:
+                    message: example-value
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /deployments:
+    post:
+      operationId: CreateDeployment
+      summary: Amazon CodeDeploy Create a Deployment
+      description: >-
+        Deploys an application revision through the specified deployment group.
+      tags:
+      - Deployments
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateDeploymentRequest'
+            examples:
+              CreateDeploymentRequestExample:
+                summary: Default CreateDeployment request
+                x-microcks-default: true
+                value:
+                  applicationName: example-resource
+                  deploymentGroupName: example-resource
+                  revision:
+                    revisionType: S3
+                    s3Location:
+                      bucket: example-value
+                      key: example-value
+                      bundleType: tar
+                    gitHubLocation:
+                      repository: example-value
+                      commitId: '500123'
+                  description: Example description
+                  autoRollbackConfiguration:
+                    enabled: true
+                    events:
+                    - DEPLOYMENT_FAILURE
+      responses:
+        '200':
+          description: Deployment created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateDeploymentResponse'
+              examples:
+                CreateDeployment200Example:
+                  summary: Default CreateDeployment 200 response
+                  x-microcks-default: true
+                  value:
+                    deploymentId: '500123'
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidDeploymentGroupNameException'
+              examples:
+                CreateDeployment400Example:
+                  summary: Default CreateDeployment 400 response
+                  x-microcks-default: true
+                  value:
+                    message: example-value
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+              examples:
+                CreateDeployment500Example:
+                  summary: Default CreateDeployment 500 response
+                  x-microcks-default: true
+                  value:
+                    message: example-value
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    get:
+      operationId: ListDeployments
+      summary: Amazon CodeDeploy List Deployments
+      description: >-
+        Lists the deployments in a deployment group for an application registered
+        with the user or AWS account.
+      tags:
+      - Deployments
+      parameters:
+      - name: applicationName
+        in: query
+        description: The name of the application.
+        schema:
+          type: string
+      - name: deploymentGroupName
+        in: query
+        description: The name of the deployment group.
+        schema:
+          type: string
+      - name: nextToken
+        in: query
+        description: Token for pagination.
+        schema:
+          type: string
+      - name: includeOnlyStatuses
+        in: query
+        description: Filter by deployment status.
+        schema:
+          type: array
+          items:
+            type: string
+            enum:
+            - Created
+            - Queued
+            - InProgress
+            - Baking
+            - Succeeded
+            - Failed
+            - Stopped
+            - Ready
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListDeploymentsResponse'
+              examples:
+                ListDeployments200Example:
+                  summary: Default ListDeployments 200 response
+                  x-microcks-default: true
+                  value:
+                    deployments:
+                    - example-value
+                    nextToken: example-value
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidApplicationNameException'
+              examples:
+                ListDeployments400Example:
+                  summary: Default ListDeployments 400 response
+                  x-microcks-default: true
+                  value:
+                    message: example-value
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+
+              examples:
+                ListDeployments500Example:
+                  summary: Default ListDeployments 500 response
+                  x-microcks-default: true
+                  value:
+                    message: example-value
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /deployments/{deploymentId}:
+    get:
+      operationId: GetDeployment
+      summary: Amazon CodeDeploy Get Deployment Details
+      description: >-
+        Gets information about a deployment, including details about the
+        deployment status.
+      tags:
+      - Deployments
+      parameters:
+      - name: deploymentId
+        in: path
+        required: true
+        description: The unique ID of a deployment.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetDeploymentResponse'
+              examples:
+                GetDeployment200Example:
+                  summary: Default GetDeployment 200 response
+                  x-microcks-default: true
+                  value:
+                    deploymentInfo:
+                      deploymentId: '500123'
+                      applicationName: example-resource
+                      deploymentGroupName: example-resource
+                      status: Created
+                      createTime: example-value
+                      startTime: example-value
+                      completeTime: example-value
+                      description: Example description
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InvalidDeploymentIdException'
+              examples:
+                GetDeployment400Example:
+                  summary: Default GetDeployment 400 response
+                  x-microcks-default: true
+                  value:
+                    message: example-value
+        '404':
+          description: Deployment not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeploymentDoesNotExistException'
+              examples:
+                GetDeployment404Example:
+                  summary: Default GetDeployment 404 response
+                  x-microcks-default: true
+                  value:
+                    message: example-value
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+
+              examples:
+                GetDeployment500Example:
+                  summary: Default GetDeployment 500 response
+                  x-microcks-default: true
+                  value:
+                    message: example-value
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    CreateApplicationRequest:
+      type: object
+      required:
+      - applicationName
+      properties:
+        applicationName:
+          type: string
+          description: The name of the application.
+        computePlatform:
+          type: string
+          description: The destination platform type for the deployment.
+          enum:
+          - Server
+          - Lambda
+          - ECS
+
+    CreateApplicationResponse:
+      type: object
+      properties:
+        applicationId:
+          type: string
+          description: A unique application ID.
+
+    ListApplicationsResponse:
+      type: object
+      properties:
+        applications:
+          type: array
+          items:
+            type: string
+        nextToken:
+          type: string
+
+    GetApplicationResponse:
+      type: object
+      properties:
+        application:
+          type: object
+          properties:
+            applicationId:
+              type: string
+            applicationName:
+              type: string
+            computePlatform:
+              type: string
+            createTime:
+              type: string
+              format: date-time
+            linkedToGitHub:
+              type: boolean
+
+    CreateDeploymentRequest:
+      type: object
+      required:
+      - applicationName
+      - deploymentGroupName
+      properties:
+        applicationName:
+          type: string
+          description: The name of the application.
+        deploymentGroupName:
+          type: string
+          description: The name of the deployment group.
+        revision:
+          type: object
+          properties:
+            revisionType:
+              type: string
+              enum:
+              - S3
+              - GitHub
+              - String
+              - AppSpecContent
+            s3Location:
+              type: object
+              properties:
+                bucket:
+                  type: string
+                key:
+                  type: string
+                bundleType:
+                  type: string
+                  enum:
+                  - tar
+                  - tgz
+                  - zip
+                  - YAML
+                  - JSON
+            gitHubLocation:
+              type: object
+              properties:
+                repository:
+                  type: string
+                commitId:
+                  type: string
+        description:
+          type: string
+          description: A comment about the deployment.
+        autoRollbackConfiguration:
+          type: object
+          properties:
+            enabled:
+              type: boolean
+            events:
+              type: array
+              items:
+                type: string
+                enum:
+                - DEPLOYMENT_FAILURE
+                - DEPLOYMENT_STOP_ON_ALARM
+                - DEPLOYMENT_STOP_ON_REQUEST
+
+    CreateDeploymentResponse:
+      type: object
+      properties:
+        deploymentId:
+          type: string
+
+    ListDeploymentsResponse:
+      type: object
+      properties:
+        deployments:
+          type: array
+          items:
+            type: string
+        nextToken:
+          type: string
+
+    GetDeploymentResponse:
+      type: object
+      properties:
+        deploymentInfo:
+          type: object
+          properties:
+            deploymentId:
+              type: string
+            applicationName:
+              type: string
+            deploymentGroupName:
+              type: string
+            status:
+              type: string
+              enum:
+              - Created
+              - Queued
+              - InProgress
+              - Baking
+              - Succeeded
+              - Failed
+              - Stopped
+              - Ready
+            createTime:
+              type: string
+              format: date-time
+            startTime:
+              type: string
+              format: date-time
+            completeTime:
+              type: string
+              format: date-time
+            description:
+              type: string
+            creator:
+              type: string
+            computePlatform:
+              type: string
+
+    InvalidApplicationNameException:
+      type: object
+      properties:
+        message:
+          type: string
+
+    ApplicationAlreadyExistsException:
+      type: object
+      properties:
+        message:
+          type: string
+
+    ApplicationDoesNotExistException:
+      type: object
+      properties:
+        message:
+          type: string
+
+    InvalidDeploymentGroupNameException:
+      type: object
+      properties:
+        message:
+          type: string
+
+    InvalidDeploymentIdException:
+      type: object
+      properties:
+        message:
+          type: string
+
+    DeploymentDoesNotExistException:
+      type: object
+      properties:
+        message:
+          type: string
+
+    InvalidNextTokenException:
+      type: object
+      properties:
+        message:
+          type: string
+
+    InternalServerException:
+      type: object
+      properties:
+        message:
+          type: string

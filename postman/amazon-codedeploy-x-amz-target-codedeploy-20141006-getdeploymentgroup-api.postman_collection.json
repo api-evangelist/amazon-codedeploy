@@ -1,0 +1,838 @@
+{
+  "info": {
+    "_postman_id": "60c020e0-0cae-437c-a960-b4e711ff08fc",
+    "name": "AWS CodeDeploy Applications #X Amz Target=CodeDeploy 20141006.GetDeploymentGroup API",
+    "description": "<p>CodeDeploy is a deployment service that automates application deployments to Amazon EC2 instances, on-premises instances running in your own facility, serverless Lambda functions, or applications in an Amazon ECS service.</p> <p>You can deploy a nearly unlimited variety of application content, such as an updated Lambda function, updated applications in an Amazon ECS service, code, web and configuration files, executables, packages, scripts, multimedia files, and so on. CodeDeploy can deploy application content stored in Amazon S3 buckets, GitHub repositories, or Bitbucket repositories. You do not need to make changes to your existing code before you can use CodeDeploy.</p> <p>CodeDeploy makes it easier for you to rapidly release new features, helps you avoid downtime during application deployment, and handles the complexity of updating your applications, without many of the risks associated with error-prone manual deployments.</p> <p> <b>CodeDeploy Components</b> </p> <p>Use the information in this guide to help you work with the following CodeDeploy components:</p> <ul> <li> <p> <b>Application</b>: A name that uniquely identifies the application you want to deploy. CodeDeploy uses this name, which functions as a container, to ensure the correct combination of revision, deployment configuration, and deployment group are referenced during a deployment.</p> </li> <li> <p> <b>Deployment group</b>: A set of individual instances, CodeDeploy Lambda deployment configuration settings, or an Amazon ECS service and network details. A Lambda deployment group specifies how to route traffic to a new version of a Lambda function. An Amazon ECS deployment group specifies the service created in Amazon ECS to deploy, a load balancer, and a listener to reroute production traffic to an updated containerized application. An Amazon EC2/On-premises deployment group contains individually tagged instances, Amazon EC2 instances in Amazon EC2 Auto Scaling groups, or both. All deployment groups can specify optional trigger, alarm, and rollback settings.</p> </li> <li> <p> <b>Deployment configuration</b>: A set of deployment rules and deployment success and failure conditions used by CodeDeploy during a deployment.</p> </li> <li> <p> <b>Deployment</b>: The process and the components used when updating a Lambda function, a containerized application in an Amazon ECS service, or of installing content on one or more instances. </p> </li> <li> <p> <b>Application revisions</b>: For an Lambda deployment, this is an AppSpec file that specifies the Lambda function to be updated and one or more functions to validate deployment lifecycle events. For an Amazon ECS deployment, this is an AppSpec file that specifies the Amazon ECS task definition, container, and port where production traffic is rerouted. For an EC2/On-premises deployment, this is an archive file that contains source content\u2014source code, webpages, executable files, and deployment scripts\u2014along with an AppSpec file. Revisions are stored in Amazon S3 buckets or GitHub repositories. For Amazon S3, a revision is uniquely identified by its Amazon S3 object key and its ETag, version, or both. For GitHub, a revision is uniquely identified by its commit ID.</p> </li> </ul> <p>This guide also contains information to help you get details about the instances in your deployments, to make on-premises instances available for CodeDeploy deployments, to get details about a Lambda function deployment, and to get details about Amazon ECS service deployments.</p> <p> <b>CodeDeploy Information Resources</b> </p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/codedeploy/latest/userguide\">CodeDeploy User Guide</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/codedeploy/latest/APIReference/\">CodeDeploy API Reference Guide</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/cli/latest/reference/deploy/index.html\">CLI Reference for CodeDeploy</a> </p> </li> <li> <p> <a href=\"https://forums.aws.amazon.com/forum.jspa?forumID=179\">CodeDeploy Developer Forum</a> </p> </li> </ul>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:12:35.000Z",
+    "updatedAt": "2026-07-28T10:12:35.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-60c020e0-0cae-437c-a960-b4e711ff08fc"
+  },
+  "item": [
+    {
+      "name": "#X-Amz-Target=CodeDeploy_20141006.GetDeploymentGroup",
+      "item": [
+        {
+          "name": "Amazon CodeDeploy Get Deployment Group",
+          "id": "abb1a48c-3003-4670-83bf-af4723c9ae7d",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "description": "(Required) ",
+                "key": "X-Amz-Target",
+                "value": "CodeDeploy_20141006.GetDeploymentGroup"
+              },
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"applicationName\": \"<string>\",\n  \"deploymentGroupName\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.GetDeploymentGroup",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "hash": "X-Amz-Target=CodeDeploy_20141006.GetDeploymentGroup"
+            },
+            "description": "Gets information about a deployment group."
+          },
+          "response": [
+            {
+              "id": "88552c63-222e-4f2e-b53e-bf871520ed85",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "CodeDeploy_20141006.GetDeploymentGroup"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationName\": \"<string>\",\n  \"deploymentGroupName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.GetDeploymentGroup",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=CodeDeploy_20141006.GetDeploymentGroup"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"deploymentGroupInfo\": {\n    \"applicationName\": \"<string>\",\n    \"deploymentGroupId\": \"<string>\",\n    \"deploymentGroupName\": \"<string>\",\n    \"deploymentConfigName\": \"<string>\",\n    \"ec2TagFilters\": [\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"KEY_AND_VALUE\"\n      },\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"KEY_ONLY\"\n      }\n    ],\n    \"onPremisesInstanceTagFilters\": [\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"VALUE_ONLY\"\n      },\n      {\n        \"Key\": \"<string>\",\n        \"Value\": \"<string>\",\n        \"Type\": \"VALUE_ONLY\"\n      }\n    ],\n    \"autoScalingGroups\": [\n      {\n        \"name\": \"<string>\",\n        \"hook\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"hook\": \"<string>\"\n      }\n    ],\n    \"serviceRoleArn\": \"<string>\",\n    \"targetRevision\": {\n      \"revisionType\": \"GitHub\",\n      \"s3Location\": {\n        \"bucket\": \"<string>\",\n        \"key\": \"<string>\",\n        \"bundleType\": \"tar\",\n        \"version\": \"<string>\",\n        \"eTag\": \"<string>\"\n      },\n      \"gitHubLocation\": {\n        \"repository\": \"<string>\",\n        \"commitId\": \"<string>\"\n      },\n      \"string\": {\n        \"content\": \"<string>\",\n        \"sha256\": \"<string>\"\n      },\n      \"appSpecContent\": {\n        \"content\": \"<string>\",\n        \"sha256\": \"<string>\"\n      }\n    },\n    \"triggerConfigurations\": [\n      {\n        \"triggerName\": \"<string>\",\n        \"triggerTargetArn\": \"<string>\",\n        \"triggerEvents\": [\n          \"DeploymentFailure\",\n          \"DeploymentFailure\"\n        ]\n      },\n      {\n        \"triggerName\": \"<string>\",\n        \"triggerTargetArn\": \"<string>\",\n        \"triggerEvents\": [\n          \"InstanceFailure\",\n          \"DeploymentStop\"\n        ]\n      }\n    ],\n    \"alarmConfiguration\": {\n      \"enabled\": \"<boolean>\",\n      \"ignorePollAlarmFailure\": \"<boolean>\",\n      \"alarms\": [\n        {\n          \"name\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\"\n        }\n      ]\n    },\n    \"autoRollbackConfiguration\": {\n      \"enabled\": \"<boolean>\",\n      \"events\": [\n        \"DEPLOYMENT_STOP_ON_REQUEST\",\n        \"DEPLOYMENT_FAILURE\"\n      ]\n    },\n    \"deploymentStyle\": {\n      \"deploymentType\": \"BLUE_GREEN\",\n      \"deploymentOption\": \"WITHOUT_TRAFFIC_CONTROL\"\n    },\n    \"outdatedInstancesStrategy\": \"IGNORE\",\n    \"blueGreenDeploymentConfiguration\": {\n      \"terminateBlueInstancesOnDeploymentSuccess\": {\n        \"action\": \"TERMINATE\",\n        \"terminationWaitTimeInMinutes\": \"<integer>\"\n      },\n      \"deploymentReadyOption\": {\n        \"actionOnTimeout\": \"CONTINUE_DEPLOYMENT\",\n        \"waitTimeInMinutes\": \"<integer>\"\n      },\n      \"greenFleetProvisioningOption\": {\n        \"action\": \"COPY_AUTO_SCALING_GROUP\"\n      }\n    },\n    \"loadBalancerInfo\": {\n      \"elbInfoList\": [\n        {\n          \"name\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\"\n        }\n      ],\n      \"targetGroupInfoList\": [\n        {\n          \"name\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\"\n        }\n      ],\n      \"targetGroupPairInfoList\": [\n        {\n          \"targetGroups\": [\n            {\n              \"name\": \"<string>\"\n            },\n            {\n              \"name\": \"<string>\"\n            }\n          ],\n          \"prodTrafficRoute\": {\n            \"listenerArns\": [\n              \"<string>\",\n              \"<string>\"\n            ]\n          },\n          \"testTrafficRoute\": {\n            \"listenerArns\": [\n              \"<string>\",\n              \"<string>\"\n            ]\n          }\n        },\n        {\n          \"targetGroups\": [\n            {\n              \"name\": \"<string>\"\n            },\n            {\n              \"name\": \"<string>\"\n            }\n          ],\n          \"prodTrafficRoute\": {\n            \"listenerArns\": [\n              \"<string>\",\n              \"<string>\"\n            ]\n          },\n          \"testTrafficRoute\": {\n            \"listenerArns\": [\n              \"<string>\",\n              \"<string>\"\n            ]\n          }\n        }\n      ]\n    },\n    \"lastSuccessfulDeployment\": {\n      \"deploymentId\": \"<string>\",\n      \"status\": \"Failed\",\n      \"endTime\": \"<dateTime>\",\n      \"createTime\": \"<dateTime>\"\n    },\n    \"lastAttemptedDeployment\": {\n      \"deploymentId\": \"<string>\",\n      \"status\": \"Ready\",\n      \"endTime\": \"<dateTime>\",\n      \"createTime\": \"<dateTime>\"\n    },\n    \"ec2TagSet\": {\n      \"ec2TagSetList\": [\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          }\n        ],\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_ONLY\"\n          }\n        ]\n      ]\n    },\n    \"onPremisesTagSet\": {\n      \"onPremisesTagSetList\": [\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          }\n        ],\n        [\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"VALUE_ONLY\"\n          },\n          {\n            \"Key\": \"<string>\",\n            \"Value\": \"<string>\",\n            \"Type\": \"KEY_AND_VALUE\"\n          }\n        ]\n      ]\n    },\n    \"computePlatform\": \"ECS\",\n    \"ecsServices\": [\n      {\n        \"serviceName\": \"<string>\",\n        \"clusterName\": \"<string>\"\n      },\n      {\n        \"serviceName\": \"<string>\",\n        \"clusterName\": \"<string>\"\n      }\n    ]\n  }\n}",
+              "createdAt": "2026-07-28T10:12:35.000Z",
+              "updatedAt": "2026-07-28T10:12:35.000Z",
+              "uid": "35240-88552c63-222e-4f2e-b53e-bf871520ed85"
+            },
+            {
+              "id": "8b636d23-0b2c-4399-87eb-71be6a0bff6b",
+              "name": "ApplicationNameRequiredException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "CodeDeploy_20141006.GetDeploymentGroup"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationName\": \"<string>\",\n  \"deploymentGroupName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.GetDeploymentGroup",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=CodeDeploy_20141006.GetDeploymentGroup"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:12:35.000Z",
+              "updatedAt": "2026-07-28T10:12:35.000Z",
+              "uid": "35240-8b636d23-0b2c-4399-87eb-71be6a0bff6b"
+            },
+            {
+              "id": "4c3898db-7a49-47af-9405-897c19f39cd3",
+              "name": "InvalidApplicationNameException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "CodeDeploy_20141006.GetDeploymentGroup"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationName\": \"<string>\",\n  \"deploymentGroupName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.GetDeploymentGroup",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=CodeDeploy_20141006.GetDeploymentGroup"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:12:35.000Z",
+              "updatedAt": "2026-07-28T10:12:35.000Z",
+              "uid": "35240-4c3898db-7a49-47af-9405-897c19f39cd3"
+            },
+            {
+              "id": "e2aad989-fa2d-47f7-b246-915b2076f87c",
+              "name": "ApplicationDoesNotExistException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "CodeDeploy_20141006.GetDeploymentGroup"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationName\": \"<string>\",\n  \"deploymentGroupName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.GetDeploymentGroup",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=CodeDeploy_20141006.GetDeploymentGroup"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:12:35.000Z",
+              "updatedAt": "2026-07-28T10:12:35.000Z",
+              "uid": "35240-e2aad989-fa2d-47f7-b246-915b2076f87c"
+            },
+            {
+              "id": "86589bfa-8a18-4a93-8b89-1bdc57edd1cf",
+              "name": "DeploymentGroupNameRequiredException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "CodeDeploy_20141006.GetDeploymentGroup"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationName\": \"<string>\",\n  \"deploymentGroupName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.GetDeploymentGroup",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=CodeDeploy_20141006.GetDeploymentGroup"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:12:35.000Z",
+              "updatedAt": "2026-07-28T10:12:35.000Z",
+              "uid": "35240-86589bfa-8a18-4a93-8b89-1bdc57edd1cf"
+            },
+            {
+              "id": "b2c11f14-0b6a-4166-9bf3-c43616d6f699",
+              "name": "InvalidDeploymentGroupNameException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "CodeDeploy_20141006.GetDeploymentGroup"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationName\": \"<string>\",\n  \"deploymentGroupName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.GetDeploymentGroup",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=CodeDeploy_20141006.GetDeploymentGroup"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:12:35.000Z",
+              "updatedAt": "2026-07-28T10:12:35.000Z",
+              "uid": "35240-b2c11f14-0b6a-4166-9bf3-c43616d6f699"
+            },
+            {
+              "id": "cab507aa-9f94-4ba8-af3d-ccf96b042732",
+              "name": "DeploymentGroupDoesNotExistException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "CodeDeploy_20141006.GetDeploymentGroup"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationName\": \"<string>\",\n  \"deploymentGroupName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.GetDeploymentGroup",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=CodeDeploy_20141006.GetDeploymentGroup"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:12:35.000Z",
+              "updatedAt": "2026-07-28T10:12:35.000Z",
+              "uid": "35240-cab507aa-9f94-4ba8-af3d-ccf96b042732"
+            },
+            {
+              "id": "71916cdc-895a-4c7a-9ba8-f00095a2056c",
+              "name": "DeploymentConfigDoesNotExistException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "description": "(Required) ",
+                    "key": "X-Amz-Target",
+                    "value": "CodeDeploy_20141006.GetDeploymentGroup"
+                  },
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationName\": \"<string>\",\n  \"deploymentGroupName\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#X-Amz-Target=CodeDeploy_20141006.GetDeploymentGroup",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "X-Amz-Target=CodeDeploy_20141006.GetDeploymentGroup"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:12:35.000Z",
+              "updatedAt": "2026-07-28T10:12:35.000Z",
+              "uid": "35240-71916cdc-895a-4c7a-9ba8-f00095a2056c"
+            }
+          ],
+          "createdAt": "2026-07-28T10:12:35.000Z",
+          "updatedAt": "2026-07-28T10:12:35.000Z",
+          "uid": "35240-abb1a48c-3003-4670-83bf-af4723c9ae7d"
+        }
+      ],
+      "id": "9b3e7d9e-5162-49c8-ab5c-9205635b4764",
+      "createdAt": "2026-07-28T10:12:35.000Z",
+      "updatedAt": "2026-07-28T10:12:35.000Z",
+      "uid": "35240-9b3e7d9e-5162-49c8-ab5c-9205635b4764"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://codedeploy.{{region}}.amazonaws.com"
+    }
+  ]
+}
