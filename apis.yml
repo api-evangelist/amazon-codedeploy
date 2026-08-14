@@ -1,10 +1,10 @@
 aid: amazon-codedeploy
 name: Amazon CodeDeploy
 description: >-
-  AWS CodeDeploy is a fully managed deployment service that automates software deployments to various compute
-  services such as Amazon EC2, AWS Fargate, AWS Lambda, and on-premises servers. CodeDeploy makes it easier to
-  rapidly release new features, helps avoid downtime during application deployment, and handles the complexity of
-  updating your applications with in-place, blue/green, and canary deployment strategies.
+  AWS CodeDeploy is a fully managed deployment service that automates software deployments to various compute services
+  such as Amazon EC2, AWS Fargate, AWS Lambda, and on-premises servers. CodeDeploy makes it easier to rapidly release
+  new features, helps avoid downtime during application deployment, and handles the complexity of updating your
+  applications with in-place, blue/green, and canary deployment strategies.
 type: Index
 accessModel:
   pricing: unknown
@@ -15,7 +15,7 @@ accessModel:
   label: Self-serve signup
   confidence: medium
   source:
-  - authentication
+    - authentication
   generated: '2026-07-22'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/amazon-codedeploy.png
@@ -27,880 +27,792 @@ tags:
   - CI/CD
   - Release Management
   - Blue/Green Deployment
-url: >-
-  https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/apis.yml
+url: https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/apis.yml
 created: '2026-03-16'
 modified: '2026-06-20'
 specificationVersion: '0.19'
 apis:
-- aid: amazon-codedeploy:amazon-codedeploy-applications-api
-  name: Amazon CodeDeploy Applications API
-  description: Operations for creating and managing CodeDeploy applications
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - Applications
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-codedeploy-applications-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: amazon-codedeploy:amazon-codedeploy-deployments-api
-  name: Amazon CodeDeploy Deployments API
-  description: Operations for creating and monitoring deployments
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - Deployments
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-codedeploy-deployments-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: >-
-    amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-addtagstoonpremisesinstances-api
-  name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.AddTagsToOnPremisesInstances API'
-  description: >-
-    The #X Amz Target=CodeDeploy 20141006.AddTagsToOnPremisesInstances API from Amazon CodeDeploy — 1
-    operation(s) for #x amz target=codedeploy 20141006.addtagstoonpremisesinstances.
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - '#X Amz Target=CodeDeploy 20141006.AddTagsToOnPremisesInstances'
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-addtagstoonpremisesinstances-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: >-
-    amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetapplicationrevisions-api
-  name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.BatchGetApplicationRevisions API'
-  description: >-
-    The #X Amz Target=CodeDeploy 20141006.BatchGetApplicationRevisions API from Amazon CodeDeploy — 1
-    operation(s) for #x amz target=codedeploy 20141006.batchgetapplicationrevisions.
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - '#X Amz Target=CodeDeploy 20141006.BatchGetApplicationRevisions'
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetapplicationrevisions-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: >-
-    amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetapplications-api
-  name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.BatchGetApplications API'
-  description: >-
-    The #X Amz Target=CodeDeploy 20141006.BatchGetApplications API from Amazon CodeDeploy — 1 operation(s)
-    for #x amz target=codedeploy 20141006.batchgetapplications.
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - '#X Amz Target=CodeDeploy 20141006.BatchGetApplications'
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetapplications-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: >-
-    amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeploymentgroups-api
-  name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.BatchGetDeploymentGroups API'
-  description: >-
-    The #X Amz Target=CodeDeploy 20141006.BatchGetDeploymentGroups API from Amazon CodeDeploy — 1 operation(s)
-    for #x amz target=codedeploy 20141006.batchgetdeploymentgroups.
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - '#X Amz Target=CodeDeploy 20141006.BatchGetDeploymentGroups'
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeploymentgroups-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: >-
-    amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeploymentinstances-api
-  name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.BatchGetDeploymentInstances API'
-  description: >-
-    The #X Amz Target=CodeDeploy 20141006.BatchGetDeploymentInstances API from Amazon CodeDeploy — 1 operation(s)
-    for #x amz target=codedeploy 20141006.batchgetdeploymentinstances.
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - '#X Amz Target=CodeDeploy 20141006.BatchGetDeploymentInstances'
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeploymentinstances-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: >-
-    amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeployments-api
-  name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.BatchGetDeployments API'
-  description: >-
-    The #X Amz Target=CodeDeploy 20141006.BatchGetDeployments API from Amazon CodeDeploy — 1 operation(s)
-    for #x amz target=codedeploy 20141006.batchgetdeployments.
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - '#X Amz Target=CodeDeploy 20141006.BatchGetDeployments'
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeployments-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: >-
-    amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeploymenttargets-api
-  name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.BatchGetDeploymentTargets API'
-  description: >-
-    The #X Amz Target=CodeDeploy 20141006.BatchGetDeploymentTargets API from Amazon CodeDeploy — 1 operation(s)
-    for #x amz target=codedeploy 20141006.batchgetdeploymenttargets.
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - '#X Amz Target=CodeDeploy 20141006.BatchGetDeploymentTargets'
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeploymenttargets-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: >-
-    amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetonpremisesinstances-api
-  name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.BatchGetOnPremisesInstances API'
-  description: >-
-    The #X Amz Target=CodeDeploy 20141006.BatchGetOnPremisesInstances API from Amazon CodeDeploy — 1 operation(s)
-    for #x amz target=codedeploy 20141006.batchgetonpremisesinstances.
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - '#X Amz Target=CodeDeploy 20141006.BatchGetOnPremisesInstances'
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetonpremisesinstances-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: >-
-    amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-continuedeployment-api
-  name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.ContinueDeployment API'
-  description: >-
-    The #X Amz Target=CodeDeploy 20141006.ContinueDeployment API from Amazon CodeDeploy — 1 operation(s)
-    for #x amz target=codedeploy 20141006.continuedeployment.
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - '#X Amz Target=CodeDeploy 20141006.ContinueDeployment'
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-continuedeployment-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: >-
-    amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-createapplication-api
-  name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.CreateApplication API'
-  description: >-
-    The #X Amz Target=CodeDeploy 20141006.CreateApplication API from Amazon CodeDeploy — 1 operation(s)
-    for #x amz target=codedeploy 20141006.createapplication.
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - '#X Amz Target=CodeDeploy 20141006.CreateApplication'
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-createapplication-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: >-
-    amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-createdeployment-api
-  name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.CreateDeployment API'
-  description: >-
-    The #X Amz Target=CodeDeploy 20141006.CreateDeployment API from Amazon CodeDeploy — 1 operation(s)
-    for #x amz target=codedeploy 20141006.createdeployment.
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - '#X Amz Target=CodeDeploy 20141006.CreateDeployment'
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-createdeployment-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: >-
-    amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-createdeploymentconfig-api
-  name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.CreateDeploymentConfig API'
-  description: >-
-    The #X Amz Target=CodeDeploy 20141006.CreateDeploymentConfig API from Amazon CodeDeploy — 1 operation(s)
-    for #x amz target=codedeploy 20141006.createdeploymentconfig.
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - '#X Amz Target=CodeDeploy 20141006.CreateDeploymentConfig'
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-createdeploymentconfig-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: >-
-    amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-createdeploymentgroup-api
-  name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.CreateDeploymentGroup API'
-  description: >-
-    The #X Amz Target=CodeDeploy 20141006.CreateDeploymentGroup API from Amazon CodeDeploy — 1 operation(s)
-    for #x amz target=codedeploy 20141006.createdeploymentgroup.
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - '#X Amz Target=CodeDeploy 20141006.CreateDeploymentGroup'
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-createdeploymentgroup-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: >-
-    amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-deleteapplication-api
-  name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.DeleteApplication API'
-  description: >-
-    The #X Amz Target=CodeDeploy 20141006.DeleteApplication API from Amazon CodeDeploy — 1 operation(s)
-    for #x amz target=codedeploy 20141006.deleteapplication.
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - '#X Amz Target=CodeDeploy 20141006.DeleteApplication'
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-deleteapplication-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: >-
-    amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-deletedeploymentconfig-api
-  name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.DeleteDeploymentConfig API'
-  description: >-
-    The #X Amz Target=CodeDeploy 20141006.DeleteDeploymentConfig API from Amazon CodeDeploy — 1 operation(s)
-    for #x amz target=codedeploy 20141006.deletedeploymentconfig.
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - '#X Amz Target=CodeDeploy 20141006.DeleteDeploymentConfig'
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-deletedeploymentconfig-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: >-
-    amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-deletedeploymentgroup-api
-  name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.DeleteDeploymentGroup API'
-  description: >-
-    The #X Amz Target=CodeDeploy 20141006.DeleteDeploymentGroup API from Amazon CodeDeploy — 1 operation(s)
-    for #x amz target=codedeploy 20141006.deletedeploymentgroup.
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - '#X Amz Target=CodeDeploy 20141006.DeleteDeploymentGroup'
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-deletedeploymentgroup-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: >-
-    amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-deletegithubaccounttoken-api
-  name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.DeleteGitHubAccountToken API'
-  description: >-
-    The #X Amz Target=CodeDeploy 20141006.DeleteGitHubAccountToken API from Amazon CodeDeploy — 1 operation(s)
-    for #x amz target=codedeploy 20141006.deletegithubaccounttoken.
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - '#X Amz Target=CodeDeploy 20141006.DeleteGitHubAccountToken'
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-deletegithubaccounttoken-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: >-
-    amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-deleteresourcesbyexternalid-api
-  name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.DeleteResourcesByExternalId API'
-  description: >-
-    The #X Amz Target=CodeDeploy 20141006.DeleteResourcesByExternalId API from Amazon CodeDeploy — 1 operation(s)
-    for #x amz target=codedeploy 20141006.deleteresourcesbyexternalid.
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - '#X Amz Target=CodeDeploy 20141006.DeleteResourcesByExternalId'
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-deleteresourcesbyexternalid-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: >-
-    amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-deregisteronpremisesinstance-api
-  name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.DeregisterOnPremisesInstance API'
-  description: >-
-    The #X Amz Target=CodeDeploy 20141006.DeregisterOnPremisesInstance API from Amazon CodeDeploy — 1
-    operation(s) for #x amz target=codedeploy 20141006.deregisteronpremisesinstance.
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - '#X Amz Target=CodeDeploy 20141006.DeregisterOnPremisesInstance'
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-deregisteronpremisesinstance-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-getapplication-api
-  name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.GetApplication API'
-  description: >-
-    The #X Amz Target=CodeDeploy 20141006.GetApplication API from Amazon CodeDeploy — 1 operation(s) for
-    #x amz target=codedeploy 20141006.getapplication.
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - '#X Amz Target=CodeDeploy 20141006.GetApplication'
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getapplication-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: >-
-    amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-getapplicationrevision-api
-  name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.GetApplicationRevision API'
-  description: >-
-    The #X Amz Target=CodeDeploy 20141006.GetApplicationRevision API from Amazon CodeDeploy — 1 operation(s)
-    for #x amz target=codedeploy 20141006.getapplicationrevision.
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - '#X Amz Target=CodeDeploy 20141006.GetApplicationRevision'
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getapplicationrevision-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeployment-api
-  name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.GetDeployment API'
-  description: >-
-    The #X Amz Target=CodeDeploy 20141006.GetDeployment API from Amazon CodeDeploy — 1 operation(s) for
-    #x amz target=codedeploy 20141006.getdeployment.
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - '#X Amz Target=CodeDeploy 20141006.GetDeployment'
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeployment-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: >-
-    amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymentconfig-api
-  name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.GetDeploymentConfig API'
-  description: >-
-    The #X Amz Target=CodeDeploy 20141006.GetDeploymentConfig API from Amazon CodeDeploy — 1 operation(s)
-    for #x amz target=codedeploy 20141006.getdeploymentconfig.
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - '#X Amz Target=CodeDeploy 20141006.GetDeploymentConfig'
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymentconfig-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: >-
-    amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymentgroup-api
-  name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.GetDeploymentGroup API'
-  description: >-
-    The #X Amz Target=CodeDeploy 20141006.GetDeploymentGroup API from Amazon CodeDeploy — 1 operation(s)
-    for #x amz target=codedeploy 20141006.getdeploymentgroup.
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - '#X Amz Target=CodeDeploy 20141006.GetDeploymentGroup'
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymentgroup-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: >-
-    amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymentinstance-api
-  name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.GetDeploymentInstance API'
-  description: >-
-    The #X Amz Target=CodeDeploy 20141006.GetDeploymentInstance API from Amazon CodeDeploy — 1 operation(s)
-    for #x amz target=codedeploy 20141006.getdeploymentinstance.
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - '#X Amz Target=CodeDeploy 20141006.GetDeploymentInstance'
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymentinstance-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: >-
-    amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymenttarget-api
-  name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.GetDeploymentTarget API'
-  description: >-
-    The #X Amz Target=CodeDeploy 20141006.GetDeploymentTarget API from Amazon CodeDeploy — 1 operation(s)
-    for #x amz target=codedeploy 20141006.getdeploymenttarget.
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - '#X Amz Target=CodeDeploy 20141006.GetDeploymentTarget'
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymenttarget-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: >-
-    amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-getonpremisesinstance-api
-  name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.GetOnPremisesInstance API'
-  description: >-
-    The #X Amz Target=CodeDeploy 20141006.GetOnPremisesInstance API from Amazon CodeDeploy — 1 operation(s)
-    for #x amz target=codedeploy 20141006.getonpremisesinstance.
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - '#X Amz Target=CodeDeploy 20141006.GetOnPremisesInstance'
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getonpremisesinstance-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: >-
-    amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-listapplicationrevisions-api
-  name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.ListApplicationRevisions API'
-  description: >-
-    The #X Amz Target=CodeDeploy 20141006.ListApplicationRevisions API from Amazon CodeDeploy — 1 operation(s)
-    for #x amz target=codedeploy 20141006.listapplicationrevisions.
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - '#X Amz Target=CodeDeploy 20141006.ListApplicationRevisions'
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listapplicationrevisions-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: >-
-    amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-listapplications-api
-  name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.ListApplications API'
-  description: >-
-    The #X Amz Target=CodeDeploy 20141006.ListApplications API from Amazon CodeDeploy — 1 operation(s)
-    for #x amz target=codedeploy 20141006.listapplications.
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - '#X Amz Target=CodeDeploy 20141006.ListApplications'
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listapplications-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: >-
-    amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymentconfigs-api
-  name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.ListDeploymentConfigs API'
-  description: >-
-    The #X Amz Target=CodeDeploy 20141006.ListDeploymentConfigs API from Amazon CodeDeploy — 1 operation(s)
-    for #x amz target=codedeploy 20141006.listdeploymentconfigs.
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - '#X Amz Target=CodeDeploy 20141006.ListDeploymentConfigs'
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymentconfigs-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: >-
-    amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymentgroups-api
-  name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.ListDeploymentGroups API'
-  description: >-
-    The #X Amz Target=CodeDeploy 20141006.ListDeploymentGroups API from Amazon CodeDeploy — 1 operation(s)
-    for #x amz target=codedeploy 20141006.listdeploymentgroups.
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - '#X Amz Target=CodeDeploy 20141006.ListDeploymentGroups'
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymentgroups-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: >-
-    amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymentinstances-api
-  name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.ListDeploymentInstances API'
-  description: >-
-    The #X Amz Target=CodeDeploy 20141006.ListDeploymentInstances API from Amazon CodeDeploy — 1 operation(s)
-    for #x amz target=codedeploy 20141006.listdeploymentinstances.
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - '#X Amz Target=CodeDeploy 20141006.ListDeploymentInstances'
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymentinstances-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeployments-api
-  name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.ListDeployments API'
-  description: >-
-    The #X Amz Target=CodeDeploy 20141006.ListDeployments API from Amazon CodeDeploy — 1 operation(s)
-    for #x amz target=codedeploy 20141006.listdeployments.
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - '#X Amz Target=CodeDeploy 20141006.ListDeployments'
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeployments-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: >-
-    amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymenttargets-api
-  name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.ListDeploymentTargets API'
-  description: >-
-    The #X Amz Target=CodeDeploy 20141006.ListDeploymentTargets API from Amazon CodeDeploy — 1 operation(s)
-    for #x amz target=codedeploy 20141006.listdeploymenttargets.
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - '#X Amz Target=CodeDeploy 20141006.ListDeploymentTargets'
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymenttargets-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: >-
-    amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-listgithubaccounttokennames-api
-  name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.ListGitHubAccountTokenNames API'
-  description: >-
-    The #X Amz Target=CodeDeploy 20141006.ListGitHubAccountTokenNames API from Amazon CodeDeploy — 1 operation(s)
-    for #x amz target=codedeploy 20141006.listgithubaccounttokennames.
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - '#X Amz Target=CodeDeploy 20141006.ListGitHubAccountTokenNames'
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listgithubaccounttokennames-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: >-
-    amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-listonpremisesinstances-api
-  name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.ListOnPremisesInstances API'
-  description: >-
-    The #X Amz Target=CodeDeploy 20141006.ListOnPremisesInstances API from Amazon CodeDeploy — 1 operation(s)
-    for #x amz target=codedeploy 20141006.listonpremisesinstances.
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - '#X Amz Target=CodeDeploy 20141006.ListOnPremisesInstances'
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listonpremisesinstances-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: >-
-    amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-listtagsforresource-api
-  name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.ListTagsForResource API'
-  description: >-
-    The #X Amz Target=CodeDeploy 20141006.ListTagsForResource API from Amazon CodeDeploy — 1 operation(s)
-    for #x amz target=codedeploy 20141006.listtagsforresource.
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - '#X Amz Target=CodeDeploy 20141006.ListTagsForResource'
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listtagsforresource-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: >-
-    amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-putlifecycleeventhookexecutionstatus-api
-  name: >-
-    Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.PutLifecycleEventHookExecutionStatus API
-  description: >-
-    The #X Amz Target=CodeDeploy 20141006.PutLifecycleEventHookExecutionStatus API from Amazon CodeDeploy
-    — 1 operation(s) for #x amz target=codedeploy 20141006.putlifecycleeventhookexecutionstatus.
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - '#X Amz Target=CodeDeploy 20141006.PutLifecycleEventHookExecutionStatus'
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-putlifecycleeventhookexecutionstatus-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: >-
-    amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-registerapplicationrevision-api
-  name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.RegisterApplicationRevision API'
-  description: >-
-    The #X Amz Target=CodeDeploy 20141006.RegisterApplicationRevision API from Amazon CodeDeploy — 1 operation(s)
-    for #x amz target=codedeploy 20141006.registerapplicationrevision.
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - '#X Amz Target=CodeDeploy 20141006.RegisterApplicationRevision'
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-registerapplicationrevision-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: >-
-    amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-registeronpremisesinstance-api
-  name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.RegisterOnPremisesInstance API'
-  description: >-
-    The #X Amz Target=CodeDeploy 20141006.RegisterOnPremisesInstance API from Amazon CodeDeploy — 1 operation(s)
-    for #x amz target=codedeploy 20141006.registeronpremisesinstance.
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - '#X Amz Target=CodeDeploy 20141006.RegisterOnPremisesInstance'
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-registeronpremisesinstance-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: >-
-    amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-removetagsfromonpremisesinstances-api
-  name: >-
-    Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.RemoveTagsFromOnPremisesInstances API
-  description: >-
-    The #X Amz Target=CodeDeploy 20141006.RemoveTagsFromOnPremisesInstances API from Amazon CodeDeploy
-    — 1 operation(s) for #x amz target=codedeploy 20141006.removetagsfromonpremisesinstances.
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - '#X Amz Target=CodeDeploy 20141006.RemoveTagsFromOnPremisesInstances'
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-removetagsfromonpremisesinstances-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: >-
-    amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-skipwaittimeforinstancetermination-api
-  name: >-
-    Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.SkipWaitTimeForInstanceTermination API
-  description: >-
-    The #X Amz Target=CodeDeploy 20141006.SkipWaitTimeForInstanceTermination API from Amazon CodeDeploy
-    — 1 operation(s) for #x amz target=codedeploy 20141006.skipwaittimeforinstancetermination.
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - '#X Amz Target=CodeDeploy 20141006.SkipWaitTimeForInstanceTermination'
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-skipwaittimeforinstancetermination-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-stopdeployment-api
-  name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.StopDeployment API'
-  description: >-
-    The #X Amz Target=CodeDeploy 20141006.StopDeployment API from Amazon CodeDeploy — 1 operation(s) for
-    #x amz target=codedeploy 20141006.stopdeployment.
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - '#X Amz Target=CodeDeploy 20141006.StopDeployment'
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-stopdeployment-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-tagresource-api
-  name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.TagResource API'
-  description: >-
-    The #X Amz Target=CodeDeploy 20141006.TagResource API from Amazon CodeDeploy — 1 operation(s) for
-    #x amz target=codedeploy 20141006.tagresource.
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - '#X Amz Target=CodeDeploy 20141006.TagResource'
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-tagresource-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-untagresource-api
-  name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.UntagResource API'
-  description: >-
-    The #X Amz Target=CodeDeploy 20141006.UntagResource API from Amazon CodeDeploy — 1 operation(s) for
-    #x amz target=codedeploy 20141006.untagresource.
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - '#X Amz Target=CodeDeploy 20141006.UntagResource'
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-untagresource-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: >-
-    amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-updateapplication-api
-  name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.UpdateApplication API'
-  description: >-
-    The #X Amz Target=CodeDeploy 20141006.UpdateApplication API from Amazon CodeDeploy — 1 operation(s)
-    for #x amz target=codedeploy 20141006.updateapplication.
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - '#X Amz Target=CodeDeploy 20141006.UpdateApplication'
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-updateapplication-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-- aid: >-
-    amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-updatedeploymentgroup-api
-  name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.UpdateDeploymentGroup API'
-  description: >-
-    The #X Amz Target=CodeDeploy 20141006.UpdateDeploymentGroup API from Amazon CodeDeploy — 1 operation(s)
-    for #x amz target=codedeploy 20141006.updatedeploymentgroup.
-  humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
-  baseURL: https://codedeploy.us-east-1.amazonaws.com
-  tags:
-  - '#X Amz Target=CodeDeploy 20141006.UpdateDeploymentGroup'
-  properties:
-  - type: OpenAPI
-    url: >-
-      openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-updatedeploymentgroup-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-applications-api
+    name: Amazon CodeDeploy Applications API
+    description: Operations for creating and managing CodeDeploy applications
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - Applications
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-applications-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-deployments-api
+    name: Amazon CodeDeploy Deployments API
+    description: Operations for creating and monitoring deployments
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - Deployments
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-deployments-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-addtagstoonpremisesinstances-api
+    name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.AddTagsToOnPremisesInstances API'
+    description: >-
+      The #X Amz Target=CodeDeploy 20141006.AddTagsToOnPremisesInstances API from Amazon CodeDeploy — 1 operation(s) for
+      #x amz target=codedeploy 20141006.addtagstoonpremisesinstances.
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - '#X Amz Target=CodeDeploy 20141006.AddTagsToOnPremisesInstances'
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-addtagstoonpremisesinstances-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetapplicationrevisions-api
+    name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.BatchGetApplicationRevisions API'
+    description: >-
+      The #X Amz Target=CodeDeploy 20141006.BatchGetApplicationRevisions API from Amazon CodeDeploy — 1 operation(s) for
+      #x amz target=codedeploy 20141006.batchgetapplicationrevisions.
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - '#X Amz Target=CodeDeploy 20141006.BatchGetApplicationRevisions'
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetapplicationrevisions-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetapplications-api
+    name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.BatchGetApplications API'
+    description: >-
+      The #X Amz Target=CodeDeploy 20141006.BatchGetApplications API from Amazon CodeDeploy — 1 operation(s) for #x amz
+      target=codedeploy 20141006.batchgetapplications.
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - '#X Amz Target=CodeDeploy 20141006.BatchGetApplications'
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetapplications-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeploymentgroups-api
+    name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.BatchGetDeploymentGroups API'
+    description: >-
+      The #X Amz Target=CodeDeploy 20141006.BatchGetDeploymentGroups API from Amazon CodeDeploy — 1 operation(s) for #x
+      amz target=codedeploy 20141006.batchgetdeploymentgroups.
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - '#X Amz Target=CodeDeploy 20141006.BatchGetDeploymentGroups'
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeploymentgroups-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeploymentinstances-api
+    name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.BatchGetDeploymentInstances API'
+    description: >-
+      The #X Amz Target=CodeDeploy 20141006.BatchGetDeploymentInstances API from Amazon CodeDeploy — 1 operation(s) for
+      #x amz target=codedeploy 20141006.batchgetdeploymentinstances.
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - '#X Amz Target=CodeDeploy 20141006.BatchGetDeploymentInstances'
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeploymentinstances-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeployments-api
+    name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.BatchGetDeployments API'
+    description: >-
+      The #X Amz Target=CodeDeploy 20141006.BatchGetDeployments API from Amazon CodeDeploy — 1 operation(s) for #x amz
+      target=codedeploy 20141006.batchgetdeployments.
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - '#X Amz Target=CodeDeploy 20141006.BatchGetDeployments'
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeployments-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeploymenttargets-api
+    name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.BatchGetDeploymentTargets API'
+    description: >-
+      The #X Amz Target=CodeDeploy 20141006.BatchGetDeploymentTargets API from Amazon CodeDeploy — 1 operation(s) for #x
+      amz target=codedeploy 20141006.batchgetdeploymenttargets.
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - '#X Amz Target=CodeDeploy 20141006.BatchGetDeploymentTargets'
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeploymenttargets-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetonpremisesinstances-api
+    name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.BatchGetOnPremisesInstances API'
+    description: >-
+      The #X Amz Target=CodeDeploy 20141006.BatchGetOnPremisesInstances API from Amazon CodeDeploy — 1 operation(s) for
+      #x amz target=codedeploy 20141006.batchgetonpremisesinstances.
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - '#X Amz Target=CodeDeploy 20141006.BatchGetOnPremisesInstances'
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetonpremisesinstances-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-continuedeployment-api
+    name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.ContinueDeployment API'
+    description: >-
+      The #X Amz Target=CodeDeploy 20141006.ContinueDeployment API from Amazon CodeDeploy — 1 operation(s) for #x amz
+      target=codedeploy 20141006.continuedeployment.
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - '#X Amz Target=CodeDeploy 20141006.ContinueDeployment'
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-continuedeployment-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-createapplication-api
+    name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.CreateApplication API'
+    description: >-
+      The #X Amz Target=CodeDeploy 20141006.CreateApplication API from Amazon CodeDeploy — 1 operation(s) for #x amz
+      target=codedeploy 20141006.createapplication.
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - '#X Amz Target=CodeDeploy 20141006.CreateApplication'
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-createapplication-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-createdeployment-api
+    name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.CreateDeployment API'
+    description: >-
+      The #X Amz Target=CodeDeploy 20141006.CreateDeployment API from Amazon CodeDeploy — 1 operation(s) for #x amz
+      target=codedeploy 20141006.createdeployment.
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - '#X Amz Target=CodeDeploy 20141006.CreateDeployment'
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-createdeployment-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-createdeploymentconfig-api
+    name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.CreateDeploymentConfig API'
+    description: >-
+      The #X Amz Target=CodeDeploy 20141006.CreateDeploymentConfig API from Amazon CodeDeploy — 1 operation(s) for #x
+      amz target=codedeploy 20141006.createdeploymentconfig.
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - '#X Amz Target=CodeDeploy 20141006.CreateDeploymentConfig'
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-createdeploymentconfig-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-createdeploymentgroup-api
+    name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.CreateDeploymentGroup API'
+    description: >-
+      The #X Amz Target=CodeDeploy 20141006.CreateDeploymentGroup API from Amazon CodeDeploy — 1 operation(s) for #x amz
+      target=codedeploy 20141006.createdeploymentgroup.
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - '#X Amz Target=CodeDeploy 20141006.CreateDeploymentGroup'
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-createdeploymentgroup-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-deleteapplication-api
+    name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.DeleteApplication API'
+    description: >-
+      The #X Amz Target=CodeDeploy 20141006.DeleteApplication API from Amazon CodeDeploy — 1 operation(s) for #x amz
+      target=codedeploy 20141006.deleteapplication.
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - '#X Amz Target=CodeDeploy 20141006.DeleteApplication'
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-deleteapplication-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-deletedeploymentconfig-api
+    name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.DeleteDeploymentConfig API'
+    description: >-
+      The #X Amz Target=CodeDeploy 20141006.DeleteDeploymentConfig API from Amazon CodeDeploy — 1 operation(s) for #x
+      amz target=codedeploy 20141006.deletedeploymentconfig.
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - '#X Amz Target=CodeDeploy 20141006.DeleteDeploymentConfig'
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-deletedeploymentconfig-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-deletedeploymentgroup-api
+    name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.DeleteDeploymentGroup API'
+    description: >-
+      The #X Amz Target=CodeDeploy 20141006.DeleteDeploymentGroup API from Amazon CodeDeploy — 1 operation(s) for #x amz
+      target=codedeploy 20141006.deletedeploymentgroup.
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - '#X Amz Target=CodeDeploy 20141006.DeleteDeploymentGroup'
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-deletedeploymentgroup-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-deletegithubaccounttoken-api
+    name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.DeleteGitHubAccountToken API'
+    description: >-
+      The #X Amz Target=CodeDeploy 20141006.DeleteGitHubAccountToken API from Amazon CodeDeploy — 1 operation(s) for #x
+      amz target=codedeploy 20141006.deletegithubaccounttoken.
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - '#X Amz Target=CodeDeploy 20141006.DeleteGitHubAccountToken'
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-deletegithubaccounttoken-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-deleteresourcesbyexternalid-api
+    name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.DeleteResourcesByExternalId API'
+    description: >-
+      The #X Amz Target=CodeDeploy 20141006.DeleteResourcesByExternalId API from Amazon CodeDeploy — 1 operation(s) for
+      #x amz target=codedeploy 20141006.deleteresourcesbyexternalid.
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - '#X Amz Target=CodeDeploy 20141006.DeleteResourcesByExternalId'
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-deleteresourcesbyexternalid-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-deregisteronpremisesinstance-api
+    name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.DeregisterOnPremisesInstance API'
+    description: >-
+      The #X Amz Target=CodeDeploy 20141006.DeregisterOnPremisesInstance API from Amazon CodeDeploy — 1 operation(s) for
+      #x amz target=codedeploy 20141006.deregisteronpremisesinstance.
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - '#X Amz Target=CodeDeploy 20141006.DeregisterOnPremisesInstance'
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-deregisteronpremisesinstance-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-getapplication-api
+    name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.GetApplication API'
+    description: >-
+      The #X Amz Target=CodeDeploy 20141006.GetApplication API from Amazon CodeDeploy — 1 operation(s) for #x amz
+      target=codedeploy 20141006.getapplication.
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - '#X Amz Target=CodeDeploy 20141006.GetApplication'
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getapplication-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-getapplicationrevision-api
+    name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.GetApplicationRevision API'
+    description: >-
+      The #X Amz Target=CodeDeploy 20141006.GetApplicationRevision API from Amazon CodeDeploy — 1 operation(s) for #x
+      amz target=codedeploy 20141006.getapplicationrevision.
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - '#X Amz Target=CodeDeploy 20141006.GetApplicationRevision'
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getapplicationrevision-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeployment-api
+    name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.GetDeployment API'
+    description: >-
+      The #X Amz Target=CodeDeploy 20141006.GetDeployment API from Amazon CodeDeploy — 1 operation(s) for #x amz
+      target=codedeploy 20141006.getdeployment.
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - '#X Amz Target=CodeDeploy 20141006.GetDeployment'
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeployment-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymentconfig-api
+    name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.GetDeploymentConfig API'
+    description: >-
+      The #X Amz Target=CodeDeploy 20141006.GetDeploymentConfig API from Amazon CodeDeploy — 1 operation(s) for #x amz
+      target=codedeploy 20141006.getdeploymentconfig.
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - '#X Amz Target=CodeDeploy 20141006.GetDeploymentConfig'
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymentconfig-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymentgroup-api
+    name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.GetDeploymentGroup API'
+    description: >-
+      The #X Amz Target=CodeDeploy 20141006.GetDeploymentGroup API from Amazon CodeDeploy — 1 operation(s) for #x amz
+      target=codedeploy 20141006.getdeploymentgroup.
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - '#X Amz Target=CodeDeploy 20141006.GetDeploymentGroup'
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymentgroup-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymentinstance-api
+    name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.GetDeploymentInstance API'
+    description: >-
+      The #X Amz Target=CodeDeploy 20141006.GetDeploymentInstance API from Amazon CodeDeploy — 1 operation(s) for #x amz
+      target=codedeploy 20141006.getdeploymentinstance.
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - '#X Amz Target=CodeDeploy 20141006.GetDeploymentInstance'
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymentinstance-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymenttarget-api
+    name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.GetDeploymentTarget API'
+    description: >-
+      The #X Amz Target=CodeDeploy 20141006.GetDeploymentTarget API from Amazon CodeDeploy — 1 operation(s) for #x amz
+      target=codedeploy 20141006.getdeploymenttarget.
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - '#X Amz Target=CodeDeploy 20141006.GetDeploymentTarget'
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymenttarget-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-getonpremisesinstance-api
+    name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.GetOnPremisesInstance API'
+    description: >-
+      The #X Amz Target=CodeDeploy 20141006.GetOnPremisesInstance API from Amazon CodeDeploy — 1 operation(s) for #x amz
+      target=codedeploy 20141006.getonpremisesinstance.
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - '#X Amz Target=CodeDeploy 20141006.GetOnPremisesInstance'
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getonpremisesinstance-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-listapplicationrevisions-api
+    name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.ListApplicationRevisions API'
+    description: >-
+      The #X Amz Target=CodeDeploy 20141006.ListApplicationRevisions API from Amazon CodeDeploy — 1 operation(s) for #x
+      amz target=codedeploy 20141006.listapplicationrevisions.
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - '#X Amz Target=CodeDeploy 20141006.ListApplicationRevisions'
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listapplicationrevisions-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-listapplications-api
+    name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.ListApplications API'
+    description: >-
+      The #X Amz Target=CodeDeploy 20141006.ListApplications API from Amazon CodeDeploy — 1 operation(s) for #x amz
+      target=codedeploy 20141006.listapplications.
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - '#X Amz Target=CodeDeploy 20141006.ListApplications'
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listapplications-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymentconfigs-api
+    name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.ListDeploymentConfigs API'
+    description: >-
+      The #X Amz Target=CodeDeploy 20141006.ListDeploymentConfigs API from Amazon CodeDeploy — 1 operation(s) for #x amz
+      target=codedeploy 20141006.listdeploymentconfigs.
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - '#X Amz Target=CodeDeploy 20141006.ListDeploymentConfigs'
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymentconfigs-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymentgroups-api
+    name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.ListDeploymentGroups API'
+    description: >-
+      The #X Amz Target=CodeDeploy 20141006.ListDeploymentGroups API from Amazon CodeDeploy — 1 operation(s) for #x amz
+      target=codedeploy 20141006.listdeploymentgroups.
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - '#X Amz Target=CodeDeploy 20141006.ListDeploymentGroups'
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymentgroups-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymentinstances-api
+    name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.ListDeploymentInstances API'
+    description: >-
+      The #X Amz Target=CodeDeploy 20141006.ListDeploymentInstances API from Amazon CodeDeploy — 1 operation(s) for #x
+      amz target=codedeploy 20141006.listdeploymentinstances.
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - '#X Amz Target=CodeDeploy 20141006.ListDeploymentInstances'
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymentinstances-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeployments-api
+    name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.ListDeployments API'
+    description: >-
+      The #X Amz Target=CodeDeploy 20141006.ListDeployments API from Amazon CodeDeploy — 1 operation(s) for #x amz
+      target=codedeploy 20141006.listdeployments.
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - '#X Amz Target=CodeDeploy 20141006.ListDeployments'
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeployments-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymenttargets-api
+    name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.ListDeploymentTargets API'
+    description: >-
+      The #X Amz Target=CodeDeploy 20141006.ListDeploymentTargets API from Amazon CodeDeploy — 1 operation(s) for #x amz
+      target=codedeploy 20141006.listdeploymenttargets.
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - '#X Amz Target=CodeDeploy 20141006.ListDeploymentTargets'
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymenttargets-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-listgithubaccounttokennames-api
+    name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.ListGitHubAccountTokenNames API'
+    description: >-
+      The #X Amz Target=CodeDeploy 20141006.ListGitHubAccountTokenNames API from Amazon CodeDeploy — 1 operation(s) for
+      #x amz target=codedeploy 20141006.listgithubaccounttokennames.
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - '#X Amz Target=CodeDeploy 20141006.ListGitHubAccountTokenNames'
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listgithubaccounttokennames-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-listonpremisesinstances-api
+    name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.ListOnPremisesInstances API'
+    description: >-
+      The #X Amz Target=CodeDeploy 20141006.ListOnPremisesInstances API from Amazon CodeDeploy — 1 operation(s) for #x
+      amz target=codedeploy 20141006.listonpremisesinstances.
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - '#X Amz Target=CodeDeploy 20141006.ListOnPremisesInstances'
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listonpremisesinstances-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-listtagsforresource-api
+    name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.ListTagsForResource API'
+    description: >-
+      The #X Amz Target=CodeDeploy 20141006.ListTagsForResource API from Amazon CodeDeploy — 1 operation(s) for #x amz
+      target=codedeploy 20141006.listtagsforresource.
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - '#X Amz Target=CodeDeploy 20141006.ListTagsForResource'
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listtagsforresource-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-putlifecycleeventhookexecutionstatus-api
+    name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.PutLifecycleEventHookExecutionStatus API'
+    description: >-
+      The #X Amz Target=CodeDeploy 20141006.PutLifecycleEventHookExecutionStatus API from Amazon CodeDeploy — 1
+      operation(s) for #x amz target=codedeploy 20141006.putlifecycleeventhookexecutionstatus.
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - '#X Amz Target=CodeDeploy 20141006.PutLifecycleEventHookExecutionStatus'
+    properties:
+      - type: OpenAPI
+        url: >-
+          openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-putlifecycleeventhookexecutionstatus-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-registerapplicationrevision-api
+    name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.RegisterApplicationRevision API'
+    description: >-
+      The #X Amz Target=CodeDeploy 20141006.RegisterApplicationRevision API from Amazon CodeDeploy — 1 operation(s) for
+      #x amz target=codedeploy 20141006.registerapplicationrevision.
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - '#X Amz Target=CodeDeploy 20141006.RegisterApplicationRevision'
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-registerapplicationrevision-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-registeronpremisesinstance-api
+    name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.RegisterOnPremisesInstance API'
+    description: >-
+      The #X Amz Target=CodeDeploy 20141006.RegisterOnPremisesInstance API from Amazon CodeDeploy — 1 operation(s) for
+      #x amz target=codedeploy 20141006.registeronpremisesinstance.
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - '#X Amz Target=CodeDeploy 20141006.RegisterOnPremisesInstance'
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-registeronpremisesinstance-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-removetagsfromonpremisesinstances-api
+    name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.RemoveTagsFromOnPremisesInstances API'
+    description: >-
+      The #X Amz Target=CodeDeploy 20141006.RemoveTagsFromOnPremisesInstances API from Amazon CodeDeploy — 1
+      operation(s) for #x amz target=codedeploy 20141006.removetagsfromonpremisesinstances.
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - '#X Amz Target=CodeDeploy 20141006.RemoveTagsFromOnPremisesInstances'
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-removetagsfromonpremisesinstances-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-skipwaittimeforinstancetermination-api
+    name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.SkipWaitTimeForInstanceTermination API'
+    description: >-
+      The #X Amz Target=CodeDeploy 20141006.SkipWaitTimeForInstanceTermination API from Amazon CodeDeploy — 1
+      operation(s) for #x amz target=codedeploy 20141006.skipwaittimeforinstancetermination.
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - '#X Amz Target=CodeDeploy 20141006.SkipWaitTimeForInstanceTermination'
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-skipwaittimeforinstancetermination-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-stopdeployment-api
+    name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.StopDeployment API'
+    description: >-
+      The #X Amz Target=CodeDeploy 20141006.StopDeployment API from Amazon CodeDeploy — 1 operation(s) for #x amz
+      target=codedeploy 20141006.stopdeployment.
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - '#X Amz Target=CodeDeploy 20141006.StopDeployment'
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-stopdeployment-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-tagresource-api
+    name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.TagResource API'
+    description: >-
+      The #X Amz Target=CodeDeploy 20141006.TagResource API from Amazon CodeDeploy — 1 operation(s) for #x amz
+      target=codedeploy 20141006.tagresource.
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - '#X Amz Target=CodeDeploy 20141006.TagResource'
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-tagresource-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-untagresource-api
+    name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.UntagResource API'
+    description: >-
+      The #X Amz Target=CodeDeploy 20141006.UntagResource API from Amazon CodeDeploy — 1 operation(s) for #x amz
+      target=codedeploy 20141006.untagresource.
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - '#X Amz Target=CodeDeploy 20141006.UntagResource'
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-untagresource-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-updateapplication-api
+    name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.UpdateApplication API'
+    description: >-
+      The #X Amz Target=CodeDeploy 20141006.UpdateApplication API from Amazon CodeDeploy — 1 operation(s) for #x amz
+      target=codedeploy 20141006.updateapplication.
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - '#X Amz Target=CodeDeploy 20141006.UpdateApplication'
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-updateapplication-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+  - aid: amazon-codedeploy:amazon-codedeploy-x-amz-target-codedeploy-20141006-updatedeploymentgroup-api
+    name: 'Amazon CodeDeploy #X Amz Target=CodeDeploy 20141006.UpdateDeploymentGroup API'
+    description: >-
+      The #X Amz Target=CodeDeploy 20141006.UpdateDeploymentGroup API from Amazon CodeDeploy — 1 operation(s) for #x amz
+      target=codedeploy 20141006.updatedeploymentgroup.
+    humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
+    baseURL: https://codedeploy.us-east-1.amazonaws.com
+    tags:
+      - '#X Amz Target=CodeDeploy 20141006.UpdateDeploymentGroup'
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-updatedeploymentgroup-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
 common:
   - type: PostmanWorkspace
     url: https://www.postman.com/kinlaneapi/amazon-codedeploy/overview
@@ -946,8 +858,6 @@ common:
     url: rules/amazon-codedeploy-spectral-rules.yml
   - type: Vocabulary
     url: vocabulary/amazon-codedeploy-vocabulary.yaml
-  - type: NaftikoCapability
-    url: capabilities/amazon-codedeploy-deployment-automation.yaml
   - type: JSONLD
     url: json-ld/amazon-codedeploy-context.jsonld
   - type: Packages
@@ -972,54 +882,54 @@ common:
     data:
       - name: Multiple Deployment Strategies
         description: >-
-          Support for in-place, blue/green, and canary deployment strategies across EC2, Lambda, ECS, and
-          on-premises targets to minimize downtime and risk.
+          Support for in-place, blue/green, and canary deployment strategies across EC2, Lambda, ECS, and on-premises
+          targets to minimize downtime and risk.
       - name: Automated Rollbacks
         description: >-
-          Automatically roll back deployments if a specified number of instances fail health checks or if
-          CloudWatch alarms are triggered during deployment.
+          Automatically roll back deployments if a specified number of instances fail health checks or if CloudWatch
+          alarms are triggered during deployment.
       - name: Deployment Lifecycle Hooks
         description: >-
-          Define custom lifecycle event hooks (BeforeInstall, AfterInstall, ApplicationStart, etc.) using scripts
-          or Lambda functions for fine-grained deployment control.
+          Define custom lifecycle event hooks (BeforeInstall, AfterInstall, ApplicationStart, etc.) using scripts or
+          Lambda functions for fine-grained deployment control.
       - name: Traffic Shifting for Lambda and ECS
         description: >-
-          Implement canary and linear traffic shifting for Lambda function updates and ECS service deployments
-          with configurable traffic weights and bake times.
+          Implement canary and linear traffic shifting for Lambda function updates and ECS service deployments with
+          configurable traffic weights and bake times.
       - name: Deployment Groups
         description: >-
-          Organize deployment targets using deployment groups with EC2 instance tags, Auto Scaling groups, ECS
-          clusters, or on-premises instance tags.
+          Organize deployment targets using deployment groups with EC2 instance tags, Auto Scaling groups, ECS clusters,
+          or on-premises instance tags.
       - name: CodeDeploy Agent
         description: >-
-          Install the CodeDeploy agent on EC2 or on-premises instances to enable deployment target registration
-          and lifecycle hook execution.
+          Install the CodeDeploy agent on EC2 or on-premises instances to enable deployment target registration and
+          lifecycle hook execution.
       - name: Integration with AWS Load Balancers
         description: >-
-          Integrate with Application Load Balancers and Network Load Balancers for blue/green deployments that
-          shift traffic between original and replacement instances.
+          Integrate with Application Load Balancers and Network Load Balancers for blue/green deployments that shift
+          traffic between original and replacement instances.
   - type: UseCases
     data:
       - name: Zero-Downtime Application Updates
         description: >-
-          Use blue/green deployments to update applications without downtime by routing traffic to a new
-          environment while keeping the original environment available for rollback.
+          Use blue/green deployments to update applications without downtime by routing traffic to a new environment
+          while keeping the original environment available for rollback.
       - name: Lambda Function Updates
         description: >-
-          Deploy new Lambda function versions with canary or linear traffic shifting to gradually migrate
-          traffic from the current version to the updated function version.
+          Deploy new Lambda function versions with canary or linear traffic shifting to gradually migrate traffic from
+          the current version to the updated function version.
       - name: ECS Service Deployment
         description: >-
-          Deploy updated container tasks to ECS services with blue/green deployments and configurable traffic
-          shifting through an Application Load Balancer.
+          Deploy updated container tasks to ECS services with blue/green deployments and configurable traffic shifting
+          through an Application Load Balancer.
       - name: On-Premises Application Deployment
         description: >-
-          Extend cloud-based deployment automation to on-premises servers using the CodeDeploy agent and
-          on-premises instance registration.
+          Extend cloud-based deployment automation to on-premises servers using the CodeDeploy agent and on-premises
+          instance registration.
       - name: Multi-Stage CD Pipeline
         description: >-
-          Use CodeDeploy as the deployment stage in an AWS CodePipeline for fully automated continuous delivery
-          from source code to production.
+          Use CodeDeploy as the deployment stage in an AWS CodePipeline for fully automated continuous delivery from
+          source code to production.
   - type: Integrations
     data:
       - name: AWS CodePipeline
