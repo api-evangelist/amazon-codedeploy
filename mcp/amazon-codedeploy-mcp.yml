@@ -1,34 +1,38 @@
 generated: '2026-06-20'
 method: derived
 status: candidate
-source: >-
-  Derived from openapi/amazon-codedeploy-openapi.yml operations. No official
-  hosted/remote CodeDeploy MCP server was found (awslabs/mcp publishes
-  ecs-mcp-server and lambda-tool-mcp-server, but no CodeDeploy-specific server as
-  of 2026-06-20).
+source: Derived from openapi/amazon-codedeploy-openapi.yml operations. No official hosted/remote CodeDeploy
+  MCP server was found (awslabs/mcp publishes ecs-mcp-server and lambda-tool-mcp-server, but no CodeDeploy-specific
+  server as of 2026-06-20).
 server:
   name: amazon-codedeploy
   transport: stdio
   url: null
 tools:
-  - name: CreateApplication
-    description: Create a CodeDeploy application (a name representing the compute platform).
-    source_operation: openapi/amazon-codedeploy-openapi.yml#CreateApplication
-  - name: ListApplications
-    description: List the applications registered with the user or AWS account.
-    source_operation: openapi/amazon-codedeploy-openapi.yml#ListApplications
-  - name: GetApplication
-    description: Get information about a CodeDeploy application.
-    source_operation: openapi/amazon-codedeploy-openapi.yml#GetApplication
-  - name: DeleteApplication
-    description: Delete a CodeDeploy application.
-    source_operation: openapi/amazon-codedeploy-openapi.yml#DeleteApplication
-  - name: CreateDeployment
-    description: Deploy an application revision through the specified deployment group.
-    source_operation: openapi/amazon-codedeploy-openapi.yml#CreateDeployment
-  - name: ListDeployments
-    description: List deployments in a deployment group for an application.
-    source_operation: openapi/amazon-codedeploy-openapi.yml#ListDeployments
-  - name: GetDeployment
-    description: Get information about a deployment.
-    source_operation: openapi/amazon-codedeploy-openapi.yml#GetDeployment
+- name: CreateApplication
+  description: Create a CodeDeploy application (a name representing the compute platform).
+  source_operation: openapi/amazon-codedeploy-openapi.yml#CreateApplication
+- name: ListApplications
+  description: List the applications registered with the user or AWS account.
+  source_operation: openapi/amazon-codedeploy-openapi.yml#ListApplications
+- name: GetApplication
+  description: Get information about a CodeDeploy application.
+  source_operation: openapi/amazon-codedeploy-openapi.yml#GetApplication
+- name: DeleteApplication
+  description: Delete a CodeDeploy application.
+  source_operation: openapi/amazon-codedeploy-openapi.yml#DeleteApplication
+- name: CreateDeployment
+  description: Deploy an application revision through the specified deployment group.
+  source_operation: openapi/amazon-codedeploy-openapi.yml#CreateDeployment
+- name: ListDeployments
+  description: List deployments in a deployment group for an application.
+  source_operation: openapi/amazon-codedeploy-openapi.yml#ListDeployments
+- name: GetDeployment
+  description: Get information about a deployment.
+  source_operation: openapi/amazon-codedeploy-openapi.yml#GetDeployment
+deployment:
+  mode: none
+  verified: derived
+  tools: 7
+  checked: '2026-08-12'
+  source: catalog MCP census

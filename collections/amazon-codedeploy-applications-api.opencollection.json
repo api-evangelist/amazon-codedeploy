@@ -1,0 +1,98 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AWS CodeDeploy Applications API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Applications",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon CodeDeploy List Applications",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://codedeploy.{region}.amazonaws.com/applications",
+            "params": [
+              {
+                "name": "nextToken",
+                "value": "",
+                "type": "query",
+                "description": "Token for pagination."
+              }
+            ]
+          },
+          "docs": "Lists the applications registered with the user or AWS account."
+        },
+        {
+          "info": {
+            "name": "Amazon CodeDeploy Create an Application",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://codedeploy.{region}.amazonaws.com/applications",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates an application. An application is a name that represents the compute platform on which you deploy (EC2/On-premises, Lambda, or ECS)."
+        },
+        {
+          "info": {
+            "name": "Amazon CodeDeploy Get Application Details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://codedeploy.{region}.amazonaws.com/applications/:applicationName",
+            "params": [
+              {
+                "name": "applicationName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the application."
+              }
+            ]
+          },
+          "docs": "Gets information about an application."
+        },
+        {
+          "info": {
+            "name": "Amazon CodeDeploy Delete an Application",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://codedeploy.{region}.amazonaws.com/applications/:applicationName",
+            "params": [
+              {
+                "name": "applicationName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the application to delete."
+              }
+            ]
+          },
+          "docs": "Deletes an application along with all associated deployment groups and revisions."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

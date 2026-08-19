@@ -1,0 +1,97 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AWS CodeDeploy Applications Deployments API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Deployments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon CodeDeploy List Deployments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://codedeploy.{region}.amazonaws.com/deployments",
+            "params": [
+              {
+                "name": "applicationName",
+                "value": "",
+                "type": "query",
+                "description": "The name of the application."
+              },
+              {
+                "name": "deploymentGroupName",
+                "value": "",
+                "type": "query",
+                "description": "The name of the deployment group."
+              },
+              {
+                "name": "nextToken",
+                "value": "",
+                "type": "query",
+                "description": "Token for pagination."
+              },
+              {
+                "name": "includeOnlyStatuses",
+                "value": "",
+                "type": "query",
+                "description": "Filter by deployment status."
+              }
+            ]
+          },
+          "docs": "Lists the deployments in a deployment group for an application registered with the user or AWS account."
+        },
+        {
+          "info": {
+            "name": "Amazon CodeDeploy Create a Deployment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://codedeploy.{region}.amazonaws.com/deployments",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Deploys an application revision through the specified deployment group."
+        },
+        {
+          "info": {
+            "name": "Amazon CodeDeploy Get Deployment Details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://codedeploy.{region}.amazonaws.com/deployments/:deploymentId",
+            "params": [
+              {
+                "name": "deploymentId",
+                "value": "",
+                "type": "path",
+                "description": "The unique ID of a deployment."
+              }
+            ]
+          },
+          "docs": "Gets information about a deployment, including details about the deployment status."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
