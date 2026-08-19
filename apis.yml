@@ -30,7 +30,7 @@ tags:
 url: https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/apis.yml
 created: '2026-03-16'
 modified: '2026-06-20'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
   - aid: amazon-codedeploy:amazon-codedeploy-applications-api
     name: Amazon CodeDeploy Applications API
