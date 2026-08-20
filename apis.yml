@@ -38,6 +38,8 @@ apis:
     humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
     baseURL: https://codedeploy.us-east-1.amazonaws.com
     tags:
+      - Application
+    tags_raw:
       - Applications
     properties:
       - type: OpenAPI
@@ -52,6 +54,8 @@ apis:
     humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
     baseURL: https://codedeploy.us-east-1.amazonaws.com
     tags:
+      - Deployment
+    tags_raw:
       - Deployments
     properties:
       - type: OpenAPI
@@ -67,7 +71,8 @@ apis:
       #x amz target=codedeploy 20141006.addtagstoonpremisesinstances.
     humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
     baseURL: https://codedeploy.us-east-1.amazonaws.com
-    tags:
+    tags: []
+    tags_raw:
       - '#X Amz Target=CodeDeploy 20141006.AddTagsToOnPremisesInstances'
     properties:
       - type: OpenAPI
@@ -83,7 +88,8 @@ apis:
       #x amz target=codedeploy 20141006.batchgetapplicationrevisions.
     humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
     baseURL: https://codedeploy.us-east-1.amazonaws.com
-    tags:
+    tags: []
+    tags_raw:
       - '#X Amz Target=CodeDeploy 20141006.BatchGetApplicationRevisions'
     properties:
       - type: OpenAPI
@@ -131,7 +137,8 @@ apis:
       #x amz target=codedeploy 20141006.batchgetdeploymentinstances.
     humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
     baseURL: https://codedeploy.us-east-1.amazonaws.com
-    tags:
+    tags: []
+    tags_raw:
       - '#X Amz Target=CodeDeploy 20141006.BatchGetDeploymentInstances'
     properties:
       - type: OpenAPI
@@ -179,7 +186,8 @@ apis:
       #x amz target=codedeploy 20141006.batchgetonpremisesinstances.
     humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
     baseURL: https://codedeploy.us-east-1.amazonaws.com
-    tags:
+    tags: []
+    tags_raw:
       - '#X Amz Target=CodeDeploy 20141006.BatchGetOnPremisesInstances'
     properties:
       - type: OpenAPI
@@ -339,7 +347,8 @@ apis:
       #x amz target=codedeploy 20141006.deleteresourcesbyexternalid.
     humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
     baseURL: https://codedeploy.us-east-1.amazonaws.com
-    tags:
+    tags: []
+    tags_raw:
       - '#X Amz Target=CodeDeploy 20141006.DeleteResourcesByExternalId'
     properties:
       - type: OpenAPI
@@ -355,7 +364,8 @@ apis:
       #x amz target=codedeploy 20141006.deregisteronpremisesinstance.
     humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
     baseURL: https://codedeploy.us-east-1.amazonaws.com
-    tags:
+    tags: []
+    tags_raw:
       - '#X Amz Target=CodeDeploy 20141006.DeregisterOnPremisesInstance'
     properties:
       - type: OpenAPI
@@ -611,7 +621,8 @@ apis:
       #x amz target=codedeploy 20141006.listgithubaccounttokennames.
     humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
     baseURL: https://codedeploy.us-east-1.amazonaws.com
-    tags:
+    tags: []
+    tags_raw:
       - '#X Amz Target=CodeDeploy 20141006.ListGitHubAccountTokenNames'
     properties:
       - type: OpenAPI
@@ -659,7 +670,8 @@ apis:
       operation(s) for #x amz target=codedeploy 20141006.putlifecycleeventhookexecutionstatus.
     humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
     baseURL: https://codedeploy.us-east-1.amazonaws.com
-    tags:
+    tags: []
+    tags_raw:
       - '#X Amz Target=CodeDeploy 20141006.PutLifecycleEventHookExecutionStatus'
     properties:
       - type: OpenAPI
@@ -676,7 +688,8 @@ apis:
       #x amz target=codedeploy 20141006.registerapplicationrevision.
     humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
     baseURL: https://codedeploy.us-east-1.amazonaws.com
-    tags:
+    tags: []
+    tags_raw:
       - '#X Amz Target=CodeDeploy 20141006.RegisterApplicationRevision'
     properties:
       - type: OpenAPI
@@ -708,7 +721,8 @@ apis:
       operation(s) for #x amz target=codedeploy 20141006.removetagsfromonpremisesinstances.
     humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
     baseURL: https://codedeploy.us-east-1.amazonaws.com
-    tags:
+    tags: []
+    tags_raw:
       - '#X Amz Target=CodeDeploy 20141006.RemoveTagsFromOnPremisesInstances'
     properties:
       - type: OpenAPI
@@ -724,7 +738,8 @@ apis:
       operation(s) for #x amz target=codedeploy 20141006.skipwaittimeforinstancetermination.
     humanURL: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
     baseURL: https://codedeploy.us-east-1.amazonaws.com
-    tags:
+    tags: []
+    tags_raw:
       - '#X Amz Target=CodeDeploy 20141006.SkipWaitTimeForInstanceTermination'
     properties:
       - type: OpenAPI
