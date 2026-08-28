@@ -6,6 +6,18 @@ description: >-
   new features, helps avoid downtime during application deployment, and handles the complexity of updating your
   applications with in-place, blue/green, and canary deployment strategies.
 type: Index
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
