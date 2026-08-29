@@ -1,0 +1,360 @@
+slug: amazon-codedeploy
+provider: Amazon CodeDeploy
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 36
+edges:
+- tag: '#X Amz Target=CodeDeploy 20141006.ContinueDeployment'
+  spec_file: amazon-codedeploy-x-amz-target-codedeploy-20141006-continuedeployment-api-openapi.yml
+  capability_id: BC-4210.40
+  capability_id_l1: BC-4210
+  capability_name: Deployment Orchestration
+  confidence: 0.95
+  evidence: ContinueDeployment — Amazon CodeDeploy Continue Deployment; schemas DeploymentIsNotInReadyStateException,
+    DeploymentWaitType
+  reason: Resumes a blue/green deployment's traffic shift — production deployment orchestration with controlled
+    blast radius.
+- tag: '#X Amz Target=CodeDeploy 20141006.CreateDeployment'
+  spec_file: amazon-codedeploy-x-amz-target-codedeploy-20141006-createdeployment-api-openapi.yml
+  capability_id: BC-4210.40
+  capability_id_l1: BC-4210
+  capability_name: Deployment Orchestration
+  confidence: 0.95
+  evidence: CreateDeployment — Amazon CodeDeploy Create Deployment; InvalidTrafficRoutingConfigurationException,
+    GitHubLocation, DeploymentId
+  reason: Launches a deployment of a revision to targets — direct deployment orchestration to production.
+- tag: '#X Amz Target=CodeDeploy 20141006.CreateDeploymentConfig'
+  spec_file: amazon-codedeploy-x-amz-target-codedeploy-20141006-createdeploymentconfig-api-openapi.yml
+  capability_id: BC-4210.40
+  capability_id_l1: BC-4210
+  capability_name: Deployment Orchestration
+  confidence: 0.95
+  evidence: CreateDeploymentConfig; schemas TimeBasedCanary, TimeBasedLinear, MinimumHealthyHosts, TrafficRoutingConfig
+  reason: Defines canary/linear traffic-shifting and minimum healthy host rules — deployment strategy
+    configuration, i.e. deployment orchestration.
+- tag: Deployments
+  spec_file: amazon-codedeploy-deployments-api-openapi.yml
+  capability_id: BC-4210.40
+  capability_id_l1: BC-4210
+  capability_name: Deployment Orchestration
+  confidence: 0.93
+  evidence: '''CreateDeployment  Amazon CodeDeploy Create a Deployment'', ''GetDeployment  Amazon CodeDeploy
+    Get Deployment Details'''
+  reason: Directly creates and monitors software deployments to production compute with in-place/blue-green/canary
+    strategies — deployment orchestration.
+- tag: '#X Amz Target=CodeDeploy 20141006.GetDeployment'
+  spec_file: amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeployment-api-openapi.yml
+  capability_id: BC-4210.40
+  capability_id_l1: BC-4210
+  capability_name: Deployment Orchestration
+  confidence: 0.92
+  evidence: GetDeployment ... schemas DeploymentInfo, DeploymentStatus, RollbackInfo, AutoRollbackEventsList,
+    LoadBalancerInfo
+  reason: Operation inspects a running/completed software deployment including rollback and traffic-shifting
+    state — squarely deployment orchestration to production.
+- tag: '#X Amz Target=CodeDeploy 20141006.GetDeploymentConfig'
+  spec_file: amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymentconfig-api-openapi.yml
+  capability_id: BC-4210.40
+  capability_id_l1: BC-4210
+  capability_name: Deployment Orchestration
+  confidence: 0.92
+  evidence: GetDeploymentConfig ... TimeBasedCanary, TimeBasedLinear, TrafficRoutingConfig, MinimumHealthyHosts
+  reason: Deployment configuration defines canary/linear traffic-shifting and healthy-host thresholds
+    — the classic controlled blast-radius deployment strategy.
+- tag: '#X Amz Target=CodeDeploy 20141006.CreateDeploymentGroup'
+  spec_file: amazon-codedeploy-x-amz-target-codedeploy-20141006-createdeploymentgroup-api-openapi.yml
+  capability_id: BC-4210.40
+  capability_id_l1: BC-4210
+  capability_name: Deployment Orchestration
+  confidence: 0.9
+  evidence: CreateDeploymentGroup; schemas LoadBalancerInfo, AutoRollbackEventsList, EC2TagSetList
+  reason: Defines the target set, load balancer and auto-rollback behaviour for deployments — deployment
+    orchestration.
+- tag: '#X Amz Target=CodeDeploy 20141006.StopDeployment'
+  spec_file: amazon-codedeploy-x-amz-target-codedeploy-20141006-stopdeployment-api-openapi.yml
+  capability_id: BC-4210.40
+  capability_id_l1: BC-4210
+  capability_name: Deployment Orchestration
+  confidence: 0.9
+  evidence: StopDeployment — schemas StopStatus, DeploymentAlreadyCompletedException, DeploymentId
+  reason: Halts/rolls back an in-flight deployment — direct deployment orchestration control with blast-radius
+    containment.
+- tag: '#X Amz Target=CodeDeploy 20141006.BatchGetDeployments'
+  spec_file: amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeployments-api-openapi.yml
+  capability_id: BC-4210.40
+  capability_id_l1: BC-4210
+  capability_name: Deployment Orchestration
+  confidence: 0.88
+  evidence: BatchGetDeployments; schemas DeploymentInfo, DeploymentStatus, RollbackInfo, AutoRollbackEventsList,
+    FileExistsBehavior
+  reason: Retrieves deployment records including status and rollback information for automated application
+    deployments to production compute — Deployment Orchestration.
+- tag: '#X Amz Target=CodeDeploy 20141006.GetDeploymentGroup'
+  spec_file: amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymentgroup-api-openapi.yml
+  capability_id: BC-4210.40
+  capability_id_l1: BC-4210
+  capability_name: Deployment Orchestration
+  confidence: 0.88
+  evidence: GetDeploymentGroup ... DeploymentGroupInfo, AutoRollbackEventsList, LoadBalancerInfo, AutoScalingGroupName
+  reason: Deployment groups define the target set and rollback/traffic behaviour for automated software
+    deployments — deployment orchestration.
+- tag: '#X Amz Target=CodeDeploy 20141006.GetDeploymentTarget'
+  spec_file: amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymenttarget-api-openapi.yml
+  capability_id: BC-4210.40
+  capability_id_l1: BC-4210
+  capability_name: Deployment Orchestration
+  confidence: 0.88
+  evidence: GetDeploymentTarget ... LambdaTarget, ECSTaskSet, InstanceTarget, TargetStatus, LifecycleEventStatus
+  reason: Returns the status of an individual deployment target (Lambda alias, ECS task set, EC2 instance)
+    within a deployment — deployment orchestration.
+- tag: '#X Amz Target=CodeDeploy 20141006.BatchGetDeploymentGroups'
+  spec_file: amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeploymentgroups-api-openapi.yml
+  capability_id: BC-4210.40
+  capability_id_l1: BC-4210
+  capability_name: Deployment Orchestration
+  confidence: 0.85
+  evidence: BatchGetDeploymentGroups; schemas DeploymentGroupInfo, AutoRollbackEventsList, LoadBalancerInfo,
+    InstanceAction, Alarm
+  reason: Deployment groups define the target fleet, load-balancer cutover and auto-rollback behaviour
+    for blue/green and in-place deployments — squarely Deployment Orchestration.
+- tag: '#X Amz Target=CodeDeploy 20141006.BatchGetDeploymentTargets'
+  spec_file: amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeploymenttargets-api-openapi.yml
+  capability_id: BC-4210.40
+  capability_id_l1: BC-4210
+  capability_name: Deployment Orchestration
+  confidence: 0.85
+  evidence: BatchGetDeploymentTargets; schemas DeploymentTarget, LambdaTarget, ECSTaskSet, InstanceTarget,
+    TargetStatus
+  reason: Inspects the individual targets (EC2, Lambda, ECS task sets) of a deployment and their status
+    — execution and blast-radius control of production deployments.
+- tag: '#X Amz Target=CodeDeploy 20141006.DeleteDeploymentConfig'
+  spec_file: amazon-codedeploy-x-amz-target-codedeploy-20141006-deletedeploymentconfig-api-openapi.yml
+  capability_id: BC-4210.40
+  capability_id_l1: BC-4210
+  capability_name: Deployment Orchestration
+  confidence: 0.85
+  evidence: DeleteDeploymentConfig — Amazon CodeDeploy Delete Deployment Config; DeploymentConfigInUseException
+  reason: Manages the lifecycle of deployment strategy configurations (traffic routing / healthy host
+    rules) used to deploy to production.
+- tag: '#X Amz Target=CodeDeploy 20141006.DeleteDeploymentGroup'
+  spec_file: amazon-codedeploy-x-amz-target-codedeploy-20141006-deletedeploymentgroup-api-openapi.yml
+  capability_id: BC-4210.40
+  capability_id_l1: BC-4210
+  capability_name: Deployment Orchestration
+  confidence: 0.85
+  evidence: DeleteDeploymentGroup; schemas AutoScalingGroupHook, DeploymentGroupName
+  reason: Removes the deployment target grouping used to orchestrate deployments to instances/ASGs.
+- tag: '#X Amz Target=CodeDeploy 20141006.GetDeploymentInstance'
+  spec_file: amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymentinstance-api-openapi.yml
+  capability_id: BC-4210.40
+  capability_id_l1: BC-4210
+  capability_name: Deployment Orchestration
+  confidence: 0.85
+  evidence: GetDeploymentInstance ... LifecycleEvent, LifecycleEventStatus, InstanceSummary, DeploymentId
+  reason: Reports per-instance deployment lifecycle event status during a software deployment; operational
+    surface of deployment orchestration.
+- tag: '#X Amz Target=CodeDeploy 20141006.ListDeploymentConfigs'
+  spec_file: amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymentconfigs-api-openapi.yml
+  capability_id: BC-4210.40
+  capability_id_l1: BC-4210
+  capability_name: Deployment Orchestration
+  confidence: 0.85
+  evidence: ListDeploymentConfigs ... DeploymentConfigsList, DeploymentConfigName
+  reason: Enumerates deployment configurations (canary/linear/all-at-once strategies) used to control
+    production rollouts.
+- tag: '#X Amz Target=CodeDeploy 20141006.ListDeploymentGroups'
+  spec_file: amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymentgroups-api-openapi.yml
+  capability_id: BC-4210.40
+  capability_id_l1: BC-4210
+  capability_name: Deployment Orchestration
+  confidence: 0.85
+  evidence: ListDeploymentGroups ... DeploymentGroupsList, DeploymentGroupName, ApplicationName
+  reason: Lists deployment groups (target sets) for an application in the deployment automation service
+    — deployment orchestration.
+- tag: '#X Amz Target=CodeDeploy 20141006.ListDeploymentInstances'
+  spec_file: amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymentinstances-api-openapi.yml
+  capability_id: BC-4210.40
+  capability_id_l1: BC-4210
+  capability_name: Deployment Orchestration
+  confidence: 0.85
+  evidence: ListDeploymentInstances ... InstancesList, InstanceStatusList, DeploymentId, DeploymentNotStartedException
+  reason: Lists the instances participating in a given software deployment and their status — operational
+    surface of deployment orchestration.
+- tag: '#X Amz Target=CodeDeploy 20141006.ListDeploymentTargets'
+  spec_file: amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymenttargets-api-openapi.yml
+  capability_id: BC-4210.40
+  capability_id_l1: BC-4210
+  capability_name: Deployment Orchestration
+  confidence: 0.85
+  evidence: POST ... ListDeploymentTargets — "CodeDeploy is a deployment service that automates application
+    deployments to Amazon EC2 instances"; schemas DeploymentId, TargetIdList, TargetFilters
+  reason: Operation lists the targets of a running deployment in an automated deployment service — this
+    is deployment orchestration of software changes to production, not generic IT ops.
+- tag: '#X Amz Target=CodeDeploy 20141006.ListDeployments'
+  spec_file: amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeployments-api-openapi.yml
+  capability_id: BC-4210.40
+  capability_id_l1: BC-4210
+  capability_name: Deployment Orchestration
+  confidence: 0.85
+  evidence: ListDeployments — schemas DeploymentStatus, DeploymentStatusList, DeploymentGroupDoesNotExistException
+  reason: Lists deployments and their statuses within the deployment automation service; squarely deployment
+    orchestration.
+- tag: '#X Amz Target=CodeDeploy 20141006.PutLifecycleEventHookExecutionStatus'
+  spec_file: amazon-codedeploy-x-amz-target-codedeploy-20141006-putlifecycleeventhookexecutionstatus-api-openapi.yml
+  capability_id: BC-4210.40
+  capability_id_l1: BC-4210
+  capability_name: Deployment Orchestration
+  confidence: 0.85
+  evidence: PutLifecycleEventHookExecutionStatus — schemas LifecycleEventStatus, LifecycleEventHookExecutionId,
+    DeploymentId
+  reason: Reports validation-hook outcomes that gate progression of a deployment (e.g. blue/green traffic
+    shift); part of controlled deployment orchestration.
+- tag: '#X Amz Target=CodeDeploy 20141006.UpdateDeploymentGroup'
+  spec_file: amazon-codedeploy-x-amz-target-codedeploy-20141006-updatedeploymentgroup-api-openapi.yml
+  capability_id: BC-4210.40
+  capability_id_l1: BC-4210
+  capability_name: Deployment Orchestration
+  confidence: 0.85
+  evidence: '''UpdateDeploymentGroup  Amazon CodeDeploy Update Deployment Group''; schemas AutoRollbackEventsList,
+    LoadBalancerInfo, AutoScalingGroupName'
+  reason: Deployment group configuration including auto-rollback, load balancer and target groups is precisely
+    deployment strategy/blast-radius control in production.
+- tag: '#X Amz Target=CodeDeploy 20141006.BatchGetDeploymentInstances'
+  spec_file: amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeploymentinstances-api-openapi.yml
+  capability_id: BC-4210.40
+  capability_id_l1: BC-4210
+  capability_name: Deployment Orchestration
+  confidence: 0.8
+  evidence: BatchGetDeploymentInstances; schemas InstanceSummary, LifecycleEventStatus, LifecycleEventName,
+    DeploymentId
+  reason: Returns per-instance lifecycle event status for a running deployment — monitoring the progress
+    of a controlled rollout, i.e. deployment orchestration.
+- tag: '#X Amz Target=CodeDeploy 20141006.CreateApplication'
+  spec_file: amazon-codedeploy-x-amz-target-codedeploy-20141006-createapplication-api-openapi.yml
+  capability_id: BC-4210.40
+  capability_id_l1: BC-4210
+  capability_name: Deployment Orchestration
+  confidence: 0.8
+  evidence: CreateApplication — Amazon CodeDeploy Create Application; CreateApplicationInput, ComputePlatform
+  reason: A CodeDeploy 'application' is the container for deployment groups and revisions; creating it
+    is part of deployment orchestration setup, per the spec description 'automates application deployments'.
+- tag: '#X Amz Target=CodeDeploy 20141006.DeleteApplication'
+  spec_file: amazon-codedeploy-x-amz-target-codedeploy-20141006-deleteapplication-api-openapi.yml
+  capability_id: BC-4210.40
+  capability_id_l1: BC-4210
+  capability_name: Deployment Orchestration
+  confidence: 0.8
+  evidence: DeleteApplication — Amazon CodeDeploy Delete Application; DeleteApplicationInput, ApplicationName
+  reason: Lifecycle management of the CodeDeploy application object that groups deployments; part of deployment
+    orchestration configuration.
+- tag: '#X Amz Target=CodeDeploy 20141006.SkipWaitTimeForInstanceTermination'
+  spec_file: amazon-codedeploy-x-amz-target-codedeploy-20141006-skipwaittimeforinstancetermination-api-openapi.yml
+  capability_id: BC-4210.40
+  capability_id_l1: BC-4210
+  capability_name: Deployment Orchestration
+  confidence: 0.8
+  evidence: SkipWaitTimeForInstanceTermination — schemas DeploymentId, UnsupportedActionForDeploymentTypeException,
+    DeploymentNotStartedException
+  reason: Controls the termination wait step of a blue/green deployment, i.e. runtime control of deployment
+    strategy execution.
+- tag: '#X Amz Target=CodeDeploy 20141006.BatchGetApplicationRevisions'
+  spec_file: amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetapplicationrevisions-api-openapi.yml
+  capability_id: BC-4210.40
+  capability_id_l1: BC-4210
+  capability_name: Deployment Orchestration
+  confidence: 0.75
+  evidence: BatchGetApplicationRevisions; schemas RevisionLocation, GitHubLocation, S3Key, AppSpecContent,
+    RevisionInfo
+  reason: Retrieves the deployable application revisions (artefact versions) used by CodeDeploy to push
+    changes to production targets — part of deployment orchestration. Read-only lookup, hence moderate
+    confidence.
+- tag: '#X Amz Target=CodeDeploy 20141006.GetApplication'
+  spec_file: amazon-codedeploy-x-amz-target-codedeploy-20141006-getapplication-api-openapi.yml
+  capability_id: BC-4210.40
+  capability_id_l1: BC-4210
+  capability_name: Deployment Orchestration
+  confidence: 0.75
+  evidence: GetApplication — Amazon CodeDeploy Get Application; ApplicationInfo, ComputePlatform, GitHubAccountTokenName
+  reason: Reads the CodeDeploy application record that anchors deployments to compute platforms; part
+    of the deployment orchestration surface.
+- tag: '#X Amz Target=CodeDeploy 20141006.GetApplicationRevision'
+  spec_file: amazon-codedeploy-x-amz-target-codedeploy-20141006-getapplicationrevision-api-openapi.yml
+  capability_id: BC-4210.40
+  capability_id_l1: BC-4210
+  capability_name: Deployment Orchestration
+  confidence: 0.75
+  evidence: GetApplicationRevision ... schemas RevisionLocation, BundleType, AppSpecContent, GitHubLocation
+    — deployable application revisions in CodeDeploy, "a deployment service that automates application
+    deployments"
+  reason: Retrieves the deployable artefact/revision registered with a CodeDeploy application; this is
+    part of delivering software changes to runtime targets, i.e. release & deployment management rather
+    than any business-domain capability.
+- tag: Applications
+  spec_file: amazon-codedeploy-applications-api-openapi.yml
+  capability_id: BC-4210.40
+  capability_id_l1: BC-4210
+  capability_name: Deployment Orchestration
+  confidence: 0.75
+  evidence: '''CreateApplication  Amazon CodeDeploy Create an Application'', ''DeleteApplication''; ''automates
+    application deployments to Amazon EC2 instances'''
+  reason: CRUD over CodeDeploy applications, the top-level construct of the automated deployment service;
+    maps to deployment orchestration within release & deployment management.
+- tag: '#X Amz Target=CodeDeploy 20141006.ListApplicationRevisions'
+  spec_file: amazon-codedeploy-x-amz-target-codedeploy-20141006-listapplicationrevisions-api-openapi.yml
+  capability_id: BC-4210.40
+  capability_id_l1: BC-4210
+  capability_name: Deployment Orchestration
+  confidence: 0.72
+  evidence: ListApplicationRevisions ... RevisionLocation, BundleType, AppSpecContent, S3Key
+  reason: Lists the deployable revisions registered for a CodeDeploy application — artefact inventory
+    feeding deployments; release & deployment management, not a business-domain capability.
+- tag: '#X Amz Target=CodeDeploy 20141006.BatchGetApplications'
+  spec_file: amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetapplications-api-openapi.yml
+  capability_id: BC-4210.40
+  capability_id_l1: BC-4210
+  capability_name: Deployment Orchestration
+  confidence: 0.7
+  evidence: BatchGetApplications; schemas ApplicationInfo, ComputePlatform, GitHubAccountTokenName
+  reason: CodeDeploy 'applications' are the deployment units the service orchestrates onto EC2/Lambda/ECS;
+    retrieving them supports deployment orchestration. Thin (read-only metadata) so 0.70.
+- tag: '#X Amz Target=CodeDeploy 20141006.ListApplications'
+  spec_file: amazon-codedeploy-x-amz-target-codedeploy-20141006-listapplications-api-openapi.yml
+  capability_id: BC-4210.40
+  capability_id_l1: BC-4210
+  capability_name: Deployment Orchestration
+  confidence: 0.7
+  evidence: ListApplications ... ApplicationsList, ApplicationName, within "CodeDeploy is a deployment
+    service that automates application deployments"
+  reason: Lists CodeDeploy application constructs that group deployment groups and revisions; sits inside
+    the deployment automation service, so release & deployment management is the honest mapping.
+- tag: '#X Amz Target=CodeDeploy 20141006.RegisterApplicationRevision'
+  spec_file: amazon-codedeploy-x-amz-target-codedeploy-20141006-registerapplicationrevision-api-openapi.yml
+  capability_id: BC-4210
+  capability_id_l1: BC-4210
+  capability_name: Software Release & Deployment Management
+  confidence: 0.7
+  evidence: RegisterApplicationRevision — schemas RevisionLocation, GitHubLocation, S3Key, AppSpecContent,
+    VersionId
+  reason: Registers a deployable application revision/artefact with the deployment service; clearly release
+    & deployment management, but ambiguous between artefact/release engineering and deployment orchestration
+    so no L2 asserted.
+- tag: '#X Amz Target=CodeDeploy 20141006.UpdateApplication'
+  spec_file: amazon-codedeploy-x-amz-target-codedeploy-20141006-updateapplication-api-openapi.yml
+  capability_id: BC-4210.40
+  capability_id_l1: BC-4210
+  capability_name: Deployment Orchestration
+  confidence: 0.7
+  evidence: '''UpdateApplication  Amazon CodeDeploy Update Application''; ''CodeDeploy is a deployment
+    service that automates application deployments'''
+  reason: Manages the CodeDeploy application object that scopes automated deployments to production compute;
+    deployment orchestration is the closest fit, though this single op is configuration of the deployment
+    target container.

@@ -841,6 +841,9 @@ apis:
       - type: APIReference
         url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html
 common:
+  - type: CapabilityMap
+    url: capabilities/amazon-codedeploy-capability-edges.yml
+    name: Amazon CodeDeploy Business Capability Map
   - type: PostmanWorkspace
     url: https://www.postman.com/kinlaneapi/amazon-codedeploy/overview
   - type: AgenticAccess
