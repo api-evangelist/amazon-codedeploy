@@ -85,7 +85,7 @@ apis:
     baseURL: https://codedeploy.us-east-1.amazonaws.com
     tags: []
     tags_raw:
-      - '#X Amz Target=CodeDeploy 20141006.AddTagsToOnPremisesInstances'
+    - '#X Amz Target=CodeDeploy 20141006.AddTagsToOnPremisesInstances'
     properties:
       - type: OpenAPI
         url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-addtagstoonpremisesinstances-api-openapi.yml
@@ -102,7 +102,7 @@ apis:
     baseURL: https://codedeploy.us-east-1.amazonaws.com
     tags: []
     tags_raw:
-      - '#X Amz Target=CodeDeploy 20141006.BatchGetApplicationRevisions'
+    - '#X Amz Target=CodeDeploy 20141006.BatchGetApplicationRevisions'
     properties:
       - type: OpenAPI
         url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetapplicationrevisions-api-openapi.yml
@@ -151,7 +151,7 @@ apis:
     baseURL: https://codedeploy.us-east-1.amazonaws.com
     tags: []
     tags_raw:
-      - '#X Amz Target=CodeDeploy 20141006.BatchGetDeploymentInstances'
+    - '#X Amz Target=CodeDeploy 20141006.BatchGetDeploymentInstances'
     properties:
       - type: OpenAPI
         url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeploymentinstances-api-openapi.yml
@@ -200,7 +200,7 @@ apis:
     baseURL: https://codedeploy.us-east-1.amazonaws.com
     tags: []
     tags_raw:
-      - '#X Amz Target=CodeDeploy 20141006.BatchGetOnPremisesInstances'
+    - '#X Amz Target=CodeDeploy 20141006.BatchGetOnPremisesInstances'
     properties:
       - type: OpenAPI
         url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetonpremisesinstances-api-openapi.yml
@@ -361,7 +361,7 @@ apis:
     baseURL: https://codedeploy.us-east-1.amazonaws.com
     tags: []
     tags_raw:
-      - '#X Amz Target=CodeDeploy 20141006.DeleteResourcesByExternalId'
+    - '#X Amz Target=CodeDeploy 20141006.DeleteResourcesByExternalId'
     properties:
       - type: OpenAPI
         url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-deleteresourcesbyexternalid-api-openapi.yml
@@ -378,7 +378,7 @@ apis:
     baseURL: https://codedeploy.us-east-1.amazonaws.com
     tags: []
     tags_raw:
-      - '#X Amz Target=CodeDeploy 20141006.DeregisterOnPremisesInstance'
+    - '#X Amz Target=CodeDeploy 20141006.DeregisterOnPremisesInstance'
     properties:
       - type: OpenAPI
         url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-deregisteronpremisesinstance-api-openapi.yml
@@ -635,7 +635,7 @@ apis:
     baseURL: https://codedeploy.us-east-1.amazonaws.com
     tags: []
     tags_raw:
-      - '#X Amz Target=CodeDeploy 20141006.ListGitHubAccountTokenNames'
+    - '#X Amz Target=CodeDeploy 20141006.ListGitHubAccountTokenNames'
     properties:
       - type: OpenAPI
         url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listgithubaccounttokennames-api-openapi.yml
@@ -684,7 +684,7 @@ apis:
     baseURL: https://codedeploy.us-east-1.amazonaws.com
     tags: []
     tags_raw:
-      - '#X Amz Target=CodeDeploy 20141006.PutLifecycleEventHookExecutionStatus'
+    - '#X Amz Target=CodeDeploy 20141006.PutLifecycleEventHookExecutionStatus'
     properties:
       - type: OpenAPI
         url: >-
@@ -702,7 +702,7 @@ apis:
     baseURL: https://codedeploy.us-east-1.amazonaws.com
     tags: []
     tags_raw:
-      - '#X Amz Target=CodeDeploy 20141006.RegisterApplicationRevision'
+    - '#X Amz Target=CodeDeploy 20141006.RegisterApplicationRevision'
     properties:
       - type: OpenAPI
         url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-registerapplicationrevision-api-openapi.yml
@@ -735,7 +735,7 @@ apis:
     baseURL: https://codedeploy.us-east-1.amazonaws.com
     tags: []
     tags_raw:
-      - '#X Amz Target=CodeDeploy 20141006.RemoveTagsFromOnPremisesInstances'
+    - '#X Amz Target=CodeDeploy 20141006.RemoveTagsFromOnPremisesInstances'
     properties:
       - type: OpenAPI
         url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-removetagsfromonpremisesinstances-api-openapi.yml
@@ -752,7 +752,7 @@ apis:
     baseURL: https://codedeploy.us-east-1.amazonaws.com
     tags: []
     tags_raw:
-      - '#X Amz Target=CodeDeploy 20141006.SkipWaitTimeForInstanceTermination'
+    - '#X Amz Target=CodeDeploy 20141006.SkipWaitTimeForInstanceTermination'
     properties:
       - type: OpenAPI
         url: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-skipwaittimeforinstancetermination-api-openapi.yml
