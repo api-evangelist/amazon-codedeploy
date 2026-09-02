@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'AWS CodeDeploy Applications #X Amz Target=CodeDeploy 20141006.GetApplicationRevision API'
+  title: 'AWS CodeDeploy Applications #X Amz Target=CodeDeploy 20141006.GetApplicationRevision #X Amz Target=CodeDeploy 20141006.GetApplicationRevision #X Amz Target=CodeDeploy 20141006.GetApplicationRevision API'
   description: '<p>CodeDeploy is a deployment service that automates application deployments to Amazon EC2 instances, on-premises instances running in your own facility, serverless Lambda functions, or applications in an Amazon ECS service.</p> <p>You can deploy a nearly unlimited variety of application content, such as an updated Lambda function, updated applications in an Amazon ECS service, code, web and configuration files, executables, packages, scripts, multimedia files, and so on. CodeDeploy can deploy application content stored in Amazon S3 buckets, GitHub repositories, or Bitbucket repositories. You do not need to make changes to your existing code before you can use CodeDeploy.</p> <p>CodeDeploy makes it easier for you to rapidly release new features, helps you avoid downtime during application deployment, and handles the complexity of updating your applications, without many of the risks associated with error-prone manual deployments.</p> <p> <b>CodeDeploy Components</b> </p> <p>Use the information in this guide to help you work with the following CodeDeploy components:</p> <ul> <li> <p> <b>Application</b>: A name that uniquely identifies the application you want to deploy. CodeDeploy uses this name, which functions as a container, to ensure the correct combination of revision, deployment configuration, and deployment group are referenced during a deployment.</p> </li> <li> <p> <b>Deployment group</b>: A set of individual instances, CodeDeploy Lambda deployment configuration settings, or an Amazon ECS service and network details. A Lambda deployment group specifies how to route traffic to a new version of a Lambda function. An Amazon ECS deployment group specifies the service created in Amazon ECS to deploy, a load balancer, and a listener to reroute production traffic to an updated containerized application. An Amazon EC2/On-premises deployment group contains individually tagged instances, Amazon EC2 instances in Amazon EC2 Auto Scaling groups, or both. All deployment groups can specify optional trigger, alarm, and rollback settings.</p> </li> <li> <p> <b>Deployment configuration</b>: A set of deployment rules and deployment success and failure conditions used by CodeDeploy during a deployment.</p> </li> <li> <p> <b>Deployment</b>: The process and the components used when updating a Lambda function, a containerized application in an Amazon ECS service, or of installing content on one or more instances. </p> </li> <li> <p> <b>Application revisions</b>: For an Lambda deployment, this is an AppSpec file that specifies the Lambda function to be updated and one or more functions to validate deployment lifecycle events. For an Amazon ECS deployment, this is an AppSpec file that specifies the Amazon ECS task definition, container, and port where production traffic is rerouted. For an EC2/On-premises deployment, this is an archive file that contains source content—source code, webpages, executable files, and deployment scripts—along with an AppSpec file. Revisions are stored in Amazon S3 buckets or GitHub repositories. For Amazon S3, a revision is uniquely identified by its Amazon S3 object key and its ETag, version, or both. For GitHub, a revision is uniquely identified by its commit ID.</p> </li> </ul> <p>This guide also contains information to help you get details about the instances in your deployments, to make on-premises instances available for CodeDeploy deployments, to get details about a Lambda function deployment, and to get details about Amazon ECS service deployments.</p> <p> <b>CodeDeploy Information Resources</b> </p> <ul> <li> <p> <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">CodeDeploy User Guide</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/">CodeDeploy API Reference Guide</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/cli/latest/reference/deploy/index.html">CLI Reference for CodeDeploy</a> </p> </li> <li> <p> <a href="https://forums.aws.amazon.com/forum.jspa?forumID=179">CodeDeploy Developer Forum</a> </p> </li> </ul>'
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
@@ -234,59 +234,80 @@ paths:
       tags:
       - '#X Amz Target=CodeDeploy 20141006.GetApplicationRevision'
 components:
-  parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    VersionId:
-      type: string
-    InvalidRevisionException: {}
     RawStringSha256:
       type: string
+    BundleType:
+      type: string
+      enum:
+      - tar
+      - tgz
+      - zip
+      - YAML
+      - JSON
+    DeploymentGroupsList:
+      type: array
+      items:
+        $ref: '#/components/schemas/DeploymentGroupName'
+    S3Key:
+      type: string
+    ApplicationDoesNotExistException: {}
+    GitHubLocation:
+      type: object
+      properties:
+        repository:
+          allOf:
+          - $ref: '#/components/schemas/Repository'
+          - description: <p>The GitHub account and repository pair that stores a reference to the commit that represents the bundled artifacts for the application revision. </p> <p>Specified as account/repository.</p>
+        commitId:
+          allOf:
+          - $ref: '#/components/schemas/CommitId'
+          - description: The SHA1 commit ID of the GitHub commit that represents the bundled artifacts for the application revision.
+      description: Information about the location of application artifacts stored in GitHub.
     ApplicationName:
       type: string
       minLength: 1
       maxLength: 100
+    Description:
+      type: string
+    InvalidRevisionException: {}
+    RevisionLocation:
+      type: object
+      properties:
+        revisionType:
+          allOf:
+          - $ref: '#/components/schemas/RevisionLocationType'
+          - description: '<p>The type of application revision:</p> <ul> <li> <p>S3: An application revision stored in Amazon S3.</p> </li> <li> <p>GitHub: An application revision stored in GitHub (EC2/On-premises deployments only).</p> </li> <li> <p>String: A YAML-formatted or JSON-formatted string (Lambda deployments only).</p> </li> <li> <p>AppSpecContent: An <code>AppSpecContent</code> object that contains the contents of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML stored as a RawString.</p> </li> </ul>'
+        s3Location:
+          allOf:
+          - $ref: '#/components/schemas/S3Location'
+          - description: 'Information about the location of a revision stored in Amazon S3. '
+        gitHubLocation:
+          allOf:
+          - $ref: '#/components/schemas/GitHubLocation'
+          - description: Information about the location of application artifacts stored in GitHub.
+        string:
+          allOf:
+          - $ref: '#/components/schemas/RawString'
+          - description: Information about the location of an Lambda deployment revision stored as a RawString.
+        appSpecContent:
+          allOf:
+          - $ref: '#/components/schemas/AppSpecContent'
+          - description: ' The content of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML and stored as a RawString. '
+      description: Information about the location of an application revision.
+    Timestamp:
+      type: string
+      format: date-time
+    RevisionLocationType:
+      type: string
+      enum:
+      - S3
+      - GitHub
+      - String
+      - AppSpecContent
+    ApplicationNameRequiredException: {}
+    VersionId:
+      type: string
     AppSpecContent:
       type: object
       properties:
@@ -299,6 +320,7 @@ components:
           - $ref: '#/components/schemas/RawStringSha256'
           - description: ' The SHA256 hash value of the revision content. '
       description: ' A revision for an Lambda or Amazon ECS deployment that is a YAML-formatted or JSON-formatted string. For Lambda and Amazon ECS deployments, the revision is the same as the AppSpec file. This method replaces the deprecated <code>RawString</code> data type. '
+    InvalidApplicationNameException: {}
     RevisionRequiredException: {}
     GenericRevisionInfo:
       type: object
@@ -324,22 +346,48 @@ components:
           - $ref: '#/components/schemas/Timestamp'
           - description: When the revision was registered with CodeDeploy.
       description: Information about an application revision.
-    GitHubLocation:
+    RevisionDoesNotExistException: {}
+    RawString:
       type: object
+      deprecated: true
       properties:
-        repository:
+        content:
           allOf:
-          - $ref: '#/components/schemas/Repository'
-          - description: <p>The GitHub account and repository pair that stores a reference to the commit that represents the bundled artifacts for the application revision. </p> <p>Specified as account/repository.</p>
-        commitId:
+          - $ref: '#/components/schemas/RawStringContent'
+          - description: The YAML-formatted or JSON-formatted revision string. It includes information about which Lambda function to update and optional Lambda functions that validate deployment lifecycle events.
+        sha256:
           allOf:
-          - $ref: '#/components/schemas/CommitId'
-          - description: The SHA1 commit ID of the GitHub commit that represents the bundled artifacts for the application revision.
-      description: Information about the location of application artifacts stored in GitHub.
-    Repository:
+          - $ref: '#/components/schemas/RawStringSha256'
+          - description: The SHA256 hash value of the revision content.
+      description: A revision for an Lambda deployment that is a YAML-formatted or JSON-formatted string. For Lambda deployments, the revision is the same as the AppSpec file.RawString and String revision type are deprecated, use AppSpecContent type instead.
+    DeploymentGroupName:
+      type: string
+      minLength: 1
+      maxLength: 100
+    ETag:
       type: string
     RawStringContent:
       type: string
+    Repository:
+      type: string
+    CommitId:
+      type: string
+    GetApplicationRevisionInput:
+      type: object
+      required:
+      - applicationName
+      - revision
+      title: GetApplicationRevisionInput
+      properties:
+        applicationName:
+          allOf:
+          - $ref: '#/components/schemas/ApplicationName'
+          - description: The name of the application that corresponds to the revision.
+        revision:
+          allOf:
+          - $ref: '#/components/schemas/RevisionLocation'
+          - description: Information about the application revision to get, including type and location.
+      description: Represents the input of a <code>GetApplicationRevision</code> operation.
     S3Location:
       type: object
       properties:
@@ -364,59 +412,8 @@ components:
           - $ref: '#/components/schemas/ETag'
           - description: <p>The ETag of the Amazon S3 object that represents the bundled artifacts for the application revision.</p> <p>If the ETag is not specified as an input parameter, ETag validation of the object is skipped.</p>
       description: Information about the location of application artifacts stored in Amazon S3.
-    ETag:
+    S3Bucket:
       type: string
-    RevisionLocation:
-      type: object
-      properties:
-        revisionType:
-          allOf:
-          - $ref: '#/components/schemas/RevisionLocationType'
-          - description: '<p>The type of application revision:</p> <ul> <li> <p>S3: An application revision stored in Amazon S3.</p> </li> <li> <p>GitHub: An application revision stored in GitHub (EC2/On-premises deployments only).</p> </li> <li> <p>String: A YAML-formatted or JSON-formatted string (Lambda deployments only).</p> </li> <li> <p>AppSpecContent: An <code>AppSpecContent</code> object that contains the contents of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML stored as a RawString.</p> </li> </ul>'
-        s3Location:
-          allOf:
-          - $ref: '#/components/schemas/S3Location'
-          - description: 'Information about the location of a revision stored in Amazon S3. '
-        gitHubLocation:
-          allOf:
-          - $ref: '#/components/schemas/GitHubLocation'
-          - description: Information about the location of application artifacts stored in GitHub.
-        string:
-          allOf:
-          - $ref: '#/components/schemas/RawString'
-          - description: Information about the location of an Lambda deployment revision stored as a RawString.
-        appSpecContent:
-          allOf:
-          - $ref: '#/components/schemas/AppSpecContent'
-          - description: ' The content of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML and stored as a RawString. '
-      description: Information about the location of an application revision.
-    RawString:
-      type: object
-      deprecated: true
-      properties:
-        content:
-          allOf:
-          - $ref: '#/components/schemas/RawStringContent'
-          - description: The YAML-formatted or JSON-formatted revision string. It includes information about which Lambda function to update and optional Lambda functions that validate deployment lifecycle events.
-        sha256:
-          allOf:
-          - $ref: '#/components/schemas/RawStringSha256'
-          - description: The SHA256 hash value of the revision content.
-      description: A revision for an Lambda deployment that is a YAML-formatted or JSON-formatted string. For Lambda deployments, the revision is the same as the AppSpec file.RawString and String revision type are deprecated, use AppSpecContent type instead.
-    S3Key:
-      type: string
-    ApplicationNameRequiredException: {}
-    DeploymentGroupName:
-      type: string
-      minLength: 1
-      maxLength: 100
-    RevisionLocationType:
-      type: string
-      enum:
-      - S3
-      - GitHub
-      - String
-      - AppSpecContent
     GetApplicationRevisionOutput:
       type: object
       properties:
@@ -433,46 +430,49 @@ components:
           - $ref: '#/components/schemas/GenericRevisionInfo'
           - description: General information about the revision.
       description: Represents the output of a <code>GetApplicationRevision</code> operation.
-    S3Bucket:
-      type: string
-    ApplicationDoesNotExistException: {}
-    BundleType:
-      type: string
-      enum:
-      - tar
-      - tgz
-      - zip
-      - YAML
-      - JSON
-    CommitId:
-      type: string
-    Description:
-      type: string
-    Timestamp:
-      type: string
-      format: date-time
-    RevisionDoesNotExistException: {}
-    InvalidApplicationNameException: {}
-    DeploymentGroupsList:
-      type: array
-      items:
-        $ref: '#/components/schemas/DeploymentGroupName'
-    GetApplicationRevisionInput:
-      type: object
-      required:
-      - applicationName
-      - revision
-      title: GetApplicationRevisionInput
-      properties:
-        applicationName:
-          allOf:
-          - $ref: '#/components/schemas/ApplicationName'
-          - description: The name of the application that corresponds to the revision.
-        revision:
-          allOf:
-          - $ref: '#/components/schemas/RevisionLocation'
-          - description: Information about the application revision to get, including type and location.
-      description: Represents the input of a <code>GetApplicationRevision</code> operation.
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

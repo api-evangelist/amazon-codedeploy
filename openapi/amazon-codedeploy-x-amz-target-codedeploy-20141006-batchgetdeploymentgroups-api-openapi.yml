@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'AWS CodeDeploy Applications #X Amz Target=CodeDeploy 20141006.BatchGetDeploymentGroups API'
+  title: 'AWS CodeDeploy Applications #X Amz Target=CodeDeploy 20141006.BatchGetDeploymentGroups #X Amz Target=CodeDeploy 20141006.BatchGetDeploymentGroups #X Amz Target=CodeDeploy 20141006.BatchGetDeploymentGroups API'
   description: '<p>CodeDeploy is a deployment service that automates application deployments to Amazon EC2 instances, on-premises instances running in your own facility, serverless Lambda functions, or applications in an Amazon ECS service.</p> <p>You can deploy a nearly unlimited variety of application content, such as an updated Lambda function, updated applications in an Amazon ECS service, code, web and configuration files, executables, packages, scripts, multimedia files, and so on. CodeDeploy can deploy application content stored in Amazon S3 buckets, GitHub repositories, or Bitbucket repositories. You do not need to make changes to your existing code before you can use CodeDeploy.</p> <p>CodeDeploy makes it easier for you to rapidly release new features, helps you avoid downtime during application deployment, and handles the complexity of updating your applications, without many of the risks associated with error-prone manual deployments.</p> <p> <b>CodeDeploy Components</b> </p> <p>Use the information in this guide to help you work with the following CodeDeploy components:</p> <ul> <li> <p> <b>Application</b>: A name that uniquely identifies the application you want to deploy. CodeDeploy uses this name, which functions as a container, to ensure the correct combination of revision, deployment configuration, and deployment group are referenced during a deployment.</p> </li> <li> <p> <b>Deployment group</b>: A set of individual instances, CodeDeploy Lambda deployment configuration settings, or an Amazon ECS service and network details. A Lambda deployment group specifies how to route traffic to a new version of a Lambda function. An Amazon ECS deployment group specifies the service created in Amazon ECS to deploy, a load balancer, and a listener to reroute production traffic to an updated containerized application. An Amazon EC2/On-premises deployment group contains individually tagged instances, Amazon EC2 instances in Amazon EC2 Auto Scaling groups, or both. All deployment groups can specify optional trigger, alarm, and rollback settings.</p> </li> <li> <p> <b>Deployment configuration</b>: A set of deployment rules and deployment success and failure conditions used by CodeDeploy during a deployment.</p> </li> <li> <p> <b>Deployment</b>: The process and the components used when updating a Lambda function, a containerized application in an Amazon ECS service, or of installing content on one or more instances. </p> </li> <li> <p> <b>Application revisions</b>: For an Lambda deployment, this is an AppSpec file that specifies the Lambda function to be updated and one or more functions to validate deployment lifecycle events. For an Amazon ECS deployment, this is an AppSpec file that specifies the Amazon ECS task definition, container, and port where production traffic is rerouted. For an EC2/On-premises deployment, this is an archive file that contains source content—source code, webpages, executable files, and deployment scripts—along with an AppSpec file. Revisions are stored in Amazon S3 buckets or GitHub repositories. For Amazon S3, a revision is uniquely identified by its Amazon S3 object key and its ETag, version, or both. For GitHub, a revision is uniquely identified by its commit ID.</p> </li> </ul> <p>This guide also contains information to help you get details about the instances in your deployments, to make on-premises instances available for CodeDeploy deployments, to get details about a Lambda function deployment, and to get details about Amazon ECS service deployments.</p> <p> <b>CodeDeploy Information Resources</b> </p> <ul> <li> <p> <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">CodeDeploy User Guide</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/">CodeDeploy API Reference Guide</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/cli/latest/reference/deploy/index.html">CLI Reference for CodeDeploy</a> </p> </li> <li> <p> <a href="https://forums.aws.amazon.com/forum.jspa?forumID=179">CodeDeploy Developer Forum</a> </p> </li> </ul>'
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
@@ -245,27 +245,17 @@ paths:
       - '#X Amz Target=CodeDeploy 20141006.BatchGetDeploymentGroups'
 components:
   schemas:
-    OutdatedInstancesStrategy:
+    DeploymentStatus:
       type: string
       enum:
-      - UPDATE
-      - IGNORE
-    EC2TagFilter:
-      type: object
-      properties:
-        Key:
-          allOf:
-          - $ref: '#/components/schemas/Key'
-          - description: The tag filter key.
-        Value:
-          allOf:
-          - $ref: '#/components/schemas/Value'
-          - description: The tag filter value.
-        Type:
-          allOf:
-          - $ref: '#/components/schemas/EC2TagFilterType'
-          - description: '<p>The tag filter type:</p> <ul> <li> <p> <code>KEY_ONLY</code>: Key only.</p> </li> <li> <p> <code>VALUE_ONLY</code>: Value only.</p> </li> <li> <p> <code>KEY_AND_VALUE</code>: Key and value.</p> </li> </ul>'
-      description: Information about an EC2 tag filter.
+      - Created
+      - Queued
+      - InProgress
+      - Baking
+      - Succeeded
+      - Failed
+      - Stopped
+      - Ready
     Alarm:
       type: object
       properties:
@@ -274,204 +264,44 @@ components:
           - $ref: '#/components/schemas/AlarmName'
           - description: The name of the alarm. Maximum length is 255 characters. Each alarm name can be used only once in a list of alarms.
       description: Information about an alarm.
-    TargetGroupInfo:
+    TagFilter:
       type: object
       properties:
-        name:
+        Key:
           allOf:
-          - $ref: '#/components/schemas/TargetGroupName'
-          - description: 'For blue/green deployments, the name of the target group that instances in the original environment are deregistered from, and instances in the replacement environment are registered with. For in-place deployments, the name of the target group that instances are deregistered from, so they are not serving traffic during a deployment, and then re-registered with after the deployment is complete. '
-      description: Information about a target group in Elastic Load Balancing to use in a deployment. Instances are registered as targets in a target group, and traffic is routed to the target group.
-    OnPremisesTagSetList:
+          - $ref: '#/components/schemas/Key'
+          - description: The on-premises instance tag filter key.
+        Value:
+          allOf:
+          - $ref: '#/components/schemas/Value'
+          - description: The on-premises instance tag filter value.
+        Type:
+          allOf:
+          - $ref: '#/components/schemas/TagFilterType'
+          - description: '<p>The on-premises instance tag filter type:</p> <ul> <li> <p>KEY_ONLY: Key only.</p> </li> <li> <p>VALUE_ONLY: Value only.</p> </li> <li> <p>KEY_AND_VALUE: Key and value.</p> </li> </ul>'
+      description: Information about an on-premises instance tag filter.
+    TriggerEventTypeList:
       type: array
       items:
-        $ref: '#/components/schemas/TagFilterList'
-    AutoRollbackEventsList:
-      type: array
-      items:
-        $ref: '#/components/schemas/AutoRollbackEvent'
-    AppSpecContent:
-      type: object
-      properties:
-        content:
-          allOf:
-          - $ref: '#/components/schemas/RawStringContent'
-          - description: <p> The YAML-formatted or JSON-formatted revision string. </p> <p> For an Lambda deployment, the content includes a Lambda function name, the alias for its original version, and the alias for its replacement version. The deployment shifts traffic from the original version of the Lambda function to the replacement version. </p> <p> For an Amazon ECS deployment, the content includes the task name, information about the load balancer that serves traffic to the container, and more. </p> <p> For both types of deployments, the content can specify Lambda functions that run at specified hooks, such as <code>BeforeInstall</code>, during a deployment. </p>
-        sha256:
-          allOf:
-          - $ref: '#/components/schemas/RawStringSha256'
-          - description: ' The SHA256 hash value of the revision content. '
-      description: ' A revision for an Lambda or Amazon ECS deployment that is a YAML-formatted or JSON-formatted string. For Lambda and Amazon ECS deployments, the revision is the same as the AppSpec file. This method replaces the deprecated <code>RawString</code> data type. '
-    GitHubLocation:
-      type: object
-      properties:
-        repository:
-          allOf:
-          - $ref: '#/components/schemas/Repository'
-          - description: <p>The GitHub account and repository pair that stores a reference to the commit that represents the bundled artifacts for the application revision. </p> <p>Specified as account/repository.</p>
-        commitId:
-          allOf:
-          - $ref: '#/components/schemas/CommitId'
-          - description: The SHA1 commit ID of the GitHub commit that represents the bundled artifacts for the application revision.
-      description: Information about the location of application artifacts stored in GitHub.
-    RevisionLocation:
-      type: object
-      properties:
-        revisionType:
-          allOf:
-          - $ref: '#/components/schemas/RevisionLocationType'
-          - description: '<p>The type of application revision:</p> <ul> <li> <p>S3: An application revision stored in Amazon S3.</p> </li> <li> <p>GitHub: An application revision stored in GitHub (EC2/On-premises deployments only).</p> </li> <li> <p>String: A YAML-formatted or JSON-formatted string (Lambda deployments only).</p> </li> <li> <p>AppSpecContent: An <code>AppSpecContent</code> object that contains the contents of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML stored as a RawString.</p> </li> </ul>'
-        s3Location:
-          allOf:
-          - $ref: '#/components/schemas/S3Location'
-          - description: 'Information about the location of a revision stored in Amazon S3. '
-        gitHubLocation:
-          allOf:
-          - $ref: '#/components/schemas/GitHubLocation'
-          - description: Information about the location of application artifacts stored in GitHub.
-        string:
-          allOf:
-          - $ref: '#/components/schemas/RawString'
-          - description: Information about the location of an Lambda deployment revision stored as a RawString.
-        appSpecContent:
-          allOf:
-          - $ref: '#/components/schemas/AppSpecContent'
-          - description: ' The content of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML and stored as a RawString. '
-      description: Information about the location of an application revision.
-    ListenerArnList:
-      type: array
-      items:
-        $ref: '#/components/schemas/ListenerArn'
-    RawString:
-      type: object
-      deprecated: true
-      properties:
-        content:
-          allOf:
-          - $ref: '#/components/schemas/RawStringContent'
-          - description: The YAML-formatted or JSON-formatted revision string. It includes information about which Lambda function to update and optional Lambda functions that validate deployment lifecycle events.
-        sha256:
-          allOf:
-          - $ref: '#/components/schemas/RawStringSha256'
-          - description: The SHA256 hash value of the revision content.
-      description: A revision for an Lambda deployment that is a YAML-formatted or JSON-formatted string. For Lambda deployments, the revision is the same as the AppSpec file.RawString and String revision type are deprecated, use AppSpecContent type instead.
-    S3Key:
-      type: string
-    AutoRollbackConfiguration:
-      type: object
-      properties:
-        enabled:
-          allOf:
-          - $ref: '#/components/schemas/Boolean'
-          - description: Indicates whether a defined automatic rollback configuration is currently enabled.
-        events:
-          allOf:
-          - $ref: '#/components/schemas/AutoRollbackEventsList'
-          - description: The event type or types that trigger a rollback.
-      description: Information about a configuration for automatically rolling back to a previous version of an application revision when a deployment is not completed successfully.
-    Value:
-      type: string
-    LoadBalancerInfo:
-      type: object
-      properties:
-        elbInfoList:
-          allOf:
-          - $ref: '#/components/schemas/ELBInfoList'
-          - description: <p>An array that contains information about the load balancer to use for load balancing in a deployment. In Elastic Load Balancing, load balancers are used with Classic Load Balancers.</p> <note> <p> Adding more than one load balancer to the array is not supported. </p> </note>
-        targetGroupInfoList:
-          allOf:
-          - $ref: '#/components/schemas/TargetGroupInfoList'
-          - description: <p>An array that contains information about the target group to use for load balancing in a deployment. In Elastic Load Balancing, target groups are used with Application Load Balancers.</p> <note> <p> Adding more than one target group to the array is not supported. </p> </note>
-        targetGroupPairInfoList:
-          allOf:
-          - $ref: '#/components/schemas/TargetGroupPairInfoList'
-          - description: ' The target group pair information. This is an array of <code>TargeGroupPairInfo</code> objects with a maximum size of one. '
-      description: Information about the Elastic Load Balancing load balancer or target group used in a deployment.
-    AutoScalingGroupName:
-      type: string
-    AutoRollbackEvent:
-      type: string
-      enum:
-      - DEPLOYMENT_FAILURE
-      - DEPLOYMENT_STOP_ON_ALARM
-      - DEPLOYMENT_STOP_ON_REQUEST
+        $ref: '#/components/schemas/TriggerEventType'
     EC2TagSetList:
       type: array
       items:
         $ref: '#/components/schemas/EC2TagFilterList'
-    TargetGroupInfoList:
-      type: array
-      items:
-        $ref: '#/components/schemas/TargetGroupInfo'
-    BundleType:
+    TriggerEventType:
       type: string
       enum:
-      - tar
-      - tgz
-      - zip
-      - YAML
-      - JSON
-    AutoScalingGroupList:
-      type: array
-      items:
-        $ref: '#/components/schemas/AutoScalingGroup'
-    BlueInstanceTerminationOption:
-      type: object
-      properties:
-        action:
-          allOf:
-          - $ref: '#/components/schemas/InstanceAction'
-          - description: '<p>The action to take on instances in the original environment after a successful blue/green deployment.</p> <ul> <li> <p> <code>TERMINATE</code>: Instances are terminated after a specified wait time.</p> </li> <li> <p> <code>KEEP_ALIVE</code>: Instances are left running after they are deregistered from the load balancer and removed from the deployment group.</p> </li> </ul>'
-        terminationWaitTimeInMinutes:
-          allOf:
-          - $ref: '#/components/schemas/Duration'
-          - description: <p>For an Amazon EC2 deployment, the number of minutes to wait after a successful blue/green deployment before terminating instances from the original environment.</p> <p> For an Amazon ECS deployment, the number of minutes before deleting the original (blue) task set. During an Amazon ECS deployment, CodeDeploy shifts traffic from the original (blue) task set to a replacement (green) task set. </p> <p> The maximum setting is 2880 minutes (2 days). </p>
-      description: 'Information about whether instances in the original environment are terminated when a blue/green deployment is successful. <code>BlueInstanceTerminationOption</code> does not apply to Lambda deployments. '
-    EC2TagFilterList:
-      type: array
-      items:
-        $ref: '#/components/schemas/EC2TagFilter'
-    Timestamp:
-      type: string
-      format: date-time
-    EC2TagSet:
-      type: object
-      properties:
-        ec2TagSetList:
-          allOf:
-          - $ref: '#/components/schemas/EC2TagSetList'
-          - description: A list that contains other lists of Amazon EC2 instance tag groups. For an instance to be included in the deployment group, it must be identified by all of the tag groups in the list.
-      description: Information about groups of Amazon EC2 instance tags.
-    ECSClusterName:
-      type: string
-    ELBInfo:
-      type: object
-      properties:
-        name:
-          allOf:
-          - $ref: '#/components/schemas/ELBName'
-          - description: For blue/green deployments, the name of the load balancer that is used to route traffic from original instances to replacement instances in a blue/green deployment. For in-place deployments, the name of the load balancer that instances are deregistered from so they are not serving traffic during a deployment, and then re-registered with after the deployment is complete.
-      description: Information about a load balancer in Elastic Load Balancing to use in a deployment. Instances are registered directly with a load balancer, and traffic is routed to the load balancer.
-    DeploymentReadyAction:
-      type: string
-      enum:
-      - CONTINUE_DEPLOYMENT
-      - STOP_DEPLOYMENT
-    TriggerTargetArn:
-      type: string
-    ELBInfoList:
-      type: array
-      items:
-        $ref: '#/components/schemas/ELBInfo'
-    GreenFleetProvisioningOption:
-      type: object
-      properties:
-        action:
-          allOf:
-          - $ref: '#/components/schemas/GreenFleetProvisioningAction'
-          - description: '<p>The method used to add instances to a replacement environment.</p> <ul> <li> <p> <code>DISCOVER_EXISTING</code>: Use instances that already exist or will be created manually.</p> </li> <li> <p> <code>COPY_AUTO_SCALING_GROUP</code>: Use settings from a specified Auto Scaling group to define and create instances in a new Auto Scaling group.</p> </li> </ul>'
-      description: Information about the instances that belong to the replacement environment in a blue/green deployment.
-    DeploymentGroupId:
+      - DeploymentStart
+      - DeploymentSuccess
+      - DeploymentFailure
+      - DeploymentStop
+      - DeploymentRollback
+      - DeploymentReady
+      - InstanceStart
+      - InstanceSuccess
+      - InstanceFailure
+      - InstanceReady
+    TargetGroupName:
       type: string
     DeploymentGroupInfo:
       type: object
@@ -565,155 +395,17 @@ components:
           - $ref: '#/components/schemas/ECSServiceList'
           - description: ' The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name pair using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. '
       description: Information about a deployment group.
-    DeploymentGroupNameRequiredException: {}
-    InvalidDeploymentGroupNameException: {}
-    DeploymentGroupName:
+    Timestamp:
       type: string
-      minLength: 1
-      maxLength: 100
-    InstanceAction:
-      type: string
-      enum:
-      - TERMINATE
-      - KEEP_ALIVE
-    Key:
-      type: string
-    TagFilter:
-      type: object
-      properties:
-        Key:
-          allOf:
-          - $ref: '#/components/schemas/Key'
-          - description: The on-premises instance tag filter key.
-        Value:
-          allOf:
-          - $ref: '#/components/schemas/Value'
-          - description: The on-premises instance tag filter value.
-        Type:
-          allOf:
-          - $ref: '#/components/schemas/TagFilterType'
-          - description: '<p>The on-premises instance tag filter type:</p> <ul> <li> <p>KEY_ONLY: Key only.</p> </li> <li> <p>VALUE_ONLY: Value only.</p> </li> <li> <p>KEY_AND_VALUE: Key and value.</p> </li> </ul>'
-      description: Information about an on-premises instance tag filter.
-    Role:
-      type: string
-    GreenFleetProvisioningAction:
-      type: string
-      enum:
-      - DISCOVER_EXISTING
-      - COPY_AUTO_SCALING_GROUP
-    LastDeploymentInfo:
-      type: object
-      properties:
-        deploymentId:
-          allOf:
-          - $ref: '#/components/schemas/DeploymentId'
-          - description: ' The unique ID of a deployment. '
-        status:
-          allOf:
-          - $ref: '#/components/schemas/DeploymentStatus'
-          - description: The status of the most recent deployment.
-        endTime:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: A timestamp that indicates when the most recent deployment to the deployment group was complete.
-        createTime:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: A timestamp that indicates when the most recent deployment to the deployment group started.
-      description: Information about the most recent attempted or successful deployment to a deployment group.
-    InvalidApplicationNameException: {}
-    TargetGroupPairInfo:
-      type: object
-      properties:
-        targetGroups:
-          allOf:
-          - $ref: '#/components/schemas/TargetGroupInfoList'
-          - description: ' One pair of target groups. One is associated with the original task set. The second is associated with the task set that serves traffic after the deployment is complete. '
-        prodTrafficRoute:
-          allOf:
-          - $ref: '#/components/schemas/TrafficRoute'
-          - description: ' The path used by a load balancer to route production traffic when an Amazon ECS deployment is complete. '
-        testTrafficRoute:
-          allOf:
-          - $ref: '#/components/schemas/TrafficRoute'
-          - description: ' An optional path used by a load balancer to route test traffic after an Amazon ECS deployment. Validation can occur while test traffic is served during a deployment. '
-      description: ' Information about two target groups and how traffic is routed during an Amazon ECS deployment. An optional test traffic route can be specified. '
-    DeploymentStyle:
-      type: object
-      properties:
-        deploymentType:
-          allOf:
-          - $ref: '#/components/schemas/DeploymentType'
-          - description: Indicates whether to run an in-place deployment or a blue/green deployment.
-        deploymentOption:
-          allOf:
-          - $ref: '#/components/schemas/DeploymentOption'
-          - description: Indicates whether to route deployment traffic behind a load balancer.
-      description: Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer.
-    TargetGroupName:
-      type: string
-    BlueGreenDeploymentConfiguration:
-      type: object
-      properties:
-        terminateBlueInstancesOnDeploymentSuccess:
-          allOf:
-          - $ref: '#/components/schemas/BlueInstanceTerminationOption'
-          - description: Information about whether to terminate instances in the original fleet during a blue/green deployment.
-        deploymentReadyOption:
-          allOf:
-          - $ref: '#/components/schemas/DeploymentReadyOption'
-          - description: Information about the action to take when newly provisioned instances are ready to receive traffic in a blue/green deployment.
-        greenFleetProvisioningOption:
-          allOf:
-          - $ref: '#/components/schemas/GreenFleetProvisioningOption'
-          - description: Information about how instances are provisioned for a replacement environment in a blue/green deployment.
-      description: Information about blue/green deployment options for a deployment group.
-    TriggerEventType:
-      type: string
-      enum:
-      - DeploymentStart
-      - DeploymentSuccess
-      - DeploymentFailure
-      - DeploymentStop
-      - DeploymentRollback
-      - DeploymentReady
-      - InstanceStart
-      - InstanceSuccess
-      - InstanceFailure
-      - InstanceReady
-    Repository:
-      type: string
-    Boolean:
-      type: boolean
-    RawStringContent:
-      type: string
-    ECSService:
-      type: object
-      properties:
-        serviceName:
-          allOf:
-          - $ref: '#/components/schemas/ECSServiceName'
-          - description: ' The name of the target Amazon ECS service. '
-        clusterName:
-          allOf:
-          - $ref: '#/components/schemas/ECSClusterName'
-          - description: ' The name of the cluster that the Amazon ECS service is associated with. '
-      description: ' Contains the service and cluster names used to identify an Amazon ECS deployment''s target. '
-    AlarmName:
-      type: string
-    ETag:
-      type: string
-    DeploymentStatus:
-      type: string
-      enum:
-      - Created
-      - Queued
-      - InProgress
-      - Baking
-      - Succeeded
-      - Failed
-      - Stopped
-      - Ready
+      format: date-time
+    TagFilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/TagFilter'
+    ELBInfoList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ELBInfo'
     RevisionLocationType:
       type: string
       enum:
@@ -721,132 +413,74 @@ components:
       - GitHub
       - String
       - AppSpecContent
-    TriggerConfig:
-      type: object
-      properties:
-        triggerName:
-          allOf:
-          - $ref: '#/components/schemas/TriggerName'
-          - description: The name of the notification trigger.
-        triggerTargetArn:
-          allOf:
-          - $ref: '#/components/schemas/TriggerTargetArn'
-          - description: The Amazon Resource Name (ARN) of the Amazon Simple Notification Service topic through which notifications about deployment or instance events are sent.
-        triggerEvents:
-          allOf:
-          - $ref: '#/components/schemas/TriggerEventTypeList'
-          - description: The event type or types for which notifications are triggered.
-      description: Information about notification triggers for the deployment group.
-    DeploymentReadyOption:
-      type: object
-      properties:
-        actionOnTimeout:
-          allOf:
-          - $ref: '#/components/schemas/DeploymentReadyAction'
-          - description: '<p>Information about when to reroute traffic from an original environment to a replacement environment in a blue/green deployment.</p> <ul> <li> <p>CONTINUE_DEPLOYMENT: Register new instances with the load balancer immediately after the new application revision is installed on the instances in the replacement environment.</p> </li> <li> <p>STOP_DEPLOYMENT: Do not register new instances with a load balancer unless traffic rerouting is started using <a>ContinueDeployment</a>. If traffic rerouting is not started before the end of the specified wait period, the deployment status is changed to Stopped.</p> </li> </ul>'
-        waitTimeInMinutes:
-          allOf:
-          - $ref: '#/components/schemas/Duration'
-          - description: The number of minutes to wait before the status of a blue/green deployment is changed to Stopped if rerouting is not started manually. Applies only to the <code>STOP_DEPLOYMENT</code> option for <code>actionOnTimeout</code>.
-      description: Information about how traffic is rerouted to instances in a replacement environment in a blue/green deployment.
-    ErrorMessage:
-      type: string
-    S3Bucket:
-      type: string
-    ECSServiceList:
-      type: array
-      items:
-        $ref: '#/components/schemas/ECSService'
-    DeploymentConfigDoesNotExistException: {}
-    ApplicationDoesNotExistException: {}
-    ECSServiceName:
-      type: string
-    DeploymentOption:
+    ApplicationNameRequiredException: {}
+    TagFilterType:
       type: string
       enum:
-      - WITH_TRAFFIC_CONTROL
-      - WITHOUT_TRAFFIC_CONTROL
-    AutoScalingGroupHook:
-      type: string
-    DeploymentGroupInfoList:
-      type: array
-      items:
-        $ref: '#/components/schemas/DeploymentGroupInfo'
+      - KEY_ONLY
+      - VALUE_ONLY
+      - KEY_AND_VALUE
     ListenerArn:
       type: string
-    TagFilterList:
+    AutoRollbackEventsList:
       type: array
       items:
-        $ref: '#/components/schemas/TagFilter'
-    TriggerName:
-      type: string
-    ComputePlatform:
-      type: string
-      enum:
-      - Server
-      - Lambda
-      - ECS
-    BatchGetDeploymentGroupsInput:
+        $ref: '#/components/schemas/AutoRollbackEvent'
+    LoadBalancerInfo:
       type: object
-      required:
-      - applicationName
-      - deploymentGroupNames
-      title: BatchGetDeploymentGroupsInput
       properties:
-        applicationName:
+        elbInfoList:
           allOf:
-          - $ref: '#/components/schemas/ApplicationName'
-          - description: The name of an CodeDeploy application associated with the applicable IAM or Amazon Web Services account.
-        deploymentGroupNames:
+          - $ref: '#/components/schemas/ELBInfoList'
+          - description: <p>An array that contains information about the load balancer to use for load balancing in a deployment. In Elastic Load Balancing, load balancers are used with Classic Load Balancers.</p> <note> <p> Adding more than one load balancer to the array is not supported. </p> </note>
+        targetGroupInfoList:
           allOf:
-          - $ref: '#/components/schemas/DeploymentGroupsList'
-          - description: The names of the deployment groups.
-      description: Represents the input of a <code>BatchGetDeploymentGroups</code> operation.
-    DeploymentId:
+          - $ref: '#/components/schemas/TargetGroupInfoList'
+          - description: <p>An array that contains information about the target group to use for load balancing in a deployment. In Elastic Load Balancing, target groups are used with Application Load Balancers.</p> <note> <p> Adding more than one target group to the array is not supported. </p> </note>
+        targetGroupPairInfoList:
+          allOf:
+          - $ref: '#/components/schemas/TargetGroupPairInfoList'
+          - description: ' The target group pair information. This is an array of <code>TargeGroupPairInfo</code> objects with a maximum size of one. '
+      description: Information about the Elastic Load Balancing load balancer or target group used in a deployment.
+    AutoScalingGroupName:
       type: string
-    VersionId:
-      type: string
-    TriggerConfigList:
-      type: array
-      items:
-        $ref: '#/components/schemas/TriggerConfig'
-    AlarmList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Alarm'
-    RawStringSha256:
-      type: string
-    DeploymentType:
+    InstanceAction:
       type: string
       enum:
-      - IN_PLACE
-      - BLUE_GREEN
-    ApplicationName:
+      - TERMINATE
+      - KEEP_ALIVE
+    EC2TagFilter:
+      type: object
+      properties:
+        Key:
+          allOf:
+          - $ref: '#/components/schemas/Key'
+          - description: The tag filter key.
+        Value:
+          allOf:
+          - $ref: '#/components/schemas/Value'
+          - description: The tag filter value.
+        Type:
+          allOf:
+          - $ref: '#/components/schemas/EC2TagFilterType'
+          - description: '<p>The tag filter type:</p> <ul> <li> <p> <code>KEY_ONLY</code>: Key only.</p> </li> <li> <p> <code>VALUE_ONLY</code>: Value only.</p> </li> <li> <p> <code>KEY_AND_VALUE</code>: Key and value.</p> </li> </ul>'
+      description: Information about an EC2 tag filter.
+    Key:
       type: string
-      minLength: 1
-      maxLength: 100
     ELBName:
       type: string
-    OnPremisesTagSet:
+    TriggerName:
+      type: string
+    Repository:
+      type: string
+    TrafficRoute:
       type: object
       properties:
-        onPremisesTagSetList:
+        listenerArns:
           allOf:
-          - $ref: '#/components/schemas/OnPremisesTagSetList'
-          - description: A list that contains other lists of on-premises instance tag groups. For an instance to be included in the deployment group, it must be identified by all of the tag groups in the list.
-      description: Information about groups of on-premises instance tags.
-    BatchGetDeploymentGroupsOutput:
-      type: object
-      properties:
-        deploymentGroupsInfo:
-          allOf:
-          - $ref: '#/components/schemas/DeploymentGroupInfoList'
-          - description: Information about the deployment groups.
-        errorMessage:
-          allOf:
-          - $ref: '#/components/schemas/ErrorMessage'
-          - description: Information about errors that might have occurred during the API call.
-      description: Represents the output of a <code>BatchGetDeploymentGroups</code> operation.
+          - $ref: '#/components/schemas/ListenerArnList'
+          - description: ' The Amazon Resource Name (ARN) of one listener. The listener identifies the route between a target group and a load balancer. This is an array of strings with a maximum size of one. '
+      description: ' Information about a listener. The listener contains the path used to route traffic that is received from the load balancer to a target group. '
     S3Location:
       type: object
       properties:
@@ -871,40 +505,369 @@ components:
           - $ref: '#/components/schemas/ETag'
           - description: <p>The ETag of the Amazon S3 object that represents the bundled artifacts for the application revision.</p> <p>If the ETag is not specified as an input parameter, ETag validation of the object is skipped.</p>
       description: Information about the location of application artifacts stored in Amazon S3.
+    S3Bucket:
+      type: string
+    AlarmName:
+      type: string
+    DeploymentReadyOption:
+      type: object
+      properties:
+        actionOnTimeout:
+          allOf:
+          - $ref: '#/components/schemas/DeploymentReadyAction'
+          - description: '<p>Information about when to reroute traffic from an original environment to a replacement environment in a blue/green deployment.</p> <ul> <li> <p>CONTINUE_DEPLOYMENT: Register new instances with the load balancer immediately after the new application revision is installed on the instances in the replacement environment.</p> </li> <li> <p>STOP_DEPLOYMENT: Do not register new instances with a load balancer unless traffic rerouting is started using <a>ContinueDeployment</a>. If traffic rerouting is not started before the end of the specified wait period, the deployment status is changed to Stopped.</p> </li> </ul>'
+        waitTimeInMinutes:
+          allOf:
+          - $ref: '#/components/schemas/Duration'
+          - description: The number of minutes to wait before the status of a blue/green deployment is changed to Stopped if rerouting is not started manually. Applies only to the <code>STOP_DEPLOYMENT</code> option for <code>actionOnTimeout</code>.
+      description: Information about how traffic is rerouted to instances in a replacement environment in a blue/green deployment.
+    TriggerConfigList:
+      type: array
+      items:
+        $ref: '#/components/schemas/TriggerConfig'
+    BundleType:
+      type: string
+      enum:
+      - tar
+      - tgz
+      - zip
+      - YAML
+      - JSON
+    S3Key:
+      type: string
+    ApplicationDoesNotExistException: {}
+    DeploymentGroupInfoList:
+      type: array
+      items:
+        $ref: '#/components/schemas/DeploymentGroupInfo'
+    Role:
+      type: string
+    GreenFleetProvisioningOption:
+      type: object
+      properties:
+        action:
+          allOf:
+          - $ref: '#/components/schemas/GreenFleetProvisioningAction'
+          - description: '<p>The method used to add instances to a replacement environment.</p> <ul> <li> <p> <code>DISCOVER_EXISTING</code>: Use instances that already exist or will be created manually.</p> </li> <li> <p> <code>COPY_AUTO_SCALING_GROUP</code>: Use settings from a specified Auto Scaling group to define and create instances in a new Auto Scaling group.</p> </li> </ul>'
+      description: Information about the instances that belong to the replacement environment in a blue/green deployment.
+    DeploymentId:
+      type: string
+    RevisionLocation:
+      type: object
+      properties:
+        revisionType:
+          allOf:
+          - $ref: '#/components/schemas/RevisionLocationType'
+          - description: '<p>The type of application revision:</p> <ul> <li> <p>S3: An application revision stored in Amazon S3.</p> </li> <li> <p>GitHub: An application revision stored in GitHub (EC2/On-premises deployments only).</p> </li> <li> <p>String: A YAML-formatted or JSON-formatted string (Lambda deployments only).</p> </li> <li> <p>AppSpecContent: An <code>AppSpecContent</code> object that contains the contents of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML stored as a RawString.</p> </li> </ul>'
+        s3Location:
+          allOf:
+          - $ref: '#/components/schemas/S3Location'
+          - description: 'Information about the location of a revision stored in Amazon S3. '
+        gitHubLocation:
+          allOf:
+          - $ref: '#/components/schemas/GitHubLocation'
+          - description: Information about the location of application artifacts stored in GitHub.
+        string:
+          allOf:
+          - $ref: '#/components/schemas/RawString'
+          - description: Information about the location of an Lambda deployment revision stored as a RawString.
+        appSpecContent:
+          allOf:
+          - $ref: '#/components/schemas/AppSpecContent'
+          - description: ' The content of an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML and stored as a RawString. '
+      description: Information about the location of an application revision.
+    BlueGreenDeploymentConfiguration:
+      type: object
+      properties:
+        terminateBlueInstancesOnDeploymentSuccess:
+          allOf:
+          - $ref: '#/components/schemas/BlueInstanceTerminationOption'
+          - description: Information about whether to terminate instances in the original fleet during a blue/green deployment.
+        deploymentReadyOption:
+          allOf:
+          - $ref: '#/components/schemas/DeploymentReadyOption'
+          - description: Information about the action to take when newly provisioned instances are ready to receive traffic in a blue/green deployment.
+        greenFleetProvisioningOption:
+          allOf:
+          - $ref: '#/components/schemas/GreenFleetProvisioningOption'
+          - description: Information about how instances are provisioned for a replacement environment in a blue/green deployment.
+      description: Information about blue/green deployment options for a deployment group.
+    DeploymentStyle:
+      type: object
+      properties:
+        deploymentType:
+          allOf:
+          - $ref: '#/components/schemas/DeploymentType'
+          - description: Indicates whether to run an in-place deployment or a blue/green deployment.
+        deploymentOption:
+          allOf:
+          - $ref: '#/components/schemas/DeploymentOption'
+          - description: Indicates whether to route deployment traffic behind a load balancer.
+      description: Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer.
+    OutdatedInstancesStrategy:
+      type: string
+      enum:
+      - UPDATE
+      - IGNORE
+    InvalidApplicationNameException: {}
+    AutoRollbackConfiguration:
+      type: object
+      properties:
+        enabled:
+          allOf:
+          - $ref: '#/components/schemas/Boolean'
+          - description: Indicates whether a defined automatic rollback configuration is currently enabled.
+        events:
+          allOf:
+          - $ref: '#/components/schemas/AutoRollbackEventsList'
+          - description: The event type or types that trigger a rollback.
+      description: Information about a configuration for automatically rolling back to a previous version of an application revision when a deployment is not completed successfully.
     BatchLimitExceededException: {}
     DeploymentConfigName:
       type: string
       minLength: 1
       maxLength: 100
-    TagFilterType:
+    GreenFleetProvisioningAction:
       type: string
       enum:
-      - KEY_ONLY
-      - VALUE_ONLY
-      - KEY_AND_VALUE
-    ApplicationNameRequiredException: {}
-    TrafficRoute:
-      type: object
-      properties:
-        listenerArns:
-          allOf:
-          - $ref: '#/components/schemas/ListenerArnList'
-          - description: ' The Amazon Resource Name (ARN) of one listener. The listener identifies the route between a target group and a load balancer. This is an array of strings with a maximum size of one. '
-      description: ' Information about a listener. The listener contains the path used to route traffic that is received from the load balancer to a target group. '
-    TriggerEventTypeList:
+      - DISCOVER_EXISTING
+      - COPY_AUTO_SCALING_GROUP
+    ListenerArnList:
       type: array
       items:
-        $ref: '#/components/schemas/TriggerEventType'
+        $ref: '#/components/schemas/ListenerArn'
+    DeploymentGroupName:
+      type: string
+      minLength: 1
+      maxLength: 100
+    ETag:
+      type: string
+    DeploymentConfigDoesNotExistException: {}
+    CommitId:
+      type: string
+    AutoRollbackEvent:
+      type: string
+      enum:
+      - DEPLOYMENT_FAILURE
+      - DEPLOYMENT_STOP_ON_ALARM
+      - DEPLOYMENT_STOP_ON_REQUEST
+    ComputePlatform:
+      type: string
+      enum:
+      - Server
+      - Lambda
+      - ECS
+    ELBInfo:
+      type: object
+      properties:
+        name:
+          allOf:
+          - $ref: '#/components/schemas/ELBName'
+          - description: For blue/green deployments, the name of the load balancer that is used to route traffic from original instances to replacement instances in a blue/green deployment. For in-place deployments, the name of the load balancer that instances are deregistered from so they are not serving traffic during a deployment, and then re-registered with after the deployment is complete.
+      description: Information about a load balancer in Elastic Load Balancing to use in a deployment. Instances are registered directly with a load balancer, and traffic is routed to the load balancer.
+    RawStringSha256:
+      type: string
+    AutoScalingGroup:
+      type: object
+      properties:
+        name:
+          allOf:
+          - $ref: '#/components/schemas/AutoScalingGroupName'
+          - description: The Auto Scaling group name.
+        hook:
+          allOf:
+          - $ref: '#/components/schemas/AutoScalingGroupHook'
+          - description: An Auto Scaling lifecycle event hook name.
+      description: Information about an Auto Scaling group.
+    TriggerTargetArn:
+      type: string
+    AutoScalingGroupList:
+      type: array
+      items:
+        $ref: '#/components/schemas/AutoScalingGroup'
+    DeploymentGroupsList:
+      type: array
+      items:
+        $ref: '#/components/schemas/DeploymentGroupName'
     EC2TagFilterType:
       type: string
       enum:
       - KEY_ONLY
       - VALUE_ONLY
       - KEY_AND_VALUE
-    CommitId:
+    EC2TagSet:
+      type: object
+      properties:
+        ec2TagSetList:
+          allOf:
+          - $ref: '#/components/schemas/EC2TagSetList'
+          - description: A list that contains other lists of Amazon EC2 instance tag groups. For an instance to be included in the deployment group, it must be identified by all of the tag groups in the list.
+      description: Information about groups of Amazon EC2 instance tags.
+    GitHubLocation:
+      type: object
+      properties:
+        repository:
+          allOf:
+          - $ref: '#/components/schemas/Repository'
+          - description: <p>The GitHub account and repository pair that stores a reference to the commit that represents the bundled artifacts for the application revision. </p> <p>Specified as account/repository.</p>
+        commitId:
+          allOf:
+          - $ref: '#/components/schemas/CommitId'
+          - description: The SHA1 commit ID of the GitHub commit that represents the bundled artifacts for the application revision.
+      description: Information about the location of application artifacts stored in GitHub.
+    ECSServiceList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ECSService'
+    ErrorMessage:
       type: string
+    EC2TagFilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/EC2TagFilter'
+    InvalidDeploymentGroupNameException: {}
+    TargetGroupPairInfo:
+      type: object
+      properties:
+        targetGroups:
+          allOf:
+          - $ref: '#/components/schemas/TargetGroupInfoList'
+          - description: ' One pair of target groups. One is associated with the original task set. The second is associated with the task set that serves traffic after the deployment is complete. '
+        prodTrafficRoute:
+          allOf:
+          - $ref: '#/components/schemas/TrafficRoute'
+          - description: ' The path used by a load balancer to route production traffic when an Amazon ECS deployment is complete. '
+        testTrafficRoute:
+          allOf:
+          - $ref: '#/components/schemas/TrafficRoute'
+          - description: ' An optional path used by a load balancer to route test traffic after an Amazon ECS deployment. Validation can occur while test traffic is served during a deployment. '
+      description: ' Information about two target groups and how traffic is routed during an Amazon ECS deployment. An optional test traffic route can be specified. '
+    OnPremisesTagSetList:
+      type: array
+      items:
+        $ref: '#/components/schemas/TagFilterList'
+    TargetGroupInfo:
+      type: object
+      properties:
+        name:
+          allOf:
+          - $ref: '#/components/schemas/TargetGroupName'
+          - description: 'For blue/green deployments, the name of the target group that instances in the original environment are deregistered from, and instances in the replacement environment are registered with. For in-place deployments, the name of the target group that instances are deregistered from, so they are not serving traffic during a deployment, and then re-registered with after the deployment is complete. '
+      description: Information about a target group in Elastic Load Balancing to use in a deployment. Instances are registered as targets in a target group, and traffic is routed to the target group.
+    AppSpecContent:
+      type: object
+      properties:
+        content:
+          allOf:
+          - $ref: '#/components/schemas/RawStringContent'
+          - description: <p> The YAML-formatted or JSON-formatted revision string. </p> <p> For an Lambda deployment, the content includes a Lambda function name, the alias for its original version, and the alias for its replacement version. The deployment shifts traffic from the original version of the Lambda function to the replacement version. </p> <p> For an Amazon ECS deployment, the content includes the task name, information about the load balancer that serves traffic to the container, and more. </p> <p> For both types of deployments, the content can specify Lambda functions that run at specified hooks, such as <code>BeforeInstall</code>, during a deployment. </p>
+        sha256:
+          allOf:
+          - $ref: '#/components/schemas/RawStringSha256'
+          - description: ' The SHA256 hash value of the revision content. '
+      description: ' A revision for an Lambda or Amazon ECS deployment that is a YAML-formatted or JSON-formatted string. For Lambda and Amazon ECS deployments, the revision is the same as the AppSpec file. This method replaces the deprecated <code>RawString</code> data type. '
+    VersionId:
+      type: string
+    Value:
+      type: string
+    DeploymentGroupId:
+      type: string
+    AutoScalingGroupHook:
+      type: string
+    AlarmList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Alarm'
+    DeploymentGroupNameRequiredException: {}
+    LastDeploymentInfo:
+      type: object
+      properties:
+        deploymentId:
+          allOf:
+          - $ref: '#/components/schemas/DeploymentId'
+          - description: ' The unique ID of a deployment. '
+        status:
+          allOf:
+          - $ref: '#/components/schemas/DeploymentStatus'
+          - description: The status of the most recent deployment.
+        endTime:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: A timestamp that indicates when the most recent deployment to the deployment group was complete.
+        createTime:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: A timestamp that indicates when the most recent deployment to the deployment group started.
+      description: Information about the most recent attempted or successful deployment to a deployment group.
+    RawStringContent:
+      type: string
+    DeploymentOption:
+      type: string
+      enum:
+      - WITH_TRAFFIC_CONTROL
+      - WITHOUT_TRAFFIC_CONTROL
+    Boolean:
+      type: boolean
+    ApplicationName:
+      type: string
+      minLength: 1
+      maxLength: 100
+    ECSClusterName:
+      type: string
+    DeploymentType:
+      type: string
+      enum:
+      - IN_PLACE
+      - BLUE_GREEN
     Duration:
       type: integer
+    BatchGetDeploymentGroupsInput:
+      type: object
+      required:
+      - applicationName
+      - deploymentGroupNames
+      title: BatchGetDeploymentGroupsInput
+      properties:
+        applicationName:
+          allOf:
+          - $ref: '#/components/schemas/ApplicationName'
+          - description: The name of an CodeDeploy application associated with the applicable IAM or Amazon Web Services account.
+        deploymentGroupNames:
+          allOf:
+          - $ref: '#/components/schemas/DeploymentGroupsList'
+          - description: The names of the deployment groups.
+      description: Represents the input of a <code>BatchGetDeploymentGroups</code> operation.
+    BlueInstanceTerminationOption:
+      type: object
+      properties:
+        action:
+          allOf:
+          - $ref: '#/components/schemas/InstanceAction'
+          - description: '<p>The action to take on instances in the original environment after a successful blue/green deployment.</p> <ul> <li> <p> <code>TERMINATE</code>: Instances are terminated after a specified wait time.</p> </li> <li> <p> <code>KEEP_ALIVE</code>: Instances are left running after they are deregistered from the load balancer and removed from the deployment group.</p> </li> </ul>'
+        terminationWaitTimeInMinutes:
+          allOf:
+          - $ref: '#/components/schemas/Duration'
+          - description: <p>For an Amazon EC2 deployment, the number of minutes to wait after a successful blue/green deployment before terminating instances from the original environment.</p> <p> For an Amazon ECS deployment, the number of minutes before deleting the original (blue) task set. During an Amazon ECS deployment, CodeDeploy shifts traffic from the original (blue) task set to a replacement (green) task set. </p> <p> The maximum setting is 2880 minutes (2 days). </p>
+      description: 'Information about whether instances in the original environment are terminated when a blue/green deployment is successful. <code>BlueInstanceTerminationOption</code> does not apply to Lambda deployments. '
+    TargetGroupPairInfoList:
+      type: array
+      items:
+        $ref: '#/components/schemas/TargetGroupPairInfo'
+    ECSServiceName:
+      type: string
+    DeploymentReadyAction:
+      type: string
+      enum:
+      - CONTINUE_DEPLOYMENT
+      - STOP_DEPLOYMENT
+    OnPremisesTagSet:
+      type: object
+      properties:
+        onPremisesTagSetList:
+          allOf:
+          - $ref: '#/components/schemas/OnPremisesTagSetList'
+          - description: A list that contains other lists of on-premises instance tag groups. For an instance to be included in the deployment group, it must be identified by all of the tag groups in the list.
+      description: Information about groups of on-premises instance tags.
     AlarmConfiguration:
       type: object
       properties:
@@ -921,27 +884,70 @@ components:
           - $ref: '#/components/schemas/AlarmList'
           - description: A list of alarms configured for the deployment or deployment group. A maximum of 10 alarms can be added.
       description: Information about alarms associated with a deployment or deployment group.
-    AutoScalingGroup:
+    ECSService:
       type: object
       properties:
-        name:
+        serviceName:
           allOf:
-          - $ref: '#/components/schemas/AutoScalingGroupName'
-          - description: The Auto Scaling group name.
-        hook:
+          - $ref: '#/components/schemas/ECSServiceName'
+          - description: ' The name of the target Amazon ECS service. '
+        clusterName:
           allOf:
-          - $ref: '#/components/schemas/AutoScalingGroupHook'
-          - description: An Auto Scaling lifecycle event hook name.
-      description: Information about an Auto Scaling group.
-    TargetGroupPairInfoList:
+          - $ref: '#/components/schemas/ECSClusterName'
+          - description: ' The name of the cluster that the Amazon ECS service is associated with. '
+      description: ' Contains the service and cluster names used to identify an Amazon ECS deployment''s target. '
+    TargetGroupInfoList:
       type: array
       items:
-        $ref: '#/components/schemas/TargetGroupPairInfo'
-    DeploymentGroupsList:
-      type: array
-      items:
-        $ref: '#/components/schemas/DeploymentGroupName'
+        $ref: '#/components/schemas/TargetGroupInfo'
+    RawString:
+      type: object
+      deprecated: true
+      properties:
+        content:
+          allOf:
+          - $ref: '#/components/schemas/RawStringContent'
+          - description: The YAML-formatted or JSON-formatted revision string. It includes information about which Lambda function to update and optional Lambda functions that validate deployment lifecycle events.
+        sha256:
+          allOf:
+          - $ref: '#/components/schemas/RawStringSha256'
+          - description: The SHA256 hash value of the revision content.
+      description: A revision for an Lambda deployment that is a YAML-formatted or JSON-formatted string. For Lambda deployments, the revision is the same as the AppSpec file.RawString and String revision type are deprecated, use AppSpecContent type instead.
+    BatchGetDeploymentGroupsOutput:
+      type: object
+      properties:
+        deploymentGroupsInfo:
+          allOf:
+          - $ref: '#/components/schemas/DeploymentGroupInfoList'
+          - description: Information about the deployment groups.
+        errorMessage:
+          allOf:
+          - $ref: '#/components/schemas/ErrorMessage'
+          - description: Information about errors that might have occurred during the API call.
+      description: Represents the output of a <code>BatchGetDeploymentGroups</code> operation.
+    TriggerConfig:
+      type: object
+      properties:
+        triggerName:
+          allOf:
+          - $ref: '#/components/schemas/TriggerName'
+          - description: The name of the notification trigger.
+        triggerTargetArn:
+          allOf:
+          - $ref: '#/components/schemas/TriggerTargetArn'
+          - description: The Amazon Resource Name (ARN) of the Amazon Simple Notification Service topic through which notifications about deployment or instance events are sent.
+        triggerEvents:
+          allOf:
+          - $ref: '#/components/schemas/TriggerEventTypeList'
+          - description: The event type or types for which notifications are triggered.
+      description: Information about notification triggers for the deployment group.
   parameters:
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Security-Token:
       name: X-Amz-Security-Token
       in: header
@@ -954,8 +960,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
@@ -966,20 +972,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
       required: false
     X-Amz-Date:
       name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
       in: header
       schema:
         type: string

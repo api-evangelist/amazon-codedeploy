@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: 'AWS CodeDeploy Applications #X Amz Target=CodeDeploy 20141006.GetDeploymentTarget API'
+  title: 'AWS CodeDeploy Applications #X Amz Target=CodeDeploy 20141006.GetDeploymentTarget #X Amz Target=CodeDeploy 20141006.GetDeploymentTarget #X Amz Target=CodeDeploy 20141006.GetDeploymentTarget API'
   description: '<p>CodeDeploy is a deployment service that automates application deployments to Amazon EC2 instances, on-premises instances running in your own facility, serverless Lambda functions, or applications in an Amazon ECS service.</p> <p>You can deploy a nearly unlimited variety of application content, such as an updated Lambda function, updated applications in an Amazon ECS service, code, web and configuration files, executables, packages, scripts, multimedia files, and so on. CodeDeploy can deploy application content stored in Amazon S3 buckets, GitHub repositories, or Bitbucket repositories. You do not need to make changes to your existing code before you can use CodeDeploy.</p> <p>CodeDeploy makes it easier for you to rapidly release new features, helps you avoid downtime during application deployment, and handles the complexity of updating your applications, without many of the risks associated with error-prone manual deployments.</p> <p> <b>CodeDeploy Components</b> </p> <p>Use the information in this guide to help you work with the following CodeDeploy components:</p> <ul> <li> <p> <b>Application</b>: A name that uniquely identifies the application you want to deploy. CodeDeploy uses this name, which functions as a container, to ensure the correct combination of revision, deployment configuration, and deployment group are referenced during a deployment.</p> </li> <li> <p> <b>Deployment group</b>: A set of individual instances, CodeDeploy Lambda deployment configuration settings, or an Amazon ECS service and network details. A Lambda deployment group specifies how to route traffic to a new version of a Lambda function. An Amazon ECS deployment group specifies the service created in Amazon ECS to deploy, a load balancer, and a listener to reroute production traffic to an updated containerized application. An Amazon EC2/On-premises deployment group contains individually tagged instances, Amazon EC2 instances in Amazon EC2 Auto Scaling groups, or both. All deployment groups can specify optional trigger, alarm, and rollback settings.</p> </li> <li> <p> <b>Deployment configuration</b>: A set of deployment rules and deployment success and failure conditions used by CodeDeploy during a deployment.</p> </li> <li> <p> <b>Deployment</b>: The process and the components used when updating a Lambda function, a containerized application in an Amazon ECS service, or of installing content on one or more instances. </p> </li> <li> <p> <b>Application revisions</b>: For an Lambda deployment, this is an AppSpec file that specifies the Lambda function to be updated and one or more functions to validate deployment lifecycle events. For an Amazon ECS deployment, this is an AppSpec file that specifies the Amazon ECS task definition, container, and port where production traffic is rerouted. For an EC2/On-premises deployment, this is an archive file that contains source content—source code, webpages, executable files, and deployment scripts—along with an AppSpec file. Revisions are stored in Amazon S3 buckets or GitHub repositories. For Amazon S3, a revision is uniquely identified by its Amazon S3 object key and its ETag, version, or both. For GitHub, a revision is uniquely identified by its commit ID.</p> </li> </ul> <p>This guide also contains information to help you get details about the instances in your deployments, to make on-premises instances available for CodeDeploy deployments, to get details about a Lambda function deployment, and to get details about Amazon ECS service deployments.</p> <p> <b>CodeDeploy Information Resources</b> </p> <ul> <li> <p> <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">CodeDeploy User Guide</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/">CodeDeploy API Reference Guide</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/cli/latest/reference/deploy/index.html">CLI Reference for CodeDeploy</a> </p> </li> <li> <p> <a href="https://forums.aws.amazon.com/forum.jspa?forumID=179">CodeDeploy Developer Forum</a> </p> </li> </ul>'
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
@@ -255,88 +255,9 @@ paths:
       - '#X Amz Target=CodeDeploy 20141006.GetDeploymentTarget'
 components:
   schemas:
-    TrafficWeight:
-      type: number
-      format: double
-    LifecycleEvent:
-      type: object
-      properties:
-        lifecycleEventName:
-          allOf:
-          - $ref: '#/components/schemas/LifecycleEventName'
-          - description: The deployment lifecycle event name, such as <code>ApplicationStop</code>, <code>BeforeInstall</code>, <code>AfterInstall</code>, <code>ApplicationStart</code>, or <code>ValidateService</code>.
-        diagnostics:
-          allOf:
-          - $ref: '#/components/schemas/Diagnostics'
-          - description: Diagnostic information about the deployment lifecycle event.
-        startTime:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: A timestamp that indicates when the deployment lifecycle event started.
-        endTime:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: A timestamp that indicates when the deployment lifecycle event ended.
-        status:
-          allOf:
-          - $ref: '#/components/schemas/LifecycleEventStatus'
-          - description: '<p>The deployment lifecycle event status:</p> <ul> <li> <p>Pending: The deployment lifecycle event is pending.</p> </li> <li> <p>InProgress: The deployment lifecycle event is in progress.</p> </li> <li> <p>Succeeded: The deployment lifecycle event ran successfully.</p> </li> <li> <p>Failed: The deployment lifecycle event has failed.</p> </li> <li> <p>Skipped: The deployment lifecycle event has been skipped.</p> </li> <li> <p>Unknown: The deployment lifecycle event is unknown.</p> </li> </ul>'
-      description: Information about a deployment lifecycle event.
-    TargetGroupName:
+    ECSTaskSetIdentifier:
       type: string
-    DeploymentId:
-      type: string
-    TargetGroupInfo:
-      type: object
-      properties:
-        name:
-          allOf:
-          - $ref: '#/components/schemas/TargetGroupName'
-          - description: 'For blue/green deployments, the name of the target group that instances in the original environment are deregistered from, and instances in the replacement environment are registered with. For in-place deployments, the name of the target group that instances are deregistered from, so they are not serving traffic during a deployment, and then re-registered with after the deployment is complete. '
-      description: Information about a target group in Elastic Load Balancing to use in a deployment. Instances are registered as targets in a target group, and traffic is routed to the target group.
-    LifecycleErrorCode:
-      type: string
-      enum:
-      - Success
-      - ScriptMissing
-      - ScriptNotExecutable
-      - ScriptTimedOut
-      - ScriptFailed
-      - UnknownError
-    DeploymentDoesNotExistException: {}
-    CloudFormationResourceType:
-      type: string
-    TargetLabel:
-      type: string
-      enum:
-      - Blue
-      - Green
-    LambdaFunctionInfo:
-      type: object
-      properties:
-        functionName:
-          allOf:
-          - $ref: '#/components/schemas/LambdaFunctionName'
-          - description: ' The name of a Lambda function. '
-        functionAlias:
-          allOf:
-          - $ref: '#/components/schemas/LambdaFunctionAlias'
-          - description: ' The alias of a Lambda function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Lambda Function Aliases</a> in the <i>Lambda Developer Guide</i>.'
-        currentVersion:
-          allOf:
-          - $ref: '#/components/schemas/Version'
-          - description: ' The version of a Lambda function that production traffic points to. '
-        targetVersion:
-          allOf:
-          - $ref: '#/components/schemas/Version'
-          - description: ' The version of a Lambda function that production traffic points to after the Lambda function is deployed. '
-        targetVersionWeight:
-          allOf:
-          - $ref: '#/components/schemas/TrafficWeight'
-          - description: ' The percentage of production traffic that the target version of a Lambda function receives. '
-      description: ' Information about a Lambda function specified in a deployment. '
-    Version:
-      type: string
+    InvalidDeploymentTargetIdException: {}
     LifecycleEventStatus:
       type: string
       enum:
@@ -346,216 +267,11 @@ components:
       - Failed
       - Skipped
       - Unknown
-    LambdaFunctionName:
+    TargetGroupName:
       type: string
-    ECSTaskSetStatus:
+    DeploymentId:
       type: string
     DeploymentTargetIdRequiredException: {}
-    TargetId:
-      type: string
-    DeploymentNotStartedException: {}
-    DeploymentTarget:
-      type: object
-      properties:
-        deploymentTargetType:
-          allOf:
-          - $ref: '#/components/schemas/DeploymentTargetType'
-          - description: The deployment type that is specific to the deployment's compute platform or deployments initiated by a CloudFormation stack update.
-        instanceTarget:
-          allOf:
-          - $ref: '#/components/schemas/InstanceTarget'
-          - description: ' Information about the target for a deployment that uses the EC2/On-premises compute platform. '
-        lambdaTarget:
-          allOf:
-          - $ref: '#/components/schemas/LambdaTarget'
-          - description: ' Information about the target for a deployment that uses the Lambda compute platform. '
-        ecsTarget:
-          allOf:
-          - $ref: '#/components/schemas/ECSTarget'
-          - description: ' Information about the target for a deployment that uses the Amazon ECS compute platform. '
-        cloudFormationTarget:
-          $ref: '#/components/schemas/CloudFormationTarget'
-      description: ' Information about the deployment target. '
-    InvalidInstanceNameException: {}
-    GetDeploymentTargetOutput:
-      type: object
-      properties:
-        deploymentTarget:
-          allOf:
-          - $ref: '#/components/schemas/DeploymentTarget'
-          - description: ' A deployment target that contains information about a deployment such as its status, lifecycle events, and when it was last updated. It also contains metadata about the deployment target. The deployment target metadata depends on the deployment target''s type (<code>instanceTarget</code>, <code>lambdaTarget</code>, or <code>ecsTarget</code>). '
-    TargetStatus:
-      type: string
-      enum:
-      - Pending
-      - InProgress
-      - Succeeded
-      - Failed
-      - Skipped
-      - Unknown
-      - Ready
-    CloudFormationTarget:
-      type: object
-      properties:
-        deploymentId:
-          allOf:
-          - $ref: '#/components/schemas/DeploymentId'
-          - description: The unique ID of an CloudFormation blue/green deployment.
-        targetId:
-          allOf:
-          - $ref: '#/components/schemas/TargetId'
-          - description: ' The unique ID of a deployment target that has a type of <code>CloudFormationTarget</code>. '
-        lastUpdatedAt:
-          allOf:
-          - $ref: '#/components/schemas/Time'
-          - description: ' The date and time when the target application was updated by an CloudFormation blue/green deployment. '
-        lifecycleEvents:
-          allOf:
-          - $ref: '#/components/schemas/LifecycleEventList'
-          - description: ' The lifecycle events of the CloudFormation blue/green deployment to this target application. '
-        status:
-          allOf:
-          - $ref: '#/components/schemas/TargetStatus'
-          - description: ' The status of an CloudFormation blue/green deployment''s target application. '
-        resourceType:
-          allOf:
-          - $ref: '#/components/schemas/CloudFormationResourceType'
-          - description: The resource type for the CloudFormation blue/green deployment.
-        targetVersionWeight:
-          allOf:
-          - $ref: '#/components/schemas/TrafficWeight'
-          - description: The percentage of production traffic that the target version of an CloudFormation blue/green deployment receives.
-      description: ' Information about the target to be updated by an CloudFormation blue/green deployment. This target type is used for all deployments initiated by a CloudFormation stack update.'
-    Diagnostics:
-      type: object
-      properties:
-        errorCode:
-          allOf:
-          - $ref: '#/components/schemas/LifecycleErrorCode'
-          - description: '<p>The associated error code:</p> <ul> <li> <p>Success: The specified script ran.</p> </li> <li> <p>ScriptMissing: The specified script was not found in the specified location.</p> </li> <li> <p>ScriptNotExecutable: The specified script is not a recognized executable file type.</p> </li> <li> <p>ScriptTimedOut: The specified script did not finish running in the specified time period.</p> </li> <li> <p>ScriptFailed: The specified script failed to run as expected.</p> </li> <li> <p>UnknownError: The specified script did not run for an unknown reason.</p> </li> </ul>'
-        scriptName:
-          allOf:
-          - $ref: '#/components/schemas/ScriptName'
-          - description: The name of the script.
-        message:
-          allOf:
-          - $ref: '#/components/schemas/LifecycleMessage'
-          - description: The message associated with the error.
-        logTail:
-          allOf:
-          - $ref: '#/components/schemas/LogTail'
-          - description: <p>The last portion of the diagnostic log.</p> <p>If available, CodeDeploy returns up to the last 4 KB of the diagnostic log.</p>
-      description: Diagnostic information about executable scripts that are part of a deployment.
-    LifecycleEventList:
-      type: array
-      items:
-        $ref: '#/components/schemas/LifecycleEvent'
-    DeploymentIdRequiredException: {}
-    LifecycleEventName:
-      type: string
-    InvalidDeploymentIdException: {}
-    DeploymentTargetType:
-      type: string
-      enum:
-      - InstanceTarget
-      - LambdaTarget
-      - ECSTarget
-      - CloudFormationTarget
-    LogTail:
-      type: string
-    ECSTaskSetCount:
-      type: integer
-    LifecycleMessage:
-      type: string
-    TargetArn:
-      type: string
-    LambdaTarget:
-      type: object
-      properties:
-        deploymentId:
-          allOf:
-          - $ref: '#/components/schemas/DeploymentId'
-          - description: ' The unique ID of a deployment. '
-        targetId:
-          allOf:
-          - $ref: '#/components/schemas/TargetId'
-          - description: ' The unique ID of a deployment target that has a type of <code>lambdaTarget</code>. '
-        targetArn:
-          allOf:
-          - $ref: '#/components/schemas/TargetArn'
-          - description: ' The Amazon Resource Name (ARN) of the target. '
-        status:
-          allOf:
-          - $ref: '#/components/schemas/TargetStatus'
-          - description: ' The status an Lambda deployment''s target Lambda function. '
-        lastUpdatedAt:
-          allOf:
-          - $ref: '#/components/schemas/Time'
-          - description: ' The date and time when the target Lambda function was updated by a deployment. '
-        lifecycleEvents:
-          allOf:
-          - $ref: '#/components/schemas/LifecycleEventList'
-          - description: ' The lifecycle events of the deployment to this target Lambda function. '
-        lambdaFunctionInfo:
-          allOf:
-          - $ref: '#/components/schemas/LambdaFunctionInfo'
-          - description: ' A <code>LambdaFunctionInfo</code> object that describes a target Lambda function. '
-      description: ' Information about the target Lambda function during an Lambda deployment. '
-    Time:
-      type: string
-      format: date-time
-    Timestamp:
-      type: string
-      format: date-time
-    ECSTaskSetList:
-      type: array
-      items:
-        $ref: '#/components/schemas/ECSTaskSet'
-    GetDeploymentTargetInput:
-      type: object
-      title: GetDeploymentTargetInput
-      properties:
-        deploymentId:
-          allOf:
-          - $ref: '#/components/schemas/DeploymentId'
-          - description: ' The unique ID of a deployment. '
-        targetId:
-          allOf:
-          - $ref: '#/components/schemas/TargetId'
-          - description: ' The unique ID of a deployment target. '
-    DeploymentTargetDoesNotExistException: {}
-    ECSTarget:
-      type: object
-      properties:
-        deploymentId:
-          allOf:
-          - $ref: '#/components/schemas/DeploymentId'
-          - description: ' The unique ID of a deployment. '
-        targetId:
-          allOf:
-          - $ref: '#/components/schemas/TargetId'
-          - description: ' The unique ID of a deployment target that has a type of <code>ecsTarget</code>. '
-        targetArn:
-          allOf:
-          - $ref: '#/components/schemas/TargetArn'
-          - description: ' The Amazon Resource Name (ARN) of the target. '
-        lastUpdatedAt:
-          allOf:
-          - $ref: '#/components/schemas/Time'
-          - description: ' The date and time when the target Amazon ECS application was updated by a deployment. '
-        lifecycleEvents:
-          allOf:
-          - $ref: '#/components/schemas/LifecycleEventList'
-          - description: ' The lifecycle events of the deployment to this target Amazon ECS application. '
-        status:
-          allOf:
-          - $ref: '#/components/schemas/TargetStatus'
-          - description: ' The status an Amazon ECS deployment''s target ECS application. '
-        taskSetsInfo:
-          allOf:
-          - $ref: '#/components/schemas/ECSTaskSetList'
-          - description: ' The <code>ECSTaskSet</code> objects associated with the ECS target. '
-      description: ' Information about the target of an Amazon ECS deployment. '
     ECSTaskSet:
       type: object
       properties:
@@ -592,13 +308,54 @@ components:
           - $ref: '#/components/schemas/TargetLabel'
           - description: ' A label that identifies whether the ECS task set is an original target (<code>BLUE</code>) or a replacement target (<code>GREEN</code>). '
       description: ' Information about a set of Amazon ECS tasks in an CodeDeploy deployment. An Amazon ECS task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic. An CodeDeploy application that uses the Amazon ECS compute platform deploys a containerized application in an Amazon ECS service as a task set. '
+    ECSTaskSetCount:
+      type: integer
+    LifecycleErrorCode:
+      type: string
+      enum:
+      - Success
+      - ScriptMissing
+      - ScriptNotExecutable
+      - ScriptTimedOut
+      - ScriptFailed
+      - UnknownError
+    LambdaFunctionName:
+      type: string
     ScriptName:
       type: string
-    InvalidDeploymentTargetIdException: {}
-    LambdaFunctionAlias:
-      type: string
-    ECSTaskSetIdentifier:
-      type: string
+    LambdaTarget:
+      type: object
+      properties:
+        deploymentId:
+          allOf:
+          - $ref: '#/components/schemas/DeploymentId'
+          - description: ' The unique ID of a deployment. '
+        targetId:
+          allOf:
+          - $ref: '#/components/schemas/TargetId'
+          - description: ' The unique ID of a deployment target that has a type of <code>lambdaTarget</code>. '
+        targetArn:
+          allOf:
+          - $ref: '#/components/schemas/TargetArn'
+          - description: ' The Amazon Resource Name (ARN) of the target. '
+        status:
+          allOf:
+          - $ref: '#/components/schemas/TargetStatus'
+          - description: ' The status an Lambda deployment''s target Lambda function. '
+        lastUpdatedAt:
+          allOf:
+          - $ref: '#/components/schemas/Time'
+          - description: ' The date and time when the target Lambda function was updated by a deployment. '
+        lifecycleEvents:
+          allOf:
+          - $ref: '#/components/schemas/LifecycleEventList'
+          - description: ' The lifecycle events of the deployment to this target Lambda function. '
+        lambdaFunctionInfo:
+          allOf:
+          - $ref: '#/components/schemas/LambdaFunctionInfo'
+          - description: ' A <code>LambdaFunctionInfo</code> object that describes a target Lambda function. '
+      description: ' Information about the target Lambda function during an Lambda deployment. '
+    DeploymentTargetDoesNotExistException: {}
     InstanceTarget:
       type: object
       properties:
@@ -631,19 +388,250 @@ components:
           - $ref: '#/components/schemas/TargetLabel'
           - description: ' A label that identifies whether the instance is an original target (<code>BLUE</code>) or a replacement target (<code>GREEN</code>). '
       description: ' A target Amazon EC2 or on-premises instance during a deployment that uses the EC2/On-premises compute platform. '
+    LambdaFunctionAlias:
+      type: string
+    TargetStatus:
+      type: string
+      enum:
+      - Pending
+      - InProgress
+      - Succeeded
+      - Failed
+      - Skipped
+      - Unknown
+      - Ready
+    DeploymentTarget:
+      type: object
+      properties:
+        deploymentTargetType:
+          allOf:
+          - $ref: '#/components/schemas/DeploymentTargetType'
+          - description: The deployment type that is specific to the deployment's compute platform or deployments initiated by a CloudFormation stack update.
+        instanceTarget:
+          allOf:
+          - $ref: '#/components/schemas/InstanceTarget'
+          - description: ' Information about the target for a deployment that uses the EC2/On-premises compute platform. '
+        lambdaTarget:
+          allOf:
+          - $ref: '#/components/schemas/LambdaTarget'
+          - description: ' Information about the target for a deployment that uses the Lambda compute platform. '
+        ecsTarget:
+          allOf:
+          - $ref: '#/components/schemas/ECSTarget'
+          - description: ' Information about the target for a deployment that uses the Amazon ECS compute platform. '
+        cloudFormationTarget:
+          $ref: '#/components/schemas/CloudFormationTarget'
+      description: ' Information about the deployment target. '
+    Timestamp:
+      type: string
+      format: date-time
+    TargetGroupInfo:
+      type: object
+      properties:
+        name:
+          allOf:
+          - $ref: '#/components/schemas/TargetGroupName'
+          - description: 'For blue/green deployments, the name of the target group that instances in the original environment are deregistered from, and instances in the replacement environment are registered with. For in-place deployments, the name of the target group that instances are deregistered from, so they are not serving traffic during a deployment, and then re-registered with after the deployment is complete. '
+      description: Information about a target group in Elastic Load Balancing to use in a deployment. Instances are registered as targets in a target group, and traffic is routed to the target group.
+    TargetLabel:
+      type: string
+      enum:
+      - Blue
+      - Green
+    ECSTaskSetList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ECSTaskSet'
+    LifecycleEventName:
+      type: string
+    GetDeploymentTargetOutput:
+      type: object
+      properties:
+        deploymentTarget:
+          allOf:
+          - $ref: '#/components/schemas/DeploymentTarget'
+          - description: ' A deployment target that contains information about a deployment such as its status, lifecycle events, and when it was last updated. It also contains metadata about the deployment target. The deployment target metadata depends on the deployment target''s type (<code>instanceTarget</code>, <code>lambdaTarget</code>, or <code>ecsTarget</code>). '
+    InvalidDeploymentIdException: {}
+    LambdaFunctionInfo:
+      type: object
+      properties:
+        functionName:
+          allOf:
+          - $ref: '#/components/schemas/LambdaFunctionName'
+          - description: ' The name of a Lambda function. '
+        functionAlias:
+          allOf:
+          - $ref: '#/components/schemas/LambdaFunctionAlias'
+          - description: ' The alias of a Lambda function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Lambda Function Aliases</a> in the <i>Lambda Developer Guide</i>.'
+        currentVersion:
+          allOf:
+          - $ref: '#/components/schemas/Version'
+          - description: ' The version of a Lambda function that production traffic points to. '
+        targetVersion:
+          allOf:
+          - $ref: '#/components/schemas/Version'
+          - description: ' The version of a Lambda function that production traffic points to after the Lambda function is deployed. '
+        targetVersionWeight:
+          allOf:
+          - $ref: '#/components/schemas/TrafficWeight'
+          - description: ' The percentage of production traffic that the target version of a Lambda function receives. '
+      description: ' Information about a Lambda function specified in a deployment. '
+    DeploymentTargetType:
+      type: string
+      enum:
+      - InstanceTarget
+      - LambdaTarget
+      - ECSTarget
+      - CloudFormationTarget
+    LogTail:
+      type: string
+    DeploymentDoesNotExistException: {}
+    TargetId:
+      type: string
+    DeploymentNotStartedException: {}
+    InvalidInstanceNameException: {}
+    Version:
+      type: string
+    TargetArn:
+      type: string
+    GetDeploymentTargetInput:
+      type: object
+      title: GetDeploymentTargetInput
+      properties:
+        deploymentId:
+          allOf:
+          - $ref: '#/components/schemas/DeploymentId'
+          - description: ' The unique ID of a deployment. '
+        targetId:
+          allOf:
+          - $ref: '#/components/schemas/TargetId'
+          - description: ' The unique ID of a deployment target. '
+    Time:
+      type: string
+      format: date-time
+    CloudFormationTarget:
+      type: object
+      properties:
+        deploymentId:
+          allOf:
+          - $ref: '#/components/schemas/DeploymentId'
+          - description: The unique ID of an CloudFormation blue/green deployment.
+        targetId:
+          allOf:
+          - $ref: '#/components/schemas/TargetId'
+          - description: ' The unique ID of a deployment target that has a type of <code>CloudFormationTarget</code>. '
+        lastUpdatedAt:
+          allOf:
+          - $ref: '#/components/schemas/Time'
+          - description: ' The date and time when the target application was updated by an CloudFormation blue/green deployment. '
+        lifecycleEvents:
+          allOf:
+          - $ref: '#/components/schemas/LifecycleEventList'
+          - description: ' The lifecycle events of the CloudFormation blue/green deployment to this target application. '
+        status:
+          allOf:
+          - $ref: '#/components/schemas/TargetStatus'
+          - description: ' The status of an CloudFormation blue/green deployment''s target application. '
+        resourceType:
+          allOf:
+          - $ref: '#/components/schemas/CloudFormationResourceType'
+          - description: The resource type for the CloudFormation blue/green deployment.
+        targetVersionWeight:
+          allOf:
+          - $ref: '#/components/schemas/TrafficWeight'
+          - description: The percentage of production traffic that the target version of an CloudFormation blue/green deployment receives.
+      description: ' Information about the target to be updated by an CloudFormation blue/green deployment. This target type is used for all deployments initiated by a CloudFormation stack update.'
+    LifecycleEvent:
+      type: object
+      properties:
+        lifecycleEventName:
+          allOf:
+          - $ref: '#/components/schemas/LifecycleEventName'
+          - description: The deployment lifecycle event name, such as <code>ApplicationStop</code>, <code>BeforeInstall</code>, <code>AfterInstall</code>, <code>ApplicationStart</code>, or <code>ValidateService</code>.
+        diagnostics:
+          allOf:
+          - $ref: '#/components/schemas/Diagnostics'
+          - description: Diagnostic information about the deployment lifecycle event.
+        startTime:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: A timestamp that indicates when the deployment lifecycle event started.
+        endTime:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: A timestamp that indicates when the deployment lifecycle event ended.
+        status:
+          allOf:
+          - $ref: '#/components/schemas/LifecycleEventStatus'
+          - description: '<p>The deployment lifecycle event status:</p> <ul> <li> <p>Pending: The deployment lifecycle event is pending.</p> </li> <li> <p>InProgress: The deployment lifecycle event is in progress.</p> </li> <li> <p>Succeeded: The deployment lifecycle event ran successfully.</p> </li> <li> <p>Failed: The deployment lifecycle event has failed.</p> </li> <li> <p>Skipped: The deployment lifecycle event has been skipped.</p> </li> <li> <p>Unknown: The deployment lifecycle event is unknown.</p> </li> </ul>'
+      description: Information about a deployment lifecycle event.
+    DeploymentIdRequiredException: {}
+    CloudFormationResourceType:
+      type: string
+    ECSTarget:
+      type: object
+      properties:
+        deploymentId:
+          allOf:
+          - $ref: '#/components/schemas/DeploymentId'
+          - description: ' The unique ID of a deployment. '
+        targetId:
+          allOf:
+          - $ref: '#/components/schemas/TargetId'
+          - description: ' The unique ID of a deployment target that has a type of <code>ecsTarget</code>. '
+        targetArn:
+          allOf:
+          - $ref: '#/components/schemas/TargetArn'
+          - description: ' The Amazon Resource Name (ARN) of the target. '
+        lastUpdatedAt:
+          allOf:
+          - $ref: '#/components/schemas/Time'
+          - description: ' The date and time when the target Amazon ECS application was updated by a deployment. '
+        lifecycleEvents:
+          allOf:
+          - $ref: '#/components/schemas/LifecycleEventList'
+          - description: ' The lifecycle events of the deployment to this target Amazon ECS application. '
+        status:
+          allOf:
+          - $ref: '#/components/schemas/TargetStatus'
+          - description: ' The status an Amazon ECS deployment''s target ECS application. '
+        taskSetsInfo:
+          allOf:
+          - $ref: '#/components/schemas/ECSTaskSetList'
+          - description: ' The <code>ECSTaskSet</code> objects associated with the ECS target. '
+      description: ' Information about the target of an Amazon ECS deployment. '
+    ECSTaskSetStatus:
+      type: string
+    LifecycleEventList:
+      type: array
+      items:
+        $ref: '#/components/schemas/LifecycleEvent'
+    Diagnostics:
+      type: object
+      properties:
+        errorCode:
+          allOf:
+          - $ref: '#/components/schemas/LifecycleErrorCode'
+          - description: '<p>The associated error code:</p> <ul> <li> <p>Success: The specified script ran.</p> </li> <li> <p>ScriptMissing: The specified script was not found in the specified location.</p> </li> <li> <p>ScriptNotExecutable: The specified script is not a recognized executable file type.</p> </li> <li> <p>ScriptTimedOut: The specified script did not finish running in the specified time period.</p> </li> <li> <p>ScriptFailed: The specified script failed to run as expected.</p> </li> <li> <p>UnknownError: The specified script did not run for an unknown reason.</p> </li> </ul>'
+        scriptName:
+          allOf:
+          - $ref: '#/components/schemas/ScriptName'
+          - description: The name of the script.
+        message:
+          allOf:
+          - $ref: '#/components/schemas/LifecycleMessage'
+          - description: The message associated with the error.
+        logTail:
+          allOf:
+          - $ref: '#/components/schemas/LogTail'
+          - description: <p>The last portion of the diagnostic log.</p> <p>If available, CodeDeploy returns up to the last 4 KB of the diagnostic log.</p>
+      description: Diagnostic information about executable scripts that are part of a deployment.
+    TrafficWeight:
+      type: number
+      format: double
+    LifecycleMessage:
+      type: string
   parameters:
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Content-Sha256:
       name: X-Amz-Content-Sha256
       in: header
@@ -656,20 +644,32 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
