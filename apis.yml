@@ -40,6 +40,7 @@ tags:
   - CI/CD
   - Release Management
   - Blue/Green Deployment
+  - Developer Tools
 url: https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/apis.yml
 created: '2026-03-16'
 modified: '2026-06-20'
