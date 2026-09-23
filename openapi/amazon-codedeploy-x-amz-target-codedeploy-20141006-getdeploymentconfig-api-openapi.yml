@@ -1,9 +1,9 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2014-10-06'
   x-release: v4
-  title: 'AWS CodeDeploy Applications #X Amz Target=CodeDeploy 20141006.GetDeploymentConfig #X Amz Target=CodeDeploy 20141006.GetDeploymentConfig #X Amz Target=CodeDeploy 20141006.GetDeploymentConfig API'
-  description: '<p>CodeDeploy is a deployment service that automates application deployments to Amazon EC2 instances, on-premises instances running in your own facility, serverless Lambda functions, or applications in an Amazon ECS service.</p> <p>You can deploy a nearly unlimited variety of application content, such as an updated Lambda function, updated applications in an Amazon ECS service, code, web and configuration files, executables, packages, scripts, multimedia files, and so on. CodeDeploy can deploy application content stored in Amazon S3 buckets, GitHub repositories, or Bitbucket repositories. You do not need to make changes to your existing code before you can use CodeDeploy.</p> <p>CodeDeploy makes it easier for you to rapidly release new features, helps you avoid downtime during application deployment, and handles the complexity of updating your applications, without many of the risks associated with error-prone manual deployments.</p> <p> <b>CodeDeploy Components</b> </p> <p>Use the information in this guide to help you work with the following CodeDeploy components:</p> <ul> <li> <p> <b>Application</b>: A name that uniquely identifies the application you want to deploy. CodeDeploy uses this name, which functions as a container, to ensure the correct combination of revision, deployment configuration, and deployment group are referenced during a deployment.</p> </li> <li> <p> <b>Deployment group</b>: A set of individual instances, CodeDeploy Lambda deployment configuration settings, or an Amazon ECS service and network details. A Lambda deployment group specifies how to route traffic to a new version of a Lambda function. An Amazon ECS deployment group specifies the service created in Amazon ECS to deploy, a load balancer, and a listener to reroute production traffic to an updated containerized application. An Amazon EC2/On-premises deployment group contains individually tagged instances, Amazon EC2 instances in Amazon EC2 Auto Scaling groups, or both. All deployment groups can specify optional trigger, alarm, and rollback settings.</p> </li> <li> <p> <b>Deployment configuration</b>: A set of deployment rules and deployment success and failure conditions used by CodeDeploy during a deployment.</p> </li> <li> <p> <b>Deployment</b>: The process and the components used when updating a Lambda function, a containerized application in an Amazon ECS service, or of installing content on one or more instances. </p> </li> <li> <p> <b>Application revisions</b>: For an Lambda deployment, this is an AppSpec file that specifies the Lambda function to be updated and one or more functions to validate deployment lifecycle events. For an Amazon ECS deployment, this is an AppSpec file that specifies the Amazon ECS task definition, container, and port where production traffic is rerouted. For an EC2/On-premises deployment, this is an archive file that contains source content—source code, webpages, executable files, and deployment scripts—along with an AppSpec file. Revisions are stored in Amazon S3 buckets or GitHub repositories. For Amazon S3, a revision is uniquely identified by its Amazon S3 object key and its ETag, version, or both. For GitHub, a revision is uniquely identified by its commit ID.</p> </li> </ul> <p>This guide also contains information to help you get details about the instances in your deployments, to make on-premises instances available for CodeDeploy deployments, to get details about a Lambda function deployment, and to get details about Amazon ECS service deployments.</p> <p> <b>CodeDeploy Information Resources</b> </p> <ul> <li> <p> <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">CodeDeploy User Guide</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/">CodeDeploy API Reference Guide</a> </p> </li> <li> <p> <a href="https://docs.aws.amazon.com/cli/latest/reference/deploy/index.html">CLI Reference for CodeDeploy</a> </p> </li> <li> <p> <a href="https://forums.aws.amazon.com/forum.jspa?forumID=179">CodeDeploy Developer Forum</a> </p> </li> </ul>'
+  title: 'AWS CodeDeploy #X Amz Target=CodeDeploy…'
+  description: CodeDeploy is a deployment service that automates application deployments to Amazon EC2 instances, on-premises instances running in your own facility, serverless Lambda functions, or applications in an Amazon ECS service.
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
     backgroundColor: '#FFFFFF'
@@ -23,6 +23,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/codedeploy-2014-10-06.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -209,30 +210,76 @@ paths:
       tags:
       - '#X Amz Target=CodeDeploy 20141006.GetDeploymentConfig'
 components:
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    GetDeploymentConfigInput:
-      type: object
-      required:
-      - deploymentConfigName
-      title: GetDeploymentConfigInput
-      properties:
-        deploymentConfigName:
-          allOf:
-          - $ref: '#/components/schemas/DeploymentConfigName'
-          - description: The name of a deployment configuration associated with the IAM user or Amazon Web Services account.
-      description: Represents the input of a <code>GetDeploymentConfig</code> operation.
-    MinimumHealthyHostsValue:
-      type: integer
-    InvalidDeploymentConfigNameException: {}
-    DeploymentConfigNameRequiredException: {}
-    MinimumHealthyHostsType:
+    TrafficRoutingType:
       type: string
       enum:
-      - HOST_COUNT
-      - FLEET_PERCENT
-    Timestamp:
+      - TimeBasedCanary
+      - TimeBasedLinear
+      - AllAtOnce
+    Percentage:
+      type: integer
+    WaitTimeInMins:
+      type: integer
+    InvalidDeploymentConfigNameException: {}
+    DeploymentConfigId:
       type: string
-      format: date-time
+    DeploymentConfigDoesNotExistException: {}
+    TimeBasedLinear:
+      type: object
+      properties:
+        linearPercentage:
+          allOf:
+          - $ref: '#/components/schemas/Percentage'
+          - description: The percentage of traffic that is shifted at the start of each increment of a <code>TimeBasedLinear</code> deployment.
+        linearInterval:
+          allOf:
+          - $ref: '#/components/schemas/WaitTimeInMins'
+          - description: The number of minutes between each incremental traffic shift of a <code>TimeBasedLinear</code> deployment.
+      description: A configuration that shifts traffic from one version of a Lambda function or ECS task set to another in equal increments, with an equal number of minutes between each increment. The original and target Lambda function versions or ECS task sets are specified in the deployment's AppSpec file.
     GetDeploymentConfigOutput:
       type: object
       properties:
@@ -253,15 +300,48 @@ components:
           - $ref: '#/components/schemas/WaitTimeInMins'
           - description: The number of minutes between the first and second traffic shifts of a <code>TimeBasedCanary</code> deployment.
       description: A configuration that shifts traffic from one version of a Lambda function or Amazon ECS task set to another in two increments. The original and target Lambda function versions or ECS task sets are specified in the deployment's AppSpec file.
-    DeploymentConfigId:
-      type: string
-    WaitTimeInMins:
+    MinimumHealthyHostsValue:
       type: integer
-    InvalidComputePlatformException: {}
+    DeploymentConfigNameRequiredException: {}
     DeploymentConfigName:
       type: string
       minLength: 1
       maxLength: 100
+    MinimumHealthyHostsType:
+      type: string
+      enum:
+      - HOST_COUNT
+      - FLEET_PERCENT
+    Timestamp:
+      type: string
+      format: date-time
+    GetDeploymentConfigInput:
+      type: object
+      required:
+      - deploymentConfigName
+      title: GetDeploymentConfigInput
+      properties:
+        deploymentConfigName:
+          allOf:
+          - $ref: '#/components/schemas/DeploymentConfigName'
+          - description: The name of a deployment configuration associated with the IAM user or Amazon Web Services account.
+      description: Represents the input of a <code>GetDeploymentConfig</code> operation.
+    TrafficRoutingConfig:
+      type: object
+      properties:
+        type:
+          allOf:
+          - $ref: '#/components/schemas/TrafficRoutingType'
+          - description: The type of traffic shifting (<code>TimeBasedCanary</code> or <code>TimeBasedLinear</code>) used by a deployment configuration.
+        timeBasedCanary:
+          allOf:
+          - $ref: '#/components/schemas/TimeBasedCanary'
+          - description: A configuration that shifts traffic from one version of a Lambda function or ECS task set to another in two increments. The original and target Lambda function versions or ECS task sets are specified in the deployment's AppSpec file.
+        timeBasedLinear:
+          allOf:
+          - $ref: '#/components/schemas/TimeBasedLinear'
+          - description: A configuration that shifts traffic from one version of a Lambda function or Amazon ECS task set to another in equal increments, with an equal number of minutes between each increment. The original and target Lambda function versions or Amazon ECS task sets are specified in the deployment's AppSpec file.
+      description: The configuration that specifies how traffic is shifted from one version of a Lambda function to another version during an Lambda deployment, or from one Amazon ECS task set to another during an Amazon ECS deployment.
     DeploymentConfigInfo:
       type: object
       properties:
@@ -290,18 +370,7 @@ components:
           - $ref: '#/components/schemas/TrafficRoutingConfig'
           - description: The configuration that specifies how the deployment traffic is routed. Used for deployments with a Lambda or Amazon ECS compute platform only.
       description: Information about a deployment configuration.
-    TimeBasedLinear:
-      type: object
-      properties:
-        linearPercentage:
-          allOf:
-          - $ref: '#/components/schemas/Percentage'
-          - description: The percentage of traffic that is shifted at the start of each increment of a <code>TimeBasedLinear</code> deployment.
-        linearInterval:
-          allOf:
-          - $ref: '#/components/schemas/WaitTimeInMins'
-          - description: The number of minutes between each incremental traffic shift of a <code>TimeBasedLinear</code> deployment.
-      description: A configuration that shifts traffic from one version of a Lambda function or ECS task set to another in equal increments, with an equal number of minutes between each increment. The original and target Lambda function versions or ECS task sets are specified in the deployment's AppSpec file.
+    InvalidComputePlatformException: {}
     MinimumHealthyHosts:
       type: object
       properties:
@@ -314,80 +383,12 @@ components:
           - $ref: '#/components/schemas/MinimumHealthyHostsValue'
           - description: The minimum healthy instance value.
       description: Information about minimum healthy instance.
-    TrafficRoutingConfig:
-      type: object
-      properties:
-        type:
-          allOf:
-          - $ref: '#/components/schemas/TrafficRoutingType'
-          - description: The type of traffic shifting (<code>TimeBasedCanary</code> or <code>TimeBasedLinear</code>) used by a deployment configuration.
-        timeBasedCanary:
-          allOf:
-          - $ref: '#/components/schemas/TimeBasedCanary'
-          - description: A configuration that shifts traffic from one version of a Lambda function or ECS task set to another in two increments. The original and target Lambda function versions or ECS task sets are specified in the deployment's AppSpec file.
-        timeBasedLinear:
-          allOf:
-          - $ref: '#/components/schemas/TimeBasedLinear'
-          - description: A configuration that shifts traffic from one version of a Lambda function or Amazon ECS task set to another in equal increments, with an equal number of minutes between each increment. The original and target Lambda function versions or Amazon ECS task sets are specified in the deployment's AppSpec file.
-      description: The configuration that specifies how traffic is shifted from one version of a Lambda function to another version during an Lambda deployment, or from one Amazon ECS task set to another during an Amazon ECS deployment.
-    Percentage:
-      type: integer
-    TrafficRoutingType:
-      type: string
-      enum:
-      - TimeBasedCanary
-      - TimeBasedLinear
-      - AllAtOnce
-    DeploymentConfigDoesNotExistException: {}
     ComputePlatform:
       type: string
       enum:
       - Server
       - Lambda
       - ECS
-  parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
   securitySchemes:
     hmac:
       type: apiKey
