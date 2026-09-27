@@ -277,7 +277,18 @@ components:
               format: date-time
             linkedToGitHub:
               type: boolean
-    ApplicationDoesNotExistException:
+    InternalServerException:
+      type: object
+      properties:
+        message:
+          type: string
+    CreateApplicationResponse:
+      type: object
+      properties:
+        applicationId:
+          type: string
+          description: A unique application ID.
+    InvalidNextTokenException:
       type: object
       properties:
         message:
@@ -297,6 +308,16 @@ components:
           - Server
           - Lambda
           - ECS
+    ApplicationDoesNotExistException:
+      type: object
+      properties:
+        message:
+          type: string
+    ApplicationAlreadyExistsException:
+      type: object
+      properties:
+        message:
+          type: string
     InvalidApplicationNameException:
       type: object
       properties:
@@ -310,27 +331,6 @@ components:
           items:
             type: string
         nextToken:
-          type: string
-    CreateApplicationResponse:
-      type: object
-      properties:
-        applicationId:
-          type: string
-          description: A unique application ID.
-    ApplicationAlreadyExistsException:
-      type: object
-      properties:
-        message:
-          type: string
-    InvalidNextTokenException:
-      type: object
-      properties:
-        message:
-          type: string
-    InternalServerException:
-      type: object
-      properties:
-        message:
           type: string
 externalDocs:
   description: Amazon CodeDeploy API Reference

@@ -248,54 +248,6 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    GetDeploymentResponse:
-      type: object
-      properties:
-        deploymentInfo:
-          type: object
-          properties:
-            deploymentId:
-              type: string
-            applicationName:
-              type: string
-            deploymentGroupName:
-              type: string
-            status:
-              type: string
-              enum:
-              - Created
-              - Queued
-              - InProgress
-              - Baking
-              - Succeeded
-              - Failed
-              - Stopped
-              - Ready
-            createTime:
-              type: string
-              format: date-time
-            startTime:
-              type: string
-              format: date-time
-            completeTime:
-              type: string
-              format: date-time
-            description:
-              type: string
-            creator:
-              type: string
-            computePlatform:
-              type: string
-    DeploymentDoesNotExistException:
-      type: object
-      properties:
-        message:
-          type: string
-    InvalidApplicationNameException:
-      type: object
-      properties:
-        message:
-          type: string
     CreateDeploymentRequest:
       type: object
       required:
@@ -375,15 +327,63 @@ components:
       properties:
         message:
           type: string
-    CreateDeploymentResponse:
+    InvalidApplicationNameException:
       type: object
       properties:
-        deploymentId:
+        message:
+          type: string
+    GetDeploymentResponse:
+      type: object
+      properties:
+        deploymentInfo:
+          type: object
+          properties:
+            deploymentId:
+              type: string
+            applicationName:
+              type: string
+            deploymentGroupName:
+              type: string
+            status:
+              type: string
+              enum:
+              - Created
+              - Queued
+              - InProgress
+              - Baking
+              - Succeeded
+              - Failed
+              - Stopped
+              - Ready
+            createTime:
+              type: string
+              format: date-time
+            startTime:
+              type: string
+              format: date-time
+            completeTime:
+              type: string
+              format: date-time
+            description:
+              type: string
+            creator:
+              type: string
+            computePlatform:
+              type: string
+    DeploymentDoesNotExistException:
+      type: object
+      properties:
+        message:
           type: string
     InternalServerException:
       type: object
       properties:
         message:
+          type: string
+    CreateDeploymentResponse:
+      type: object
+      properties:
+        deploymentId:
           type: string
 externalDocs:
   description: Amazon CodeDeploy API Reference
