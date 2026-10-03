@@ -260,35 +260,12 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    GetApplicationResponse:
-      type: object
-      properties:
-        application:
-          type: object
-          properties:
-            applicationId:
-              type: string
-            applicationName:
-              type: string
-            computePlatform:
-              type: string
-            createTime:
-              type: string
-              format: date-time
-            linkedToGitHub:
-              type: boolean
-    InternalServerException:
+    InvalidApplicationNameException:
       type: object
       properties:
         message:
           type: string
-    CreateApplicationResponse:
-      type: object
-      properties:
-        applicationId:
-          type: string
-          description: A unique application ID.
-    InvalidNextTokenException:
+    ApplicationDoesNotExistException:
       type: object
       properties:
         message:
@@ -308,17 +285,7 @@ components:
           - Server
           - Lambda
           - ECS
-    ApplicationDoesNotExistException:
-      type: object
-      properties:
-        message:
-          type: string
-    ApplicationAlreadyExistsException:
-      type: object
-      properties:
-        message:
-          type: string
-    InvalidApplicationNameException:
+    InternalServerException:
       type: object
       properties:
         message:
@@ -331,6 +298,39 @@ components:
           items:
             type: string
         nextToken:
+          type: string
+    CreateApplicationResponse:
+      type: object
+      properties:
+        applicationId:
+          type: string
+          description: A unique application ID.
+    GetApplicationResponse:
+      type: object
+      properties:
+        application:
+          type: object
+          properties:
+            applicationId:
+              type: string
+            applicationName:
+              type: string
+            computePlatform:
+              type: string
+            createTime:
+              type: string
+              format: date-time
+            linkedToGitHub:
+              type: boolean
+    ApplicationAlreadyExistsException:
+      type: object
+      properties:
+        message:
+          type: string
+    InvalidNextTokenException:
+      type: object
+      properties:
+        message:
           type: string
 externalDocs:
   description: Amazon CodeDeploy API Reference
