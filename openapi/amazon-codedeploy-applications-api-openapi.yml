@@ -260,12 +260,21 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    InvalidApplicationNameException:
+    ListApplicationsResponse:
+      type: object
+      properties:
+        applications:
+          type: array
+          items:
+            type: string
+        nextToken:
+          type: string
+    ApplicationDoesNotExistException:
       type: object
       properties:
         message:
           type: string
-    ApplicationDoesNotExistException:
+    InternalServerException:
       type: object
       properties:
         message:
@@ -285,26 +294,17 @@ components:
           - Server
           - Lambda
           - ECS
-    InternalServerException:
-      type: object
-      properties:
-        message:
-          type: string
-    ListApplicationsResponse:
-      type: object
-      properties:
-        applications:
-          type: array
-          items:
-            type: string
-        nextToken:
-          type: string
     CreateApplicationResponse:
       type: object
       properties:
         applicationId:
           type: string
           description: A unique application ID.
+    ApplicationAlreadyExistsException:
+      type: object
+      properties:
+        message:
+          type: string
     GetApplicationResponse:
       type: object
       properties:
@@ -322,12 +322,12 @@ components:
               format: date-time
             linkedToGitHub:
               type: boolean
-    ApplicationAlreadyExistsException:
+    InvalidNextTokenException:
       type: object
       properties:
         message:
           type: string
-    InvalidNextTokenException:
+    InvalidApplicationNameException:
       type: object
       properties:
         message:

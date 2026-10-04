@@ -248,78 +248,6 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    CreateDeploymentResponse:
-      type: object
-      properties:
-        deploymentId:
-          type: string
-    InvalidApplicationNameException:
-      type: object
-      properties:
-        message:
-          type: string
-    GetDeploymentResponse:
-      type: object
-      properties:
-        deploymentInfo:
-          type: object
-          properties:
-            deploymentId:
-              type: string
-            applicationName:
-              type: string
-            deploymentGroupName:
-              type: string
-            status:
-              type: string
-              enum:
-              - Created
-              - Queued
-              - InProgress
-              - Baking
-              - Succeeded
-              - Failed
-              - Stopped
-              - Ready
-            createTime:
-              type: string
-              format: date-time
-            startTime:
-              type: string
-              format: date-time
-            completeTime:
-              type: string
-              format: date-time
-            description:
-              type: string
-            creator:
-              type: string
-            computePlatform:
-              type: string
-    InvalidDeploymentGroupNameException:
-      type: object
-      properties:
-        message:
-          type: string
-    InternalServerException:
-      type: object
-      properties:
-        message:
-          type: string
-    ListDeploymentsResponse:
-      type: object
-      properties:
-        deployments:
-          type: array
-          items:
-            type: string
-        nextToken:
-          type: string
-    InvalidDeploymentIdException:
-      type: object
-      properties:
-        message:
-          type: string
     CreateDeploymentRequest:
       type: object
       required:
@@ -380,7 +308,79 @@ components:
                 - DEPLOYMENT_FAILURE
                 - DEPLOYMENT_STOP_ON_ALARM
                 - DEPLOYMENT_STOP_ON_REQUEST
+    InvalidDeploymentIdException:
+      type: object
+      properties:
+        message:
+          type: string
+    GetDeploymentResponse:
+      type: object
+      properties:
+        deploymentInfo:
+          type: object
+          properties:
+            deploymentId:
+              type: string
+            applicationName:
+              type: string
+            deploymentGroupName:
+              type: string
+            status:
+              type: string
+              enum:
+              - Created
+              - Queued
+              - InProgress
+              - Baking
+              - Succeeded
+              - Failed
+              - Stopped
+              - Ready
+            createTime:
+              type: string
+              format: date-time
+            startTime:
+              type: string
+              format: date-time
+            completeTime:
+              type: string
+              format: date-time
+            description:
+              type: string
+            creator:
+              type: string
+            computePlatform:
+              type: string
+    InternalServerException:
+      type: object
+      properties:
+        message:
+          type: string
+    InvalidDeploymentGroupNameException:
+      type: object
+      properties:
+        message:
+          type: string
+    CreateDeploymentResponse:
+      type: object
+      properties:
+        deploymentId:
+          type: string
     DeploymentDoesNotExistException:
+      type: object
+      properties:
+        message:
+          type: string
+    ListDeploymentsResponse:
+      type: object
+      properties:
+        deployments:
+          type: array
+          items:
+            type: string
+        nextToken:
+          type: string
+    InvalidApplicationNameException:
       type: object
       properties:
         message:
