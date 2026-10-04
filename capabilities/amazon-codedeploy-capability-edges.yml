@@ -11,7 +11,7 @@ capability_model:
   attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
     CC BY 4.0
   notice: NOTICE
-edge_count: 36
+edge_count: 37
 edges:
 - tag: '#X Amz Target=CodeDeploy 20141006.ContinueDeployment'
   spec_file: amazon-codedeploy-x-amz-target-codedeploy-20141006-continuedeployment-api-openapi.yml
@@ -70,6 +70,16 @@ edges:
   evidence: GetDeploymentConfig ... TimeBasedCanary, TimeBasedLinear, TrafficRoutingConfig, MinimumHealthyHosts
   reason: Deployment configuration defines canary/linear traffic-shifting and healthy-host thresholds
     — the classic controlled blast-radius deployment strategy.
+- tag: AWS CodeDeploy
+  spec_file: amazon-codedeploy-aws-codedeploy-api-openapi.yml
+  capability_id: BC-4210.40
+  capability_id_l1: BC-4210
+  capability_name: Deployment Orchestration
+  confidence: 0.92
+  evidence: '"CodeDeploy is a deployment service that automates application deployments"; ''CreateDeployment'',
+    ''ContinueDeployment'', ''CreateDeploymentConfig'', schema ''TrafficRoutingConfig'', ''AutoRollbackConfiguration'''
+  reason: Operations orchestrate deployments to production targets with traffic routing and automatic
+    rollback — squarely Deployment Orchestration.
 - tag: '#X Amz Target=CodeDeploy 20141006.CreateDeploymentGroup'
   spec_file: amazon-codedeploy-x-amz-target-codedeploy-20141006-createdeploymentgroup-api-openapi.yml
   capability_id: BC-4210.40
