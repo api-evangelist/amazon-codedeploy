@@ -260,51 +260,22 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    ListApplicationsResponse:
-      type: object
-      properties:
-        applications:
-          type: array
-          items:
-            type: string
-        nextToken:
-          type: string
-    ApplicationDoesNotExistException:
-      type: object
-      properties:
-        message:
-          type: string
     InternalServerException:
       type: object
       properties:
         message:
           type: string
-    CreateApplicationRequest:
+    InvalidApplicationNameException:
       type: object
-      required:
-      - applicationName
       properties:
-        applicationName:
+        message:
           type: string
-          description: The name of the application.
-        computePlatform:
-          type: string
-          description: The destination platform type for the deployment.
-          enum:
-          - Server
-          - Lambda
-          - ECS
     CreateApplicationResponse:
       type: object
       properties:
         applicationId:
           type: string
           description: A unique application ID.
-    ApplicationAlreadyExistsException:
-      type: object
-      properties:
-        message:
-          type: string
     GetApplicationResponse:
       type: object
       properties:
@@ -322,16 +293,45 @@ components:
               format: date-time
             linkedToGitHub:
               type: boolean
+    ApplicationDoesNotExistException:
+      type: object
+      properties:
+        message:
+          type: string
+    ApplicationAlreadyExistsException:
+      type: object
+      properties:
+        message:
+          type: string
     InvalidNextTokenException:
       type: object
       properties:
         message:
           type: string
-    InvalidApplicationNameException:
+    ListApplicationsResponse:
       type: object
       properties:
-        message:
+        applications:
+          type: array
+          items:
+            type: string
+        nextToken:
           type: string
+    CreateApplicationRequest:
+      type: object
+      required:
+      - applicationName
+      properties:
+        applicationName:
+          type: string
+          description: The name of the application.
+        computePlatform:
+          type: string
+          description: The destination platform type for the deployment.
+          enum:
+          - Server
+          - Lambda
+          - ECS
 externalDocs:
   description: Amazon CodeDeploy API Reference
   url: https://docs.aws.amazon.com/codedeploy/latest/APIReference/
