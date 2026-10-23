@@ -25,287 +25,287 @@ artifacts:
     method: derived
     evidence: openapi/amazon-codedeploy-deployments-api
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-addtagstoonpremisesinstances-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-addtagstoonpremisesinstances-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-addtagstoonpremisesinstances-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-addtagstoonpremisesinstances-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetapplicationrevisions-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetapplicationrevisions-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetapplicationrevisions-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetapplicationrevisions-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetapplications-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetapplications-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetapplications-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetapplications-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeploymentgroups-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeploymentgroups-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeploymentgroups-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeploymentgroups-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeploymentinstances-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeploymentinstances-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeploymentinstances-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeploymentinstances-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeployments-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeployments-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeployments-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeployments-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeploymenttargets-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeploymenttargets-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeploymenttargets-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeploymenttargets-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetonpremisesinstances-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetonpremisesinstances-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetonpremisesinstances-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetonpremisesinstances-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-continuedeployment-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-continuedeployment-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-continuedeployment-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-continuedeployment-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-createapplication-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-createapplication-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-createapplication-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-createapplication-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-createdeployment-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-createdeployment-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-createdeployment-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-createdeployment-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-createdeploymentconfig-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-createdeploymentconfig-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-createdeploymentconfig-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-createdeploymentconfig-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-createdeploymentgroup-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-createdeploymentgroup-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-createdeploymentgroup-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-createdeploymentgroup-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-deleteapplication-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-deleteapplication-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-deleteapplication-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-deleteapplication-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-deletedeploymentconfig-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-deletedeploymentconfig-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-deletedeploymentconfig-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-deletedeploymentconfig-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-deletedeploymentgroup-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-deletedeploymentgroup-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-deletedeploymentgroup-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-deletedeploymentgroup-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-deletegithubaccounttoken-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-deletegithubaccounttoken-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-deletegithubaccounttoken-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-deletegithubaccounttoken-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-deleteresourcesbyexternalid-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-deleteresourcesbyexternalid-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-deleteresourcesbyexternalid-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-deleteresourcesbyexternalid-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-deregisteronpremisesinstance-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-deregisteronpremisesinstance-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-deregisteronpremisesinstance-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-deregisteronpremisesinstance-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-getapplication-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getapplication-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-getapplication-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getapplication-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-getapplicationrevision-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getapplicationrevision-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-getapplicationrevision-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getapplicationrevision-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeployment-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeployment-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeployment-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeployment-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymentconfig-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymentconfig-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymentconfig-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymentconfig-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymentgroup-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymentgroup-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymentgroup-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymentgroup-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymentinstance-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymentinstance-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymentinstance-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymentinstance-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymenttarget-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymenttarget-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymenttarget-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymenttarget-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-getonpremisesinstance-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getonpremisesinstance-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-getonpremisesinstance-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getonpremisesinstance-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-listapplicationrevisions-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listapplicationrevisions-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-listapplicationrevisions-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listapplicationrevisions-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-listapplications-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listapplications-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-listapplications-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listapplications-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymentconfigs-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymentconfigs-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymentconfigs-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymentconfigs-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymentgroups-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymentgroups-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymentgroups-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymentgroups-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymentinstances-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymentinstances-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymentinstances-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymentinstances-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeployments-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeployments-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeployments-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeployments-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymenttargets-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymenttargets-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymenttargets-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymenttargets-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-listgithubaccounttokennames-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listgithubaccounttokennames-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-listgithubaccounttokennames-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listgithubaccounttokennames-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-listonpremisesinstances-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listonpremisesinstances-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-listonpremisesinstances-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listonpremisesinstances-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-listtagsforresource-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listtagsforresource-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-listtagsforresource-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listtagsforresource-api
+    method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-putlifecycleeventhookexecutionstatus-api.opencollection.json
-  : method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-putlifecycleeventhookexecutionstatus-api
+  : method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-putlifecycleeventhookexecutionstatus-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-putlifecycleeventhookexecutionstatus-api
+  : method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-registerapplicationrevision-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-registerapplicationrevision-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-registerapplicationrevision-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-registerapplicationrevision-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-registeronpremisesinstance-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-registeronpremisesinstance-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-registeronpremisesinstance-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-registeronpremisesinstance-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-removetagsfromonpremisesinstances-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-removetagsfromonpremisesinstances-api
+    method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-removetagsfromonpremisesinstances-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-removetagsfromonpremisesinstances-api
+  : method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-skipwaittimeforinstancetermination-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-skipwaittimeforinstancetermination-api
+    method: unknown
+    evidence: no authorship recorded
   ? collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-skipwaittimeforinstancetermination-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-skipwaittimeforinstancetermination-api
+  : method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-stopdeployment-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-stopdeployment-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-stopdeployment-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-stopdeployment-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-tagresource-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-tagresource-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-tagresource-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-tagresource-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-untagresource-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-untagresource-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-untagresource-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-untagresource-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-updateapplication-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-updateapplication-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-updateapplication-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-updateapplication-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-updatedeploymentgroup-api.opencollection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-updatedeploymentgroup-api
+    method: unknown
+    evidence: no authorship recorded
   collections/amazon-codedeploy-x-amz-target-codedeploy-20141006-updatedeploymentgroup-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-updatedeploymentgroup-api
+    method: unknown
+    evidence: no authorship recorded
   conformance/amazon-codedeploy-conformance.yml:
     method: derived
     evidence: declared in the artifact
@@ -3858,127 +3858,7 @@ artifacts:
   json-structure/amazon-codedeploy-wait-time-in-mins-structure.json:
     method: unknown
     evidence: no authorship recorded
-  kin/checks-2026-09-24T161608.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-25T125852.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-25T133943.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-25T143147.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-25T154045.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-26T215308.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-27T094438.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-27T103455.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-27T123021.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-27T132314.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-27T140727.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-28T221322.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-29T213958.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-29T230545.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-30T203505.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-30T220315.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-31T223420.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-01T063623.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-01T210448.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-01T222808.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-02T211804.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-02T224043.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-03T161828.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-03T174231.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-04T062714.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-04T212454.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-04T224856.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-05T055819.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-05T072335.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-05T144739.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-05T195450.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-05T211839.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-06T011047.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-06T211804.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-06T224210.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-07T200636.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-07T213054.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-08T214843.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-08T232836.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-10T204815.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-10T222408.yml:
+  kin/checks-2026-10-11T110117.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-09-12T062655.yml:
@@ -4062,6 +3942,21 @@ artifacts:
   kin/score-2026-09-24T161608.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-25T210408.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-25T232841.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-10-03T000835.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-10-03T024842.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-10-11T110117.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
   lifecycle/amazon-codedeploy-lifecycle.yml:
     method: searched
     evidence: declared in the artifact
@@ -4082,153 +3977,15 @@ artifacts:
   openapi/amazon-codedeploy-applications-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+  openapi/amazon-codedeploy-aws-codedeploy-api-openapi.yml:
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/amazon-codedeploy-deployments-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-addtagstoonpremisesinstances-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetapplicationrevisions-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetapplications-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeploymentgroups-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeploymentinstances-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeployments-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeploymenttargets-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetonpremisesinstances-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-continuedeployment-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-createapplication-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-createdeployment-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-createdeploymentconfig-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-createdeploymentgroup-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-deleteapplication-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-deletedeploymentconfig-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-deletedeploymentgroup-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-deletegithubaccounttoken-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-deleteresourcesbyexternalid-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-deregisteronpremisesinstance-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getapplication-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getapplicationrevision-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeployment-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymentconfig-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymentgroup-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymentinstance-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymenttarget-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getonpremisesinstance-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listapplicationrevisions-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listapplications-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymentconfigs-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymentgroups-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymentinstances-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeployments-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymenttargets-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listgithubaccounttokennames-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listonpremisesinstances-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listtagsforresource-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-putlifecycleeventhookexecutionstatus-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-registerapplicationrevision-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-registeronpremisesinstance-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-removetagsfromonpremisesinstances-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-skipwaittimeforinstancetermination-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-stopdeployment-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-tagresource-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-untagresource-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-updateapplication-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-updatedeploymentgroup-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   overlays/amazon-codedeploy-openapi-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   packages/amazon-codedeploy-packages.yml:
     method: searched
     evidence: declared in the artifact
@@ -4239,146 +3996,146 @@ artifacts:
     method: derived
     evidence: openapi/amazon-codedeploy-deployments-api
   postman/amazon-codedeploy-x-amz-target-codedeploy-20141006-addtagstoonpremisesinstances-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-addtagstoonpremisesinstances-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetapplicationrevisions-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetapplicationrevisions-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetapplications-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetapplications-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeploymentgroups-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeploymentgroups-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeploymentinstances-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeploymentinstances-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeployments-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeployments-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeploymenttargets-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeploymenttargets-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetonpremisesinstances-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetonpremisesinstances-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-codedeploy-x-amz-target-codedeploy-20141006-continuedeployment-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-continuedeployment-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-codedeploy-x-amz-target-codedeploy-20141006-createapplication-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-createapplication-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-codedeploy-x-amz-target-codedeploy-20141006-createdeployment-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-createdeployment-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-codedeploy-x-amz-target-codedeploy-20141006-createdeploymentconfig-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-createdeploymentconfig-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-codedeploy-x-amz-target-codedeploy-20141006-createdeploymentgroup-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-createdeploymentgroup-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-codedeploy-x-amz-target-codedeploy-20141006-deleteapplication-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-deleteapplication-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-codedeploy-x-amz-target-codedeploy-20141006-deletedeploymentconfig-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-deletedeploymentconfig-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-codedeploy-x-amz-target-codedeploy-20141006-deletedeploymentgroup-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-deletedeploymentgroup-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-codedeploy-x-amz-target-codedeploy-20141006-deletegithubaccounttoken-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-deletegithubaccounttoken-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-codedeploy-x-amz-target-codedeploy-20141006-deleteresourcesbyexternalid-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-deleteresourcesbyexternalid-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-codedeploy-x-amz-target-codedeploy-20141006-deregisteronpremisesinstance-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-deregisteronpremisesinstance-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-codedeploy-x-amz-target-codedeploy-20141006-getapplication-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getapplication-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-codedeploy-x-amz-target-codedeploy-20141006-getapplicationrevision-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getapplicationrevision-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeployment-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeployment-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymentconfig-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymentconfig-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymentgroup-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymentgroup-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymentinstance-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymentinstance-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymenttarget-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymenttarget-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-codedeploy-x-amz-target-codedeploy-20141006-getonpremisesinstance-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-getonpremisesinstance-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-codedeploy-x-amz-target-codedeploy-20141006-listapplicationrevisions-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listapplicationrevisions-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-codedeploy-x-amz-target-codedeploy-20141006-listapplications-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listapplications-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymentconfigs-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymentconfigs-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymentgroups-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymentgroups-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymentinstances-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymentinstances-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeployments-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeployments-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymenttargets-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listdeploymenttargets-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-codedeploy-x-amz-target-codedeploy-20141006-listgithubaccounttokennames-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listgithubaccounttokennames-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-codedeploy-x-amz-target-codedeploy-20141006-listonpremisesinstances-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listonpremisesinstances-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-codedeploy-x-amz-target-codedeploy-20141006-listtagsforresource-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-listtagsforresource-api
+    method: unknown
+    evidence: no authorship recorded
   ? postman/amazon-codedeploy-x-amz-target-codedeploy-20141006-putlifecycleeventhookexecutionstatus-api.postman_collection.json
-  : method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-putlifecycleeventhookexecutionstatus-api
+  : method: unknown
+    evidence: no authorship recorded
   postman/amazon-codedeploy-x-amz-target-codedeploy-20141006-registerapplicationrevision-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-registerapplicationrevision-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-codedeploy-x-amz-target-codedeploy-20141006-registeronpremisesinstance-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-registeronpremisesinstance-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-codedeploy-x-amz-target-codedeploy-20141006-removetagsfromonpremisesinstances-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-removetagsfromonpremisesinstances-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-codedeploy-x-amz-target-codedeploy-20141006-skipwaittimeforinstancetermination-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-skipwaittimeforinstancetermination-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-codedeploy-x-amz-target-codedeploy-20141006-stopdeployment-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-stopdeployment-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-codedeploy-x-amz-target-codedeploy-20141006-tagresource-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-tagresource-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-codedeploy-x-amz-target-codedeploy-20141006-untagresource-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-untagresource-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-codedeploy-x-amz-target-codedeploy-20141006-updateapplication-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-updateapplication-api
+    method: unknown
+    evidence: no authorship recorded
   postman/amazon-codedeploy-x-amz-target-codedeploy-20141006-updatedeploymentgroup-api.postman_collection.json:
-    method: derived
-    evidence: openapi/amazon-codedeploy-x-amz-target-codedeploy-20141006-updatedeploymentgroup-api
+    method: unknown
+    evidence: no authorship recorded
   rules/amazon-codedeploy-jsonschema-spectral-rules.yml:
     method: generated
     evidence: declared in the artifact
