@@ -66,146 +66,258 @@
 
 AWS CodeDeploy is a fully managed deployment service that automates software deployments to various compute services such as Amazon EC2, AWS Fargate, AWS Lambda, and on-premises servers. CodeDeploy makes it easier to rapidly release new features, helps avoid downtime during application deployment, and handles the complexity of updating your applications with in-place, blue/green, and canary deployment strategies.
 
-**URL:** [Visit APIs.json](https://raw.githubusercontent.com/api-evangelist/amazon-codedeploy/refs/heads/main/apis.yml)
+**Areas:** Amazon · AWS · Deployment · DevOps · CI/CD · Release Management · Blue/Green Deployment · Developer Tools
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## Amazon CodeDeploy on APIs.io
 
-## Tags:
+Everything profiled for Amazon CodeDeploy is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/amazon-codedeploy/](https://apis.io/providers/amazon-codedeploy/)** — or go straight to one of the APIs or properties below.
 
- - Amazon, AWS, Deployment, DevOps, CI/CD, Release Management, Blue/Green Deployment
+### APIs (3)
 
-## Timestamps
+- [Amazon CodeDeploy Applications API](https://apis.io/apis/amazon-codedeploy/amazon-codedeploy-applications-api/) — Operations for creating and managing CodeDeploy applications
+- [Amazon CodeDeploy Deployments API](https://apis.io/apis/amazon-codedeploy/amazon-codedeploy-deployments-api/) — Operations for creating and monitoring deployments
+- [Amazon CodeDeploy AWS CodeDeploy API](https://apis.io/apis/amazon-codedeploy/amazon-codedeploy-aws-codedeploy-api/) — The AWS CodeDeploy API from Amazon CodeDeploy — 47 operation(s) for aws codedeploy.
 
-- **Created:** 2026-03-16
-- **Modified:** 2026-04-19
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### Amazon CodeDeploy API
+#### MCP servers (1)
 
-The Amazon CodeDeploy REST API enables programmatic management of applications, deployment groups, deployment configurations, and deployments. Create and update deployment groups, trigger deployments to EC2, Lambda, ECS, and on-premises targets, monitor deployment status, and manage deployment lifecycle hooks and rollback policies.
+Model Context Protocol servers that expose the API to agents.
 
-**Human URL:** [https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html](https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html)
+- [amazon-codedeploy](https://apis.io/servers/amazon-codedeploy/amazon-codedeploy/)
 
-#### Tags:
+#### Agentic access (1)
 
- - Amazon, AWS, Deployment, DevOps, CI/CD
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Properties
+- [Amazon Codedeploy Agentic Access](https://apis.io/agentic-access/amazon-codedeploy/amazon-codedeploy-agentic-access/)
 
-- [Documentation](https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html)
-- [APIReference](https://docs.aws.amazon.com/codedeploy/latest/APIReference/Welcome.html)
-- [OpenAPI](openapi/amazon-codedeploy-openapi-original.yaml)
+#### JSON Schema (394)
 
-## Common Properties
+The data models the API reads and writes.
 
-- [GettingStarted](https://docs.aws.amazon.com/codedeploy/latest/userguide/getting-started-codedeploy.html)
-- [Authentication](https://docs.aws.amazon.com/codedeploy/latest/userguide/auth-and-access-control.html)
-- [Pricing](https://aws.amazon.com/codedeploy/pricing/)
-- [Console](https://console.aws.amazon.com/codedeploy/)
-- [Portal](https://aws.amazon.com/codedeploy/)
+- [AddTagsToOnPremisesInstancesInput](https://apis.io/schemas/amazon-codedeploy/amazon-codedeploy-add-tags-to-on-premises-instances-input/)
+- [AdditionalDeploymentStatusInfo](https://apis.io/schemas/amazon-codedeploy/amazon-codedeploy-additional-deployment-status-info/)
+- [Alarm](https://apis.io/schemas/amazon-codedeploy/amazon-codedeploy-alarm/)
+- [AlarmConfiguration](https://apis.io/schemas/amazon-codedeploy/amazon-codedeploy-alarm-configuration/)
+- [AlarmList](https://apis.io/schemas/amazon-codedeploy/amazon-codedeploy-alarm-list/)
+- [AlarmName](https://apis.io/schemas/amazon-codedeploy/amazon-codedeploy-alarm-name/)
+- [AlarmsLimitExceededException](https://apis.io/schemas/amazon-codedeploy/amazon-codedeploy-alarms-limit-exceeded-exception/)
+- [AppSpecContent](https://apis.io/schemas/amazon-codedeploy/amazon-codedeploy-app-spec-content/)
+- [ApplicationAlreadyExistsException](https://apis.io/schemas/amazon-codedeploy/amazon-codedeploy-application-already-exists-exception/)
+- [ApplicationDoesNotExistException](https://apis.io/schemas/amazon-codedeploy/amazon-codedeploy-application-does-not-exist-exception/)
+- [ApplicationId](https://apis.io/schemas/amazon-codedeploy/amazon-codedeploy-application-id/)
+- [ApplicationInfo](https://apis.io/schemas/amazon-codedeploy/amazon-codedeploy-application-info/)
+- [ApplicationLimitExceededException](https://apis.io/schemas/amazon-codedeploy/amazon-codedeploy-application-limit-exceeded-exception/)
+- [ApplicationName](https://apis.io/schemas/amazon-codedeploy/amazon-codedeploy-application-name/)
+- [ApplicationNameRequiredException](https://apis.io/schemas/amazon-codedeploy/amazon-codedeploy-application-name-required-exception/)
+- [ApplicationRevisionSortBy](https://apis.io/schemas/amazon-codedeploy/amazon-codedeploy-application-revision-sort-by/)
+- [ApplicationsInfoList](https://apis.io/schemas/amazon-codedeploy/amazon-codedeploy-applications-info-list/)
+- [ApplicationsList](https://apis.io/schemas/amazon-codedeploy/amazon-codedeploy-applications-list/)
+- [Arn](https://apis.io/schemas/amazon-codedeploy/amazon-codedeploy-arn/)
+- [ArnNotSupportedException](https://apis.io/schemas/amazon-codedeploy/amazon-codedeploy-arn-not-supported-exception/)
+- [AutoRollbackConfiguration](https://apis.io/schemas/amazon-codedeploy/amazon-codedeploy-auto-rollback-configuration/)
+- [AutoRollbackEvent](https://apis.io/schemas/amazon-codedeploy/amazon-codedeploy-auto-rollback-event/)
+- [AutoRollbackEventsList](https://apis.io/schemas/amazon-codedeploy/amazon-codedeploy-auto-rollback-events-list/)
+- [AutoScalingGroup](https://apis.io/schemas/amazon-codedeploy/amazon-codedeploy-auto-scaling-group/)
+- [AutoScalingGroupHook](https://apis.io/schemas/amazon-codedeploy/amazon-codedeploy-auto-scaling-group-hook/)
+- …and 369 more published on APIs.io
+
+#### JSON Structure (393)
+
+Data models expressed in JSON Structure.
+
+- [Amazon Codedeploy Add Tags To On Premises Instances Input Structure](https://apis.io/json-structure/amazon-codedeploy/amazon-codedeploy-add-tags-to-on-premises-instances-input-structure/)
+- [Amazon Codedeploy Additional Deployment Status Info Structure](https://apis.io/json-structure/amazon-codedeploy/amazon-codedeploy-additional-deployment-status-info-structure/)
+- [Amazon Codedeploy Alarm Configuration Structure](https://apis.io/json-structure/amazon-codedeploy/amazon-codedeploy-alarm-configuration-structure/)
+- [Amazon Codedeploy Alarm List Structure](https://apis.io/json-structure/amazon-codedeploy/amazon-codedeploy-alarm-list-structure/)
+- [Amazon Codedeploy Alarm Name Structure](https://apis.io/json-structure/amazon-codedeploy/amazon-codedeploy-alarm-name-structure/)
+- [Amazon Codedeploy Alarm Structure](https://apis.io/json-structure/amazon-codedeploy/amazon-codedeploy-alarm-structure/)
+- [Amazon Codedeploy Alarms Limit Exceeded Exception Structure](https://apis.io/json-structure/amazon-codedeploy/amazon-codedeploy-alarms-limit-exceeded-exception-structure/)
+- [Amazon Codedeploy App Spec Content Structure](https://apis.io/json-structure/amazon-codedeploy/amazon-codedeploy-app-spec-content-structure/)
+- [Amazon Codedeploy Application Already Exists Exception Structure](https://apis.io/json-structure/amazon-codedeploy/amazon-codedeploy-application-already-exists-exception-structure/)
+- [Amazon Codedeploy Application Does Not Exist Exception Structure](https://apis.io/json-structure/amazon-codedeploy/amazon-codedeploy-application-does-not-exist-exception-structure/)
+- [Amazon Codedeploy Application Id Structure](https://apis.io/json-structure/amazon-codedeploy/amazon-codedeploy-application-id-structure/)
+- [Amazon Codedeploy Application Info Structure](https://apis.io/json-structure/amazon-codedeploy/amazon-codedeploy-application-info-structure/)
+- [Amazon Codedeploy Application Limit Exceeded Exception Structure](https://apis.io/json-structure/amazon-codedeploy/amazon-codedeploy-application-limit-exceeded-exception-structure/)
+- [Amazon Codedeploy Application Name Required Exception Structure](https://apis.io/json-structure/amazon-codedeploy/amazon-codedeploy-application-name-required-exception-structure/)
+- [Amazon Codedeploy Application Name Structure](https://apis.io/json-structure/amazon-codedeploy/amazon-codedeploy-application-name-structure/)
+- [Amazon Codedeploy Application Revision Sort By Structure](https://apis.io/json-structure/amazon-codedeploy/amazon-codedeploy-application-revision-sort-by-structure/)
+- [Amazon Codedeploy Applications Info List Structure](https://apis.io/json-structure/amazon-codedeploy/amazon-codedeploy-applications-info-list-structure/)
+- [Amazon Codedeploy Applications List Structure](https://apis.io/json-structure/amazon-codedeploy/amazon-codedeploy-applications-list-structure/)
+- [Amazon Codedeploy Arn Not Supported Exception Structure](https://apis.io/json-structure/amazon-codedeploy/amazon-codedeploy-arn-not-supported-exception-structure/)
+- [Amazon Codedeploy Arn Structure](https://apis.io/json-structure/amazon-codedeploy/amazon-codedeploy-arn-structure/)
+- [Amazon Codedeploy Auto Rollback Configuration Structure](https://apis.io/json-structure/amazon-codedeploy/amazon-codedeploy-auto-rollback-configuration-structure/)
+- [Amazon Codedeploy Auto Rollback Event Structure](https://apis.io/json-structure/amazon-codedeploy/amazon-codedeploy-auto-rollback-event-structure/)
+- [Amazon Codedeploy Auto Rollback Events List Structure](https://apis.io/json-structure/amazon-codedeploy/amazon-codedeploy-auto-rollback-events-list-structure/)
+- [Amazon Codedeploy Auto Scaling Group Hook Structure](https://apis.io/json-structure/amazon-codedeploy/amazon-codedeploy-auto-scaling-group-hook-structure/)
+- [Amazon Codedeploy Auto Scaling Group List Structure](https://apis.io/json-structure/amazon-codedeploy/amazon-codedeploy-auto-scaling-group-list-structure/)
+- …and 368 more published on APIs.io
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Amazon Codedeploy Context](https://apis.io/jsonld/amazon-codedeploy/amazon-codedeploy-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Amazon Codedeploy Vocabulary](https://apis.io/vocabularies/amazon-codedeploy/amazon-codedeploy-vocabulary/)
+
+#### Examples (154)
+
+Example requests and responses.
+
+- [Amazon Codedeploy Add Tags To On Premises Instances Input Example](https://apis.io/examples/amazon-codedeploy/amazon-codedeploy-add-tags-to-on-premises-instances-input-example/)
+- [Amazon Codedeploy Alarm Configuration Example](https://apis.io/examples/amazon-codedeploy/amazon-codedeploy-alarm-configuration-example/)
+- [Amazon Codedeploy Alarm Example](https://apis.io/examples/amazon-codedeploy/amazon-codedeploy-alarm-example/)
+- [Amazon Codedeploy App Spec Content Example](https://apis.io/examples/amazon-codedeploy/amazon-codedeploy-app-spec-content-example/)
+- [Amazon Codedeploy Application Already Exists Exception Example](https://apis.io/examples/amazon-codedeploy/amazon-codedeploy-application-already-exists-exception-example/)
+- [Amazon Codedeploy Application Does Not Exist Exception Example](https://apis.io/examples/amazon-codedeploy/amazon-codedeploy-application-does-not-exist-exception-example/)
+- [Amazon Codedeploy Application Info Example](https://apis.io/examples/amazon-codedeploy/amazon-codedeploy-application-info-example/)
+- [Amazon Codedeploy Auto Rollback Configuration Example](https://apis.io/examples/amazon-codedeploy/amazon-codedeploy-auto-rollback-configuration-example/)
+- [Amazon Codedeploy Auto Scaling Group Example](https://apis.io/examples/amazon-codedeploy/amazon-codedeploy-auto-scaling-group-example/)
+- [Amazon Codedeploy Batch Get Application Revisions Input Example](https://apis.io/examples/amazon-codedeploy/amazon-codedeploy-batch-get-application-revisions-input-example/)
+- [Amazon Codedeploy Batch Get Application Revisions Output Example](https://apis.io/examples/amazon-codedeploy/amazon-codedeploy-batch-get-application-revisions-output-example/)
+- [Amazon Codedeploy Batch Get Applications Input Example](https://apis.io/examples/amazon-codedeploy/amazon-codedeploy-batch-get-applications-input-example/)
+- [Amazon Codedeploy Batch Get Applications Output Example](https://apis.io/examples/amazon-codedeploy/amazon-codedeploy-batch-get-applications-output-example/)
+- [Amazon Codedeploy Batch Get Deployment Groups Input Example](https://apis.io/examples/amazon-codedeploy/amazon-codedeploy-batch-get-deployment-groups-input-example/)
+- [Amazon Codedeploy Batch Get Deployment Groups Output Example](https://apis.io/examples/amazon-codedeploy/amazon-codedeploy-batch-get-deployment-groups-output-example/)
+- [Amazon Codedeploy Batch Get Deployment Instances Input Example](https://apis.io/examples/amazon-codedeploy/amazon-codedeploy-batch-get-deployment-instances-input-example/)
+- [Amazon Codedeploy Batch Get Deployment Instances Output Example](https://apis.io/examples/amazon-codedeploy/amazon-codedeploy-batch-get-deployment-instances-output-example/)
+- [Amazon Codedeploy Batch Get Deployment Targets Input Example](https://apis.io/examples/amazon-codedeploy/amazon-codedeploy-batch-get-deployment-targets-input-example/)
+- [Amazon Codedeploy Batch Get Deployment Targets Output Example](https://apis.io/examples/amazon-codedeploy/amazon-codedeploy-batch-get-deployment-targets-output-example/)
+- [Amazon Codedeploy Batch Get Deployments Input Example](https://apis.io/examples/amazon-codedeploy/amazon-codedeploy-batch-get-deployments-input-example/)
+- [Amazon Codedeploy Batch Get Deployments Output Example](https://apis.io/examples/amazon-codedeploy/amazon-codedeploy-batch-get-deployments-output-example/)
+- [Amazon Codedeploy Batch Get On Premises Instances Input Example](https://apis.io/examples/amazon-codedeploy/amazon-codedeploy-batch-get-on-premises-instances-input-example/)
+- [Amazon Codedeploy Batch Get On Premises Instances Output Example](https://apis.io/examples/amazon-codedeploy/amazon-codedeploy-batch-get-on-premises-instances-output-example/)
+- [Amazon Codedeploy Blue Green Deployment Configuration Example](https://apis.io/examples/amazon-codedeploy/amazon-codedeploy-blue-green-deployment-configuration-example/)
+- [Amazon Codedeploy Blue Instance Termination Option Example](https://apis.io/examples/amazon-codedeploy/amazon-codedeploy-blue-instance-termination-option-example/)
+- …and 129 more published on APIs.io
+
+#### Collections (98)
+
+Postman and Open Collection request collections.
+
+- [AWS CodeDeploy Applications API](https://apis.io/collections/amazon-codedeploy/open-amazon-codedeploy-applications-api/)
+- [AWS CodeDeploy Applications Deployments API](https://apis.io/collections/amazon-codedeploy/open-amazon-codedeploy-deployments-api/)
+- [AWS CodeDeploy Applications #X Amz Target=CodeDeploy 20141006.AddTagsToOnPremisesInstances API](https://apis.io/collections/amazon-codedeploy/open-amazon-codedeploy-x-amz-target-codedeploy-20141006-addtagstoonpremisesinstances-api/)
+- [AWS CodeDeploy Applications #X Amz Target=CodeDeploy 20141006.BatchGetApplicationRevisions API](https://apis.io/collections/amazon-codedeploy/open-amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetapplicationrevisions-api/)
+- [AWS CodeDeploy Applications #X Amz Target=CodeDeploy 20141006.BatchGetApplications API](https://apis.io/collections/amazon-codedeploy/open-amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetapplications-api/)
+- [AWS CodeDeploy Applications #X Amz Target=CodeDeploy 20141006.BatchGetDeploymentGroups API](https://apis.io/collections/amazon-codedeploy/open-amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeploymentgroups-api/)
+- [AWS CodeDeploy Applications #X Amz Target=CodeDeploy 20141006.BatchGetDeploymentInstances API](https://apis.io/collections/amazon-codedeploy/open-amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeploymentinstances-api/)
+- [AWS CodeDeploy Applications #X Amz Target=CodeDeploy 20141006.BatchGetDeployments API](https://apis.io/collections/amazon-codedeploy/open-amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeployments-api/)
+- [AWS CodeDeploy Applications #X Amz Target=CodeDeploy 20141006.BatchGetDeploymentTargets API](https://apis.io/collections/amazon-codedeploy/open-amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetdeploymenttargets-api/)
+- [AWS CodeDeploy Applications #X Amz Target=CodeDeploy 20141006.BatchGetOnPremisesInstances API](https://apis.io/collections/amazon-codedeploy/open-amazon-codedeploy-x-amz-target-codedeploy-20141006-batchgetonpremisesinstances-api/)
+- [AWS CodeDeploy Applications #X Amz Target=CodeDeploy 20141006.ContinueDeployment API](https://apis.io/collections/amazon-codedeploy/open-amazon-codedeploy-x-amz-target-codedeploy-20141006-continuedeployment-api/)
+- [AWS CodeDeploy Applications #X Amz Target=CodeDeploy 20141006.CreateApplication API](https://apis.io/collections/amazon-codedeploy/open-amazon-codedeploy-x-amz-target-codedeploy-20141006-createapplication-api/)
+- [AWS CodeDeploy Applications #X Amz Target=CodeDeploy 20141006.CreateDeployment API](https://apis.io/collections/amazon-codedeploy/open-amazon-codedeploy-x-amz-target-codedeploy-20141006-createdeployment-api/)
+- [AWS CodeDeploy Applications #X Amz Target=CodeDeploy 20141006.CreateDeploymentConfig API](https://apis.io/collections/amazon-codedeploy/open-amazon-codedeploy-x-amz-target-codedeploy-20141006-createdeploymentconfig-api/)
+- [AWS CodeDeploy Applications #X Amz Target=CodeDeploy 20141006.CreateDeploymentGroup API](https://apis.io/collections/amazon-codedeploy/open-amazon-codedeploy-x-amz-target-codedeploy-20141006-createdeploymentgroup-api/)
+- [AWS CodeDeploy Applications #X Amz Target=CodeDeploy 20141006.DeleteApplication API](https://apis.io/collections/amazon-codedeploy/open-amazon-codedeploy-x-amz-target-codedeploy-20141006-deleteapplication-api/)
+- [AWS CodeDeploy Applications #X Amz Target=CodeDeploy 20141006.DeleteDeploymentConfig API](https://apis.io/collections/amazon-codedeploy/open-amazon-codedeploy-x-amz-target-codedeploy-20141006-deletedeploymentconfig-api/)
+- [AWS CodeDeploy Applications #X Amz Target=CodeDeploy 20141006.DeleteDeploymentGroup API](https://apis.io/collections/amazon-codedeploy/open-amazon-codedeploy-x-amz-target-codedeploy-20141006-deletedeploymentgroup-api/)
+- [AWS CodeDeploy Applications #X Amz Target=CodeDeploy 20141006.DeleteGitHubAccountToken API](https://apis.io/collections/amazon-codedeploy/open-amazon-codedeploy-x-amz-target-codedeploy-20141006-deletegithubaccounttoken-api/)
+- [AWS CodeDeploy Applications #X Amz Target=CodeDeploy 20141006.DeleteResourcesByExternalId API](https://apis.io/collections/amazon-codedeploy/open-amazon-codedeploy-x-amz-target-codedeploy-20141006-deleteresourcesbyexternalid-api/)
+- [AWS CodeDeploy Applications #X Amz Target=CodeDeploy 20141006.DeregisterOnPremisesInstance API](https://apis.io/collections/amazon-codedeploy/open-amazon-codedeploy-x-amz-target-codedeploy-20141006-deregisteronpremisesinstance-api/)
+- [AWS CodeDeploy Applications #X Amz Target=CodeDeploy 20141006.GetApplication API](https://apis.io/collections/amazon-codedeploy/open-amazon-codedeploy-x-amz-target-codedeploy-20141006-getapplication-api/)
+- [AWS CodeDeploy Applications #X Amz Target=CodeDeploy 20141006.GetApplicationRevision API](https://apis.io/collections/amazon-codedeploy/open-amazon-codedeploy-x-amz-target-codedeploy-20141006-getapplicationrevision-api/)
+- [AWS CodeDeploy Applications #X Amz Target=CodeDeploy 20141006.GetDeployment API](https://apis.io/collections/amazon-codedeploy/open-amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeployment-api/)
+- [AWS CodeDeploy Applications #X Amz Target=CodeDeploy 20141006.GetDeploymentConfig API](https://apis.io/collections/amazon-codedeploy/open-amazon-codedeploy-x-amz-target-codedeploy-20141006-getdeploymentconfig-api/)
+- …and 73 more published on APIs.io
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Amazon Codedeploy Openapi Overlay](https://apis.io/overlays/amazon-codedeploy/amazon-codedeploy-openapi-overlay/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Amazon CodeDeploy — jsonschema rules](https://apis.io/rules/amazon-codedeploy/amazon-codedeploy-jsonschema-spectral-rules/)
+- [Amazon CodeDeploy API Rules](https://apis.io/rules/amazon-codedeploy/amazon-codedeploy-spectral-rules/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Amazon Codedeploy Authentication](https://apis.io/security/amazon-codedeploy/amazon-codedeploy-authentication/)
+- [Amazon Codedeploy Domain Security](https://apis.io/security/amazon-codedeploy/amazon-codedeploy-domain-security/)
+- [Amazon Codedeploy Trust Center](https://apis.io/security/amazon-codedeploy/amazon-codedeploy-trust-center/)
+- [Amazon Codedeploy Vulnerability Disclosure](https://apis.io/security/amazon-codedeploy/amazon-codedeploy-vulnerability-disclosure/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://aws.amazon.com/codedeploy/)
 - [Documentation](https://docs.aws.amazon.com/codedeploy/latest/userguide/)
-- [TermsOfService](https://aws.amazon.com/service-terms/)
-- [PrivacyPolicy](https://aws.amazon.com/privacy/)
-- [StatusPage](https://health.aws.amazon.com/health/status)
+- [Getting started](https://docs.aws.amazon.com/codedeploy/latest/userguide/getting-started-codedeploy.html)
+- [Pricing](https://aws.amazon.com/codedeploy/pricing/)
+- [Sign up](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html)
 - [Blog](https://aws.amazon.com/blogs/devops/)
-- [FAQ](https://aws.amazon.com/codedeploy/faqs/)
-- [SignUp](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html)
-- [GitHubOrganization](https://github.com/aws)
+- [Terms of service](https://aws.amazon.com/service-terms/)
+- [Privacy policy](https://aws.amazon.com/privacy/)
+- [GitHub](https://github.com/aws)
+- [Status](https://health.aws.amazon.com/health/status)
 
-## Features
+## API Evangelist rating
 
-| Name | Description |
-|------|-------------|
-| Multiple Deployment Strategies | Support for in-place, blue/green, and canary deployment strategies across EC2, Lambda, ECS, and on-premises targets to m |
-| Automated Rollbacks | Automatically roll back deployments if a specified number of instances fail health checks or if CloudWatch alarms are tr |
-| Deployment Lifecycle Hooks | Define custom lifecycle event hooks (BeforeInstall, AfterInstall, ApplicationStart, etc.) using scripts or Lambda functi |
-| Traffic Shifting for Lambda and ECS | Implement canary and linear traffic shifting for Lambda function updates and ECS service deployments with configurable t |
-| Deployment Groups | Organize deployment targets using deployment groups with EC2 instance tags, Auto Scaling groups, ECS clusters, or on-pre |
-| CodeDeploy Agent | Install the CodeDeploy agent on EC2 or on-premises instances to enable deployment target registration and lifecycle hook |
-| Integration with AWS Load Balancers | Integrate with Application Load Balancers and Network Load Balancers for blue/green deployments that shift traffic betwe |
+**Kin Score 58.2** — strong · rubric 0.25.0 · scored 2026-10-23
 
-## Use Cases
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 62.2 |
+| Contract governance | 31.8 |
+| Operational transparency | 28.9 |
+| Developer ergonomics | 60.7 |
+| Access clarity | 52.6 |
 
-| Name | Description |
-|------|-------------|
-| Zero-Downtime Application Updates | Use blue/green deployments to update applications without downtime by routing traffic to a new environment while keeping |
-| Lambda Function Updates | Deploy new Lambda function versions with canary or linear traffic shifting to gradually migrate traffic from the current |
-| ECS Service Deployment | Deploy updated container tasks to ECS services with blue/green deployments and configurable traffic shifting through an  |
-| On-Premises Application Deployment | Extend cloud-based deployment automation to on-premises servers using the CodeDeploy agent and on-premises instance regi |
-| Multi-Stage CD Pipeline | Use CodeDeploy as the deployment stage in an AWS CodePipeline for fully automated continuous delivery from source code t |
+**Agent readiness 29.6** — agent-ready
 
-## Integrations
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | verified |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
 
-| Name | Description |
-|------|-------------|
-| AWS CodePipeline | Use CodeDeploy as the deployment stage in CodePipeline CD pipelines. |
-| AWS CodeBuild | Trigger CodeDeploy deployments from build artifacts produced by CodeBuild. |
-| AWS Lambda | Deploy Lambda function updates with traffic shifting strategies. |
-| Amazon ECS | Deploy ECS service updates with blue/green deployments. |
-| AWS CloudWatch | Trigger automatic rollbacks based on CloudWatch alarm states. |
-| Elastic Load Balancing | Integrate with ALB and NLB for blue/green traffic shifting. |
-| Amazon EC2 Auto Scaling | Deploy to Auto Scaling groups with automatic instance health checking. |
-| AWS Systems Manager | Use SSM Run Command and State Manager for deployment automation. |
-| GitHub | Deploy application revisions stored in GitHub repositories. |
-| Amazon S3 | Store and retrieve application deployment bundles from S3. |
+**Regulatory alignment 35.3** — Horizontal (data, software, accessibility, platform)
 
-## Artifacts
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/amazon-codedeploy/](https://apis.io/providers/amazon-codedeploy/).
 
-Machine-readable API specifications organized by format.
+## How this profile is made
 
-### OpenAPI
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
 
-- [amazon-codedeploy-openapi-original](openapi/amazon-codedeploy-openapi-original.yaml)
-- [amazon-codedeploy-openapi](openapi/amazon-codedeploy-openapi.yml)
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Amazon CodeDeploy: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
 
-### JSON Schema
+## Open an issue
 
-394 JSON Schema files generated from the OpenAPI specification.
-
-- [amazon-codedeploy-add-tags-to-on-premises-instances-input-schema](json-schema/amazon-codedeploy-add-tags-to-on-premises-instances-input-schema.json)
-- [amazon-codedeploy-additional-deployment-status-info-schema](json-schema/amazon-codedeploy-additional-deployment-status-info-schema.json)
-- [amazon-codedeploy-alarm-configuration-schema](json-schema/amazon-codedeploy-alarm-configuration-schema.json)
-- [amazon-codedeploy-alarm-list-schema](json-schema/amazon-codedeploy-alarm-list-schema.json)
-- [amazon-codedeploy-alarm-name-schema](json-schema/amazon-codedeploy-alarm-name-schema.json)
-- ...and 389 more in [json-schema/](json-schema/)
-
-### JSON Structure
-
-393 JSON Structure files in [json-structure/](json-structure/).
-
-### JSON-LD
-
-- [amazon-codedeploy-context](json-ld/amazon-codedeploy-context.jsonld)
-
-### Examples
-
-393 example JSON files in [examples/](examples/).
-
-## Capabilities
-
-Naftiko capabilities organized as shared per-API definitions composed into customer-facing workflows.
-
-### Shared Per-API Definitions
-
-- [codedeploy](capabilities/shared/codedeploy.yaml) — 47 operations
-
-### Workflow Capabilities
-
-| Workflow | APIs Combined | Tools | Persona |
-|----------|--------------|-------|---------|
-| [Amazon CodeDeploy Deployment Automation](capabilities/amazon-codedeploy-deployment-automation.yaml) | codedeploy | 10 | DevOps Engineer |
-
-## Vocabulary
-
-- [amazon-codedeploy-vocabulary](vocabulary/amazon-codedeploy-vocabulary.yaml) — Unified taxonomy mapping 1 resources, 6 actions, 1 workflows, and 2 personas
-
-## Rules
-
-- [amazon-codedeploy-spectral-rules](rules/amazon-codedeploy-spectral-rules.yml) — 9 rules enforcing Amazon CodeDeploy API conventions
-
-## Maintainers
-
-**FN:** Kin Lane
-
-**Email:** kin@apievangelist.com
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/amazon-codedeploy/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
